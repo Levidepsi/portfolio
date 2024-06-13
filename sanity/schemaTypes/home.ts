@@ -19,13 +19,6 @@ export default defineType({
         maxLength: 96,
       },
     }),
-
-    defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    }),
     defineField({
       name: 'publishedAt',
       title: 'Published at',
@@ -36,6 +29,17 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: "components",
+      title: "Components",
+      type: "array",
+      of: [
+        {
+          type: "slider",
+          title: "Slider",
+        },
+      ]
+    })
   ],
 
   preview: {

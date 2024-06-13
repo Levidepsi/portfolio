@@ -11,8 +11,8 @@ export default async function Home() {
   // const client = loadQuery(isEnabled ? token : undefined);
   const homedata = await loadQuery<SanityDocument[]>(HOME_QUERY, {}, {
     perspective: draftMode().isEnabled ? "previewDrafts" : "published",
-  });
-
+    cache: "no-store"
+  },);
 
   return isEnabled ? (
     <HomePreview initial={homedata} />
@@ -20,3 +20,12 @@ export default async function Home() {
     <Homepage data={homedata.data} />
   )
 }
+
+
+export async function generateStaticParams() {
+	return [
+		{ slug: "/" }, // -> lets cache these pages as they will never change!
+	];
+}
+
+export const revalidate = 1;

@@ -1,20 +1,25 @@
 import { type SchemaTypeDefinition } from 'sanity'
 
 import blockContent from './schemaTypes/blockContent'
-import category from './schemaTypes/category'
 import post from './schemaTypes/post'
-import author from './schemaTypes/author'
 import page from './schemaTypes/page'
 import home from './schemaTypes/home'
+import slideshow from './components/slideshow'
+import banner from './components/banner'
+import text_with_image from './components/text_with_image'
+import navigation from './schemaTypes/navigation'
 
-export const schema: { types: SchemaTypeDefinition[] } = {
-  types: 
+const schema =
   [
-    post, 
+    navigation,
     page, 
     home,
-    author, 
-    category, 
-    blockContent
-  ],
-}
+    post, 
+    blockContent,
+      // objects
+    slideshow,
+    banner,
+    text_with_image,
+  ]
+
+export default schema;

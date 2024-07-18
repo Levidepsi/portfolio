@@ -37,6 +37,7 @@ export const HOME_QUERY = groq`*[_type == "home"][0]{
   "slug": slug.current,
   _type,
   components[]{
+  ...,
   _type,
     title,
     "image": image.asset->url,
@@ -44,13 +45,157 @@ export const HOME_QUERY = groq`*[_type == "home"][0]{
     slider_items[]{
     "image": image.asset->url
     },
+    text_items[]{
+      title,
+      link,
+      body,
+      show_link
+    }
   },
+}`;
+
+export const ALLPAGE_QUERY = groq`*[_type == "page"]{
+  title,
+  "slug": slug.current,
+  _type,
 }`;
 
 export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
   title,
   "slug": slug.current,
-  _type
+  _type,
+  components[]{
+    ...,
+    _type,
+    title,
+    "image": image.asset->url,
+    positions,
+    slider_items[]{
+      link,
+      url,
+      body
+    },
+    text_items[]{
+      title,
+      link,
+      body,
+      show_link
+    },
+    imageblock_items[]{
+      title,
+      sub_title,
+      body,
+      "image": image.asset->url,
+    },
+    multiple_image_items[]{
+      show_border_bottom,
+      show_border_right,
+      margin_top,
+      link,
+      "image": image.asset->url,
+      height,
+      width
+    }
+  },
+}`;
+
+export const ALLINVESTMENTS_QUERY = groq`*[_type == "news"]{
+  title,
+  "slug": slug.current,
+  _type,
+}`;
+
+
+
+export const SINGLE_INVESTMENTS_QUERY = groq`*[_type == "news" && slug.current == $slug][0]{
+  title,
+  "slug": slug.current,
+  _type,
+  components[]{
+    ...,
+    _type,
+    title,
+    "image": image.asset->url,
+    positions,
+    slider_items[]{
+      link,
+      url,
+      body
+    },
+    text_items[]{
+      title,
+      link,
+      body,
+      show_link
+    },
+    imageblock_items[]{
+      title,
+      sub_title,
+      body,
+      "image": image.asset->url,
+    },
+    multiple_image_items[]{
+      show_border_bottom,
+      show_border_right,
+      margin_top,
+      link,
+      "image": image.asset->url,
+      height,
+      width
+    }
+  },
+}`;
+
+
+export const ALLPORTFOLIO_QUERY = groq`*[_type == "portfolio"]{
+  title,
+  "slug": slug.current,
+  _type,
+}`;
+
+
+
+export const SINGLE_PORTFOLIO_QUERY = groq`*[_type == "portfolio" && slug.current == $slug][0]{
+  title,
+  "slug": slug.current,
+  _type,
+  components[]{
+    ...,
+    _type,
+    title,
+    "image": image.asset->url,
+    positions,
+    slider_items[]{
+      link,
+      url,
+      body
+    },
+    text_items[]{
+      title,
+      link,
+      body,
+      show_link
+    },
+    imageblock_items[]{
+      title,
+      sub_title,
+      body,
+      "image": image.asset->url,
+    },
+    multiple_image_items[]{
+      show_border_bottom,
+      show_border_right,
+      margin_top,
+      link,
+      "image": image.asset->url,
+      height,
+      width
+    },
+    details[] {
+      key,
+      value
+    }
+  },
 }`;
 
 

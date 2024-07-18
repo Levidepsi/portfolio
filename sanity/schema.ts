@@ -8,6 +8,14 @@ import slideshow from './components/slideshow'
 import banner from './components/banner'
 import text_with_image from './components/text_with_image'
 import navigation from './schemaTypes/navigation'
+import heading from './components/heading'
+import multiple_text from './components/multiple_text'
+import imageblock_text from './components/imageblock_text'
+import multiple_image from './components/multiple_image'
+import mapwithtext from './components/mapwithtext'
+import investments from './schemaTypes/investments'
+import portfolio from './schemaTypes/portfolio'
+import featured_portfolio from './components/featured_portfolio'
 
 const schema =
   [
@@ -16,10 +24,18 @@ const schema =
     home,
     post, 
     blockContent,
+    investments,
+    portfolio,
       // objects
     slideshow,
     banner,
     text_with_image,
+    heading,
+    multiple_text,
+    imageblock_text,
+    multiple_image,
+    mapwithtext,
+    featured_portfolio
   ]
 
 export default schema;

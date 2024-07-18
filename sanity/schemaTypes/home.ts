@@ -38,6 +38,18 @@ export default defineType({
           type: "slider",
           title: "Slider",
         },
+        {
+          type: 'banner',
+          title: 'Banner',
+        },
+        {
+          type: 'heading',
+          title: 'Heading',
+        },
+        {
+          type: 'multiple_text',
+          title: 'Multiple Text',
+        },
       ]
     })
   ],

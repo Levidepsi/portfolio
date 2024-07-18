@@ -1,6 +1,6 @@
 
 import { draftMode } from "next/headers";
-import { HOME_QUERY } from "../sanity/lib/client";
+import { ALLPAGE_QUERY, HOME_QUERY } from "../sanity/lib/client";
 import { SanityDocument } from "next-sanity";
 import { loadQuery } from "../sanity/lib/store";
 import Homepage from "../components/pages/Homepage";
@@ -14,6 +14,8 @@ export default async function Home() {
     cache: "no-store"
   },);
 
+
+
   return isEnabled ? (
     <HomePreview initial={homedata} />
   ) : (
@@ -23,6 +25,7 @@ export default async function Home() {
 
 
 export async function generateStaticParams() {
+  
 	return [
 		{ slug: "/" }, // -> lets cache these pages as they will never change!
 	];

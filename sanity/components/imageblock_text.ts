@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'slider',
-  title: 'Slider',
+  name: 'imageblock_text',
+  title: 'Image Block Text',
   type: 'object',
   fields: [
     defineField({
@@ -11,38 +11,38 @@ export default defineType({
       type: 'string',
     }),
     
-    defineField({
-      name: 'padding_top',
-      title: 'Padding Top',
-      type: 'number',
-    }),
 
     defineField({
-        name: "slider_items",
-        title: "Slider Items",
+        name: "imageblock_items",
+        title: "Image Block Items",
         type: 'array',
         of: [
-              {
+            {
                 type: "object",
                 fields: [
                     {
-                    name: 'link',
-                    title: 'link',
+                    name: 'title',
+                    title: 'Title',
                     type: 'string',
                     },
                     {
-                      name: "url",
-                      title: "url",
+                      name: "sub_title",
+                      title: "Sub Title",
                       type: "string"
                     },
                     {
                       name: 'body',
                       title: 'Body',
                       type: 'blockContent',
+                  },
+                    {
+                      name: 'image',
+                      title: 'Image',
+                      type: 'image',
                     },
-                    
+                   
                 ]
-              }
+            }
         ]
     }),
   ],

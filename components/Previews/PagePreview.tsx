@@ -4,6 +4,7 @@ import { QueryResponseInitial, useQuery } from "@sanity/react-loader";
 import { QueryParams, SanityDocument } from "next-sanity";
 import Post from "../pages/posts/Post";
 import { PAGE_QUERY, POST_QUERY } from "../../sanity/lib/client";
+import Pages from "../pages/Pages";
 
 
 export default function PagePreview({
@@ -20,7 +21,7 @@ export default function PagePreview({
   );
 
   return data ? (
-    <Post post={data} />
+    <Pages page={data} />
   ) : (
     <div className="bg-red-100">Post not found</div>
   );

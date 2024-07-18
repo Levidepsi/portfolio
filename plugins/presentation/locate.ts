@@ -11,7 +11,7 @@ const doctypes: any =  [home.name, post.name, page.name ]
 
 
 // Pass 'context' as the second argument
-export const locate: DocumentLocationResolver = (params, context) => {
+export const locations: DocumentLocationResolver = (params, context) => {
   // Set up locations for post documents
   if (doctypes.includes(params.type)) {
     // Subscribe to the latest slug and title

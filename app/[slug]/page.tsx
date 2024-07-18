@@ -1,7 +1,7 @@
 
 import { draftMode } from "next/headers";
 import { SanityDocument } from "next-sanity";
-import { PAGE_QUERY } from "../../sanity/lib/client";
+import { ALLPAGE_QUERY, PAGE_QUERY } from "../../sanity/lib/client";
 import { loadQuery } from "../../sanity/lib/store";
 import PagePreview from "../../components/Previews/PagePreview";
 import Pages from "../../components/pages/Pages";
@@ -29,3 +29,21 @@ export default async function Page({
     <Pages page={page.data} />
   );
 }
+
+
+export async function generateStaticParams() {
+	  const allslug = await loadQuery<SanityDocument>(ALLPAGE_QUERY, {},{
+    cache: "no-store"
+    },);
+  
+  
+ const pageslugs =  allslug.data.map((item: any) => {
+    return {
+      slug: item.slug
+    }
+  })
+
+  return pageslugs
+  }
+
+export const revalidate = 1;

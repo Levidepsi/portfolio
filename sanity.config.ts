@@ -1,4 +1,4 @@
-import { locate } from './plugins/presentation/locate';
+import { locations } from './plugins/presentation/locate';
 /**
  * This configuration is used to for the Sanity Studio that’s mounted on the `\app\admin\[[...index]]\page.tsx` route
  */
@@ -29,7 +29,9 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: "v2024-04-12"}),
     presentationTool({
-      locate,
+      resolve: {
+        locations
+      },
       previewUrl: {
         draftMode: {
           enable: '/api/draft',

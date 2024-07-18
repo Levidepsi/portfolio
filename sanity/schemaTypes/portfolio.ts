@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'page',
-  title: 'Page',
+  name: 'portfolio',
+  title: 'Portfolio',
   type: 'document',
   fields: [
     defineField({
@@ -22,9 +22,9 @@ export default defineType({
 
 
     defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
+      name: 'image',
+      title: 'Image',
+      type: 'image',
     }),
     defineField({
       name: 'body',
@@ -64,6 +64,10 @@ export default defineType({
         {
           type: 'maptwithtext',
           title: 'Map With text',
+        },
+        {
+          type: 'feature_portfolio',
+          title: 'Feature Portfolio',
         },
       ]
     })

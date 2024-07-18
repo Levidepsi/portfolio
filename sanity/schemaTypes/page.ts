@@ -27,9 +27,15 @@ export default defineType({
       type: 'datetime',
     }),
     defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      name: 'meta_description',
+      title: 'Meta Description',
+      type: 'string',
+    }),
+
+     defineField({
+      name: 'meta_image',
+      title: 'Meta Image',
+      type: 'image',
     }),
 
     defineField({

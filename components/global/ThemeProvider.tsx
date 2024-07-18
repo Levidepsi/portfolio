@@ -40,7 +40,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 				}}
 			>
 				
-				<div className='overflow-hidden'>{children}</div>
+				<div className='overflow-hidden min-h-[100vh] flex flex-col justify-between'>{children}</div>
 			</ThemeContext.Provider>
 		</div>
 	);

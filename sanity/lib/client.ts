@@ -36,6 +36,8 @@ export const HOME_QUERY = groq`*[_type == "home"][0]{
   title,
   "slug": slug.current,
   _type,
+  "image": image.asset->url,
+  meta_description,
   components[]{
   ...,
   _type,
@@ -64,6 +66,8 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
   title,
   "slug": slug.current,
   _type,
+  "image": image.asset->url,
+  meta_description,
   components[]{
     ...,
     _type,
@@ -111,6 +115,8 @@ export const SINGLE_INVESTMENTS_QUERY = groq`*[_type == "news" && slug.current =
   title,
   "slug": slug.current,
   _type,
+  "image": image.asset->url,
+  meta_description,
   components[]{
     ...,
     _type,
@@ -159,6 +165,8 @@ export const SINGLE_PORTFOLIO_QUERY = groq`*[_type == "portfolio" && slug.curren
   title,
   "slug": slug.current,
   _type,
+  "image": image.asset->url,
+  meta_description,
   components[]{
     ...,
     _type,

@@ -2,6 +2,7 @@
 
 import { PortableText } from "@portabletext/react";
 import { useWindowWide } from "../../hooks/ScreenSize";
+import {motion} from "framer-motion"
 
 const Heading = ({ title, description, description2, padding_top,show_border, description2_max_width, description2_font_size,descriptions_max_width }: any) => {
   let pt_moble = padding_top / 2
@@ -10,7 +11,16 @@ const Heading = ({ title, description, description2, padding_top,show_border, de
   let mobileFont = description2_font_size - 2
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, }}
+      whileInView={{opacity: 1}}
+      transition={{
+        duration: 1,
+        delay: 0.3,
+        ease: [0.19, 1, 0.22, 1],
+      }}
+      viewport={{ once: true }}
+      
       style={desktop ?{
         paddingTop: padding_top ? `${padding_top}px` : pt_moble ? `${pt_moble}px` : ""
       } : {
@@ -42,7 +52,7 @@ const Heading = ({ title, description, description2, padding_top,show_border, de
        </div>
       </div>
        
-    </div>
+    </motion.div>
   );
 };
 

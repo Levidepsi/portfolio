@@ -10,7 +10,7 @@ const Footer = ({ navigation }: any) => {
     <>
       {pathname.includes("/admin") ? "" : 
       
-      <div className="flex flex-col md:flex-row justify-center items-center md:justify-between pt-[50px] pb-[40px] px-5 lg:px-[32px]">
+      <div className="flex flex-col md:flex-row justify-center items-center md:justify-between pt-[50px] pb-[50px] px-5 lg:px-[32px]">
           <Image src={navigation.footer_logo} alt="footer" width={500} height={500} className="h-auto w-[88px] mb-5 lg:mb-0 ]" />
           <div className="flex">
             {navigation.footer_menu && navigation.footer_menu.map((item: any, i: number) => {

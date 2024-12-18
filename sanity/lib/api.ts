@@ -1,0 +1,1 @@
+export const DRAFT_MODE_ROUTE = '/api/draft'

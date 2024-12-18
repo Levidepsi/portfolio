@@ -12,36 +12,44 @@ import Header from "../components/navigations/Header";
 import Footer from "../components/navigations/Footer";
 import Logo from "../public/Group 5.svg"
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Osprey",
+  title: "91 Group",
    icons: {
       icon: `${Logo}`,
       shortcut: `${Logo}`,
 	},
 };
 
+type Params = Promise<{ slug: string }>
+
 export default async function RootLayout({
   children,
+  params 
 }: Readonly<{
   children: React.ReactNode;
+  params: Params 
 }>) {
-
+    const { slug } = await params
     const navigation = await loadQuery<SanityDocument[]>(NAVIGATION, {}, {
     cache: "no-store"
     });
+
+    const {isEnabled} = await draftMode()
+
   
   return (
     <html lang="en">
       <body >
         <ThemeProvider>
-          <Header navigation={navigation.data} />
+          {/* <Header navigation={navigation.data} /> */}
           <ProviderWrapper>
             {children}
           </ProviderWrapper>
-          <Footer navigation={navigation.data}  />
-          {draftMode().isEnabled && <LiveVisualEditing />}
+          {/* <Footer navigation={navigation.data}  /> */}
+          {isEnabled && <LiveVisualEditing />}
        </ThemeProvider>
       </body>
     </html>

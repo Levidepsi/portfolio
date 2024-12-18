@@ -8,62 +8,69 @@ import HomePreview from "../components/Previews/HomePreview";
 import { Metadata } from "next";
 
 
-export async function generateMetadata(): Promise<Metadata> {
+// export async function generateMetadata(): Promise<Metadata> {
   
-	const page: any = await loadQuery<SanityDocument[]>(HOME_QUERY, {}, {
-    perspective: draftMode().isEnabled ? "previewDrafts" : "published",
-    cache: "no-store"
-  },);
+// 	const { isEnabled } = await draftMode()
 
-	const aspectRatio = 1.91; // The desired aspect ratio
-	let width = 1200; // Default width
 
-	let height = Math.round(width / aspectRatio);
+// 	const page: any = await loadQuery<SanityDocument[]>(HOME_QUERY, {}, {
+//     perspective: isEnabled ? "previewDrafts" : "published",
+//     cache: "no-store"
+//   },);
 
-	if (height > 630) {
-		height = 630;
-		width = Math.round(height * aspectRatio);
-	}
+// 	const aspectRatio = 1.91; // The desired aspect ratio
+// 	let width = 1200; // Default width
 
-	let metaTitle = `Osprey`;
-	const metadata = {
-		title: metaTitle,
-		description: "",
+// 	let height = Math.round(width / aspectRatio);
 
-		openGraph: {  
-			title: metaTitle,
-			description: page.data.meta_description ? page.data.meta_description : "Osprey",
-			url: `https://osprey-one.vercel.app/`,
-			siteName: `${metaTitle}`,
-			images: [
-				{
-					url: page.data.meta_image,
-					width: 1200,
-					height: 630,
-					aspectRatio: aspectRatio,
-				},
-			],
-			type: "website",
-		},
-	};
-	return metadata;
-}
+// 	if (height > 630) {
+// 		height = 630;
+// 		width = Math.round(height * aspectRatio);
+// 	}
+
+// 	let metaTitle = `Osprey`;
+// 	const metadata = {
+// 		title: metaTitle,
+// 		description: "",
+
+// 		openGraph: {  
+// 			title: metaTitle,
+// 			description: page.data.meta_description ? page.data.meta_description : "Osprey",
+// 			url: `https://osprey-one.vercel.app/`,
+// 			siteName: `${metaTitle}`,
+// 			images: [
+// 				{
+// 					url: page.data.meta_image,
+// 					width: 1200,
+// 					height: 630,
+// 					aspectRatio: aspectRatio,
+// 				},
+// 			],
+// 			type: "website",
+// 		},
+// 	};
+// 	return metadata;
+// }
 
 export default async function Home() {
-  const {isEnabled} = draftMode()
+  
+	const { isEnabled } = await draftMode()
   // const client = loadQuery(isEnabled ? token : undefined);
   const homedata = await loadQuery<SanityDocument[]>(HOME_QUERY, {}, {
-    perspective: draftMode().isEnabled ? "previewDrafts" : "published",
+    perspective: isEnabled ? "previewDrafts" : "published",
     cache: "no-store"
   },);
+	
 
+	return (
+		<>SADSAD</>
+	)
 
-
-  return isEnabled ? (
-    <HomePreview initial={homedata} />
-  ) : (
-    <Homepage data={homedata.data} />
-  )
+  // return isEnabled ? (
+  //   <HomePreview initial={homedata} />
+  // ) : (
+  //   <Homepage data={homedata.data} />
+  // )
 }
 
 

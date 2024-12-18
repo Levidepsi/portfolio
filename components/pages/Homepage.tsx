@@ -27,7 +27,7 @@ const Homepage = ({ data }: any) => {
 
 //   }
   return <>
-      <SpreadComponents components={data.components} />
+      {data.components && <SpreadComponents components={data.components} />}
   </>;
 };
 

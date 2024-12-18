@@ -7,16 +7,18 @@ import PagePreview from "../../components/Previews/PagePreview";
 import Pages from "../../components/pages/Pages";
 import { Metadata } from "next";
 
+type Params = Promise<{ slug: string }>
 
-export async function generateMetadata({
-    params,
-  }: {
-    params: { slug: string,  }
-  }): Promise<Metadata> {
-  const { slug } = params
+export async function generateMetadata(props: {
+  params: Params
+}): Promise<Metadata> {
+    const params = await props.params
+    const slug = params.slug
+  const {isEnabled} = await draftMode()
+
   
 	const page: any = await loadQuery<SanityDocument[]>(PAGE_QUERY, {slug}, {
-    perspective: draftMode().isEnabled ? "previewDrafts" : "published",
+    perspective: isEnabled ? "previewDrafts" : "published",
     cache: "no-store"
   },);
 
@@ -55,19 +57,18 @@ export async function generateMetadata({
 }
 
 
-export default async function Page({
-    params,
-  }: {
-    params: { slug: string,  }
-  }) {
-  const {isEnabled} = draftMode()
+export default async function Page(props: {
+  params: Params
+}) {
+  const {isEnabled} = await draftMode()
   // const client = loadQuery(isEnabled ? token : undefined);
-  const { slug } = params
- 
+   const params = await props.params
+  const slug = params.slug
+  
   const page = await loadQuery<SanityDocument>(PAGE_QUERY, {slug}, {
     // Because of Next.js, RSC and Dynamic Routes this currently
     // cannot be set on the loadQuery function at the "top level"
-    perspective: draftMode().isEnabled ? "previewDrafts" : "published",
+    perspective: isEnabled ? "previewDrafts" : "published",
     cache: "no-store"
 
   })

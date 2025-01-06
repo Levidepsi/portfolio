@@ -4,37 +4,53 @@
 
 
 @font-face {
-    font-family: 'Apercu';
-    src: url('../public/fonts/Apercu.eot');
-    src: url('../public/fonts/Apercu.eot?#iefix') format('embedded-opentype'),
-        url('../public/fonts/Apercu.woff2') format('woff2'),
-        url('../public/fonts/Apercu.woff') format('woff'),
-        url('../public/fonts/Apercu.ttf') format('truetype');
+    font-family: 'Avenir Book';
+    src: url('../public/fonts/Avenir-Book.eot');
+    src: url('../public/fonts//Avenir-Book.eot?#iefix') format('embedded-opentype'),
+        url('../public/fonts//Avenir-Book.woff2') format('woff2'),
+        url('../public/fonts//Avenir-Book.woff') format('woff'),
+        url('../public/fonts//Avenir-Book.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Apercu Italic';
-    src: url('../public/fonts/Apercu-Italic.eot');
-    src: url('../public/fonts/Apercu-Italic.eot?#iefix') format('embedded-opentype'),
-        url('../public/fonts/Apercu-Italic.woff2') format('woff2'),
-        url('../public/fonts/Apercu-Italic.woff') format('woff'),
-        url('../public/fonts/Apercu-Italic.ttf') format('truetype');
+    font-family: 'Avenir Roman';
+    src: url('../public/fonts/Avenir-Roman.eot');
+    src: url('../public/fonts/Avenir-Roman.eot?#iefix') format('embedded-opentype'),
+        url('../public/fonts/Avenir-Roman.woff2') format('woff2'),
+        url('../public/fonts/Avenir-Roman.woff') format('woff'),
+        url('../public/fonts/Avenir-Roman.ttf') format('truetype');
     font-weight: normal;
-    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Boing Thin';
+    src: url('../public/fonts/HILVCCBoing-Thin.eot');
+    src: url('../public/fonts/HILVCCBoing-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../public/fonts/HILVCCBoing-Thin.woff2') format('woff2'),
+        url('../public/fonts/HILVCCBoing-Thin.woff') format('woff'),
+        url('../public/fonts/HILVCCBoing-Thin.ttf') format('truetype');
+    font-weight: normal;
     font-display: swap;
 }
 
 
 
-.apercu {
-   font-family: 'Apercu';
+.avenir_book {
+  font-family: 'Avenir Book';
+
 }
 
-.apercu_italic {
-        font-family: 'Apercu Italic';
+.avenir_roman {
+      font-family: 'Avenir Roman';
+
+}
+
+.boing_thin {
+      font-family: 'Boing Thin';
 }
 
 
@@ -127,7 +143,7 @@ body {
 }
 
 body {
-background-color: #FFFFFF;
+background-color: #EFEBE5;
 }
 
 a {
@@ -141,15 +157,41 @@ a {
   }
 }
 
+.x-button {
+  position: relative;
+  width: 20px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.x-button::before,
+.x-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 23px;
+  height: 1.17px;
+  background-color: #30282A;
+  border-radius: 2px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.x-button::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
 
 .bar1,
 .bar2,
 .bar3 {
-	width: 27px;
-	height: 3px;
-	background-color: #0D4BA0;
-	margin: 5px 0;
-	transition: 0.4s;
+  width: 23px;
+  height: 1px;
+  background-color: #EFEBE5;
+  margin: 4px 0;
+  transition: 0.4s;
 }
 
 .bar1.active,
@@ -163,11 +205,11 @@ a {
 	.bar1,
 	.bar2,
 	.bar3 {
-		width: 27px;
-		height: 3px;
-		background-color: #0D4BA0;
-		margin: 6px 0;
-		transition: 0.4s;
+    width: 23px;
+    height: 1px;
+    background-color: #EFEBE5;
+    margin: 4px 0;
+    transition: 0.4s;
 	}
 }
 
@@ -378,8 +420,8 @@ a {
 }
 
 .multipleimage_wrapper {
-  column-gap: 20px;
-  row-gap: 20px;
+  column-gap: 18px;
+  row-gap: 18px;
 }
 
 @media (min-width: 768px) {
@@ -502,4 +544,77 @@ a {
 
 .heading_description2 > p:empty {
   margin: 15px;
+}
+
+.menu {
+  margin-top: -100vh;
+  transition: 1s all;
+}
+
+.menu.slideDown {
+  margin-top: 0;
+}
+
+.menu_item_parent {
+  position: relative;
+}
+
+.menu::-webkit-scrollbar {
+  display: block;
+  width: 7px;
+}
+
+.menu::-webkit-scrollbar-button {
+  display: none;
+}
+
+.menu::-webkit-scrollbar-track {
+  position: absolute;
+  right: -3rem;
+  top: -50rem;
+  background: transparent;
+}
+
+.menu::-webkit-scrollbar-track-piece {
+  background-color: #00000000;
+  width: 10px;
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.384);
+  border: 5px solid #00000059;
+
+  border-radius: 10rem;
+}
+
+.sub_menu {
+  left: 50%;
+  top: 0;
+}
+
+@media (min-width: 1280px) {
+  
+}
+
+/* text items */
+.multiple_text_wrapper .text_items.item0 {
+  border-top: 1px solid #30282A;
+}
+
+.multiple_text_wrapper .text_items {
+  border-bottom: 1px solid #30282A;
+
+}
+
+@media (min-width: 768px) {
+  .footer_wrap {
+    display: grid !important;
+    grid-template-columns: 640px auto auto;
+  }
+}
+.email_input{
+  background-color: transparent;
+}
+.email_input::placeholder {
+  color: #EFEBE5;
 }

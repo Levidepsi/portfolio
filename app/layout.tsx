@@ -37,18 +37,19 @@ export default async function RootLayout({
     cache: "no-store"
     });
 
-    const {isEnabled} = await draftMode()
-
+  const { isEnabled } = await draftMode()
   
+  console.log(slug)
+
   return (
-    <html lang="en">
+    <html className="html" lang="en">
       <body >
-        <ThemeProvider>
-          {/* <Header navigation={navigation.data} /> */}
+        <ThemeProvider navigation={navigation.data}>
+          <Header navigation={navigation.data} />
           <ProviderWrapper>
             {children}
           </ProviderWrapper>
-          {/* <Footer navigation={navigation.data}  /> */}
+          <Footer navigation={navigation.data}  />
           {isEnabled && <LiveVisualEditing />}
        </ThemeProvider>
       </body>

@@ -12,7 +12,7 @@ export default function Pages({ page }: any) {
 
   return (
     <>
-   {page.components != null &&  <SpreadComponents components={page.components} />}
+   {page && page.components != null &&  <SpreadComponents components={page.components} />}
 
     </>
   );

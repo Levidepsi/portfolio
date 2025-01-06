@@ -11,22 +11,17 @@ const MultipleImage = ({ multiple_image_items, title }: any) => {
 
 
   return (
-    <div className="px-[20px] lg:px-[32px]">
-      <h2>{title}</h2>
-      <div className="multipleimage_wrapper relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="px-[20px] mt-[100px] mb-5 lg:mt-[150px] lg:mb-[20px] lg:px-[20px] h-full">
+      <div className="multipleimage_wrapper relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {multiple_image_items && multiple_image_items.map((item: any, i: number) => {
         return (
           <Link 
             href={item.link ? `${item.link}`:"/"}
             key={i}
-            className={`flex ${item.show_border_right && "multipleimage_item-borderRight"} ${item.show_border_bottom && "multipleimage_item-borderBottom"} justify-center items-center relative`} >
+            className={`block w-full h-full overflow-hidden`} >
+            <h2 className="mb-[11px] text-[#30282A] tracking-[1.56px] leading-[18px] avenir_roman uppercase">{item.title}</h2>
             <Image
-               style={{
-                width: item.width ? `${item.width}px` : "132px",
-                height: item.height ? `${item.height}px` : "132px"
-
-              }}
-              src={item.image} alt={item.link} width={500} height={500} className="h-full w-full " />
+              src={item.image} alt={item.link} width={1000} height={1000} className="h-full w-full object-cover" />
           </Link>
         )
       })}

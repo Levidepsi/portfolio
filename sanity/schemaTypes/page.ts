@@ -36,6 +36,17 @@ export default defineType({
       name: 'meta_image',
       title: 'Meta Image',
       type: 'image',
+     }),
+      defineField({
+      name: 'menu_image',
+      title: 'Menu Image',
+      type: 'image',
+      }),
+
+      defineField({
+      name: 'hamburger_color',
+      title: 'Hamburger Color',
+      type: 'string',
     }),
 
     defineField({
@@ -60,16 +71,20 @@ export default defineType({
           title: 'Multiple Text',
         },
         {
-          type: 'imageblock_text',
-          title: 'Image Block Text',
+          type: 'text_with_image',
+          title: 'Text With Image',
         },
         {
+          type: 'featured_banner',
+          title: 'Featured Banner',
+        },
+         {
+          type: 'text_with_image2',
+          title: 'Text With Image 2',
+        },
+         {
           type: 'multiple_image',
           title: 'Multiple Image',
-        },
-        {
-          type: 'maptwithtext',
-          title: 'Map With text',
         },
       ]
     })

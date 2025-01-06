@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'text_with_image',
-  title: 'Text With Image',
+  name: 'text_with_image2',
+  title: 'Text With Image 2',
   type: 'object',
   fields: [
     defineField({
@@ -10,15 +10,10 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
-    defineField({
-      name: 'padding_top',
-      title: 'Padding Top',
-      type: 'number',
-    }),
 
     defineField({
-        name: "textwimage_items",
-        title: "Text W Image Items",
+        name: "textwimage_items2",
+        title: "Text W Image Items 2",
         type: 'array',
         of: [
             {
@@ -30,9 +25,9 @@ export default defineType({
                       type: "image"
                     },
                     {
-											name: 'title',
-											title: 'Title',
-											type: 'string',
+                      name: 'title',
+                      title: 'Title',
+                      type: 'string',
                     },
                     {
                       name: 'body',
@@ -44,7 +39,12 @@ export default defineType({
                       title: 'Content Position',
                       type: 'boolean',
                       description: "If true image on left"
-                    }
+                  },
+                    {
+                      name: 'background',
+                      title: 'Background',
+                      type: 'string',
+                    },
                 ]
             }
         ]

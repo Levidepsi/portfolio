@@ -16,6 +16,11 @@ export default defineType({
         title: "Header Logo",
         type: "image"
     }),
+    defineField({
+        name: "header_logo2",
+        title: "Header Logo 2",
+        type: "image"
+    }),
 
     defineField({
       name: "footer_logo",
@@ -37,11 +42,51 @@ export default defineType({
                       type: 'string',
                     },
                     {
-                      name: "link",
-                      title: "Link",
-                      type: "string",
-                      initialValue: "about"
+                      name: 'page',
+                      type: 'object',
+                      fields: [
+                        {
+                          title: 'slug',
+                          name: 'slug',
+                          type: 'reference',
+                          to: [{type: 'page'}]
+                        }
+                      ]
                     },
+                  {
+                    name: "subMenu",
+                    title: "Sub Menu",
+                    type: "array",
+                    of: [
+                      {
+                        type: "object",
+                        fields: [
+                          {
+                            name: 'title',
+                            title: 'Title',
+                            type: 'string',
+                          },
+                          {
+                            name: 'custom_links',
+                            title: 'Custom Links',
+                            type: 'string',
+                          },
+                          {
+                            name: 'page',
+                            type: 'object',
+                            fields: [
+                              {
+                                title: 'slug',
+                                name: 'slug',
+                                type: 'reference',
+                                to: [{type: 'page'}]
+                              }
+                            ]
+                          },
+                        ]
+                      }
+                    ]
+                  }
                    
                    
                 ]
@@ -52,6 +97,31 @@ export default defineType({
      defineField({
         name: "footer_menu",
         title: "Footer Menu",
+        type: 'array',
+        of: [
+            {
+                type: "object",
+                fields: [
+                    {
+                      name: 'title',
+                      title: 'Title',
+                      type: 'string',
+                    },
+                    {
+                      name: "link",
+                      title: "Link",
+                      type: "string",
+                      initialValue: "about"
+                    },
+                   
+                   
+                ]
+            }
+        ]
+     }),
+     defineField({
+        name: "social_links",
+        title: "social links",
         type: 'array',
         of: [
             {

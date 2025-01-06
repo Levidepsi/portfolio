@@ -9,7 +9,9 @@ import ImageBlockText from "../sections/ImageBlockText";
 import MultipleImage from "../sections/MultipleImage";
 import Contact from "../sections/map/Contact";
 import FeaturePortfolio from "../sections/FeaturePortfolio";
-
+import TextWithImage from "../sections/TextWithImage";
+import FeaturedBanner from "../sections/FeaturedBanner";
+import TextWithImage2 from "../sections/TextWithImage2";
 
 export default function SpreadComponents({ components }: { components: any }) {
     return (
@@ -38,7 +40,11 @@ export default function SpreadComponents({ components }: { components: any }) {
                     description2_font_size: number
                     details: any;
                     image_width: number;
-                    image_height: number
+                    image_height: number;
+                    textwimage_items: any;
+                    textwimage_items2: any;
+                    padding_top_bottom: number;
+                    background: string
                 }, index: number) => (
                 // console.log(component._type)
                 <div key={`${component._key} + ${index}`} className={`${component._type}`}>
@@ -76,9 +82,11 @@ export default function SpreadComponents({ components }: { components: any }) {
                             "multiple_text": (
                                 <MultipleText
                                     key={component._key}
-                                   padding_top={component.padding_top}
+                                   padding_top_bottom={component.padding_top_bottom}
                                     title={component.title}
-                                    text_items={component.text_items} />
+                                    text_items={component.text_items}
+                                    background={component.background}
+                                />
                             ),
                              "imageblock_text": (
                                 <ImageBlockText
@@ -113,6 +121,25 @@ export default function SpreadComponents({ components }: { components: any }) {
                                     image_height={component.image_height}
                                     details={component.details}
                                  />
+                            ),
+                               "text_with_image": (
+                                   <TextWithImage
+                                       key={component._key}
+                                       padding_top={component.padding_top}
+                                       textwimage_items={component.textwimage_items}
+                                   />
+                            ),
+                               "text_with_image2": (
+                                   <TextWithImage2
+                                       key={component._key}
+                                       textwimage_items2={component.textwimage_items2}
+                                   />
+                            ),
+                               "featured_banner": (
+                                   <FeaturedBanner
+                                       key={component._key}
+                                       image={component.image}
+                                   />
                             ),
                         }[component._type]
                     }

@@ -56,6 +56,22 @@ export default defineType({
           type: 'multiple_text',
           title: 'Multiple Text',
         },
+        {
+          type: 'text_with_image',
+          title: 'Text With Image',
+        },
+        {
+          type: 'featured_banner',
+          title: 'Featured Banner',
+        },
+         {
+          type: 'text_with_image2',
+          title: 'Text With Image 2',
+        },
+         {
+          type: 'multiple_image',
+          title: 'Multiple Image',
+        },
       ]
     })
   ],

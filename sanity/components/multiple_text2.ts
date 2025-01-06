@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'multiple_text',
-  title: 'Multiple Text',
+  name: 'multiple_text2',
+  title: 'Multiple Text 2',
   type: 'object',
   fields: [
     defineField({

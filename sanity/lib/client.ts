@@ -20,15 +20,34 @@ export const NAVIGATION = groq`*[_type == "navigation"][0]{
   title,
   _type,
   "header_logo": header_logo.asset->url,
+  "header_logo2": header_logo2.asset->url,
+
   "footer_logo": footer_logo.asset->url,
   header_menu[]{
     title,
-    link
-  },
+    page{
+      slug->{
+        "slug": slug.current
+        }
+      },
+      subMenu[]{
+      title,
+      custom_links,
+      page{
+        slug->{
+          "slug": slug.current
+          },
+        },
+      },
+    },
    footer_menu[]{
     title,
     link
   },
+  social_links[]{
+    title,
+    link
+  }
 }`;
 
 
@@ -49,9 +68,25 @@ export const HOME_QUERY = groq`*[_type == "home"][0]{
     },
     text_items[]{
       title,
-      link,
       body,
-      show_link
+    },
+    textwimage_items[]{
+      "image": image.asset->url,
+      title,
+      body,
+      content_position
+    },
+    textwimage_items2[]{
+      "image": image.asset->url,
+      title,
+      body,
+      content_position,
+      background
+    },
+    multiple_image_items[]{
+      title,
+      link,
+      "image": image.asset->url,
     }
   },
 }`;
@@ -60,6 +95,8 @@ export const ALLPAGE_QUERY = groq`*[_type == "page"]{
   title,
   "slug": slug.current,
   _type,
+  "menu_image": menu_image.asset->url,
+  hamburger_color
 }`;
 
 export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
@@ -92,13 +129,9 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
       "image": image.asset->url,
     },
     multiple_image_items[]{
-      show_border_bottom,
-      show_border_right,
-      margin_top,
+    title,
       link,
       "image": image.asset->url,
-      height,
-      width
     }
   },
 }`;

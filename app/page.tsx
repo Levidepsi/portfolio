@@ -62,15 +62,11 @@ export default async function Home() {
   },);
 	
 
-	return (
-		<>SADSAD</>
-	)
-
-  // return isEnabled ? (
-  //   <HomePreview initial={homedata} />
-  // ) : (
-  //   <Homepage data={homedata.data} />
-  // )
+  return isEnabled ? (
+    <HomePreview initial={homedata} />
+  ) : (
+    <Homepage data={homedata.data} />
+  )
 }
 
 

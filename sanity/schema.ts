@@ -16,6 +16,8 @@ import mapwithtext from './components/mapwithtext'
 import investments from './schemaTypes/investments'
 import portfolio from './schemaTypes/portfolio'
 import featured_portfolio from './components/featured_portfolio'
+import featured_banner from './components/featured_banner'
+import text_with_image2 from './components/text_with_image2'
 
 const schema =
   [
@@ -35,7 +37,9 @@ const schema =
     imageblock_text,
     multiple_image,
     mapwithtext,
-    featured_portfolio
+    featured_portfolio,
+    featured_banner,
+    text_with_image2
   ]
 
 export default schema;

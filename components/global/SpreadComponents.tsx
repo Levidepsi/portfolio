@@ -46,7 +46,8 @@ export default function SpreadComponents({ components }: { components: any }) {
                     textwimage_items2: any;
                     padding_top_bottom: number;
                     background: string;
-                    video: string
+                    video: string;
+                    text_color: string;
                 }, index: number) => (
                 // console.log(component._type)
                 <div key={`${component._key} + ${index}`} className={`${component._type}`}>
@@ -90,6 +91,7 @@ export default function SpreadComponents({ components }: { components: any }) {
                                     title={component.title}
                                     text_items={component.text_items}
                                     background={component.background}
+                                    text_color={component.text_color}
                                 />
                             ),
                             "multiple_text2": (

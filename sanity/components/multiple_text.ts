@@ -15,9 +15,14 @@ export default defineType({
       title: 'Background',
       type: 'string',
     }),
+    defineField({
+      name: 'text_color',
+      title: 'Text Color',
+      type: 'string',
+    }),
      defineField({
       name: 'padding_top_bottom',
-      title: 'Padding TOp Bottom',
+      title: 'Padding Top Bottom',
       type: 'number',
     }),
 

@@ -4,17 +4,22 @@ import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { useWindowWide } from "../../hooks/ScreenSize";
 
-const MultipleText = ({ title, text_items, padding_top_bottom, background }: any) => {
+const MultipleText = ({ title, text_items, padding_top_bottom, background, text_color }: any) => {
   return (
     <div style={{paddingTop: `${padding_top_bottom}px`, paddingBottom: `${padding_top_bottom}px`, background: `${background}`}} className="py-[50px] px-5 multiple_text_wrapper">
-      <h1 className="text-[#30282A] text-[65px] tracking-[1.3px] leading-[56px] boing_thin mb-[45px]">{title}</h1>
+      <h1 
+      style={{color: `${text_color}`}} 
+      className="text-[#30282A] text-[65px] tracking-[1.3px] leading-[56px] boing_thin mb-[45px]">{title}</h1>
       {text_items && text_items.map((item: any, index: number) => {
         return (
-          <div className={`text_items item${index} flex flex-col lg:flex-row justify-between py-[17px]`} key={index}>
-            <div className="text-[13px] avenir_roman text-[#30282A] tracking-[1.56px] leading-[18px] lg:w-[50%] mb-5 lg:mb-0">{item.title}</div>
-            <div className="text-[13px] avenir_roman [&>p]:text-[#30282A] tracking-[0.26px] leading-[18px] lg:w-[50%] "><PortableText value={item.body}/></div>
-
-
+          <div 
+          style={{ 
+            borderBottom: `1px solid ${text_color}`,
+            borderTop: index === 0 ? `1px solid ${text_color}` : undefined,
+          }} 
+          className={`text_items item${index} flex flex-col lg:flex-row justify-between py-[17px] border-b-red-500`} key={index}>
+            <div style={{ color: `${text_color}` }} className="text-[13px] avenir_roman text-[#30282A] tracking-[1.56px] leading-[18px] lg:w-[50%] mb-5 lg:mb-0">{item.title}</div>
+            <div style={{ color: `${text_color}` }} className={`multipletext-body text-[13px] text-[#30282A] avenir_roman tracking-[0.26px] leading-[18px] lg:w-[50%] `}><PortableText value={item.body}/></div>
           </div>
         )
       })}

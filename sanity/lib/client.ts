@@ -112,6 +112,7 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
     title,
     "image": image.asset->url,
     positions,
+    text_color,
     slider_items[]{
       link,
       url,
@@ -120,6 +121,7 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
     text_items[]{
       title,
       body,
+      "image": image.asset->url
     },
     imageblock_items[]{
       title,

@@ -10,6 +10,16 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
+    defineField({
+      name: 'title_max_width',
+      title: 'Title Max Width',
+      type: 'number',
+    }),
+    defineField({
+      name: 'title_padding_bottom',
+      title: 'Title Padding Bottom',
+      type: 'number',
+    }),
      defineField({
       name: 'background',
       title: 'Background',

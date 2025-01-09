@@ -4,12 +4,12 @@ import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { useWindowWide } from "../../hooks/ScreenSize";
 
-const MultipleText = ({ title, text_items, padding_top_bottom, background, text_color }: any) => {
+const MultipleText = ({ title, text_items, padding_top_bottom, background, text_color, title_max_width, title_padding_bottom }: any) => {
   return (
     <div style={{paddingTop: `${padding_top_bottom}px`, paddingBottom: `${padding_top_bottom}px`, background: `${background}`}} className="py-[50px] px-5 multiple_text_wrapper">
       <h1 
-      style={{color: `${text_color}`}} 
-      className="text-[#30282A] text-[65px] tracking-[1.3px] leading-[56px] boing_thin mb-[45px]">{title}</h1>
+      style={{color: `${text_color}`, maxWidth: `${title_max_width}px`, marginBottom: `${title_padding_bottom}px`}} 
+      className={`text-[#30282A] text-[65px] tracking-[1.3px] leading-[56px] boing_thin mb-[45px]`}>{title}</h1>
       {text_items && text_items.map((item: any, index: number) => {
         return (
           <div 

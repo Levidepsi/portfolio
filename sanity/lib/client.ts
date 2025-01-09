@@ -112,6 +112,8 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
     title,
     "image": image.asset->url,
     positions,
+    title_max_width,
+    title_padding_bottom,
     text_color,
     slider_items[]{
       link,

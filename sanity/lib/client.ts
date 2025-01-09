@@ -62,6 +62,7 @@ export const HOME_QUERY = groq`*[_type == "home"][0]{
   _type,
     title,
     "image": image.asset->url,
+    "video":video.asset->url,
     positions,
     slider_items[]{
     "image": image.asset->url
@@ -132,7 +133,20 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
     title,
       link,
       "image": image.asset->url,
-    }
+    },
+      textwimage_items[]{
+      "image": image.asset->url,
+      title,
+      body,
+      content_position
+    },
+    textwimage_items2[]{
+      "image": image.asset->url,
+      title,
+      body,
+      content_position,
+      background
+    },
   },
 }`;
 

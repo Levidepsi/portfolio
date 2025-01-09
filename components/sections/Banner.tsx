@@ -21,7 +21,7 @@ const Banner = ({ image, description, max_width, content_position }: any) => {
           ease: [0.19, 1, 0.22, 1],
         }}
         viewport={{ once: true }}
-      className={`banner_content ${content_position}`} style={{ maxWidth: `${max_width ? max_width : ""}px` }}>
+        className={`banner_content ${content_position}`} style={{ maxWidth: `${max_width ? max_width : ""}px` }}>
         <PortableText value={description} />
       </motion.div>
     </div>

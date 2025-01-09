@@ -9,6 +9,7 @@ import { client } from "../../../sanity/lib/client";
 const clientWithToken = client.withConfig({ token });
 
 export async function GET(request: Request) {
+    const draft = await draftMode()
   const { isValid, redirectTo = "/" } = await validatePreviewUrl(
     clientWithToken,
     request.url
@@ -18,7 +19,7 @@ export async function GET(request: Request) {
     return new Response("Invalid secret", { status: 401 });
   }
 
-  draftMode().enable();
+ draft.enable();
 
   redirect(redirectTo);
 }

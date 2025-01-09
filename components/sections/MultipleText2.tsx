@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useWindowWide } from "../../hooks/ScreenSize";
 
 const MultipleText2 = ({ title, text_items, padding_top_bottom, background }: any) => {
+  console.log(text_items)
   return (
     <div style={{paddingTop: `${padding_top_bottom}px`, paddingBottom: `${padding_top_bottom}px`, background: `${background}`}} className="py-[50px] px-5 multiple_text_wrapper">
       <h1 className="text-[#30282A] text-[65px] tracking-[1.3px] leading-[56px] boing_thin mb-[45px]">{title}</h1>

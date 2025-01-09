@@ -71,6 +71,10 @@ export default defineType({
           title: 'Multiple Text',
         },
         {
+          type: 'multiple_text2',
+          title: 'Multiple Text 2',
+        },
+        {
           type: 'text_with_image',
           title: 'Text With Image',
         },

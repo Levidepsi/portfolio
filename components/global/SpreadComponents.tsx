@@ -12,6 +12,7 @@ import FeaturePortfolio from "../sections/FeaturePortfolio";
 import TextWithImage from "../sections/TextWithImage";
 import FeaturedBanner from "../sections/FeaturedBanner";
 import TextWithImage2 from "../sections/TextWithImage2";
+import MultipleText2 from "../sections/MultipleText2";
 
 export default function SpreadComponents({ components }: { components: any }) {
     return (
@@ -44,7 +45,8 @@ export default function SpreadComponents({ components }: { components: any }) {
                     textwimage_items: any;
                     textwimage_items2: any;
                     padding_top_bottom: number;
-                    background: string
+                    background: string;
+                    video: string
                 }, index: number) => (
                 // console.log(component._type)
                 <div key={`${component._key} + ${index}`} className={`${component._type}`}>
@@ -64,7 +66,9 @@ export default function SpreadComponents({ components }: { components: any }) {
                                     image={component.image}
                                     description={component.description}
                                     max_width={component.max_width}
-                                    content_position={component.content_position} />
+                                    content_position={component.content_position}
+                                    video={component.video}
+                                />
                             ),
                             "heading": (
                                 <Heading
@@ -81,6 +85,15 @@ export default function SpreadComponents({ components }: { components: any }) {
                             ),
                             "multiple_text": (
                                 <MultipleText
+                                    key={component._key}
+                                   padding_top_bottom={component.padding_top_bottom}
+                                    title={component.title}
+                                    text_items={component.text_items}
+                                    background={component.background}
+                                />
+                            ),
+                            "multiple_tex2": (
+                                <MultipleText2
                                     key={component._key}
                                    padding_top_bottom={component.padding_top_bottom}
                                     title={component.title}

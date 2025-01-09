@@ -18,6 +18,7 @@ import portfolio from './schemaTypes/portfolio'
 import featured_portfolio from './components/featured_portfolio'
 import featured_banner from './components/featured_banner'
 import text_with_image2 from './components/text_with_image2'
+import multiple_text2 from './components/multiple_text2'
 
 const schema =
   [
@@ -39,7 +40,8 @@ const schema =
     mapwithtext,
     featured_portfolio,
     featured_banner,
-    text_with_image2
+    text_with_image2,
+    multiple_text2
   ]
 
 export default schema;

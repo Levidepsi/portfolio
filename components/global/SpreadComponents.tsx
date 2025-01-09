@@ -92,7 +92,7 @@ export default function SpreadComponents({ components }: { components: any }) {
                                     background={component.background}
                                 />
                             ),
-                            "multiple_tex2": (
+                            "multiple_text2": (
                                 <MultipleText2
                                     key={component._key}
                                    padding_top_bottom={component.padding_top_bottom}

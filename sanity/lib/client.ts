@@ -119,9 +119,7 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
     },
     text_items[]{
       title,
-      link,
       body,
-      show_link
     },
     imageblock_items[]{
       title,

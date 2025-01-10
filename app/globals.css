@@ -52,6 +52,10 @@
   font-family: "Boing Thin";
 }
 
+p {
+  margin-bottom: 10px;
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -683,4 +687,36 @@ a {
 
 .x-shape::after {
   transform: translateX(-50%) rotate(-45deg);
+}
+
+/* Timeline */
+
+.timeline-wrapper {
+}
+
+.timeline-arrow{
+  position: relative;
+  text-align: center;
+}
+
+.timeline-arrow:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 7px;
+  background-color: #30282A;
+}
+
+.timeline-items {
+  width: 50%;
+}
+
+.timeline-arrow {
+  width: 50%;
+}
+
+@media(min-width: 750px) {
+  .timeline-item:after {
+    
+  }
 }

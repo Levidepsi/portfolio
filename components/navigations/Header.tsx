@@ -22,13 +22,13 @@ const Header = ({navigation}: any) => {
           <div className="header_wrap justify-between absolute top-0 left-0 z-[999] pt-[20px] w-full  transition-all duration-[0.5s] h-auto px-[20px] flex">
             <Link
               href={"/"}
-              className="header_logo  max-w-[130px] md:max-w-[170px] w-full">
+              className="header_logo  max-w-[130px] md:max-w-[150px] w-full">
               <Image
                 src={navigation.header_logo}
                 alt="Navigation"
                 width={500}
                 height={500}
-                className="h-auto w-full firstimage max-w-[130px] md:max-w-[170px] "
+                className="h-auto w-full firstimage max-w-[130px] md:max-w-[150px] "
               />
             </Link>
             {url == "/" ? (

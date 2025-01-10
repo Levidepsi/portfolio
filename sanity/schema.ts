@@ -24,6 +24,7 @@ import companies from './schemaTypes/companies'
 import banner2 from './components/banner2'
 
 import timeline from "./components/timeline";
+import richtext from "./components/richtext";
 
 const schema =
   [
@@ -50,7 +51,8 @@ const schema =
     text_with_image2,
     multiple_text2,
     people,
-    timeline
+    timeline,
+    richtext
   ]
 
 export default schema;

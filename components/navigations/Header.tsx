@@ -20,50 +20,61 @@ const Header = ({navigation}: any) => {
       ) : (
         <>
           <div className="header_wrap justify-between absolute top-0 left-0 z-[999] pt-[20px] w-full  transition-all duration-[0.5s] h-auto px-[20px] flex">
-            <Link href={"/"} className="header_logo  max-w-[161px]">
+            <Link
+              href={"/"}
+              className="header_logo  max-w-[130px] md:max-w-[170px] w-full">
               <Image
                 src={navigation.header_logo}
                 alt="Navigation"
                 width={500}
                 height={500}
-                className="h-auto w-full firstimage max-w-[156px] "
+                className="h-auto w-full firstimage max-w-[130px] md:max-w-[170px] "
               />
             </Link>
             {url == "/" ? (
               <>
-                <div className="mt-[45px] mx-5">
-                  {navigation.header_menu &&
-                    navigation.header_menu.map(
-                      (
-                        item: {
-                          title: string;
-                          page: any;
-                          subMenu: Array<Object>;
-                        },
-                        index: number
-                      ) => {
-                        return (
-                          <div key={index}>
-                            {item.subMenu ? (
-                              <button className=" ">{item.title}</button>
-                            ) : (
-                              <Link
-                                className=" "
-                                href={`${item.page.slug.slug != null ? `/${item.page.slug.slug}` : "/"}`}>
-                                {item.title}
-                              </Link>
-                            )}
-                          </div>
-                        );
-                      }
-                    )}
-                </div>
-                <div
-                  className={` block absolute right-5 cursor-pointer  ml-5 lg:ml-0 `}
-                  onClick={() => setOpenMenu(true)}>
-                  <div className={`bar1 ${openMenu ? "active" : ""} `}></div>
-                  <div className={`bar2 ${openMenu ? "active" : ""} `}></div>
-                  <div className={`bar3 ${openMenu ? "active" : ""} `}></div>
+                <div className="lg:w-[90%]">
+                  <div className="hidden lg:block">
+                    <ul className=" text-right pr-[40px]">
+                      {navigation.header_menu &&
+                        navigation.header_menu.map(
+                          (
+                            item: {
+                              title: string;
+                              page: any;
+                              subMenu: Array<Object>;
+                            },
+                            index: number
+                          ) => {
+                            return (
+                              <li
+                                className="list-none inline-block ml-[20px]
+                                 mr-[20px]	"
+                                key={index}>
+                                {item.subMenu ? (
+                                  <button className=" text-[#30282A] uppercase text-[14px] avenir_book">
+                                    {item.title}
+                                  </button>
+                                ) : (
+                                  <Link
+                                    className=" text-[#30282A] uppercase text-[14px] avenir_book"
+                                    href={`${item.page.slug.slug != null ? `/${item.page.slug.slug}` : "/"}`}>
+                                    {item.title}
+                                  </Link>
+                                )}
+                              </li>
+                            );
+                          }
+                        )}
+                    </ul>
+                  </div>
+                  <div
+                    className={` block absolute right-5 cursor-pointer top-[25px]  ml-5 lg:ml-0 `}
+                    onClick={() => setOpenMenu(true)}>
+                    <div className={`bar1 ${openMenu ? "active" : ""} `}></div>
+                    <div className={`bar2 ${openMenu ? "active" : ""} `}></div>
+                    <div className={`bar3 ${openMenu ? "active" : ""} `}></div>
+                  </div>
                 </div>
               </>
             ) : (

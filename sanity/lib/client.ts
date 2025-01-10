@@ -160,7 +160,8 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
       title,
       body,
       content_position,
-      background
+      background,
+      color
     },
     profiles[]{
       "image": image.asset->url,
@@ -224,7 +225,8 @@ export const COMPANIES_QUERY = groq`*[_type == "companies" && slug.current == $s
       title,
       body,
       content_position,
-      background
+      background,
+      color
     },
     profiles[]{
       "image": image.asset->url,

@@ -44,6 +44,11 @@ export default defineType({
                       name: 'background',
                       title: 'Background',
                       type: 'string',
+                  },
+                    {
+                      name: 'color',
+                      title: 'Color',
+                      type: 'string',
                     },
                 ]
             }

@@ -9,7 +9,7 @@ import { useWindowWide } from "../../hooks/ScreenSize";
 const Banner = ({ image, description, max_width, content_position, video }: any) => {
   const desktop = useWindowWide(1024)
   return (
-    <div className="relative ">
+    <div className="relative">
       {video
         ? 
         <div className="relative h-[100vh] w-full">
@@ -18,9 +18,22 @@ const Banner = ({ image, description, max_width, content_position, video }: any)
           </video>
         </div>
         : 
-        <Image src={image} alt={"banner"} width={2000} height={2000} priority className="w-full h-auto object-cover" />
+        <Image src={image} alt={"banner"} width={2000} height={2000} priority className="w-full h-[100vh] object-cover" />
       }
       
+
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{opacity: 1, x: 0 }}
+        transition={{
+          duration: 1,
+          delay: 0.3,
+          ease: [0.19, 1, 0.22, 1],
+        }}
+        viewport={{ once: true }}
+        className={`banner_content ${content_position}`} style={{ maxWidth: `${max_width ? max_width : ""}px` }}>
+        <PortableText value={description} />
+      </motion.div>
     </div>
   );
 };

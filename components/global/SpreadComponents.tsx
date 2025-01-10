@@ -15,6 +15,7 @@ import TextWithImage2 from "../sections/TextWithImage2";
 import MultipleText2 from "../sections/MultipleText2";
 import People from "../sections/People";
 import Timeline from "../sections/Timeline";
+import Banner2 from "../sections/Banner2";
 
 export default function SpreadComponents({ components }: { components: any }) {
     return (
@@ -78,6 +79,8 @@ export default function SpreadComponents({ components }: { components: any }) {
                                 }>;
                             }>;
                         }>
+                    sub: string;
+                    website: string
                 }, index: number) => (
                 // console.log(component._type)
                 <div key={`${component._key} + ${index}`} className={`${component._type}`}>
@@ -99,6 +102,17 @@ export default function SpreadComponents({ components }: { components: any }) {
                                     max_width={component.max_width}
                                     content_position={component.content_position}
                                     video={component.video}
+                                />
+                            ),
+                            "banner2": (
+                                <Banner2
+                                    key={component._key}
+                                    image={component.image}
+                                    title={component.title}
+                                    sub={component.sub}
+                                    website={component.website}
+                                    description={component.description}
+                                    max_width={component.max_width}
                                 />
                             ),
                             "heading": (

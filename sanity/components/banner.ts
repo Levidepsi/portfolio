@@ -10,17 +10,6 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
-    defineField({
-      name: 'website',
-      title: 'Website',
-      type: 'string',
-    }),
-
-     defineField({
-      name: 'description',
-      title: 'Body',
-      type: 'blockContent',
-    }),
 
     defineField({
         name: "image",

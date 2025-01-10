@@ -160,7 +160,8 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
       title,
       body,
       content_position,
-      background
+      background,
+      color
     },
     profiles[]{
       "image": image.asset->url,
@@ -171,15 +172,7 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
   },
 }`;
 
-export const ALLINVESTMENTS_QUERY = groq`*[_type == "news"]{
-  title,
-  "slug": slug.current,
-  _type,
-}`;
-
-
-
-export const SINGLE_INVESTMENTS_QUERY = groq`*[_type == "news" && slug.current == $slug][0]{
+export const COMPANIES_QUERY = groq`*[_type == "companies" && slug.current == $slug][0]{
   title,
   "slug": slug.current,
   _type,
@@ -191,6 +184,9 @@ export const SINGLE_INVESTMENTS_QUERY = groq`*[_type == "news" && slug.current =
     title,
     "image": image.asset->url,
     positions,
+    title_max_width,
+    title_padding_bottom,
+    text_color,
     slider_items[]{
       link,
       url,
@@ -198,9 +194,12 @@ export const SINGLE_INVESTMENTS_QUERY = groq`*[_type == "news" && slug.current =
     },
     text_items[]{
       title,
-      link,
       body,
-      show_link
+      "image": image.asset->url,
+      learn_more,
+       slug->{
+        "slug": slug.current
+      }
     },
     imageblock_items[]{
       title,
@@ -209,71 +208,34 @@ export const SINGLE_INVESTMENTS_QUERY = groq`*[_type == "news" && slug.current =
       "image": image.asset->url,
     },
     multiple_image_items[]{
-      show_border_bottom,
-      show_border_right,
-      margin_top,
-      link,
-      "image": image.asset->url,
-      height,
-      width
-    }
-  },
-}`;
-
-
-export const ALLPORTFOLIO_QUERY = groq`*[_type == "portfolio"]{
-  title,
-  "slug": slug.current,
-  _type,
-}`;
-
-
-
-export const SINGLE_PORTFOLIO_QUERY = groq`*[_type == "portfolio" && slug.current == $slug][0]{
-  title,
-  "slug": slug.current,
-  _type,
-  "image": image.asset->url,
-  meta_description,
-  components[]{
-    ...,
-    _type,
     title,
-    "image": image.asset->url,
-    positions,
-    slider_items[]{
-      link,
-      url,
-      body
-    },
-    text_items[]{
-      title,
-      link,
-      body,
-      show_link
-    },
-    imageblock_items[]{
-      title,
-      sub_title,
-      body,
-      "image": image.asset->url,
-    },
-    multiple_image_items[]{
-      show_border_bottom,
-      show_border_right,
-      margin_top,
       link,
       "image": image.asset->url,
-      height,
-      width
     },
-    details[] {
-      key,
-      value
+      textwimage_items[]{
+      "image": image.asset->url,
+      title,
+      body,
+      content_position,
+      body_bottom,
+      body_bottom_max_width
+    },
+    textwimage_items2[]{
+      "image": image.asset->url,
+      title,
+      body,
+      content_position,
+      background,
+      color
+    },
+    profiles[]{
+      "image": image.asset->url,
+      name,
+      type,
+      description
     }
   },
 }`;
-
 
 export const POSTS_QUERY = groq`*[_type == "post" && defined(slug)]`;
 

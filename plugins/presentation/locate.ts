@@ -5,9 +5,10 @@ import { map } from "rxjs";
 import home from "../../sanity/schemaTypes/home";
 import post from "../../sanity/schemaTypes/post";
 import page from "../../sanity/schemaTypes/page";
+import companies from "../../sanity/schemaTypes/companies";
 
 
-const doctypes: any =  [home.name, post.name, page.name ]
+const doctypes: any =  [home.name, post.name, page.name, companies.name ]
 
 
 // Pass 'context' as the second argument
@@ -32,6 +33,10 @@ export const locations: DocumentLocationResolver = (params, context) => {
             {
               title: doc.title || "Untitled",
               href: `/${doc.slug.current}`,
+            },
+            {
+              title: doc.title || "Untitled",
+              href: `/companies/${doc.slug.current}`,
             },
             {
               title: "Posts",

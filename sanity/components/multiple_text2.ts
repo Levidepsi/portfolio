@@ -19,6 +19,17 @@ export default defineType({
       name: 'padding_top_bottom',
       title: 'Padding TOp Bottom',
       type: 'number',
+     }),
+     defineField({
+      name: 'titles_font_size',
+      title: 'Titles Font Size',
+      type: 'number',
+     }),
+     
+     defineField({
+      name: 'titles_lineheight',
+      title: 'Titles Line height',
+      type: 'number',
     }),
 
     defineField({
@@ -35,15 +46,25 @@ export default defineType({
                       type: "image"
                     },
                     {
-                    name: 'title',
-                    title: 'Title',
-                    type: 'string',
+                      name: 'title',
+                      title: 'Title',
+                      type: 'blockContent',
                     },
-                    
                     {
                       name: 'body',
                       title: 'Body',
                       type: 'blockContent',
+                    },
+                    {
+                    name: 'learn_more',
+                    title: 'Learn More',
+                    type: 'string',
+                  },
+                  {
+                    title: 'slug',
+                    name: 'slug',
+                    type: 'reference',
+                    to: [{type: 'companies'}]
                   },
                 ]
             }

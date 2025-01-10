@@ -10,7 +10,7 @@ const MultipleText2 = ({ title, text_items, padding_top_bottom, background, imag
   return (
     <div style={{paddingTop: `${padding_top_bottom}px`, paddingBottom: `${padding_top_bottom}px`, background: `${background}`}} className="py-[50px] px-5 multiple_text_wrapper">
       {title && (
-        <h1 className="text-[#30282A] text-[65px] tracking-[1.3px] leading-[56px] boing_thin mb-[45px]">{title}</h1>
+        <h1 className="text-[#30282A] text-center text-[40px] leading-[46px] lg:text-[65px] lg:leading-[56px] tracking-[1.3px] boing_thin mb-[45px] lg:mb-[60px] lg:max-w-[451px] lg:mx-[auto]">{title}</h1>
       )}
       <div className="md:flex md:flex-wrap md:justify-between md:gap-y-[25px]">
         {text_items && text_items.map((item: any, index: number) => {

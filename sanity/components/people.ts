@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'text_with_image',
-  title: 'Text With Image',
+  name: 'people',
+  title: 'People',
   type: 'object',
   fields: [
     defineField({
@@ -15,11 +15,16 @@ export default defineType({
       title: 'Padding Top',
       type: 'number',
     }),
-    
+
+     defineField({
+      name: 'background_color',
+      title: 'Background Color',
+      type: 'string',
+    }),
 
     defineField({
-        name: "textwimage_items",
-        title: "Text W Image Items",
+        name: "profiles",
+        title: "Profile",
         type: 'array',
         of: [
             {
@@ -31,30 +36,19 @@ export default defineType({
                       type: "image"
                     },
                     {
-											name: 'title',
-											title: 'Title',
-											type: 'string',
-                    },
-                    {
-                      name: 'body',
-                      title: 'Body',
-                      type: 'blockContent',
+                    name: 'name',
+                    title: 'Name',
+                    type: 'string',
                   },
                     {
-                        name: 'body_bottom',
-                        title: 'Body Bottom',
-                        type: 'blockContent',
+                    name: 'type',
+                    title: 'Type',
+                    type: 'string',
                   },
                     {
-                        name: 'body_bottom_max_width',
-                        title: 'Body Bottom Max Width',
-                        type: 'number',
-                    },
-                    {
-                      name: 'content_position',
-                      title: 'Content Position',
-                      type: 'boolean',
-                      description: "If true image on left"
+                    name: 'description',
+                    title: 'Description',
+                    type: 'blockContent',
                     }
                 ]
             }

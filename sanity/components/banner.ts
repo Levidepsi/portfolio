@@ -10,6 +10,17 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
+    defineField({
+      name: 'website',
+      title: 'Website',
+      type: 'string',
+    }),
+
+     defineField({
+      name: 'description',
+      title: 'Body',
+      type: 'blockContent',
+    }),
 
     defineField({
         name: "image",
@@ -23,12 +34,7 @@ export default defineType({
         type: 'file',
         
     }),
-
-    defineField({
-      name: 'description',
-      title: 'Body',
-      type: 'blockContent',
-    }),
+   
     defineField({
       name: "max_width",
       title: "Max Width",

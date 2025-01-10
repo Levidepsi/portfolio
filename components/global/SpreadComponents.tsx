@@ -13,6 +13,7 @@ import TextWithImage from "../sections/TextWithImage";
 import FeaturedBanner from "../sections/FeaturedBanner";
 import TextWithImage2 from "../sections/TextWithImage2";
 import MultipleText2 from "../sections/MultipleText2";
+import People from "../sections/People";
 
 export default function SpreadComponents({ components }: { components: any }) {
     return (
@@ -50,6 +51,31 @@ export default function SpreadComponents({ components }: { components: any }) {
                     text_color: string;
                     title_max_width: number;
                     title_padding_bottom: number;
+                    background_color: string
+                    titles_font_size: number
+                    titles_lineheight: number
+                    profiles: Array<
+                        {
+                            image: string,
+                            name: string,
+                            type: string;
+                             description: Array<{
+                            _type: string;
+                            style?: string; 
+                            children?: Array<{ 
+                            _type: string;
+                            text?: string; 
+                                }>;
+                            }>;
+                            body_bottom: Array<{
+                                _key: string;
+                                markDefs: Array<any>;
+                                children: Array<{
+                                _type: string;
+                                text?: string; 
+                                }>;
+                            }>;
+                        }>
                 }, index: number) => (
                 // console.log(component._type)
                 <div key={`${component._key} + ${index}`} className={`${component._type}`}>
@@ -96,6 +122,7 @@ export default function SpreadComponents({ components }: { components: any }) {
                                     text_color={component.text_color}
                                     title_max_width={component.title_max_width}
                                     title_padding_bottom={component.title_padding_bottom}
+                                    
                                 />
                             ),
                             "multiple_text2": (
@@ -105,6 +132,8 @@ export default function SpreadComponents({ components }: { components: any }) {
                                     title={component.title}
                                     text_items={component.text_items}
                                     background={component.background}
+                                    titles_font_size={component.titles_font_size}
+                                    titles_lineheight={component.titles_lineheight}
                                 />
                             ),
                              "imageblock_text": (
@@ -158,6 +187,13 @@ export default function SpreadComponents({ components }: { components: any }) {
                                    <FeaturedBanner
                                        key={component._key}
                                        image={component.image}
+                                   />
+                            ),
+                               "people": (
+                                   <People
+                                       key={component._key}
+                                       background_color={component.background_color}
+                                       profiles={component.profiles}
                                    />
                             ),
                         }[component._type]

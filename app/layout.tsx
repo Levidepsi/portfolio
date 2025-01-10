@@ -39,7 +39,6 @@ export default async function RootLayout({
 
   const { isEnabled } = await draftMode()
   
-  console.log(slug)
 
   return (
     <html className="html" lang="en">

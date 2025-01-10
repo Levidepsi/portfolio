@@ -70,12 +70,15 @@ export const HOME_QUERY = groq`*[_type == "home"][0]{
     text_items[]{
       title,
       body,
+      
     },
     textwimage_items[]{
       "image": image.asset->url,
       title,
       body,
-      content_position
+      content_position,
+      body_bottom,
+      body_bottom_max_width
     },
     textwimage_items2[]{
       "image": image.asset->url,
@@ -123,7 +126,11 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
     text_items[]{
       title,
       body,
-      "image": image.asset->url
+      "image": image.asset->url,
+      learn_more,
+       slug->{
+        "slug": slug.current
+      }
     },
     imageblock_items[]{
       title,
@@ -140,7 +147,9 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
       "image": image.asset->url,
       title,
       body,
-      content_position
+      content_position,
+      body_bottom,
+      body_bottom_max_width
     },
     textwimage_items2[]{
       "image": image.asset->url,
@@ -149,6 +158,12 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
       content_position,
       background
     },
+    profiles[]{
+      "image": image.asset->url,
+      name,
+      type,
+      description
+    }
   },
 }`;
 

@@ -85,13 +85,13 @@ const People: React.FC<Props> = ({ profiles, background_color }) => {
                 <span className="text-[#EFEBE5] text-[13px] leading-[19px] tracking-[1.56px] avenir_book">{profile.type}</span>
               </div>
               </div>
-              <div className={`  h-[100vh] overflow-hidden px-[20px] bg-[${bg}] w-full h-full fixed top-0 left-0 ${open == index ? "z-[9999] opacity-[1] visible" : "z-0 opacity-0 invisible"}  justify-between`}>
+              <div className={`h-[1000px] overflow-hidden px-[20px] bg-[${bg}] w-full h-full fixed top-0 left-0 ${open == index ? "z-[9999] opacity-[1] visible" : "z-0 opacity-0 invisible"}  justify-between`}>
                 <div onClick={() => setOpen(null)} className="x-shape"></div>
                 <div className="flex">
-                  <div className="lg:w-[50%]">
-                  <div className="flex flex-col  gap-y-5 pt-[16px]">
-                    <span className="text-[#EFEBE5] text-[13px] leading-[19px] tracking-[1.56px] avenir_book">{profile.name}</span>
-                    <span className="text-[#EFEBE5] text-[13px] leading-[19px] tracking-[1.56px] avenir_book">{profile.type}</span>
+                  <div className="lg:w-[50%] flex flex-col justify-between">
+                  <div className="flex flex-col gap-y-5 pt-[16px]">
+                    <span className="text-[#EFEBE5] text-[65px] leading-[56px] tracking-[1.3px] avenir_book">{profile.name}</span>
+                    <span className="text-[#EFEBE5] text-[13px] leading-[14px] uppercase tracking-[1.56px] avenir_book">{profile.type}</span>
                   </div>
                   <div>
                     {profile.description ? (

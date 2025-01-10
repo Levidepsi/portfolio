@@ -63,6 +63,10 @@ export default defineType({
           title: 'Banner',
         },
         {
+          type: 'banner2',
+          title: 'Banner 2',
+        },
+        {
           type: 'heading',
           title: 'Heading',
         },

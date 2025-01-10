@@ -21,6 +21,7 @@ import text_with_image2 from './components/text_with_image2'
 import multiple_text2 from './components/multiple_text2'
 import people from './components/people'
 import companies from './schemaTypes/companies'
+import banner2 from './components/banner2'
 
 const schema =
   [
@@ -35,6 +36,7 @@ const schema =
       // objects
     slideshow,
     banner,
+    banner2,
     text_with_image,
     heading,
     multiple_text,

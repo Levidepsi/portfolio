@@ -9,7 +9,7 @@ import { useWindowWide } from "../../hooks/ScreenSize";
 const Banner = ({ image, description, max_width, content_position, video }: any) => {
   const desktop = useWindowWide(1024)
   return (
-    <div className="relative">
+    <div className="relative ">
       {video
         ? 
         <div className="relative h-[100vh] w-full">
@@ -18,7 +18,7 @@ const Banner = ({ image, description, max_width, content_position, video }: any)
           </video>
         </div>
         : 
-        <Image src={image} alt={"banner"} width={2000} height={2000} priority className="w-full h-[100vh] object-cover" />
+        <Image src={image} alt={"banner"} width={2000} height={2000} priority className="w-full h-auto object-cover" />
       }
       
     </div>

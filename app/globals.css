@@ -603,7 +603,15 @@ a {
 
 .multiple_text_wrapper .text_items {
   border-bottom: 1px solid #30282A;
+}
 
+.multiple_text2 .multiple_text_wrapper .text_items {
+  border-bottom: none;
+  border-top: none;
+}
+
+.multipletext-body p {
+  color: inherit;
 }
 
 @media (min-width: 768px) {

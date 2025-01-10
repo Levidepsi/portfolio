@@ -11,20 +11,22 @@ const Timeline = ({ title, timeline_items, background }: any) => {
       {title && (
         <h1 className="text-[#30282A] text-center text-[40px] leading-[46px] lg:text-[65px] lg:leading-[56px] tracking-[1.3px] boing_thin mb-[45px] lg:mb-[60px] lg:max-w-[451px] lg:mx-[auto]">{title}</h1>
       )}
-      <div className="md:flex md:flex-wrap md:justify-start md:gap-y-[25px]">
-        {timeline_items && timeline_items.map((item: any, index: number) => {
-            console.log(item) 
-            return (
-            <div className={`timeline-item w-[50%] flex justify-between md:w-[45%] lg:w-[33.33%] md:items-center flex-col text-center lg:flex-col py-[17px]`} key={index}>
-                <div className="text-[13px] avenir_roman text-[#30282A] tracking-[1.56px] leading-[18px] lg:w-[50%] mb-4">
-                    {item.title}
+      <div className="timeline-wrapper flex-row-reverse flex md:flex-row md:flex-wrap md:justify-start md:gap-y-[25px]">
+        <div className="timeline-arrow"></div>
+        <div className="timeline-items">
+            {timeline_items && timeline_items.map((item: any, index: number) => {
+                return (
+                <div className={`timeline-item w-[100%] flex  md:w-[16.66%] lg:w-[16.66%] md:items-center flex-col text-center lg:flex-col py-[17px]`} key={index}>
+                    <div className="text-[13px] avenir_roman text-[#30282A] tracking-[1.56px] leading-[18px] lg:w-[50%]">
+                        {item.title}
+                    </div>
+                    {item.body && (
+                        <div className="text-[13px] avenir_roman [&>p]:text-[#30282A] pb-[10px] tracking-[0.26px] leading-[18px] lg:w-[80%] "><PortableText value={item.body} /></div>
+                    )}
                 </div>
-                {item.body && (
-                    <div className="text-[13px] avenir_roman [&>p]:text-[#30282A] pb-[10px] tracking-[0.26px] leading-[18px] lg:w-[80%] "><PortableText value={item.body} /></div>
-                )}
-            </div>
-            )
-        })}
+                )
+            })}
+        </div>
       </div>
     </div>
   );

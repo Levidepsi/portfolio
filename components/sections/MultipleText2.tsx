@@ -25,7 +25,7 @@ const MultipleText2 = ({ title, text_items, padding_top_bottom, background, imag
                     <PortableText value={item.title} />
                 </div>
                 <div className="text-[13px] avenir_roman [&>p]:text-[#30282A] pb-[10px] tracking-[0.26px] leading-[18px] lg:w-[80%] "><PortableText value={item.body} /></div>
-                <Link href={`${item.slug != null ? `/companies/${item.slug.slug}` : ""}`} className="text-[13px] avenir_roman text-[#30282A] tracking-[0.26px] leading-[18px] lg:w-[80%] ">{item.learn_more}</Link>
+                <Link href={`${item.slug != null ? `/company/${item.slug.slug}` : ""}`} className="text-[13px] avenir_roman text-[#30282A] tracking-[0.26px] leading-[18px] lg:w-[80%] ">{item.learn_more}</Link>
                 
             </div>
             )

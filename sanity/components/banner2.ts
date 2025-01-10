@@ -11,6 +11,16 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'sub',
+      title: 'sub',
+      type: 'string',
+    }),
+    defineField({
+      name: 'heading',
+      title: 'heading',
+      type: 'heading',
+    }),
+    defineField({
       name: 'website',
       title: 'Website',
       type: 'string',
@@ -26,12 +36,6 @@ export default defineType({
         name: "image",
         title: "Image",
         type: 'image',
-        
-    }),
-     defineField({
-        name: "video",
-        title: "Video",
-        type: 'file',
         
     }),
    

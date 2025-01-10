@@ -33,7 +33,7 @@ const TextWithImage = ({ textwimage_items, padding_top }: any) => {
   const desktop = useWindowWide(1024)
   
   return (
-    <div style={{paddingTop: `${padding_top}px`}} className="px-5 py-5">
+    <div style={{paddingTop: desktop ? `${padding_top}px` : `${padding_top + 20}px`}} className="px-5 pt-[50px] pb-5 lg:py-5">
       {textwimage_items && textwimage_items.map((item:
         {
           content_position: boolean;
@@ -66,7 +66,7 @@ const TextWithImage = ({ textwimage_items, padding_top }: any) => {
             <div className={`flex flex-col-reverse ${item.content_position == true ? "lg:flex-row-reverse" : "lg:flex-row"}`} >
             <div className={`lg:w-[50%] ${item.content_position == true ? "flex justify-end" : ""}`}>
               <div className={` lg:flex flex-col h-full ${item.body ? "justify-between" : "justify-end"}`}>
-              <h1 className={`${item.body ? "mb-5" : ""}  text-[#30282A] text-[65px] lg:max-w-[480px] tracking-[1.3px] leading-[56px] boing_thin `}>{item.title}</h1>
+              {item.title && <h1 className={`${item.body ? "mb-5" : ""}  text-[#30282A] text-[45px] mb-5 lg:text-[65px] tracking-[1.3px] lg:leading-[56px] lg:max-w-[480px]  boing_thin `}>{item.title}</h1>}
                 <div className="avenir_book [&>p]:text-[#30282A] lg:max-w-[450px] text-[15px] tracking-[0.3px] leading-[22px]"><PortableText value={item.body} /></div>
                 {item.body_bottom &&
                 <div
@@ -79,7 +79,7 @@ const TextWithImage = ({ textwimage_items, padding_top }: any) => {
                 <Image
                   ref={imageRef}
                   src={item.image}
-                  alt={item.title}
+                  alt={item.title ? item.title : "Text With Image"}
                   width={2000}
                   height={2000}
                   priority

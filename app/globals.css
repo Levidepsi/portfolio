@@ -599,6 +599,17 @@ a {
     visibility: visible;
   }
 
+  .dropdown_nav svg {
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .dropdown_wrapper.active .dropdown_nav svg {
+    opacity: 1;
+    visibility: visible;
+  }
+
   .dropdown_menu .Submenu_Item:first-child {
     margin-top: 0;
   }

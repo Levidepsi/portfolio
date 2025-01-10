@@ -64,7 +64,7 @@ export const ThemeProvider = ({
           </Link>
           <div className="x-button" onClick={() => setOpenMenu(false)}></div>
         </div>
-        <div className="mt-[45px] mx-5 lg:max-w-[50%] lg:w-full">
+        <div className="mt-[45px] mx-5 lg:max-w-[47%] lg:w-full">
           {navigation.header_menu &&
             navigation.header_menu.map(
               (

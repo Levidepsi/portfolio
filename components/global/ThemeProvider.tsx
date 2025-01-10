@@ -53,18 +53,18 @@ export const ThemeProvider = ({
       <div
         className={`h-[100vh] pb-[50px] overflow-y-scroll overflow-x-hidden w-full bg-[#EFEBE5] menu  ${openMenu ? " slideDown" : ""}`}>
         <div className="flex justify-between mx-5 py-5 border-solid border-[#30282A] border-b-[1px]">
-          <Link href={"/"}>
+          <Link href={"/"} className="w-full max-w-[130px] md:max-w-[150px]">
             <Image
               src={navigation.header_logo2}
               alt="Header 2"
               width={500}
               height={500}
-              className="h-auto w-full firstimage max-w-[156px] "
+              className="h-auto w-full firstimage max-w-[130px] md:max-w-[150px] "
             />
           </Link>
           <div className="x-button" onClick={() => setOpenMenu(false)}></div>
         </div>
-        <div className="mt-[45px] mx-5">
+        <div className="mt-[45px] mx-5 lg:max-w-[50%] lg:w-full">
           {navigation.header_menu &&
             navigation.header_menu.map(
               (
@@ -76,37 +76,62 @@ export const ThemeProvider = ({
                     onMouseEnter={() => hoverItem(index)}
                     onMouseLeave={() => setActiveItem(null)}
                     key={index}
-                    className={`relative ${activeItem == index ? "active" : ""}`}>
+                    className={`relative dropdown_wrapper  ${activeItem == index ? "active" : ""}`}>
                     {item.subMenu ? (
-                      <button className=" text-[30px] md:text-[65px] w-full text-left flex menu_item_parent xl:max-w-[620px] border-b-[1px] border-solid border-[#30282A] py-[0px] text-[#30282A] uppercase tracking-[1.3px] leading-[96px] boing_thin">
+                      <button className="dropdown_nav pt-[20px] pb-[20px] items-center justify-between text-[30px] md:text-[65px] w-full text-left flex menu_item_parent  border-b-[1px] border-solid border-[#30282A] py-[0px] text-[#30282A] uppercase tracking-[1.3px] leading-[40px] boing_thin">
                         {item.title}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14.619"
+                          height="24.746"
+                          viewBox="0 0 14.619 24.746">
+                          <path
+                            id="Icon_ionic-ios-arrow-forward"
+                            data-name="Icon ionic-ios-arrow-forward"
+                            d="M20.679,18,11.742,9.07a1.681,1.681,0,0,1,0-2.384,1.7,1.7,0,0,1,2.391,0L24.258,16.8a1.685,1.685,0,0,1,.049,2.327L14.14,29.32a1.688,1.688,0,0,1-2.391-2.384Z"
+                            transform="translate(-10.746 -5.566)"
+                            fill="none"
+                            stroke="#000"
+                            strokeWidth="1"
+                          />
+                        </svg>
                       </button>
                     ) : (
                       <Link
-                        className=" text-[30px] md:text-[65px] block w-auto menu_item_parent xl:max-w-[620px] border-b-[1px] border-solid border-[#30282A] py-[0px] text-[#30282A] uppercase tracking-[1.3px] leading-[96px] boing_thin"
+                        className="pt-[20px] pb-[20px] text-[30px] md:text-[65px] block w-auto menu_item_parent border-b-[1px] border-solid border-[#30282A] py-[0px] text-[#30282A] uppercase tracking-[1.3px] leading-[40px] boing_thin"
                         href={`${item.page.slug.slug != null ? `/${item.page.slug.slug}` : "/"}`}>
                         {item.title}
                       </Link>
                     )}
-                    {/* <div className={`sub_menu 2xl:absolute left-0 top-0 transition-all duration-[0.6s] ${activeItem == index ? "active opacity-[1] visible z-10" : "z-0 opacity-0 invisible"}`}>
-									{item.subMenu && item.subMenu.map((sub_item: any, jindex: number) => {
-										return (
-											<div key={jindex} className="flex ">
-												<span className="text-[#30282A] text-[20px] mt-[0px] mr-[10px] opacity-[0.5]">{jindex + 1}</span>
-												<Link
-														className="text-[38px] block w-full    py-[0px] text-[#30282A]  tracking-[0.76px] leading-[50px] boing_thin"
-														href={`
-														${item.page.slug.slug != null
-															? `/${item.page.slug.slug}`
-															: sub_item.custom_links
-																? sub_item.custom_links
-																: "/"}`}>
-														{sub_item.title}
-													</Link>
-												</div>
-											)
-										})}
-								</div> */}
+                    {item.subMenu && item.subMenu.length > 0 && (
+                      <div
+                        className={`dropdown_menu transition-all ease-in-out duration-300 overflow-hidden ${
+                          activeItem == index
+                            ? "opacity-100 max-h-[500px] lg:max-h-none lg:opacity-100"
+                            : "opacity-0 max-h-0 lg:max-h-none lg:opacity-0"
+                        }`}>
+                        {item.subMenu.map((sub_item: any, jindex: number) => {
+                          return (
+                            <div key={jindex} className="flex Submenu_Item">
+                              <span className="pt-[15px] text-[#30282A] lg:pt-[5px] text-[15px] lg:text-[20px] mt-[0px] mr-[10px] lg:mr-[15px] avenir_book">
+                                {jindex + 1}
+                              </span>
+                              <Link
+                                className="text-[25px] lg:text-[38px] block w-full py-[0px] text-[#30282A] tracking-[0.76px] leading-[50px] boing_thin"
+                                href={`${
+                                  item.page.slug.slug != null
+                                    ? `/${item.page.slug.slug}`
+                                    : sub_item.custom_links
+                                      ? sub_item.custom_links
+                                      : "/"
+                                }`}>
+                                {sub_item.title}
+                              </Link>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                 );
               }

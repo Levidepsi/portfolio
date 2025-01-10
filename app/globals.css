@@ -573,7 +573,34 @@ a {
   top: 0;
 }
 
-@media (min-width: 1280px) {
+.dropdown_menu {
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.dropdown_menu .Submenu_Item:first-child {
+  margin-top: 20px;
+}
+
+@media (min-width: 1024px) {
+  .dropdown_menu {
+    position: absolute;
+    left: 100%;
+    top: 14px;
+    transition:
+      opacity 0.3s ease-in-out,
+      max-height 0.3s ease-in-out;
+    width: 100%;
+    padding-left: 30px;
+  }
+
+  .dropdown_menu .Submenu_Item:first-child {
+    margin-top: 0;
+  }
+
+  .dropdown_menu .Submenu_Item {
+    margin-bottom: 5px;
+  }
 }
 
 /* text items */

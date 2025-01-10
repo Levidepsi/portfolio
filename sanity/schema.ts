@@ -1,4 +1,4 @@
-import { type SchemaTypeDefinition } from 'sanity'
+import {type SchemaTypeDefinition} from "sanity";
 
 import blockContent from './schemaTypes/blockContent'
 import post from './schemaTypes/post'
@@ -22,7 +22,8 @@ import multiple_text2 from './components/multiple_text2'
 import people from './components/people'
 import companies from './schemaTypes/companies'
 import banner2 from './components/banner2'
-import timeline from './components/timeline'
+
+import timeline from "./components/timeline";
 
 const schema =
   [

@@ -17,6 +17,7 @@ import People from "../sections/People";
 import Timeline from "../sections/Timeline";
 import Banner2 from "../sections/Banner2";
 
+
 export default function SpreadComponents({ components }: { components: any }) {
     return (
         <>

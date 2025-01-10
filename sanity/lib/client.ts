@@ -134,7 +134,7 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
     },
     timeline_items[]{
       title,
-      body,
+      body
     },
     imageblock_items[]{
       title,

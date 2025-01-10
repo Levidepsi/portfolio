@@ -17,8 +17,8 @@ export default defineType({
     }),
 
     defineField({
-        name: "text_items",
-        title: "Text Items",
+        name: "timeline_items",
+        title: "Timeline Items",
         type: 'array',
         of: [
             {

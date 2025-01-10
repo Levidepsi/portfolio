@@ -98,6 +98,7 @@ export const ThemeProvider = ({
                       </button>
                     ) : (
                       <Link
+                        onClick={() => setOpenMenu(false)}
                         className="pt-[20px] pb-[20px] text-[30px] md:text-[65px] block w-auto menu_item_parent border-b-[1px] border-solid border-[#30282A] py-[0px] text-[#30282A] uppercase tracking-[1.3px] leading-[40px] boing_thin"
                         href={`${item.page.slug.slug != null ? `/${item.page.slug.slug}` : "/"}`}>
                         {item.title}
@@ -117,6 +118,7 @@ export const ThemeProvider = ({
                                 {jindex + 1}
                               </span>
                               <Link
+                                onClick={() => setOpenMenu(false)}
                                 className="text-[25px] lg:text-[38px] block w-full py-[0px] text-[#30282A] tracking-[0.76px] leading-[50px] boing_thin"
                                 href={`${
                                   item.page.slug.slug != null

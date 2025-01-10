@@ -592,6 +592,11 @@ a {
       max-height 0.3s ease-in-out;
     width: 100%;
     padding-left: 30px;
+    visibility: hidden;
+  }
+
+  .dropdown_wrapper.active .dropdown_menu {
+    visibility: visible;
   }
 
   .dropdown_menu .Submenu_Item:first-child {
@@ -651,13 +656,13 @@ a {
 
 .x-shape::before,
 .x-shape::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
   width: 1px; /* Line thickness */
   height: 20px;
-  background-color: #EFEBE5;
+  background-color: #efebe5;
   transform-origin: center;
 }
 

@@ -5,14 +5,14 @@ import Link from "next/link";
 import { useWindowWide } from "../../hooks/ScreenSize";
 import Image from "next/image";
 
-const MultipleText2 = ({ title, text_items, padding_top_bottom, background, image, titles_font_size, titles_lineheight }: any) => {
+const Timeline = ({ title, timeline_items, background }: any) => {
   return (
-    <div style={{paddingTop: `${padding_top_bottom}px`, paddingBottom: `${padding_top_bottom}px`, background: `${background}`}} className="py-[50px] px-5 multiple_text_wrapper">
+    <div style={{ background: `${background}`}} className="py-[50px] px-5 multiple_text_wrapper">
       {title && (
         <h1 className="text-[#30282A] text-center text-[40px] leading-[46px] lg:text-[65px] lg:leading-[56px] tracking-[1.3px] boing_thin mb-[45px] lg:mb-[60px] lg:max-w-[451px] lg:mx-[auto]">{title}</h1>
       )}
       <div className="md:flex md:flex-wrap md:justify-start md:gap-y-[25px]">
-        {text_items && text_items.map((item: any, index: number) => {
+        {timeline_items && timeline_items.map((item: any, index: number) => {
           // console.log(item.slug.slug)
             return (
             <div className={`text_items item${index} flex justify-between md:w-[45%] lg:w-[33.33%] md:items-center flex-col text-center lg:flex-col py-[17px]`} key={index}>
@@ -35,4 +35,4 @@ const MultipleText2 = ({ title, text_items, padding_top_bottom, background, imag
   );
 };
 
-export default MultipleText2;
+export default Timeline;

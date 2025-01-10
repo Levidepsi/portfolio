@@ -94,6 +94,10 @@ export default defineType({
           type: 'people',
           title: 'People',
         },
+        {
+          type: 'timeline',
+          title: 'Timeline',
+        },
       ]
     })
   ],

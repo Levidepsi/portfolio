@@ -14,6 +14,7 @@ import FeaturedBanner from "../sections/FeaturedBanner";
 import TextWithImage2 from "../sections/TextWithImage2";
 import MultipleText2 from "../sections/MultipleText2";
 import People from "../sections/People";
+import Timeline from "../sections/Timeline";
 
 export default function SpreadComponents({ components }: { components: any }) {
     return (
@@ -31,6 +32,7 @@ export default function SpreadComponents({ components }: { components: any }) {
                     description2: any
                     title: string;
                     text_items: any
+                    timeline_items: any
                     show_border: any
                     padding_top: number
                     imageblock_items: any
@@ -195,6 +197,14 @@ export default function SpreadComponents({ components }: { components: any }) {
                                        background_color={component.background_color}
                                        profiles={component.profiles}
                                    />
+                            ),
+                            "timeline": (
+                                <Timeline
+                                    key={component._key}
+                                    title={component.title}
+                                    background={component.background}
+                                    timeline_items={component.timeline_items}
+                                />
                             ),
                         }[component._type]
                     }

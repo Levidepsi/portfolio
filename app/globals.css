@@ -606,3 +606,38 @@ a {
 .email_input::placeholder {
   color: #efebe5;
 }
+
+.x-shape {
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  opacity: 1;
+  margin-right: 0;
+  margin-left: auto;
+
+  /* Create the X using pseudo-elements */
+}
+
+.x-shape::before,
+.x-shape::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px; /* Line thickness */
+  height: 20px;
+  background-color: #EFEBE5;
+  transform-origin: center;
+}
+
+.x-shape::before {
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.x-shape::after {
+  transform: translateX(-50%) rotate(-45deg);
+}

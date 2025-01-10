@@ -19,6 +19,8 @@ import featured_portfolio from './components/featured_portfolio'
 import featured_banner from './components/featured_banner'
 import text_with_image2 from './components/text_with_image2'
 import multiple_text2 from './components/multiple_text2'
+import people from './components/people'
+import companies from './schemaTypes/companies'
 
 const schema =
   [
@@ -28,7 +30,8 @@ const schema =
     post, 
     blockContent,
     investments,
-    portfolio,
+    // portfolio,
+    companies,
       // objects
     slideshow,
     banner,
@@ -41,7 +44,8 @@ const schema =
     featured_portfolio,
     featured_banner,
     text_with_image2,
-    multiple_text2
+    multiple_text2,
+    people
   ]
 
 export default schema;

@@ -4,6 +4,8 @@ import post from '../../sanity/schemaTypes/post'
 import { DRAFT_MODE_ROUTE } from '../../sanity/lib/api'
 import page from '../../sanity/schemaTypes/page'
 import home from '../../sanity/schemaTypes/home'
+import companies from '../../sanity/schemaTypes/companies'
+
 
 
 const iframeOptions = {
@@ -21,6 +23,10 @@ const iframeOptions = {
         case 'home':
             return "/"
         case 'page':
+          return (document as any)?.slug?.current
+              ? `/${(document as any).slug.current}`
+            : new Error('Missing slug')
+        case 'companies':
           return (document as any)?.slug?.current
               ? `/${(document as any).slug.current}`
               : new Error('Missing slug')
@@ -48,6 +54,11 @@ export const previewDocumentNode = (): DefaultDocumentNodeResolver => {
           S.view.component(Iframe).options(iframeOptions).title('Preview'),
         ])
       case page.name:
+        return S.document().views([
+          S.view.form(),
+          S.view.component(Iframe).options(iframeOptions).title('Preview'),
+        ])
+      case companies.name:
         return S.document().views([
           S.view.form(),
           S.view.component(Iframe).options(iframeOptions).title('Preview'),

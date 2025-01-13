@@ -55,6 +55,18 @@ export default defineType({
                       title: 'Body',
                       type: 'blockContent',
                   },
+                    {
+                      name: 'apply_now',
+                      title: 'Apply Now',
+                      type: 'string',
+                      initialValue: "Apply Now"
+                  },
+                    {
+                      name: 'apply_now_link',
+                      title: 'Apply Now Link',
+                      type: 'string',
+                      initialValue: "/contact-us"
+                    },
                     
                    
                 ]

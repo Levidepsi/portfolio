@@ -697,6 +697,7 @@ a {
 .timeline-arrow{
   position: relative;
   text-align: center;
+  
 }
 
 .timeline-arrow:after {
@@ -705,6 +706,31 @@ a {
   height: 100%;
   width: 7px;
   background-color: #30282A;
+}
+
+ .arrow{
+  clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+  background-color: #30282A;
+    width: 50px;
+    height: 44px;
+    position: absolute;
+    top: auto;
+    right: 102px;
+    bottom: -30px;
+     transform: rotate(180deg);
+}
+
+@media (min-width: 750px) {
+  .arrow{
+  clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+  background-color: #30282A;
+    width: 50px;
+    height: 44px;
+    position: absolute;
+    top: -20px;
+    right: -27px;
+  transform: rotate(90deg);
+}
 }
 
 .timeline-items {
@@ -724,7 +750,7 @@ a {
   position: absolute;
   height: 30px;
   width: 30px;
-  left: 144.5%;
+  left: 145.5%;
   border-radius: 6px;
   background-color: #30282A;
   transform: rotate(45deg);
@@ -771,4 +797,8 @@ a {
     position: absolute;
     bottom: 70%;
   }
+}
+
+.singleposttext > p:empty {
+  margin: 20px;
 }

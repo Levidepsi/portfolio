@@ -130,7 +130,9 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
       learn_more,
        slug->{
         "slug": slug.current
-      }
+      },
+      apply_now,
+      apply_now_link
     },
     timeline_items[]{
       title,
@@ -237,13 +239,34 @@ export const COMPANIES_QUERY = groq`*[_type == "companies" && slug.current == $s
   },
 }`;
 
-export const POSTS_QUERY = groq`*[_type == "post" && defined(slug)]`;
+export const POSTS_QUERY = groq`*[_type == "post"] | order(_createdAt asc){
+  _type,
+  title,
+  "slug": slug.current,
+  "mainImage": mainImage.asset->url,
+  body
+}`;
 
 export const POSTS_SLUG_QUERY = groq`*[_type == "post" && defined(slug.current)][]{
   "params": { "slug": slug.current }
 }`;
 
 export const POST_QUERY = groq`*[_type == "post" && slug.current == $slug][0]{
-  title,
-  "slug": slug.current
+   _type,
+    title,
+    "slug": slug.current,
+    "mainImage": mainImage.asset->url,
+    body,
+    body2,
+    author,
+    date,
+    "image2": image2.asset->url,
+    related_post[]{
+     post->{
+       title,
+       body,
+       "mainImage": mainImage.asset->url,
+     
+     }
+   }
 }`;

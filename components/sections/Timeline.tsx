@@ -12,7 +12,9 @@ const Timeline = ({ title, timeline_items, background }: any) => {
         <h1 className="text-[#30282A] text-center text-[40px] leading-[46px] lg:text-[65px] lg:leading-[56px] tracking-[1.3px] boing_thin mb-[45px] lg:mb-[60px] lg:max-w-[451px] lg:mx-[auto]">{title}</h1>
       )}
       <div className="timeline-wrapper flex-row-reverse md:mr-[30px] flex md:flex-col md:flex-wrap md:relative md:justify-start md:gap-y-[25px]">
-        <div className="timeline-arrow"></div>
+        <div className="timeline-arrow">
+          <div className="arrow"></div>
+        </div>
         <div className="timeline-items md:flex md:pr-[100px] lg:pr-[120px]">
             {timeline_items && timeline_items.map((item: any, index: number) => {
                 return (

@@ -10,7 +10,7 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
-    defineField({
+     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -20,6 +20,17 @@ export default defineType({
       },
     }),
 
+    defineField({
+      name: 'author',
+      title: 'Author',
+      type: 'string',
+    }),
+    defineField({
+      name: 'date',
+      title: 'Date',
+      type: 'string',
+    }),
+   
     defineField({
       name: 'mainImage',
       title: 'Main image',
@@ -35,17 +46,46 @@ export default defineType({
         }
       ]
     }),
- 
+
     defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
+      name: 'image2',
+      title: 'Image 2',
+      type: 'image',
+      
     }),
+ 
+  
     defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'body2',
+      title: 'Body 2',
+      type: 'blockContent',
+    }),
+
+     defineField({
+        name: "related_post",
+        title: "Related Post",
+        type: 'array',
+        of: [
+            {
+                type: "object",
+                fields: [
+                   {
+                      title: 'post',
+                      name: 'post',
+                      type: 'reference',
+                      to: [{type: 'post'}]
+                    }
+                   
+                ]
+            }
+        ]
+     }),
+    
   ],
 
   preview: {

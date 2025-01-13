@@ -6,6 +6,9 @@ import { useWindowWide } from "../../hooks/ScreenSize";
 import Image from "next/image";
 
 const MultipleText2 = ({ title, text_items, padding_top_bottom, background, image, titles_font_size, titles_lineheight }: any) => {
+  let customFontSize: number = titles_font_size
+  let customLineHeight: number = titles_lineheight
+
   return (
     <div style={{paddingTop: `${padding_top_bottom}px`, paddingBottom: `${padding_top_bottom}px`, background: `${background}`}} className="py-[50px] px-5 multiple_text_wrapper">
       {title && (
@@ -22,7 +25,9 @@ const MultipleText2 = ({ title, text_items, padding_top_bottom, background, imag
                             <Image src={item.image} alt={item.title} width={2000} height={2000} priority className="object-contain mb-4 max-w-[50px] mx-[auto]" />
                         )}
                     </div>
+                  <div style={{fontSize: `${customFontSize}px`, lineHeight: `${customLineHeight}px`}} className={`text-[${customFontSize}px] leading-[${customLineHeight}]`}>
                     <PortableText value={item.title} />
+                    </div>
                 </div>
                 <div className="text-[13px] avenir_roman [&>p]:text-[#30282A] pb-[10px] tracking-[0.26px] leading-[18px] lg:w-[80%] "><PortableText value={item.body} /></div>
                 <Link href={`${item.slug != null ? `/company/${item.slug.slug}` : ""}`} className="text-[13px] avenir_roman text-[#30282A] tracking-[0.26px] leading-[18px] lg:w-[80%] ">{item.learn_more}</Link>

@@ -29,10 +29,11 @@ type Profile = {
 type Props = {
   profiles: Array<Profile>;
   background_color: string; // Add background color
+  title: string
 };
 
 
-const People: React.FC<Props> = ({ profiles, background_color }) => {
+const People: React.FC<Props> = ({ profiles, background_color, title }) => {
   let bg: string = background_color
 
   const [open, setOpen] = useState(null);
@@ -52,8 +53,9 @@ const People: React.FC<Props> = ({ profiles, background_color }) => {
     }
 }, [open]);
   return (
-    <div>
-      <div className={`bg-[${bg}] px-[18px] pt-[21px] pb-[70px] gap-x-[24px] gap-y-[16px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3`}>
+    <div className={`bg-[${bg}]`}>
+      <h1 className="text-[45px] tracking-[1.3px] leading-[56px] lg:text-[65px] boing_thin text=[#EFEBE5] py-[50px] lg:py-[87px] px-[18px]">{title}</h1>
+      <div className={` px-[18px] pt-[21px] pb-[70px] gap-x-[24px] gap-y-[16px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3`}>
         {profiles && profiles.map((profile:
           {
             image: string

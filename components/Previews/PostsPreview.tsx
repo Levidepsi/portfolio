@@ -18,6 +18,8 @@ export default function PostsPreview({
     { initial }
   );
 
+  console.log(data)
+
   return data ? (
     <Page posts={data} />
   ) : (

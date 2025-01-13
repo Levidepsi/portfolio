@@ -20,8 +20,11 @@ const MultipleText = ({ title, text_items, padding_top_bottom, background, text_
             borderTop: index === 0 ? `1px solid ${text_color}` : undefined,
           }} 
           className={`text_items item${index} flex flex-col lg:flex-row justify-between py-[17px] border-b-red-500`} key={index}>
-            <div style={{ color: `${text_color}` }} className="text-[13px] avenir_roman text-[#30282A] tracking-[1.56px] leading-[18px] lg:w-[50%] mb-5 lg:mb-0">{item.title}</div>
-            <div style={{ color: `${text_color}` }} className={`multipletext-body text-[13px] text-[#30282A] avenir_roman tracking-[0.26px] leading-[18px] lg:w-[50%] `}><PortableText value={item.body}/></div>
+            <div style={{ color: `${text_color}` }} className={`text-[13px] avenir_roman text-[#30282A] tracking-[1.56px] leading-[18px] lg:w-[50%] mb-5 lg:mb-0`}>{item.title}</div>
+            <div style={{ color: `${text_color}` }} className={`multipletext-body text-[13px] text-[#30282A] avenir_roman tracking-[0.26px] leading-[18px] lg:w-[50%] `}><PortableText value={item.body} /></div>
+            {item.apply_now &&
+              <Link className="text-[#30282A] block w-full max-w-fit border-solid border-[1px] border-[#30282A] rounded-[17px] py-[9px] px-[19px] text-[13px] avenir_roman tracking-[1.56px] leading-[18px]" href={`${item.apply_now_link}`}>{item.apply_now}</Link>
+            }
           </div>
         )
       })}

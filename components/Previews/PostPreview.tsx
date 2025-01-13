@@ -20,7 +20,7 @@ export default function PostPreview({
   );
 
   return data ? (
-    <Post post={data} />
+    <Post page={data} />
   ) : (
     <div className="bg-red-100">Post not found</div>
   );

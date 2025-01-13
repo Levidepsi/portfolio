@@ -16,7 +16,7 @@ import MultipleText2 from "../sections/MultipleText2";
 import People from "../sections/People";
 import Timeline from "../sections/Timeline";
 import Banner2 from "../sections/Banner2";
-import Richtext from "../sections/richtext";
+import Richtext from "../sections/Richtext";
 
 export default function SpreadComponents({components}: {components: any}) {
   return (
@@ -224,6 +224,7 @@ export default function SpreadComponents({components}: {components: any}) {
                       key={component._key}
                       background_color={component.background_color}
                       profiles={component.profiles}
+                      title={component.title}
                     />
                   ),
                   timeline: (

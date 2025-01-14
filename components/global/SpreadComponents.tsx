@@ -17,6 +17,7 @@ import People from "../sections/People";
 import Timeline from "../sections/Timeline";
 import Banner2 from "../sections/Banner2";
 import Richtext from "../sections/Richtext";
+import MapDescription from "../sections/MapDescription";
 
 export default function SpreadComponents({components}: {components: any}) {
   return (
@@ -84,6 +85,25 @@ export default function SpreadComponents({components}: {components: any}) {
               }>;
               sub: string;
               website: string;
+              pointers: Array<{
+                title: string;
+                body1: Array<{
+                  _type: string;
+                  style?: string;
+                  children?: Array<{
+                    _type: string;
+                    text?: string;
+                  }>;
+                }>;
+                body2: Array<{
+                  _type: string;
+                  style?: string;
+                  children?: Array<{
+                    _type: string;
+                    text?: string;
+                  }>;
+                }>;
+              }>
             },
             index: number
           ) => (
@@ -233,6 +253,13 @@ export default function SpreadComponents({components}: {components: any}) {
                       title={component.title}
                       background={component.background}
                       timeline_items={component.timeline_items}
+                    />
+                  ),
+                  map_description: (
+                    <MapDescription
+                      key={component._key}
+                      image={component.image}
+                      pointers={component.pointers}
                     />
                   ),
                 }[component._type]

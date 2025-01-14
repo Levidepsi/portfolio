@@ -40,53 +40,55 @@ const Posts = ({ posts }: any) => {
    const [latest, setLatest] = useState("Latest")
   const [openlatest, setopenLatest] = useState(false)
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6; // Number of items per page
-  const [pageRange, setPageRange] = useState([1, 2, 3]);
+ const [currentPage, setCurrentPage] = useState(1);
+const itemsPerPage = 6; // Number of items per page
+const [pageRange, setPageRange] = useState([1, 2, 3]);
 
-  const totalPages = Math.ceil(posts.length / itemsPerPage);
+// Exclude the first item
+const filteredPosts = posts.slice(1); // Remove the first item
 
-  // Calculate items to display based on the current page
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const postsData = posts.slice(startIndex, endIndex);
+const totalPages = Math.ceil(filteredPosts.length / itemsPerPage);
 
+// Calculate items to display based on the current page
+const startIndex = (currentPage - 1) * itemsPerPage;
+const endIndex = startIndex + itemsPerPage;
+const postsData = filteredPosts.slice(startIndex, endIndex);
 
-  // Handle "Next" button click
-  const nextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage((prevPage) => {
-        const nextPage = prevPage + 1;
-        if (nextPage > pageRange[pageRange.length - 1]) {
-          setPageRange((prevRange) => prevRange.map((num) => num + 1));
-        }
-        return nextPage;
-      });
-    }
-  };
+// Handle "Next" button click
+const nextPage = () => {
+  if (currentPage < totalPages) {
+    setCurrentPage((prevPage) => {
+      const nextPage = prevPage + 1;
+      if (nextPage > pageRange[pageRange.length - 1]) {
+        setPageRange((prevRange) => prevRange.map((num) => num + 1));
+      }
+      return nextPage;
+    });
+  }
+};
 
-  // Handle "Prev" button click
-  const prevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prevPage) => {
-        const prevPageData: any = prevPage - 1;
-        if (prevPage < prevPageData[0]) {
-          setPageRange((prevRange) => prevRange.map((num) => num - 1));
-        }
-        return prevPage;
-      });
-    }
-  };
+// Handle "Prev" button click
+const prevPage = () => {
+  if (currentPage > 1) {
+    setCurrentPage((prevPage) => {
+      const prevPageData = prevPage - 1;
+      if (prevPage < pageRange[0]) {
+        setPageRange((prevRange) => prevRange.map((num) => num - 1));
+      }
+      return prevPage;
+    });
+  }
+};
 
-  // Jump to a specific page
-  const jumpToPage = (page: any) => {
-    setCurrentPage(page);
-    if (page > pageRange[pageRange.length - 1]) {
-      setPageRange([page, page + 1, page + 2, page + 3]);
-    } else if (page < pageRange[0]) {
-      setPageRange([page - 3, page - 2, page - 1, page]);
-    }
-  };
+// Jump to a specific page
+const jumpToPage = (page: any) => {
+  setCurrentPage(page);
+  if (page > pageRange[pageRange.length - 1]) {
+    setPageRange([page, page + 1, page + 2, page + 3]);
+  } else if (page < pageRange[0]) {
+    setPageRange([page - 3, page - 2, page - 1, page]);
+  }
+};
 
   
   return <div className="py-[100px] lg:py-[47px]">

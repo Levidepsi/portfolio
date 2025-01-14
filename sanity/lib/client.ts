@@ -57,6 +57,7 @@ export const HOME_QUERY = groq`*[_type == "home"][0]{
   _type,
   "image": image.asset->url,
   meta_description,
+  "meta_image": meta_image.asset->url,
   components[]{
   ...,
   _type,
@@ -108,6 +109,7 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
   "slug": slug.current,
   _type,
   "image": image.asset->url,
+  "meta_image": meta_image.asset->url,
   meta_description,
   components[]{
     ...,
@@ -170,6 +172,11 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
       name,
       type,
       description
+    },
+    pointers[]{
+      title,
+      body1,
+      body2
     }
   },
 }`;
@@ -180,6 +187,7 @@ export const COMPANIES_QUERY = groq`*[_type == "companies" && slug.current == $s
   _type,
   "image": image.asset->url,
   meta_description,
+  "meta_image": meta_image.asset->url,
   components[]{
     ...,
     _type,

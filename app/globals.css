@@ -802,3 +802,26 @@ a {
 .singleposttext > p:empty {
   margin: 20px;
 }
+
+@media (max-width: 1023px) {
+  .map_contents {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .map_contents::after {
+            content: "";
+        clip-path: polygon(50% 0%, 25% 100%, 82% 100%);
+        background-color: #30282A;
+        width: 34px;
+        height: 27px;
+        position: absolute;
+        border: 0;
+        left: -6px;
+        bottom: -24px;
+        transform: rotate(180deg);
+  }
+}

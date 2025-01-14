@@ -101,6 +101,10 @@ export default defineType({
           type: "timeline",
           title: "Timeline",
         },
+        {
+          type: 'map_description',
+          title: 'Map Description',
+        },
       ],
     }),
   ],

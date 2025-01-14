@@ -10,7 +10,7 @@ import { SanityDocument } from "next-sanity";
 import { NAVIGATION } from "../sanity/lib/client";
 import Header from "../components/navigations/Header";
 import Footer from "../components/navigations/Footer";
-import Logo from "../public/Group 5.svg"
+import Logo from "../public/nog_Logotype_ag-6.png"
 
 
 const inter = Inter({ subsets: ["latin"] });

@@ -25,6 +25,7 @@ import banner2 from "./components/banner2";
 
 import timeline from "./components/timeline";
 import richtext from "./components/richtext";
+import map_description from "./components/map_description";
 
 const schema = [
   navigation,
@@ -52,6 +53,7 @@ const schema = [
   multiple_text2,
   people,
   timeline,
+  map_description
 ];
 
 export default schema;

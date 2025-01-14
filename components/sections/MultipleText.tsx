@@ -3,6 +3,7 @@
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { useWindowWide } from "../../hooks/ScreenSize";
+import {motion} from "framer-motion"
 
 const MultipleText = ({ title, text_items, padding_top_bottom, background, text_color, title_max_width, title_padding_bottom }: any) => {
   return (
@@ -14,7 +15,15 @@ const MultipleText = ({ title, text_items, padding_top_bottom, background, text_
       }
       {text_items && text_items.map((item: any, index: number) => {
         return (
-          <div 
+          <motion.div
+          initial={{ opacity: 0, }}
+          whileInView={{ opacity: 1,}}
+          transition={{
+            delay: index * 0.1,
+            duration: 0.7,
+            ease: [0.19, 1, 0.22, 1],
+          }}
+          viewport={{ once: true }}  
           style={{ 
             borderBottom: `1px solid ${text_color}`,
             borderTop: index === 0 ? `1px solid ${text_color}` : undefined,
@@ -25,7 +34,7 @@ const MultipleText = ({ title, text_items, padding_top_bottom, background, text_
             {item.apply_now &&
               <Link className="text-[#30282A] block w-full max-w-fit border-solid border-[1px] border-[#30282A] rounded-[17px] py-[9px] px-[19px] text-[13px] avenir_roman tracking-[1.56px] leading-[18px]" href={`${item.apply_now_link}`}>{item.apply_now}</Link>
             }
-          </div>
+          </motion.div>
         )
       })}
     </div>

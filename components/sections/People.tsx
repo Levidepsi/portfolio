@@ -3,6 +3,7 @@
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import {motion} from "framer-motion"
 
 type Profile = {
   image: string;
@@ -79,7 +80,16 @@ const People: React.FC<Props> = ({ profiles, background_color, title }) => {
             }>;
           }, index: number) => {
           return (
-            <div  className=" overflow-hidden cursor-pointer" key={index}>
+            <motion.div
+              initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1,}}
+                transition={{
+                  delay: index * 0.1 ,
+                  duration: 0.7,
+                  ease: [0.19, 1, 0.22, 1],
+                }}
+                viewport={{ once: true }}
+              className=" overflow-hidden cursor-pointer" key={index}>
               <div onClick={() => handleToggle(index)} className="profile_wrapper">
                 <Image src={profile.image} alt={profile.name} width={1000} height={1000} className="object-cover w-full h-auto" />
               <div className="flex justify-between gap-x-5 pt-[16px]">
@@ -108,7 +118,7 @@ const People: React.FC<Props> = ({ profiles, background_color, title }) => {
                     </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           )
         })}
       </div>

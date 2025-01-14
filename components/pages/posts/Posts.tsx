@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import TruncatedPortableText from "../../../hooks/TruncatedText";
+import {motion} from "framer-motion"
 
 const Posts = ({ posts }: any) => {
 
@@ -88,7 +89,9 @@ const jumpToPage = (page: any) => {
   } else if (page < pageRange[0]) {
     setPageRange([page - 3, page - 2, page - 1, page]);
   }
-};
+  };
+  
+  
 
   
   return <div className="py-[100px] lg:py-[47px]">

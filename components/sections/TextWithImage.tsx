@@ -4,6 +4,7 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useWindowWide } from "../../hooks/ScreenSize";
+import {motion} from "framer-motion"
 
 const TextWithImage = ({ textwimage_items, padding_top }: any) => {
 
@@ -31,6 +32,8 @@ const TextWithImage = ({ textwimage_items, padding_top }: any) => {
 
 
   const desktop = useWindowWide(1024)
+
+  
   
   return (
     <div style={{paddingTop: desktop ? `${padding_top}px` : `${padding_top + 20}px`}} className="px-5 pt-[50px] pb-5 lg:py-5">
@@ -64,7 +67,16 @@ const TextWithImage = ({ textwimage_items, padding_top }: any) => {
         return (
           <div key={index}>
             <div className={`flex flex-col-reverse ${item.content_position == true ? "lg:flex-row-reverse" : "lg:flex-row"}`} >
-            <div className={`lg:w-[50%] ${item.content_position == true ? "flex justify-end" : ""}`}>
+              <motion.div
+                 initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1,}}
+                transition={{
+                  delay: 0.7,
+                  duration: 0.7,
+                  ease: [0.19, 1, 0.22, 1],
+                }}
+                viewport={{ once: true }}
+                className={`lg:w-[50%] ${item.content_position == true ? "flex justify-end" : ""}`}>
               <div className={` lg:flex flex-col h-full ${item.body ? "justify-between" : "justify-end"}`}>
               {item.title && <h1 className={`${item.body ? "mb-5" : ""}  text-[#30282A] text-[45px] mb-5 lg:text-[65px] tracking-[1.3px] lg:leading-[56px] lg:max-w-[480px]  boing_thin `}>{item.title}</h1>}
                 <div className="avenir_book [&>p]:text-[#30282A] lg:max-w-[450px] text-[15px] tracking-[0.3px] leading-[22px]"><PortableText value={item.body} /></div>
@@ -74,8 +86,17 @@ const TextWithImage = ({ textwimage_items, padding_top }: any) => {
                   <PortableText value={item.body_bottom} />
                 </div>}
             </div>  
-            </div>
-            <div className="lg:w-[50%]">
+            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1,}}
+                transition={{
+                  delay: 0.7,
+                  duration: 0.7,
+                  ease: [0.19, 1, 0.22, 1],
+                }}
+                viewport={{ once: true }}
+                className="lg:w-[50%]">
                 <Image
                   ref={imageRef}
                   src={item.image}
@@ -85,7 +106,7 @@ const TextWithImage = ({ textwimage_items, padding_top }: any) => {
                   priority
                   className="object-cover xl:min-h-[47.461vw] mb-5 lg:mb-0" />
               
-            </div>
+            </motion.div>
             </div>
             <div
               style={{ maxWidth: `${imageWidth}px` }}

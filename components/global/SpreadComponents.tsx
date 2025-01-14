@@ -16,7 +16,7 @@ import MultipleText2 from "../sections/MultipleText2";
 import People from "../sections/People";
 import Timeline from "../sections/Timeline";
 import Banner2 from "../sections/Banner2";
-import Richtext from "../sections/Richtext";
+import Richtext from "../sections/richtext";
 import MapDescription from "../sections/MapDescription";
 
 export default function SpreadComponents({components}: {components: any}) {
@@ -103,7 +103,7 @@ export default function SpreadComponents({components}: {components: any}) {
                     text?: string;
                   }>;
                 }>;
-              }>
+              }>;
             },
             index: number
           ) => (

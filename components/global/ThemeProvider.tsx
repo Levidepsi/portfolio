@@ -112,6 +112,7 @@ export const ThemeProvider = ({
                             : "opacity-0 max-h-0 lg:max-h-none lg:opacity-0"
                         }`}>
                         {item.subMenu.map((sub_item: any, jindex: number) => {
+                          console.log(sub_item)
                           return (
                             <div key={jindex} className="flex Submenu_Item">
                               <span className="pt-[15px] text-[#30282A] lg:pt-[5px] text-[15px] lg:text-[20px] mt-[0px] mr-[10px] lg:mr-[15px] avenir_book">
@@ -121,8 +122,8 @@ export const ThemeProvider = ({
                                 onClick={() => setOpenMenu(false)}
                                 className="text-[25px] lg:text-[38px] block w-full py-[0px] text-[#30282A] tracking-[0.76px] leading-[50px] boing_thin"
                                 href={`${
-                                  item.page.slug.slug != null
-                                    ? `/${item.page.slug.slug}`
+                                  sub_item.page != null
+                                    ? `/${sub_item.page.slug.slug}`
                                     : sub_item.custom_links
                                       ? sub_item.custom_links
                                       : "/"

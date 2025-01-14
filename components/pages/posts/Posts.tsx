@@ -245,9 +245,9 @@ const jumpToPage = (page: any) => {
 
 const FirstPost = ({post, imageWidth, imageRef}: any) => {
   return (
-    <div className="">
-      <div className={`flex flex-col-reverse lg:flex-row`} >
-      <div className={`lg:w-[50%] px-[18px]`}>
+    <div className=" ">
+      <div className={`flex flex-col-reverse px-[18px] lg:flex-row`} >
+      <div className={`lg:w-[50%] `}>
         <div className={` lg:flex flex-col h-full justify-end`}>
         {post.title && <h1 className={`  text-[#30282A] text-[45px] mb-5 lg:text-[65px] tracking-[1.3px] lg:leading-[56px] lg:max-w-[480px]  boing_thin `}>{post.title}</h1>}
            {post.body &&

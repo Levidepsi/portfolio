@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {createContext, useContext, useEffect, useRef, useState} from "react";
+import { useWindowWide } from "../../hooks/ScreenSize";
 
 interface IThemeContext {
   initialLoaded: any;
@@ -48,6 +49,7 @@ export const ThemeProvider = ({
     setActiveItem(activeItem === index ? null : index);
   };
 
+  const desktop = useWindowWide(1024)
   return (
     <div>
       <div
@@ -64,7 +66,7 @@ export const ThemeProvider = ({
           </Link>
           <div className="x-button" onClick={() => setOpenMenu(false)}></div>
         </div>
-        <div className="mt-[45px] mx-5 lg:max-w-[47%] lg:w-full">
+        <div className="mt-[30px] mx-[18px] lg:max-w-[47%] lg:w-full">
           {navigation.header_menu &&
             navigation.header_menu.map(
               (
@@ -76,14 +78,15 @@ export const ThemeProvider = ({
                     onMouseEnter={() => hoverItem(index)}
                     onMouseLeave={() => setActiveItem(null)}
                     key={index}
-                    className={`relative dropdown_wrapper  ${activeItem == index ? "active" : ""}`}>
+                    className={`relative dropdown_wrapper border-b-[1px]  border-solid border-[#30282A]  ${activeItem == index ? "active" : ""}`}>
                     {item.subMenu ? (
-                      <button className="dropdown_nav pt-[20px] pb-[20px] items-center justify-between text-[30px] md:text-[65px] w-full text-left flex menu_item_parent  border-b-[1px] border-solid border-[#30282A] py-[0px] text-[#30282A] uppercase tracking-[1.3px] leading-[40px] boing_thin">
+                      <button className="dropdown_nav pt-[20px] pb-[20px] items-center justify-between text-[45px] md:text-[65px] w-full text-left flex menu_item_parent   py-[0px] text-[#30282A] uppercase tracking-[1.3px] leading-[40px] boing_thin">
                         {item.title}
                         <svg
+                          className="rotate-[90deg] lg:rotate-0"
                           xmlns="http://www.w3.org/2000/svg"
-                          width="14.619"
-                          height="24.746"
+                          width={`${desktop? "14.619" : "12px"}`}
+                          height={`${desktop ? "24.746" : "18px"}`}
                           viewBox="0 0 14.619 24.746">
                           <path
                             id="Icon_ionic-ios-arrow-forward"
@@ -99,7 +102,7 @@ export const ThemeProvider = ({
                     ) : (
                       <Link
                         onClick={() => setOpenMenu(false)}
-                        className="pt-[20px] pb-[20px] text-[30px] md:text-[65px] block w-auto menu_item_parent border-b-[1px] border-solid border-[#30282A] py-[0px] text-[#30282A] uppercase tracking-[1.3px] leading-[40px] boing_thin"
+                        className={`pt-[20px] pb-[20px] text-[45px] md:text-[65px] block w-auto menu_item_parent py-[0px] text-[#30282A] uppercase tracking-[1.3px] leading-[40px] boing_thin`}
                         href={`${item.page.slug.slug != null ? `/${item.page.slug.slug}` : "/"}`}>
                         {item.title}
                       </Link>
@@ -112,10 +115,9 @@ export const ThemeProvider = ({
                             : "opacity-0 max-h-0 lg:max-h-none lg:opacity-0"
                         }`}>
                         {item.subMenu.map((sub_item: any, jindex: number) => {
-                          console.log(sub_item)
                           return (
                             <div key={jindex} className="flex Submenu_Item">
-                              <span className="pt-[15px] text-[#30282A] lg:pt-[5px] text-[15px] lg:text-[20px] mt-[0px] mr-[10px] lg:mr-[15px] avenir_book">
+                              <span className="pt-[10px] text-[#30282A] lg:pt-[5px] text-[15px] lg:text-[20px] mt-[0px] mr-[10px] lg:mr-[15px] avenir_book">
                                 {jindex + 1}
                               </span>
                               <Link

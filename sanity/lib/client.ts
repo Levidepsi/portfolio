@@ -165,7 +165,10 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
       body,
       content_position,
       background,
-      color
+      color,
+      body_mobile1,
+      body_mobile2,
+      body_mobile3
     },
     profiles[]{
       "image": image.asset->url,

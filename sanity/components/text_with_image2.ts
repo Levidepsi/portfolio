@@ -34,6 +34,21 @@ export default defineType({
                       title: 'Body',
                       type: 'blockContent',
                   },
+                  {
+                        name: 'body_mobile1',
+                        title: 'Body Mobile 1',
+                        type: 'blockContent',
+                  },
+                  {
+                        name: 'body_mobile2',
+                        title: 'Body Mobile 2',
+                        type: 'blockContent',
+                  },
+                  {
+                         name: 'body_mobile3',
+                        title: 'Body Mobile 3',
+                        type: 'blockContent',
+                  },
                     {
                       name: 'content_position',
                       title: 'Content Position',

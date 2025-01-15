@@ -16,8 +16,8 @@ import MultipleText2 from "../sections/MultipleText2";
 import People from "../sections/People";
 import Timeline from "../sections/Timeline";
 import Banner2 from "../sections/Banner2";
-import Richtext from "../sections/richtext";
 import MapDescription from "../sections/MapDescription";
+import Richtext from "../sections/Richtext";
 
 export default function SpreadComponents({components}: {components: any}) {
   return (
@@ -104,6 +104,7 @@ export default function SpreadComponents({components}: {components: any}) {
                   }>;
                 }>;
               }>;
+              layout: string;
             },
             index: number
           ) => (
@@ -165,6 +166,8 @@ export default function SpreadComponents({components}: {components: any}) {
                       text_color={component.text_color}
                       title_max_width={component.title_max_width}
                       title_padding_bottom={component.title_padding_bottom}
+                      layout={component.layout}
+
                     />
                   ),
                   multiple_text2: (

@@ -34,6 +34,10 @@ const Banner = ({ image, description, max_width, content_position, video }: any)
         className={`banner_content ${content_position}`} style={{ maxWidth: `${max_width ? max_width : ""}px` }}>
         <PortableText value={description} />
       </motion.div>
+      <div className="arrow_down max-w-[35px] max-h-[35px] w-full h-full flex justify-center items-center absolute bottom-5 left-0 right-0 mx-auto rounded-[50px]  p-[5px] border-solid border-[1px] border-[#EFEBE5]relative">
+        <span className="text-[14px] avenir_book">|</span>
+      </div>
+      
     </div>
   );
 };

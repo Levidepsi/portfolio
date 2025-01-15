@@ -70,5 +70,18 @@ export default defineType({
             }
         ]
     }),
+     defineField({
+      title: 'Layout',
+      name: 'layout',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Accordion', value: 'accordion'},
+          { title: 'Slider', value: 'slider' },
+          
+        ], // <-- predefined values
+        layout: 'radio' // <-- defaults to 'dropdown'
+      }
+    }),
   ],
 })

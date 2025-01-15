@@ -33,7 +33,8 @@ const TextWithImage = ({ textwimage_items, padding_top }: any) => {
 
   const desktop = useWindowWide(1024)
 
-  
+
+ 
   
   return (
     <div style={{paddingTop: desktop ? `${padding_top}px` : `${padding_top + 20}px`}} className="px-5 pt-[50px] pb-5 lg:py-5">
@@ -78,11 +79,11 @@ const TextWithImage = ({ textwimage_items, padding_top }: any) => {
                 viewport={{ once: true }}
                 className={`lg:w-[50%] ${item.content_position == true ? "flex justify-end" : ""}`}>
               <div className={` lg:flex flex-col h-full ${item.body ? "justify-between" : "justify-end"}`}>
-              {item.title && <h1 className={`${item.body ? "mb-5" : ""}  text-[#30282A] text-[45px] mb-5 lg:text-[65px] tracking-[1.3px] lg:leading-[56px] lg:max-w-[480px]  boing_thin `}>{item.title}</h1>}
-                <div className="avenir_book [&>p]:text-[#30282A] lg:max-w-[450px] text-[15px] tracking-[0.3px] leading-[22px]"><PortableText value={item.body} /></div>
+              {item.title && <h1 className={`${item.body ? "mb-5" : ""}  text-[#30282A] hidden lg:block text-[45px] mb-5 lg:text-[65px] tracking-[1.3px] lg:leading-[56px] lg:max-w-[480px]  boing_thin `}>{item.title}</h1>}
+                <div className="avenir_book [&>p]:text-[#30282A] text-center lg:text-left lg:max-w-[450px] text-[15px] tracking-[0.3px] leading-[22px]"><PortableText value={item.body} /></div>
                 {item.body_bottom &&
                 <div
-                  className="avenir_book block lg:hidden pb-[47px] [&>p]:text-[#30282A] lg:max-w-[451px] text-[15px] tracking-[0.2px] leading-[22px]">
+                  className="avenir_book block  lg:hidden pb-[47px] [&>p]:text-[#30282A] lg:max-w-[451px] text-[15px] tracking-[0.2px] leading-[22px]">
                   <PortableText value={item.body_bottom} />
                 </div>}
             </div>  
@@ -97,6 +98,7 @@ const TextWithImage = ({ textwimage_items, padding_top }: any) => {
                 }}
                 viewport={{ once: true }}
                 className="lg:w-[50%]">
+                {item.title && <h1 className={`${item.body ? "mb-5" : ""}  text-[#30282A] lg:hidden text-[45px] leading-[45px] text-center mb-5 lg:text-[65px] tracking-[1.3px] lg:leading-[56px] lg:max-w-[480px]  boing_thin `}>{item.title}</h1>}
                 <Image
                   ref={imageRef}
                   src={item.image}

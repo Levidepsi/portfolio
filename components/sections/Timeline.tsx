@@ -11,14 +11,14 @@ const Timeline = ({ title, timeline_items, background }: any) => {
       {title && (
         <h1 className="text-[#30282A] text-center text-[40px] leading-[46px] lg:text-[65px] lg:leading-[56px] tracking-[1.3px] boing_thin mb-[45px] lg:mb-[60px] lg:max-w-[451px] lg:mx-[auto]">{title}</h1>
       )}
-      <div className="timeline-wrapper flex-row-reverse md:mr-[30px] flex md:flex-col md:flex-wrap md:relative md:justify-start md:gap-y-[25px]">
+      <div className="timeline-wrapper left-[50%] lg:left-0 flex-row-reverse md:mr-[30px] flex md:flex-col md:flex-wrap relative md:justify-start md:gap-y-[25px]">
         <div className="timeline-arrow">
           <div className="arrow"></div>
         </div>
-        <div className="timeline-items md:flex md:pr-[100px] lg:pr-[120px]">
+        <div className="timeline-items flex md:pr-[100px] lg:pr-[120px]">
             {timeline_items && timeline_items.map((item: any, index: number) => {
                 return (
-                <div className={`timeline-item w-[100%] min-h-[100px] justify-center flex gap-y-[10px] md:w-[16.66%] lg:w-[16.66%] md:items-center flex-col text-center lg:flex-col py-[17px]`} key={index}>
+                <div className={`timeline-item w-[250px] max-w-[205px] min-h-[100px] justify-center flex gap-y-[10px] md:w-[16.66%] lg:w-[16.66%] md:items-center flex-col text-center lg:flex-col py-[17px]`} key={index}>
                     <div className="timeline-item-content flex flex-col items-center gap-[10px]">
                       <div className="text-[13px] avenir_roman text-[#30282A] tracking-[1.56px] leading-[18px] lg:w-[100%]">
                           {item.title}

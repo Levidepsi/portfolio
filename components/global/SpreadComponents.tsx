@@ -17,7 +17,7 @@ import People from "../sections/People";
 import Timeline from "../sections/Timeline";
 import Banner2 from "../sections/Banner2";
 import MapDescription from "../sections/MapDescription";
-import Richtext from "../sections/Richtext";
+import Richtext from "../sections/richtext";
 
 export default function SpreadComponents({components}: {components: any}) {
   return (
@@ -167,7 +167,6 @@ export default function SpreadComponents({components}: {components: any}) {
                       title_max_width={component.title_max_width}
                       title_padding_bottom={component.title_padding_bottom}
                       layout={component.layout}
-
                     />
                   ),
                   multiple_text2: (

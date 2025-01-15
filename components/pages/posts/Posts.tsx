@@ -6,6 +6,8 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import TruncatedPortableText from "../../../hooks/TruncatedText";
 import {motion} from "framer-motion"
+import { useWindowWide } from "../../../hooks/ScreenSize";
+
 
 const Posts = ({ posts }: any) => {
 
@@ -32,6 +34,8 @@ const Posts = ({ posts }: any) => {
     };
   }, []);
 
+  const desktop = useWindowWide(1024)
+
   const [categories, setCategories] = useState("Categories")
   const [openCategories, setOpenCategories] = useState(false)
 
@@ -42,7 +46,7 @@ const Posts = ({ posts }: any) => {
   const [openlatest, setopenLatest] = useState(false)
 
  const [currentPage, setCurrentPage] = useState(1);
-const itemsPerPage = 6; // Number of items per page
+const itemsPerPage = desktop ? 6 : 3; // Number of items per page
 const [pageRange, setPageRange] = useState([1, 2, 3]);
 
 // Exclude the first item

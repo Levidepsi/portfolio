@@ -91,7 +91,7 @@ const MultipleText = ({ title, text_items, padding_top_bottom, background, text_
 
       {layout == "slider" && 
         <>
-        <div className={`hidden lg:block ${layout}`}>
+        <div className={`hidden lg:hidden ${layout}`}>
           {text_items && text_items.map((item: any, index: number) => {
       return (
         <motion.div

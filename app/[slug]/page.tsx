@@ -91,8 +91,12 @@ export async function generateStaticParams() {
   
   
  const pageslugs =  allslug.data.map((item: any) => {
-    return {
+    if (item.slug == "news-and-press") {
+      return null
+    } else {
+      return {
       slug: item.slug
+    }
     }
   })
 

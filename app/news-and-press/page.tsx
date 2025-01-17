@@ -64,3 +64,6 @@ export default async function PostsPage() {
     <Posts posts={postsData.data} />
   )
 }
+
+
+export const revalidate = 1;

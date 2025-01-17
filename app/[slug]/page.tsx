@@ -22,7 +22,6 @@ export async function generateMetadata(props: {
     cache: "no-store"
   },);
 
-  console.log(page)
 
 	const aspectRatio = 1.91; // The desired aspect ratio
 	let width = 1200; // Default width
@@ -90,6 +89,7 @@ export async function generateStaticParams() {
     },);
   
   
+  
  const pageslugs =  allslug.data.map((item: any) => {
     if (item.slug == "news-and-press") {
       return null
@@ -98,7 +98,7 @@ export async function generateStaticParams() {
       slug: item.slug
     }
     }
-  })
+ })
 
   return pageslugs
   }

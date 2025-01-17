@@ -253,6 +253,7 @@ export const COMPANIES_QUERY = groq`*[_type == "companies" && slug.current == $s
 export const POSTS_QUERY = groq`*[_type == "post"] | order(_createdAt asc){
   _type,
   title,
+  _createdAt,
   "slug": slug.current,
   "mainImage": mainImage.asset->url,
   body

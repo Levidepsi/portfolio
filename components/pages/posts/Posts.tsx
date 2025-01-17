@@ -42,24 +42,39 @@ const Posts = ({ posts }: any) => {
    const [sections, setSections] = useState("Sections")
   const [openSections, setOpenSections] = useState(false)
 
-   const [latest, setLatest] = useState("Latest")
+   const [latest, setLatest] = useState("latest")
   const [openlatest, setopenLatest] = useState(false)
 
  const [currentPage, setCurrentPage] = useState(1);
 const itemsPerPage = desktop ? 6 : 3; // Number of items per page
 const [pageRange, setPageRange] = useState([1, 2, 3]);
 
-// Exclude the first item
-const filteredPosts = posts.slice(1); // Remove the first item
+  const filteredPosts = posts.slice(1); // Remove the first item
 
-const totalPages = Math.ceil(filteredPosts.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredPosts.length / itemsPerPage);
 
-// Calculate items to display based on the current page
-const startIndex = (currentPage - 1) * itemsPerPage;
-const endIndex = startIndex + itemsPerPage;
-const postsData = filteredPosts.slice(startIndex, endIndex);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
 
-// Handle "Next" button click
+  let sortedPosts: any = []
+
+  if (latest == "latest") {
+    const sorted = [...filteredPosts].sort(
+      (a, b) => new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime()
+    )
+    sortedPosts = sorted
+    
+  } else if (latest == "oldest") {
+     const sorted = [...filteredPosts].sort(
+      (a, b) => new Date(a._createdAt).getTime() - new Date(b._createdAt).getTime()
+    )
+    sortedPosts = sorted
+
+  }
+
+
+  const postsData = sortedPosts.slice(startIndex, endIndex);
+
 const nextPage = () => {
   if (currentPage < totalPages) {
     setCurrentPage((prevPage) => {
@@ -180,7 +195,7 @@ const jumpToPage = (page: any) => {
         </div>
       </div> 
       <div className="relative">
-        <button className="text-[15px] tracking-[0.15px] leading-[22pxx]  text-[#30282A] flex items-center gap-x-[5px] avenir_book" onClick={() => setopenLatest(!openlatest)}>
+        <button className="text-[15px] tracking-[0.15px] leading-[22pxx] capitalize text-[#30282A] flex items-center gap-x-[5px] avenir_book" onClick={() => setopenLatest(!openlatest)}>
           {latest}
           <div className="button_arrow pt-[3px]">
             <svg
@@ -198,17 +213,22 @@ const jumpToPage = (page: any) => {
         </button>
         <div className={`flex absolute transition-all duration-[0.3s] ${openlatest ? "visible opacity-[1] top-[20px]" : "top-[-10px] opacity-0 invisible"} flex-col bg-[#30282A] max-w-[100px]`}>
           <button
+            onClick={() => {
+              setLatest("latest")
+              setopenLatest(false)
+            }}
             className="text-[15px] tracking-[0.15px] leading-[22pxx] avenir_book hover:bg-[#EFEBE5] border-solid border-[1px] border-[#30282A] hover:text-[#30282A] text-[#EFEBE5] p-[5px]">
-            {latest}
+            Latest
           </button>
           <button
+            onClick={() => {
+              setLatest("oldest")
+              setopenLatest(false)
+            }}
             className="text-[15px] tracking-[0.15px] leading-[22pxx] avenir_book hover:bg-[#EFEBE5] border-solid border-[1px] border-[#30282A] hover:text-[#30282A] text-[#EFEBE5]">
-            {latest}
+            Oldest
           </button>
-          <button
-            className="text-[15px] tracking-[0.15px] leading-[22pxx] avenir_book hover:bg-[#EFEBE5] border-solid border-[1px] border-[#30282A] hover:text-[#30282A] text-[#EFEBE5]">
-            {latest}
-          </button>
+         
         
         </div>
       </div>
@@ -217,12 +237,9 @@ const jumpToPage = (page: any) => {
     {/* all posts */}
     <div className="py-[78px] px-[18px] grid gap-x-[24px] gap-y-[30px] grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {postsData && postsData.map((post: any, index: number) => {
-      if (index != 0) {
-        
         return (
           <AllPostsNotFirstItem post={post} key={index} />
         )
-      }
     })}
     </div>
 

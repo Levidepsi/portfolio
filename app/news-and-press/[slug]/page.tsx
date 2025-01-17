@@ -98,5 +98,3 @@ export default async function Page(props: {
 }
 
 
-
-export const revalidate = 1;

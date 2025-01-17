@@ -84,23 +84,20 @@ export default async function Page(props: {
 
 
 export async function generateStaticParams() {
-	  const allslug = await loadQuery<SanityDocument>(ALLPAGE_QUERY, {},{
-    cache: "no-store"
-    },);
-  
-  
-  
- const pageslugs =  allslug.data.map((item: any) => {
-    if (item.slug == "news-and-press") {
-      return null
-    } else {
-      return {
-      slug: item.slug
-    }
-    }
- })
+  const allslug = await loadQuery<SanityDocument>(ALLPAGE_QUERY, {}, {
+    cache: "no-store",
+  });
 
-  return pageslugs
-  }
+  // Filter out "news-and-press" and map the remaining slugs
+  const pageslugs = allslug.data
+    .filter((item: any) => item.slug !== "news-and-press")
+    .map((item: any) => ({
+      slug: item.slug,
+    }));
+  
+  console.log(pageslugs)
+
+  return pageslugs;
+}
 
 export const revalidate = 1;

@@ -256,7 +256,9 @@ export const POSTS_QUERY = groq`*[_type == "post"] | order(_createdAt asc){
   _createdAt,
   "slug": slug.current,
   "mainImage": mainImage.asset->url,
-  body
+  body,
+  category,
+  section
 }`;
 
 export const POSTS_SLUG_QUERY = groq`*[_type == "post" && defined(slug.current)][]{

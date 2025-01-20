@@ -95,7 +95,6 @@ export async function generateStaticParams() {
       slug: item.slug,
     }));
   
-  console.log(pageslugs)
 
   return pageslugs;
 }

@@ -37,9 +37,13 @@ const Posts = ({ posts }: any) => {
   const desktop = useWindowWide(1024)
 
   const [categories, setCategories] = useState("Categories")
+  const [categoryFilter, setCategoryFilter] = useState("")
+
   const [openCategories, setOpenCategories] = useState(false)
 
-   const [sections, setSections] = useState("Sections")
+  const [sections, setSections] = useState("Sections")
+  const [sectionFilter, setSectionFilter] = useState("")
+  
   const [openSections, setOpenSections] = useState(false)
 
    const [latest, setLatest] = useState("latest")
@@ -56,24 +60,25 @@ const [pageRange, setPageRange] = useState([1, 2, 3]);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
-  let sortedPosts: any = []
+  const sortedAndFilteredPosts = filteredPosts
+     .filter((post: any) => {
+    const matchesCategory = !categoryFilter || post.category === categoryFilter;
+    const matchesSection = !sectionFilter || post.section === sectionFilter;
+    return matchesCategory && matchesSection;
+  })
+    .sort((a: any, b: any) => {
+      // Sorting logic
+      if (latest === "latest") {
+        return new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime();
+      } else if (latest === "oldest") {
+        return new Date(a._createdAt).getTime() - new Date(b._createdAt).getTime();
+      }
+      return 0; // Default: no sorting
+    });
 
-  if (latest == "latest") {
-    const sorted = [...filteredPosts].sort(
-      (a, b) => new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime()
-    )
-    sortedPosts = sorted
-    
-  } else if (latest == "oldest") {
-     const sorted = [...filteredPosts].sort(
-      (a, b) => new Date(a._createdAt).getTime() - new Date(b._createdAt).getTime()
-    )
-    sortedPosts = sorted
+  const postsData = sortedAndFilteredPosts.slice(startIndex, endIndex);
 
-  }
-
-
-  const postsData = sortedPosts.slice(startIndex, endIndex);
+console.log(postsData)
 
 const nextPage = () => {
   if (currentPage < totalPages) {
@@ -110,9 +115,6 @@ const jumpToPage = (page: any) => {
   }
   };
   
-  
-
-  
   return <div className="py-[100px] lg:py-[47px]">
 
     {/* item 0 */}
@@ -146,17 +148,25 @@ const jumpToPage = (page: any) => {
         </button>
         <div className={`flex absolute transition-all duration-[0.3s] ${openCategories ? "visible opacity-[1] top-[20px]" : "top-[-10px] opacity-0 invisible"} flex-col bg-[#30282A] max-w-[100px]`}>
           <button
+            onClick={() => {
+              setCategories("Category 1")
+              setCategoryFilter("category1")
+              setOpenCategories(false)
+
+            }}
             className="text-[15px] tracking-[0.15px] leading-[22pxx] avenir_book hover:bg-[#EFEBE5] border-solid border-[1px] border-[#30282A] hover:text-[#30282A] text-[#EFEBE5] p-[5px]">
-            {categories}
+            Category 1
           </button>
           <button
+            onClick={() => {
+              setCategories("Category 2")
+              setCategoryFilter("category2")
+              setOpenCategories(false)
+            }}
             className="text-[15px] tracking-[0.15px] leading-[22pxx] avenir_book hover:bg-[#EFEBE5] border-solid border-[1px] border-[#30282A] hover:text-[#30282A] text-[#EFEBE5]">
-            {categories}
+            Category 2
           </button>
-          <button
-            className="text-[15px] tracking-[0.15px] leading-[22pxx] avenir_book hover:bg-[#EFEBE5] border-solid border-[1px] border-[#30282A] hover:text-[#30282A] text-[#EFEBE5]">
-            {categories}
-          </button>
+         
         
         </div>
       </div> 
@@ -180,17 +190,24 @@ const jumpToPage = (page: any) => {
         </button>
         <div className={`flex absolute transition-all duration-[0.3s] ${openSections ? "visible opacity-[1] top-[20px]" : "top-[-10px] opacity-0 invisible"} flex-col bg-[#30282A] max-w-[100px]`}>
           <button
+            onClick={() => {
+              setOpenSections(false)
+              setSectionFilter("section1")
+              setSections("Section 1")
+            }}
             className="text-[15px] tracking-[0.15px] leading-[22pxx] avenir_book hover:bg-[#EFEBE5] border-solid border-[1px] border-[#30282A] hover:text-[#30282A] text-[#EFEBE5] p-[5px]">
-            {sections}
+            Section 1
           </button>
           <button
+             onClick={() => {
+              setOpenSections(false)
+              setSectionFilter("section2")
+              setSections("Section 2")
+            }}
             className="text-[15px] tracking-[0.15px] leading-[22pxx] avenir_book hover:bg-[#EFEBE5] border-solid border-[1px] border-[#30282A] hover:text-[#30282A] text-[#EFEBE5]">
-            {sections}
+            Section 2
           </button>
-          <button
-            className="text-[15px] tracking-[0.15px] leading-[22pxx] avenir_book hover:bg-[#EFEBE5] border-solid border-[1px] border-[#30282A] hover:text-[#30282A] text-[#EFEBE5]">
-            {sections}
-          </button>
+         
         
         </div>
       </div> 

@@ -65,6 +65,33 @@ export default defineType({
       title: 'Body 2',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'category',
+      title: 'category',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Category 1', value: 'category1'},
+          { title: 'Category 2', value: 'category2' },
+        ], // <-- predefined values
+        layout: 'radio' // <-- defaults to 'dropdown'
+      },
+      initialValue: "category1"
+    }),
+
+    defineField({
+      name: 'section',
+      title: 'section',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'section 1', value: 'section1'},
+          { title: 'section 2', value: 'section2' },
+        ], // <-- predefined values
+        layout: 'radio' // <-- defaults to 'dropdown'
+      },
+      initialValue: "section1"
+    }),
 
      defineField({
         name: "related_post",

@@ -22,7 +22,6 @@ export async function generateMetadata(props: {
     cache: "no-store"
   },);
 
-
 	const aspectRatio = 1.91; // The desired aspect ratio
 	let width = 1200; // Default width
 

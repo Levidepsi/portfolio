@@ -10,7 +10,11 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
+<<<<<<< HEAD
      defineField({
+=======
+    defineField({
+>>>>>>> 95815d94db79ab108d16645d1fa3477a73abad45
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -21,6 +25,7 @@ export default defineType({
     }),
 
     defineField({
+<<<<<<< HEAD
       name: 'author',
       title: 'Author',
       type: 'string',
@@ -32,6 +37,8 @@ export default defineType({
     }),
    
     defineField({
+=======
+>>>>>>> 95815d94db79ab108d16645d1fa3477a73abad45
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
@@ -46,6 +53,7 @@ export default defineType({
         }
       ]
     }),
+<<<<<<< HEAD
 
     defineField({
       name: 'image2',
@@ -55,11 +63,20 @@ export default defineType({
     }),
  
   
+=======
+ 
+    defineField({
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
+    }),
+>>>>>>> 95815d94db79ab108d16645d1fa3477a73abad45
     defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
     }),
+<<<<<<< HEAD
     defineField({
       name: 'body2',
       title: 'Body 2',
@@ -113,6 +130,8 @@ export default defineType({
         ]
      }),
     
+=======
+>>>>>>> 95815d94db79ab108d16645d1fa3477a73abad45
   ],
 
   preview: {

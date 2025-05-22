@@ -25,5 +25,10 @@ export default defineType({
       title: "Description",
       type: "blockContent",
     }),
+    defineField({
+      name: "maxWidth",
+      title: "Max Width",
+      type: "number",
+    }),
   ],
 });

@@ -1,47 +1,47 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from "sanity";
 
 export default defineType({
-  name: 'multiple_text',
-  title: 'Multiple Text',
-  type: 'object',
+  name: "multiple_text",
+  title: "Multiple Text",
+  type: "object",
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     }),
+    
     defineField({
-      name: 'title_max_width',
-      title: 'Title Max Width',
-      type: 'number',
-    }),
-    defineField({
-      name: 'title_padding_bottom',
-      title: 'Title Padding Bottom',
-      type: 'number',
-    }),
-     defineField({
-      name: 'background',
-      title: 'Background',
-      type: 'string',
-    }),
-    defineField({
-      name: 'text_color',
-      title: 'Text Color',
-      type: 'string',
-    }),
-     defineField({
-      name: 'padding_top_bottom',
-      title: 'Padding Top Bottom',
-      type: 'number',
+      name: "sub_title",
+      title: "Sub Title",
+      type: "string",
     }),
 
+
     defineField({
-        name: "text_items",
-        title: "Text Items",
-        type: 'array',
+      name: "left_description",
+      title: "Left Description",
+      type: "blockContent",
+      description: "this will be on left side ",
+
+    }),
+   
+    defineField({
+      name: "body",
+      title: "Body",
+      type: "blockContent",
+      description: "this will be on right side ",
+
+    }),
+
+
+    defineField({
+        name: "texts_accordions",
+        title: "Text Accordions",
+       type: 'array',
         of: [
-            {
+          {
+                name: "accordions",
                 type: "object",
                 fields: [
                     {
@@ -55,36 +55,63 @@ export default defineType({
                       title: 'Body',
                       type: 'blockContent',
                   },
-                    {
-                      name: 'apply_now',
-                      title: 'Apply Now',
-                      type: 'string',
-                      initialValue: "Apply Now"
+                ],
+                preview: {
+                  select: {
+                    title: "title", // Get the 'title' from the referenced 'projects' document
                   },
-                    {
-                      name: 'apply_now_link',
-                      title: 'Apply Now Link',
-                      type: 'string',
-                      initialValue: "/contact-us"
-                    },
-                    
-                   
-                ]
-            }
+                  prepare({ title,  }) {
+                    return {
+                      title: title,
+                    };
+                  },
+                },
+          },
         ]
     }),
+
+
     defineField({
-      title: 'Layout',
-      name: 'layout',
-      type: 'string',
+      name: "backgroundColor",
+      title: "Background Color",
+      type: "string",
       options: {
         list: [
-          {title: 'Accordion', value: 'accordion'},
-          { title: 'Slider', value: 'slider' },
-          
+          { title: "White", value: "white" },
+          { title: "Gray", value: "gray" },
         ], // <-- predefined values
-        layout: 'radio' // <-- defaults to 'dropdown'
-      }
+        layout: "radio", // <-- defaults to 'dropdown'
+      },
     }),
+   
+    defineField({
+      name: "paddingTop",
+      title: "Padding Top",
+      type: "number",
+    }),
+
+    defineField({
+      name: "paddingBottom",
+      title: "Padding Bottom",
+      type: "number",
+    }),
+    defineField({
+      name: "descriptions_max_width",
+      title: "Description Max Width",
+      type: "number",
+    }),
+
+    
   ],
-})
+  preview: {
+    select: {
+      title: "title",
+    },
+    prepare(selection) {
+      const { title,  } = selection;
+      return {
+        title: title || "Multiple Text Block",
+      };
+    },
+  },
+});

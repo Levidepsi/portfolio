@@ -24,16 +24,21 @@ export default defineType({
         of: [
               {
                 type: "object",
-                fields: [
+            fields: [
                     {
-                    name: 'link',
-                    title: 'link',
-                    type: 'string',
+                      name: 'title',
+                      title: 'Title',
+                      type: 'string',
                     },
                     {
-                      name: "url",
-                      title: "url",
-                      type: "string"
+                      name: 'link',
+                      title: 'link',
+                      type: 'string',
+                    },
+                    {
+                      name: 'image',
+                      title: 'image',
+                      type: 'image',
                     },
                     {
                       name: 'body',
@@ -46,4 +51,15 @@ export default defineType({
         ]
     }),
   ],
+    preview: {
+    select: {
+      title: "title",
+    },
+    prepare(selection) {
+      const { title,  } = selection;
+      return {
+        title: title ||  "Slider",
+      };
+    },
+  },
 })

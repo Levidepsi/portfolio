@@ -1,78 +1,145 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from "sanity";
 
 export default defineType({
-  name: 'text_with_image',
-  title: 'Text With Image',
-  type: 'object',
+  name: "text_with_image",
+  title: "Text With Image",
+  type: "object",
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "background_color",
+      title: "Background Color",
+      type: "string",
     }),
-    defineField({
-      name: 'padding_top',
-      title: 'Padding Top',
-      type: 'number',
-    }),
-    
 
     defineField({
-        name: "textwimage_items",
-        title: "Text W Image Items",
-        type: 'array',
+      name: "layout",
+      title: "Layout",
+      type: "string",
+      options: {
+        list: [
+          { title: "Multiple Images", value: "multiple_images" },
+          { title: "Single Image", value: "single_image" },
+        ],
+        layout: "dropdown"
+      }
+    }),
+
+    defineField({
+      name: "title",
+      title: "title",
+      type: "string",
+    }),
+    defineField({
+      name: "sub_title",
+      title: "Sub title",
+      type: "string",
+    }),
+    defineField({
+      name: "body",
+      title: "Body",
+      type: "blockContent",
+    }),
+    defineField({
+      name: "image",
+      title: "Image",
+      type: "image",
+       hidden: ({parent}) => parent?.layout != "single_image"
+
+    }),
+
+    defineField({
+      name: "content_position",
+      title: "Content Position",
+      type: "string",
+      options: {
+        list: [
+          { title: "Top", value: "top" },
+          { title: "Bottom", value: "bottom" },
+        ],
+        layout: "radio"
+      }
+    }),
+
+
+     defineField({
+        name: "slideshow_images",
+        title: "Slide Show Images",
+       type: 'array',
+       hidden: ({parent}) => parent?.layout != "multiple_images",
         of: [
-            {
+          {
+                name: "slides",
                 type: "object",
                 fields: [
+                    
                     {
-                      name: "image",
-                      title: "Image",
-                      type: "image"
+                      name: 'image',
+                      title: 'Image',
+                      type: 'image',
                     },
-                    {
-											name: 'title',
-											title: 'Title',
-											type: 'string',
-                    },
-                    {
-                      name: 'body',
-                      title: 'Body',
-                      type: 'blockContent',
+                   
+                ],
+                preview: {
+                  select: {
+                    title: "title", // Get the 'title' from the referenced 'projects' document
+                    media: "image", // Optional: Get the 'image' if available
                   },
-                    {
-                        name: 'body_bottom',
-                        title: 'Body Bottom',
-                        type: 'blockContent',
+                  prepare({ title, media }) {
+                    return {
+                      title: title,
+                      media: media || undefined, // Use image if available
+                    };
                   },
-                    {
-                        name: 'body_bottom_max_width',
-                        title: 'Body Bottom Max Width',
-                        type: 'number',
-                    },
-                    {
-                      name: 'content_position',
-                      title: 'Content Position',
-                      type: 'boolean',
-                      description: "If true image on left"
-                    }
-                ]
+                },
             }
         ]
     }),
-
+    
     defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      name: "multipleText",
+      title: "Multiple Text",
+      type: 'array',
+        of: [
+          {
+                name: "texts",
+                type: "object",
+                fields: [
+                    
+                  {
+                    name: "body",
+                    title: "Body",
+                    type: "blockContent",
+                  },
+                  
+                ],
+                preview: {
+                  select: {
+                    title: "Multiple Text", // Get the 'title' from the referenced 'projects' document
+                  },
+                  prepare({ title  }) {
+                    return {
+                      title: title,
+                    };
+                  },
+                },
+            }
+        ]
     }),
+    
   ],
 
   preview: {
     select: {
-      title: 'title',
-
+      title: "title",
+      sub_title: "sub_title",
+      media: "image",
     },
-   
+    prepare(selection) {
+      const { title, media, sub_title } = selection;
+      return {
+        title: title || sub_title ||  "Text With Image Block",
+        media: media || undefined,
+      };
+    },
   },
-})
+});

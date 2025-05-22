@@ -1,0 +1,87 @@
+.quote-container {
+  font-family: "F37 Caslon Trial, Regular Italic";
+  font-size: 45px;
+  line-height: 50px;
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #181818;
+}
+
+.richtext-container h2 {
+  font-size: 35px;
+  line-height: 41px;
+  font-family: "F37 Caslon Trial, Regular";
+  letter-spacing: 0;
+  margin-bottom: 25px;
+  color: #181818;
+}
+
+.body-container {
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: 0;
+  font-family: "Neue Haas Grotesk Text Pro";
+}
+
+.body-container p {
+  margin-bottom: 15px;
+  color: #181818;
+}
+
+.body-container p:last-child {
+  margin-bottom: 0;
+}
+
+.richtext-container .button {
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: 0;
+  font-family: "Neue Haas Grotesk Text Pro";
+  font-style: italic;
+  display: inline-block;
+  margin-top: 30px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  color: #181818;
+}
+
+.richtext-container .button svg {
+  width: 16px;
+  height: auto;
+}
+
+@media (min-width: 990px) {
+  .quote-container {
+    text-align: left;
+    max-width: 378px;
+    margin-bottom: 0;
+  }
+
+  .quote-with-richtext--section {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: end;
+  }
+
+  .richtext-container {
+    max-width: 60%;
+  }
+
+  .richtext-container h2 {
+    font-size: 40px;
+    line-height: 46px;
+    margin-bottom: 40px;
+  }
+
+  .richtext-container .button {
+    margin-top: 45px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .richtext-container .button:hover {
+    column-gap: 50px;
+  }
+}

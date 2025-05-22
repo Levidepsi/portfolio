@@ -1,0 +1,46 @@
+.image-block-content p {
+  font-size: 14px;
+  line-height: 18px;
+  color: #000;
+}
+/* .button_url::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: #000;
+  opacity: 0;
+  transition: 0.7s all;
+} */
+
+/* .button_url:hover:after {
+  width: 100%;
+  opacity: 0.7;
+} */
+
+.button_url::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #0D988C;
+  transition: transform 0.3s ease-out;
+  display: block;
+}
+
+.button_url:hover:after{
+  transform-origin: bottom center;
+  transform: scaleX(1);
+}
+
+@media (min-width: 1024px) {
+  .image-block-content {
+    font-size: 0.911vw;
+  line-height: 1.172vw;
+  }
+}

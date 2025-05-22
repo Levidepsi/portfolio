@@ -1,98 +1,245 @@
-"use client";
+"use client"
 
-import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import "./header.css";
+import { HeaderMenuItem, HeaderSubMenuItem, HeaderValues, PageObject } from "@/types/header";
 import Link from "next/link";
-import {usePathname} from "next/navigation";
-import {useEffect, useState} from "react";
-import {GlobalContext} from "../global/ThemeProvider";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 
-const Header = ({navigation}: any) => {
-  const {openMenu, setOpenMenu} = GlobalContext();
+const Header = ({ navigation }: { navigation: HeaderValues }) => {
+  const homepage = "/"
+  const pathname = usePathname()
+  const [openMenuMobile, setOpenMenuMobile] = useState(false)
+  const [openSubMenu, setOpenSubMenu] = useState<number | null>(null)
 
-  const url = usePathname();
-  const isAdmin = url?.includes("/admin") ? true : false;
-  const pathname = usePathname();
+  
+  const handleSubMenu = (index: number) => {
+    setOpenSubMenu(openSubMenu === index ? null : index)
+  }
 
+  useEffect(() => {
+    if (openMenuMobile == true) {
+      document.body.classList.add("overflow-hidden")
+    } else {
+      document.body.classList.remove("overflow-hidden")
+
+    }
+  }, [openMenuMobile])
+
+  if (pathname.includes("/admin")) {
+    return null
+  }
+
+    
   return (
-    <div className="">
-      {pathname.includes("/admin") ? (
-        ""
-      ) : (
-        <>
-          <div className="header_wrap justify-between absolute top-0 left-0 z-[999] pt-[20px] w-full  transition-all duration-[0.5s] h-auto px-[20px] flex">
-            <Link
-              href={"/"}
-              className="header_logo  max-w-[130px] md:max-w-[150px] w-full">
-              <Image
-                src={navigation.header_logo}
-                alt="Navigation"
-                width={500}
-                height={500}
-                className="h-auto w-full firstimage max-w-[130px] md:max-w-[150px] "
-              />
-            </Link>
-            {url == "/" ? (
-              <>
-                <div className="lg:w-[90%]">
-                  <div className="hidden lg:block">
-                    <ul className=" text-right pr-[40px]">
-                      {navigation.header_menu &&
-                        navigation.header_menu.map(
-                          (
-                            item: {
-                              title: string;
-                              page: any;
-                              subMenu: Array<Object>;
-                            },
-                            index: number
-                          ) => {
-                            return (
-                              <li
-                                className="list-none inline-block ml-[20px]
-                                 mr-[20px]	"
-                                key={index}>
-                                {item.subMenu ? (
-                                  <button className=" text-[#30282A] uppercase text-[14px] avenir_book">
-                                    {item.title}
-                                  </button>
-                                ) : (
-                                  <Link
-                                    className=" text-[#30282A] uppercase text-[14px] avenir_book"
-                                    href={`${item.page.slug.slug != null ? `/${item.page.slug.slug}` : "/"}`}>
-                                    {item.title}
-                                  </Link>
-                                )}
-                              </li>
-                            );
-                          }
-                        )}
-                    </ul>
-                  </div>
-                  <div
-                    className={` block absolute right-5 cursor-pointer top-[25px]  ml-5 lg:ml-0 `}
-                    onClick={() => setOpenMenu(true)}>
-                    <div className={`bar1 ${openMenu ? "active" : ""} `}></div>
-                    <div className={`bar2 ${openMenu ? "active" : ""} `}></div>
-                    <div className={`bar3 ${openMenu ? "active" : ""} `}></div>
-                  </div>
-                </div>
-              </>
-            ) : (
-              <>
-                <div
-                  className={` block absolute right-5 cursor-pointer  ml-5 lg:ml-0 `}
-                  onClick={() => setOpenMenu(true)}>
-                  <div className={`bar1 ${openMenu ? "active" : ""} `}></div>
-                  <div className={`bar2 ${openMenu ? "active" : ""} `}></div>
-                  <div className={`bar3 ${openMenu ? "active" : ""} `}></div>
-                </div>
-              </>
-            )}
-          </div>
-        </>
-      )}
-    </div>
-  );
-};
+    <header className={`header-container flex justify-between lg:justify-center flex-row lg:flex-col bg-white w-full  items-center gap-x-5 px-[14px] lg:px-[56px] py-[20px] lg:py-[25.25px] ${openMenuMobile == true ? "active" : ""} fixed   top-0 left-0 z-[11]`}>
+      {navigation != null && navigation.header_logo ?
+        <Link href={"/"} className={``}>
+          <Image src={navigation.header_logo} alt={navigation.title} width={500} height={500} className="w-[140px] h-auto object-cover lg:mb-[25px]" />
+        </Link>
+        : 
+        <Link href={"/"} className={`logo  ${openMenuMobile == true ? "active" : ""} `}>
+          Ocean And Sea
+        </Link>
+      }
 
+      <div className="Desktop_Menu hidden lg:flex justify-center">
+        <div className="Menu_Wrapper w-full justify-center flex gap-x-[50px]">
+          {navigation?.header_menu.map((item: HeaderMenuItem, index: number) => {
+             const titleSlug = item.title.replace(/\s+/g, '-').toLowerCase();
+
+            return (
+              <div
+                className="menu_Link relative"
+                key={index}
+                onMouseEnter={() => setOpenSubMenu(index)}
+                onMouseLeave={() => setOpenSubMenu(null)}
+              >
+                {item.subMenu ? (
+                  <button
+                    type="button"
+                    className={`text-[14px]  menu_item relative pb-[5px] leading-[18px] aktiv_regular text-[#0D988C] ${
+                      openSubMenu === index ? "active" : ""
+                    }`}
+                  >
+                    {item.title}
+                  </button>
+                ) : (
+                  <Link
+                    href={`/${item.page.slug.slug}`}
+                    className="text-[14px] menu_item aktiv_regular relative pb-[5px] leading-[18px] text-[#0D988C]"
+                  >
+                    {item.title}
+                  </Link>
+                )}
+
+                {item.subMenu && (
+                  <div
+                    className={`subMenuItems-Wrapper  pt-[15px] px-[15px] z-20 absolute bg-white left-[-15px] mobile flex flex-col ${
+                      openSubMenu === index ? "active" : ""
+                    }`}
+                  >
+                    {item.subMenu.map((sub: HeaderSubMenuItem, subIndex: number) => (
+                      <Link
+                        onClick={() => {
+                          setOpenMenuMobile(false);
+                          setOpenSubMenu(null);
+                        }}
+                        key={subIndex}
+                        href={`/${titleSlug}/${sub.page ? `${sub.page.slug.slug}` : "/"}`}
+                        className="text-[#0D988C] aktiv_regular text-[14px] lg:text-[14px] pb-[10px] leading-[18px] lg:leading-[18px] subMenu-Item w-max"
+                      >
+                        {sub.title}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+            )
+          })}
+        </div>
+      </div>
+
+      <div className="Burger relative lg:hidden">
+        <div onClick={() => setOpenMenuMobile(true)} className={`mobile_icons open ${openMenuMobile ? "hide" : "show"}`}><BurgerIcon /></div>
+        <div onClick={() => setOpenMenuMobile(false)} className={`mobile_icons close ${openMenuMobile ? "show" : "hide"}`}><CloseIcon /></div>
+      </div>
+
+      <div className={`Mobile_Header w-full flex justify-center ${openMenuMobile ? "show" : ""} bg-white pb-[250px] absolute top-[55px] left-0  lg:hidden`}>
+          <MobileMenu setOpenMenuMobile={setOpenMenuMobile} setOpenSubMenu={setOpenSubMenu} openSubMenu={openSubMenu} menu={navigation.header_menu} path={pathname} homepage={homepage} />
+      </div>
+
+    </header>
+  );
+}
+
+
+const MobileMenu = (
+  { menu,
+    path,
+    homepage,
+    setOpenMenuMobile,
+    openSubMenu ,
+    setOpenSubMenu
+  }
+    :
+  
+    {
+      menu: HeaderMenuItem[];
+      path: string;
+      openSubMenu: any;
+      homepage: string;
+      setOpenMenuMobile:
+      React.Dispatch<React.SetStateAction<boolean>>
+      setOpenSubMenu: any
+    }) => {
+  return (
+    <div className="flex w-full mobile_header_wrapper pt-[30px] text-center justify-center flex-col gap-y-5">
+      {menu.map((
+        item: HeaderMenuItem,
+        index: number
+      ) => {
+        const titleSlug = item.title.replace(/\s+/g, '-').toLowerCase();
+          return (
+            <li className={`menu-item ${path.includes(item.page.slug.slug) ? "active": "not-active"}  list-none`} key={index}>
+              {item.subMenu ? (
+                <button
+                    onClick={() =>
+                      setOpenSubMenu(openSubMenu === index ? null : index)
+                    }
+                    type="button"
+                    className={`text-[14px] cursor-pointer menu_item relative pb-[5px] leading-[18px] aktiv_regular text-[#0D988C] ${
+                      openSubMenu === index ? "active" : ""
+                    }`}
+                  >
+                    {item.title}
+                  </button>
+                ) : (
+                  <Link
+                    onClick={() => setOpenMenuMobile(false)}
+                    className={`text-[#0D988C] text-[16px]  leading-[21px] aktiv_regular`}
+                    href={`/${item.page.slug.slug}`}>{item.title}</Link>
+                    )}
+              {/* <Link
+                className={`text-[#0D988C] text-[16px]  leading-[21px] aktiv_regular`}
+                href={`/${item.page.slug.slug}`}>{item.title}</Link> */}
+              {item.subMenu && (
+                  <div
+                    className={`subMenuItems-Wrapper mobile  px-[15px] z-20 justify-center bg-white left-[-15px] mobile flex flex-col ${
+                      openSubMenu === index ? "active pt-[15px]" : ""
+                    }`}
+                  >
+                    {item.subMenu.map((sub: HeaderSubMenuItem, subIndex: number) => (
+                      <Link
+                        onClick={() => {
+                          setOpenMenuMobile(false);
+                          // setOpenSubMenu(null);
+                        }}
+                        key={subIndex}
+                        href={`/${titleSlug}/${sub.page ? `${sub.page.slug.slug}` : "/"}`}
+                        className="text-[#0D988C] text-center aktiv_regular text-[14px] mx-auto lg:text-[14px] pb-[10px] leading-[18px] lg:leading-[18px] subMenu-Item w-max"
+                      >
+                        {sub.title}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+            </li>
+          )
+      })}
+    </div>
+  ) 
+}
+
+const BurgerIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="9" viewBox="0 0 22 9">
+      <g id="Group_85" data-name="Group 85" transform="translate(-342 -30)">
+        <line id="Line_46" data-name="Line 46" x2="21" transform="translate(342.5 30.5)" fill="none" stroke="#07988c" strokeLinecap="round" strokeWidth="1"/>
+        <line id="Line_47" data-name="Line 47" x2="21" transform="translate(342.5 34.5)" fill="none" stroke="#07988c" strokeLinecap="round" strokeWidth="1"/>
+        <line id="Line_48" data-name="Line 48" x2="21" transform="translate(342.5 38.5)" fill="none" stroke="#07988c" strokeLinecap="round" strokeWidth="1"/>
+      </g>
+    </svg>
+  )
+}
+
+const CloseIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 24 24" fill="none">
+      <path d="M7 17L16.8995 7.10051" stroke="#0D988C" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M7 7.00001L16.8995 16.8995" stroke="#0D988C" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+
+const ArrowSvg = () => {
+  return (
+    <svg
+      className="md:mt-[6px] ml-[20px] rotate-[90deg] md:rotate-0 transition-all duration-100"
+      width={"30px"}
+      height={"30px"}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <g
+        id="SVGRepo_bgCarrier"
+        strokeWidth="0">
+      </g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        strokeLinecap="round"
+        strokeLinejoin="round">
+      </g>
+      <g
+        id="SVGRepo_iconCarrier">
+        <path
+          d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z"
+          fill="#A64D24">
+        </path>
+      </g>
+    </svg>
+  )
+}
 export default Header;

@@ -1,4 +1,5 @@
 "use client"
+
 import SpreadComponents from "../global/SpreadComponents";
 
 // const writeToken = `${process.env.SANITY_API_WRITE_TOKEN}`
@@ -25,9 +26,9 @@ const Homepage = ({ data }: any) => {
 //   .then(result => console.log(result))
 //   .catch(error => console.error(error))
 
-//   }
+  //   }
   return <>
-      {data.components && <SpreadComponents components={data.components} />}
+      {data && data.components && <SpreadComponents components={data.components} />}
   </>;
 };
 

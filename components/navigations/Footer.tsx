@@ -1,56 +1,60 @@
 "use client"
 
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { FooterMenuItem, FooterValues } from "@/types/header"
+import { PortableText, SanityDocument } from "next-sanity"
+import Image from "next/image"
+import "./header.css"
+import { usePathname } from "next/navigation"
+import Link from "next/link"
 
-const Footer = ({ navigation }: any) => {
-  const pathname = usePathname()
+const Footer = ({ footer }: { footer: FooterValues }) => {
+  const path = usePathname()
+
+  const isAdmin = path?.includes("/admin") ? true : false;
+
+  if (isAdmin) {
+    return null
+  }
+  
   return (
-    <>
-      {pathname.includes("/admin") ? "" : 
-      
-        <div className="flex flex-col footer_wrap pt-[31px] pb-[31px] px-5 lg:px-[20px] bg-[#30282A]">
-          <div className="text-[#EFEBE5] text-[13px] 2xl:text-[0.813vw] tracking-[0.33px] leading-[18px] avenir_roman">
-            © Ninety-One Group 2024
-          </div>
-          <div className="flex flex-col gap-y-[20px]">
-            <div className="flex flex-col">
-            {navigation.footer_menu && navigation.footer_menu.map((item: any, i: number) => {
+    <div className={`flex justify-center md:justify-between gap-x-[50px] px-[15px] md:px-[47px] m py-[30px] mt-[50px] flex-col md:flex-row bg-[#F5F7FA]`}>
+      <div className="footerLogo md:w-[12%] text-center flex flex-col justify-center lg:justify-start items-center mb-[50px] md:mb-0">
+      <Link className="text-center flex flex-col justify-center items-center" href={"/"}>
+        <Image src={footer.footer_logo} alt="RuthBerg" width={500} height={500} className="w-[49px] h-auto object-cover mb-[12.85px]" />
+        <Image src={footer.header_logo} alt="RuthBerg" width={500} height={500} className="w-[142px] h-[15.78px] md:h-auto object-cover" />
+      </Link>
+      </div>
+      <div className="md:w-[80%] text-center md:text-left gap-x-5 flex flex-col justify-center md:flex-row md:justify-end">
+        <div className="footer_menu_links  md:w-[23.3333%] mb-[30px] md:mb-0">
+          <div className="links text-center md:text-left md:mb-[35px]">
+            {footer?.footer_menu.map((item: FooterMenuItem, index: number) => {
               return (
-                <Link className="text-[13px] 2xl:text-[0.813vw] tracking-[0.33px] leading-[18px] avenir_roman text-[#EFEBE5]" key={i} href={ item.link ? `/${item.link}` : "/"}>
+                <div className="menu_Link" key={index}>
+                  <Link href={`/${item.link}`} className="text-[12px] aktiv_regular relative pb-[5px] leading-[15px] text-[#0D988C]">
                     {item.title}
-                </Link>
+                  </Link>
+                </div>
               )
             })}
           </div>
-          <div className="flex flex-col">
-            {navigation.social_links && navigation.social_links.map((item: any, i: number) => {
-              return (
-                <Link className="text-[13px] 2xl:text-[0.813vw] tracking-[0.33px] leading-[18px] avenir_roman text-[#EFEBE5]" key={i} href={ item.link ? `${item.link}` : "/"}>
-                    {item.title}
-                </Link>
-              )
-            })}
-          </div>
-          </div>
-          <div>
-            <h2 className="text-[13px] mb-5 2xl:text-[0.813vw] tracking-[0.33px] leading-[18px] avenir_roman text-[#EFEBE5]">Get on the list</h2>
-            <form className="flex flex-col items-baseline">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="bg-none mb-[30px] pb-[3px] email_input outline-none border-b-[1px] border-solid border-[#EFEBE5] w-full max-w-[310px] text-[13px] 2xl:text-[0.813vw] tracking-[0.33px] leading-[18px] avenir_roman text-[#EFEBE5]"
-                placeholder="Your email" />
-              <button type="submit" className="text-[13px] mb-5 2xl:text-[0.813vw] tracking-[0.33px] leading-[18px] avenir_roman text-[#EFEBE5]">Submit</button>
-            </form>
+          <div className="copywrite aktiv_regular hidden md:block ">
+            &copy;{footer.copywrite}
           </div>
         </div>
-      }
-    </>
-    
-  );
-};
+        <div className="contact-emails aktiv_regular text-center md:text-left mb-5 md:mb-0  md:w-[23.3333%]">
+          <PortableText value={footer.contact_email}/>
+        </div>
+        {footer.location &&
+        <div className="locations aktiv_regular mb-5 md:mb-0  md:w-[33.3333%]">
+          <PortableText value={footer.location} />
+        </div>
+        }
+        <div className="copywrite aktiv_regular md:hidden text-center md:text-left md:w-[33.3333%]">
+          &copy;{footer.copywrite}
+        </div>
+      </div>
+    </div>
+  )
+}
 
-export default Footer;
+export default Footer

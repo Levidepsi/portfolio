@@ -3,7 +3,7 @@
 
 import { QueryResponseInitial, useQuery } from "@sanity/react-loader";
 import { SanityDocument } from "next-sanity";
-import { HOME_QUERY, POSTS_QUERY } from "../../sanity/lib/client";
+import { HOME_QUERY } from "../../sanity/lib/client";
 import Homepage from "../pages/Homepage";
 
 

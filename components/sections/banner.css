@@ -1,0 +1,72 @@
+.BannerSection {
+  position: relative;
+  overflow: hidden;
+}
+
+.BannerSection .content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  margin: auto;
+  max-height: fit-content;
+}
+
+.BannerSection .background-image {
+  position: relative;
+}
+
+.BannerSection video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .BannerSection .content.bottom_center {
+    top: auto;
+    left: 0;
+    right: 0;
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+}
+
+@media (min-width: 768px) {
+  .BannerSection .content {
+    bottom: 47px;
+  }
+}
+
+.content.top_center {
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: max-content;
+  padding-top: 47px;
+}
+
+
+.titleOnImage {
+  top: 0;
+  left: 14px;
+  bottom: 0;
+  margin: auto;
+  transform: translate(0, 50%);
+  text-align: left;
+}
+
+@media (min-width: 1024px) {
+  
+  .titleOnImage {
+    top: 52%;
+    left: 55px;
+    bottom: auto;
+    transform: translate(0, 50%);
+    text-align: center;
+  }
+}

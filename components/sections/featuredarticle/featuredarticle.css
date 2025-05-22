@@ -1,0 +1,180 @@
+.featured-article--section h2,
+.featured-article--section h3,
+.featured-article--section p,
+.featured-article--section a,
+.article-date {
+  color: #eef0ea;
+}
+
+.featured-article--section {
+  background-color: #181818;
+}
+
+.title-link-wrapper h2 {
+  font-size: 35px;
+  line-height: 42px;
+  font-family: "F37 Caslon Trial, Regular";
+  margin-bottom: 28px;
+}
+
+.title-link-wrapper {
+  margin-bottom: 30px;
+}
+
+.featured-article--section .button {
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: 0;
+  font-family: "Neue Haas Grotesk Text Pro";
+  font-style: italic;
+  display: inline-block;
+  margin-top: 30px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.featured-article--section .button svg {
+  width: 16px;
+  height: auto;
+}
+
+.featured-article--section .button svg path {
+  fill: #eef0ea;
+}
+
+.article-item-image {
+  width: 100%;
+  height: 215px;
+  margin-bottom: 15px;
+}
+
+.article-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-date {
+  font-size: 12px;
+  line-height: 15px;
+  font-family: "Neue Haas Grotesk Text Pro";
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.article-item {
+  margin-bottom: 40px;
+}
+
+.article-item:last-child {
+  margin-bottom: 0;
+}
+
+.article-item h3 {
+  font-size: 20px;
+  line-height: 23px;
+  font-family: "F37 Caslon Trial, Regular";
+  margin-bottom: 30px;
+  max-width: 300px;
+}
+
+.article-body {
+  font-size: 15px;
+  line-height: 19px;
+  font-family: "Neue Haas Grotesk Text Pro";
+  margin-bottom: 20px;
+}
+
+.article-body p {
+  margin-bottom: 15px;
+}
+
+.article-body p:last-child {
+  margin-bottom: 0;
+}
+
+.article-item a {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .title-link-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .featured-article--section .button {
+    margin-top: 0;
+  }
+
+  .title-link-wrapper h2 {
+    margin-bottom: 0;
+  }
+
+  .featured-article-container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 26px;
+  }
+
+  .article-item {
+    width: 48%;
+  }
+
+  .article-item-image {
+    width: 100%;
+    height: 225px;
+  }
+}
+
+@media (min-width: 990px) {
+  .article-item .button {
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .article-item .button:hover {
+    column-gap: 50px;
+  }
+
+  .title-link-wrapper .button {
+    position: relative;
+  }
+
+  .title-link-wrapper .button svg {
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  .title-link-wrapper .button {
+    padding-right: 35px;
+  }
+
+  .title-link-wrapper .button:hover svg {
+    right: -20px;
+  }
+
+  .article-item {
+    width: 32%;
+  }
+
+  .article-item-image {
+    overflow: hidden;
+  }
+
+  .article-item-image img {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .article-item-image:hover img {
+    transform: scale(1.1);
+  }
+}

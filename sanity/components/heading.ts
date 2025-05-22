@@ -56,6 +56,18 @@ export default defineType({
       
       }),
   ],
-
+  preview: {
+    select: {
+      title: "title",
+      media: "image",
+    },
+    prepare(selection) {
+      const { title, media } = selection;
+      return {
+        title: title ||  "Heading",
+        media: media || undefined,
+      };
+    },
+  },
 
 })

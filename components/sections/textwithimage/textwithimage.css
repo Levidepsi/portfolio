@@ -1,0 +1,91 @@
+.image-contents p {
+  font-size: 14px;
+  line-height: 18px;
+  color: black;
+}
+
+.image-contents p:empty {
+  margin: 20px;
+}
+
+.multiple_images .swiper-slide {
+  width: 100% !important;
+} 
+
+.image-contents.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+@media (min-width: 1536px) {
+  .image-contents p {
+    font-size: 0.911vw;
+    line-height: 1.172vw;
+    color: black;
+  }
+  
+}
+
+.multipleText_Item h3 {
+  font-family: 'AktivGrotesk Medium';
+  font-size: 14px;
+  color: #000;
+  line-height: 16px;
+}
+
+.multipleText_Item p {
+  font-size: 14px;
+  line-height: 18px;
+  color: black;
+  font-family: 'Aktiv Grotesk Regular';
+}
+
+.multipleText::-webkit-scrollbar {
+  display: block;
+  width: 0;
+}
+
+@media (min-width: 1536px) {
+  .multipleText_Item h3 {
+    font-size: 0.911vw;
+    line-height: 1.042vw;
+  }
+  .multipleText_Item p {
+    font-size: 0.911vw;
+    line-height: 1.172vw;
+    color: black;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .parallax-container {
+      min-height: 200vh;
+    }
+  
+    .parallax-image {
+      transition: transform 0.3s ease-out; }
+}
+
+.topContent div p a {
+  position: relative;
+}
+
+.topContent div p a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transition: transform 0.3s ease-out;
+  display: block;
+}
+
+.topContent div p:hover a::after {
+  transform-origin: bottom center;
+  transform: scaleX(1);
+}

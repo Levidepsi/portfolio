@@ -10,6 +10,12 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
+    
+    defineField({
+      name: 'backgroundColor',
+      title: 'Background Color',
+      type: 'string',
+    }),
 
     defineField({
         name: "image",
@@ -21,10 +27,23 @@ export default defineType({
     defineField({
       name: "image_height",
       title: "Image Height",
-      type: "number"
+      type: "number",
+      description: "Add by viewport Size"
     })
 
   ],
-
+  preview: {
+    select: {
+      title: "title",
+      media: "image",
+    },
+    prepare(selection) {
+      const { title, media } = selection;
+      return {
+        title: title ||  "Featured Banner",
+        media: media || undefined,
+      };
+    },
+  },
 
 })

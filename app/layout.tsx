@@ -1,56 +1,63 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import LiveVisualEditing from "../components/LiveVisualEditing";
+import "@/components/navigations/header.css"
+import { ThemeProvider } from "@/components/global/ThemeProvider";
+import ProviderWrapper from "@/components/global/ProviderWrapper";
 import { draftMode } from "next/headers";
-import { ThemeProvider } from "../components/global/ThemeProvider";
-import ProviderWrapper from "../components/global/ProviderWrapper";
-import { loadQuery } from "../sanity/lib/store";
+import { FOOTER, HEADER, NAVIGATION } from "@/sanity/lib/client";
+import { loadQuery } from "@/sanity/lib/store";
 import { SanityDocument } from "next-sanity";
-import { NAVIGATION } from "../sanity/lib/client";
-import Header from "../components/navigations/Header";
-import Footer from "../components/navigations/Footer";
-import Logo from "../public/nog_Logotype_ag-6.png"
-
-
-const inter = Inter({ subsets: ["latin"] });
+import LiveVisualEditing from "@/components/LiveVisualEditing";
+import Header from "@/components/navigations/Header";
+import { FooterValues, HeaderValues } from "@/types/header";
+import logo from "@/public/Group 13.png";
+import Footer from "@/components/navigations/Footer";
 
 export const metadata: Metadata = {
-  title: "91 Group",
-   icons: {
-      icon: `${Logo}`,
-      shortcut: `${Logo}`,
-	},
+  title: "Ocean and Sea",
+  icons: {
+    icon: `${logo}`,
+    shortcut: `${logo}`,
+  },
 };
-
-type Params = Promise<{ slug: string }>
 
 export default async function RootLayout({
   children,
-  params 
 }: Readonly<{
   children: React.ReactNode;
-  params: Params 
 }>) {
-    const { slug } = await params
-    const navigation = await loadQuery<SanityDocument[]>(NAVIGATION, {}, {
-    cache: "no-store"
-    });
+  const navigation = await loadQuery<HeaderValues>(
+    HEADER,
+    {},
+    {
+      cache: "no-store",
+    }
+  );
+    const footer = await loadQuery<FooterValues>(
+    FOOTER,
+    {},
+    {
+      cache: "no-store",
+    }
+  );
 
-  const { isEnabled } = await draftMode()
-  
-
+  const { isEnabled } = await draftMode();
   return (
-    <html className="html" lang="en">
-      <body >
-        <ThemeProvider navigation={navigation.data}>
+    <html lang="en">
+      <head>
+        
+      {/* <link rel="preload" href="/public/fonts/AktivGrotesk-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/> */}
+      </head>
+      <body>
+        <ThemeProvider >
           <Header navigation={navigation.data} />
-          <ProviderWrapper>
-            {children}
-          </ProviderWrapper>
-          <Footer navigation={navigation.data}  />
+          <main>  
+            <ProviderWrapper>{children}</ProviderWrapper>
+          </main>
+          <Footer footer={footer.data} />
           {isEnabled && <LiveVisualEditing />}
-       </ThemeProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

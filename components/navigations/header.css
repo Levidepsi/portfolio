@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+.menu_Link .menu_item::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #0D988C;
+  transition: transform 0.3s ease-out;
+  display: block;
+}
+
+.menu_Link:hover .menu_item::after {
+  transform-origin: bottom center;
+  transform: scaleX(1);
+}
+
+.menu_Link .menu_item.active::after {
+  transform-origin: bottom center;
+  transform: scaleX(1);
+}
+
+
+.menu_Link a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #0D988C;
+  transition: transform 0.3s ease-out;
+  display: block;
+}
+
+.menu_Link:hover a::after {
+  transform-origin: bottom center;
+  transform: scaleX(1);
+}
+
+.menu_Link a.active::after {
+  transform-origin: bottom center;
+  transform: scaleX(1);
+}
+.mobile_icons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  transition: 0.7s all;
+}
+
+.mobile_icons.open {
+  right: 10px;
+}
+
+.mobile_icons.close {
+  top: -14px;
+}
+
+.mobile_icons.open.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mobile_icons.open.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile_icons.close.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mobile_icons.close.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* mobile */
+
+.Mobile_Header {
+  opacity: 0;
+  visibility: hidden;
+  height: auto;
+  max-height: 0;
+  transition: 0.7s all;
+}
+.Mobile_Header.show {
+  opacity: 1;
+  visibility: visible;
+  max-height: 1000rem;
+}
+
+.Mobile_Header::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  top: 0;
+  left: 0;
+  background-color: #0D988C;
+  transition: transform 0.3s ease-out;
+  display: block;
+}
+
+.Mobile_Header.show::after {
+  transform-origin: bottom center;
+  transform: scaleX(1);
+}
+
+.contact-emails h5 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.contact-emails p:empty {
+  margin: 20px;
+}
+
+.contact-emails p,
+.copywrite,
+.contact-emails h5 {
+  font-size: 12px;
+  line-height: 15px;
+  color: #0D988C;
+}
+
+
+@media (min-width: 1024px) {
+  .contact-emails p:empty {
+      margin: 40px;
+    }
+    .contact-emails p  {
+      width: max-content;
+    }
+}
+
+.subMenuItems-Wrapper.mobile {
+  transition: 1s ease-in-out;
+}
+
+.subMenuItems-Wrapper {
+  opacity: 0;
+  visibility: hidden;
+  height: auto;
+  max-height: 0;
+  transition: 0.7s all;
+}
+
+.subMenuItems-Wrapper.active {
+  opacity: 1;
+  visibility: visible;
+  max-height: 1000rem;
+}
+
+
+
+
+.contact-emails p {
+  position: relative;
+}
+
+.contact-emails p a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #0D988C;
+  transition: transform 0.3s ease-out;
+  display: block;
+}
+
+.contact-emails p:hover a::after {
+  transform-origin: bottom center;
+  transform: scaleX(1);
+}

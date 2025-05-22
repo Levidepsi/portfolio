@@ -1,0 +1,87 @@
+.left-description p,
+.right-description p {
+  font-size: 14px;
+  line-height: 18px;
+  color: black;
+  font-family: Aktiv Grotesk Regular;
+}
+
+.left-description p:empty,
+.right-description p:empty {
+  margin: 20px;
+}
+
+.left-description p a,
+.right-description p a  {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.left-description p a::before,
+.right-description p a::before {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 0;
+  height: 1px;
+  background-color: #000000;
+  transition: 0.7s all;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.left-description p a:hover::before,
+.right-description p a:hover::before {
+  opacity: 1;
+  width: 100%;
+}
+
+.body {
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.accordion_item_wrapper:not(:last-child) {
+  border-bottom: 1px solid #000;
+}
+
+.right-description div h2 {
+  font-size: 20px;
+  line-height: 24px;
+  color: black;
+  font-family: 'AktivGrotesk Medium';
+  margin-bottom: 20px;
+}
+
+.left-description  h3 {
+  font-size: 20px;
+  line-height: 24px;
+  color: black;
+  font-family: 'AktivGrotesk Medium';
+  max-width: 379px;
+}
+
+@media (min-width: 1536px) {
+  .right-description div h2,
+  .left-description  h3 {
+    font-size: 1.302vw;
+    line-height: 1.563vw;
+    color: black;
+    font-family: 'AktivGrotesk Medium';
+  }
+
+
+    .left-description p,
+    .right-description p {
+      font-size: 0.911vw;
+      line-height: 1.172vw;
+      color: black;
+    }
+  
+}
+
+.accordion_item_wrapper:last-child {
+  margin-bottom: 0 !important;
+}

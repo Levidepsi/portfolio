@@ -2,8 +2,7 @@
 
 import { QueryResponseInitial, useQuery } from "@sanity/react-loader";
 import { QueryParams, SanityDocument } from "next-sanity";
-import Post from "../pages/posts/Post";
-import { PAGE_QUERY, POST_QUERY } from "../../sanity/lib/client";
+import { PAGE_QUERY } from "../../sanity/lib/client";
 import Pages from "../pages/Pages";
 
 

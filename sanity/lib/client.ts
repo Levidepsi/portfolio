@@ -1,13 +1,13 @@
-import { createClient, groq } from 'next-sanity'
+import { createClient, groq } from "next-sanity";
 
-import { apiVersion, dataset, projectId, useCdn } from '../env'
+import { apiVersion, dataset, projectId, useCdn } from "../env";
 
 export const client = createClient({
   apiVersion,
   dataset,
   projectId,
   useCdn,
-  // These settings will be overridden in 
+  // These settings will be overridden in
   // ./sanity/lib/store.ts when draftMode is enabled
   perspective: "published",
   stega: {
@@ -47,61 +47,134 @@ export const NAVIGATION = groq`*[_type == "navigation"][0]{
   social_links[]{
     title,
     link
-  }
+  },
+  contact_email,
+  location,
+  copywrite
 }`;
 
+export const HEADER = groq`*[_type == "navigation"][0]{
+  title,
+  _type,
+  "header_logo": header_logo.asset->url,
+  "header_logo2": header_logo2.asset->url,
+  header_menu[]{
+    title,
+    page{
+      slug->{
+        "slug": slug.current
+        }
+      },
+      subMenu[]{
+      title,
+      custom_links,
+      page{
+        slug->{
+          "slug": slug.current
+          },
+        },
+      },
+    },
+}`;
+
+export const FOOTER = groq`*[_type == "navigation"][0]{
+  title,
+  _type,
+  "footer_logo": footer_logo.asset->url,
+  "header_logo": header_logo.asset->url,
+  contact_email,
+  location,
+  copywrite,
+  footer_menu[] {
+    title,
+    link
+  }
+}`;
 
 export const HOME_QUERY = groq`*[_type == "home"][0]{
   title,
   "slug": slug.current,
   _type,
   "image": image.asset->url,
+  "video": video.asset->url,
   meta_description,
+  section_layout,
+  content_alignment,
+  quote_content,
+  background_color,
   "meta_image": meta_image.asset->url,
   components[]{
-  ...,
-  _type,
+    ...,
+   "image": image.asset->url,
+   "video": video.asset->url,
+   "image_title": image_title.asset->url,
+    content_position,
+    section_layout,
+    content_alignment,
+    quote_content,
+    background_color,
     title,
-    "image": image.asset->url,
-    "video":video.asset->url,
-    positions,
+    textblock_items [] {
+    title,
+    sub_title,
+    body,
+    button_url,
+   "image": image.asset->url,
+    data
+    },
     slider_items[]{
-    "image": image.asset->url
-    },
-    text_items[]{
-      title,
-      body,
-      
-    },
-    textwimage_items[]{
-      "image": image.asset->url,
-      title,
-      body,
-      content_position,
-      body_bottom,
-      body_bottom_max_width
-    },
-    textwimage_items2[]{
-      "image": image.asset->url,
-      title,
-      body,
-      content_position,
-      background
-    },
-    multiple_image_items[]{
       title,
       link,
       "image": image.asset->url,
+      body
+    },
+    slideshow_images[]{
+     
+      "image": image.asset->url,
+
     }
-  },
+    
+  }
 }`;
 
 export const ALLPAGE_QUERY = groq`*[_type == "page"]{
   title,
+  sub_title,
+  background_color,
+  add_border_bottom,
+  section_layout,
+  content_alignment,
+  _updatedAt,
   "slug": slug.current,
   _type,
   "menu_image": menu_image.asset->url,
-  hamburger_color
+  hamburger_color,
+  components[]{
+    ...,
+   "image": image.asset->url,
+   "video": video.asset->url,
+   "image_title": image_title.asset->url,
+    content_position,
+    section_layout,
+    content_alignment,
+    quote_content,
+    background_color,
+    add_border_bottom,
+    title,
+    textblock_items [] {
+    title,
+    sub_title,
+    body,
+    button_label,
+    button_url,
+    right_content,
+    tableData[] {
+      column1,
+      column2
+    }
+    }
+  },
+  
 }`;
 
 export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
@@ -111,176 +184,101 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
   "image": image.asset->url,
   "meta_image": meta_image.asset->url,
   meta_description,
+  section_layout,
+  content_alignment,
   components[]{
-    ...,
-    _type,
-    title,
-    "image": image.asset->url,
-    positions,
-    title_max_width,
-    title_padding_bottom,
-    text_color,
-    slider_items[]{
-      link,
-      url,
-      body
+  ...,
+  "image": image.asset->url,
+    right_content,
+    section_layout,
+    content_alignment,
+    tableData[] {
+      column1,
+      column2,
+      column3
     },
-    text_items[]{
-      title,
-      body,
-      "image": image.asset->url,
-      learn_more,
-       slug->{
-        "slug": slug.current
-      },
-      apply_now,
-      apply_now_link
-    },
-    timeline_items[]{
-      title,
-      body
-    },
-    imageblock_items[]{
+    textblock_items[]{
       title,
       sub_title,
       body,
+      button_url,
       "image": image.asset->url,
+      data
     },
-    multiple_image_items[]{
-    title,
+    texts_accordions[] {
+      title,
+      body
+    },
+    slider_items[]{
+      title,
       link,
       "image": image.asset->url,
+      body
     },
-      textwimage_items[]{
+    slideshow_images[]{
+     
       "image": image.asset->url,
-      title,
-      body,
-      content_position,
-      body_bottom,
-      body_bottom_max_width
     },
-    textwimage_items2[]{
-      "image": image.asset->url,
-      title,
-      body,
-      content_position,
-      background,
-      color,
-      body_mobile1,
-      body_mobile2,
-      body_mobile3
+    interests[] {
+      title
     },
-    profiles[]{
-      "image": image.asset->url,
-      name,
-      type,
-      description
-    },
-    pointers[]{
-      title,
-      body1,
-      body2
+    multipleText[] {
+      body
     }
-  },
+  }
 }`;
 
-export const COMPANIES_QUERY = groq`*[_type == "companies" && slug.current == $slug][0]{
+export const DESTINATION_QUERY = groq`*[_type == "destinations" && slug.current == $slug][0]{
   title,
   "slug": slug.current,
   _type,
   "image": image.asset->url,
-  meta_description,
   "meta_image": meta_image.asset->url,
+  meta_description,
+  section_layout,
+  content_alignment,
   components[]{
-    ...,
-    _type,
-    title,
-    "image": image.asset->url,
-    positions,
-    title_max_width,
-    title_padding_bottom,
-    text_color,
-    slider_items[]{
-      link,
-      url,
-      body
+  ...,
+  "image": image.asset->url,
+    right_content,
+    section_layout,
+    content_alignment,
+    tableData[] {
+      column1,
+      column2,
+      column3
     },
-    text_items[]{
-      title,
-      body,
-      "image": image.asset->url,
-      learn_more,
-       slug->{
-        "slug": slug.current
-      }
-    },
-    imageblock_items[]{
+    textblock_items[]{
       title,
       sub_title,
       body,
+      button_url,
       "image": image.asset->url,
+      data
     },
-    multiple_image_items[]{
-    title,
+    texts_accordions[] {
+      title,
+      body
+    },
+    slider_items[]{
+      title,
       link,
       "image": image.asset->url,
+      body
     },
-      textwimage_items[]{
+    slideshow_images[]{
+
       "image": image.asset->url,
+    },
+    interests[] {
+      title
+    },
+    destinations[]{
       title,
       body,
-      content_position,
-      body_bottom,
-      body_bottom_max_width
-    },
-    textwimage_items2[]{
+      mapUrl,
       "image": image.asset->url,
-      title,
-      body,
-      content_position,
-      background,
-      color
-    },
-    profiles[]{
-      "image": image.asset->url,
-      name,
-      type,
-      description
+
     }
-  },
-}`;
-
-export const POSTS_QUERY = groq`*[_type == "post"] | order(_createdAt asc){
-  _type,
-  title,
-  _createdAt,
-  "slug": slug.current,
-  "mainImage": mainImage.asset->url,
-  body,
-  category,
-  section
-}`;
-
-export const POSTS_SLUG_QUERY = groq`*[_type == "post" && defined(slug.current)][]{
-  "params": { "slug": slug.current }
-}`;
-
-export const POST_QUERY = groq`*[_type == "post" && slug.current == $slug][0]{
-   _type,
-    title,
-    "slug": slug.current,
-    "mainImage": mainImage.asset->url,
-    body,
-    body2,
-    author,
-    date,
-    "image2": image2.asset->url,
-    related_post[]{
-     post->{
-       title,
-       body,
-       "mainImage": mainImage.asset->url,
-     
-     }
-   }
+  }
 }`;

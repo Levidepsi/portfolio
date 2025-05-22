@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+.heading_description p {
+  color: #000;
+  font-size: 16px;
+  line-height: 21px;
+  font-family: Aktiv Grotesk Regular;
+
+}
+
+@media (min-width: 1536px) {
+  .heading_description p {
+    font-size: 1.042vw;
+    line-height: 1.367vw;
+  }
+}

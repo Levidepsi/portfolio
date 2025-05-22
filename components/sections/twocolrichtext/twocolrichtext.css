@@ -1,0 +1,119 @@
+.text-image-wrapper {
+  margin-bottom: 25px;
+}
+
+.two-col-rich-left h2.left-title,
+.two-col-rich-left h2 {
+  font-family: "F37 Caslon Trial\, Regular";
+  font-size: 30px;
+  line-height: 34px;
+  margin-bottom: 30px;
+}
+
+.left-body-content {
+  font-size: 15px;
+  line-height: 19px;
+  font-family: "Neue Haas Grotesk Text Pro";
+}
+
+.two-col-rich-left {
+  margin-bottom: 50px;
+}
+
+.two-col-rich-right .right-body-content {
+  font-size: 15px;
+  line-height: 19px;
+  font-family: "Neue Haas Grotesk Text Pro";
+}
+
+.two-col-rich-right .right-body-content p,
+.two-col-rich-left .left-body-content p {
+  margin-bottom: 20px;
+}
+
+.two-col-rich-right .right-body-content p:last-child,
+.two-col-rich-left .left-body-content p:last-child {
+  margin-bottom: 0;
+}
+
+.two-col-rich-left.no-content {
+  margin-bottom: 0;
+}
+
+.table-content {
+  border: 1px solid #181818;
+  margin-bottom: 30px;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #181818;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row .table-col {
+  width: 33%;
+  text-align: left;
+  padding: 5px;
+  border-right: 1px solid #181818;
+  font-size: 8px;
+  line-height: 10px;
+}
+
+.table-row .table-col:last-child {
+  border-right: none;
+}
+
+.two-col-rich--section.add-border-bottom {
+  position: relative;
+}
+
+.right-body-content ul li {
+  position: relative;
+  line-height: 30px;
+}
+
+.right-body-content ul li:before {
+  content: "-";
+  position: relative;
+  padding-right: 5px;
+}
+
+@media (min-width: 990px) {
+  .two-col-rich--section {
+    column-gap: 127px;
+  }
+
+  .two-col-rich-left {
+    max-width: 378px;
+    margin-bottom: 0;
+  }
+
+  .right-body-content {
+    max-width: 681px;
+    width: 681px;
+  }
+
+  .table-row .table-col {
+    padding: 10px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .right-body-content ul {
+    column-count: 2;
+    column-gap: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 90%;
+  }
+
+  .right-body-content ul li {
+    display: inline-block;
+  }
+}

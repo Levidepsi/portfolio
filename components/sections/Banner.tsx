@@ -6,6 +6,8 @@ import "./banner.css";
 import { motion } from "motion/react";
 import anchorArrow from "@/public/Path 44.svg"
 import { useWindowWide } from "@/hooks/ScreenSize";
+import { PortableText } from "next-sanity";
+import Link from "next/link";
 
 type Description = {
   _type: string;
@@ -42,7 +44,7 @@ const Banner: React.FC<BannerProps> = ({
 
 
   return (
-    <div className={`BannerSection ${image ? "xl:h-[48.5vh] 2xl:h-[48.5vh]" : "h-[100vh]"} ${video ? "z-50" : ""}`}>
+    <div className={`BannerSection ${image ? "h-[100vh]" : "h-[100vh]"} ${video ? "z-50" : ""}`}>
       {image && (
         <motion.div
           initial={{ opacity: 0,}}
@@ -60,7 +62,7 @@ const Banner: React.FC<BannerProps> = ({
           alt="Title"
           width={2000}
           height={2000}
-          className="object-cover background-image w-full h-[40.1vh] xl:h-[48.5vh] 2xl:h-[48.5vh]"
+          className="object-cover background-image w-full h-[100vh] "
         />
         </motion.div>
       )}
@@ -92,8 +94,16 @@ const Banner: React.FC<BannerProps> = ({
         }
         
       </motion.div>
-      <div className={`title  ${video ? "thin_italic bottom-[88px] left-0 right-0 text-[25px] leading-[30px] lg:text-[30px] lg:leading-[36px]" : "titleOnImage uppercase aktiv_medium left-[25px] lg:left-[55px] text-[40px] lg:text-[40px] leading-[48px]"} text-[#FFFFFF]  absolute  mx-auto text-center z-10 w-auto`}>
-        {title}
+      <div className={`contents_banner ${content_position} absolute `}>
+        <div className={`title moinster_regular text-[#FFF5EF] text-[30px]  lg:text-[40px] lg:tracking-[2.8px] lg:leading-[42px] max-w-[677px] mb-[25px]`}>
+          {title}
+        </div>
+        <div className="banner_description mb-[22px]">
+          <PortableText  value={description}/>
+        </div>
+        <Link href={"/"} className="border-solid rounded-[5px] border-[#FFF5EF] text-[#FFF5EF] border-[0.5px] block py-[5px] px-[10px] text-[13px] tracking-[0.26px] leading-[16px] w-max">
+          Get in touch
+        </Link>
       </div>
       {video && 
       <div onClick={() => window.scrollBy({ top: 500, behavior: 'smooth' })} className="anchorArrow absolute bottom-[36px] left-0 right-0 mx-auto w-max cursor-pointer">

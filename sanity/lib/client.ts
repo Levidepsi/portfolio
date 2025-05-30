@@ -84,7 +84,9 @@ export const FOOTER = groq`*[_type == "navigation"][0]{
   "header_logo": header_logo.asset->url,
   contact_email,
   location,
-  copywrite,
+  services,
+  about,
+  company_info,
   footer_menu[] {
     title,
     link
@@ -129,11 +131,12 @@ export const HOME_QUERY = groq`*[_type == "home"][0]{
       body
     },
     slideshow_images[]{
-     
       "image": image.asset->url,
-
+    },
+    multiple_text[] {
+      title,
+      position
     }
-    
   }
 }`;
 
@@ -176,6 +179,15 @@ export const ALLPAGE_QUERY = groq`*[_type == "page"]{
   },
   
 }`;
+
+export const GET_ALL_PAGE_MENU_COLOR = groq`
+  *[_type in ["page", "home"]]{
+    "slug": slug.current,
+    _type,
+    menuColor
+  }
+`;
+
 
 export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
   title,
@@ -224,7 +236,12 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
     },
     multipleText[] {
       body
-    }
+    },
+    items[]{
+      title,
+      "image": image.asset->url,
+      body
+    },
   }
 }`;
 

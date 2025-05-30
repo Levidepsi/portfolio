@@ -17,40 +17,46 @@ const Footer = ({ footer }: { footer: FooterValues }) => {
   }
   
   return (
-    <div className={`flex justify-center md:justify-between gap-x-[50px] px-[15px] md:px-[47px] m py-[30px] mt-[50px] flex-col md:flex-row bg-[#F5F7FA]`}>
-      <div className="footerLogo md:w-[12%] text-center flex flex-col justify-center lg:justify-start items-center mb-[50px] md:mb-0">
-      <Link className="text-center flex flex-col justify-center items-center" href={"/"}>
-        <Image src={footer.footer_logo} alt="RuthBerg" width={500} height={500} className="w-[49px] h-auto object-cover mb-[12.85px]" />
-        <Image src={footer.header_logo} alt="RuthBerg" width={500} height={500} className="w-[142px] h-[15.78px] md:h-auto object-cover" />
-      </Link>
+    <div className={`flex justify-center md:justify-between gap-x-[50px] px-[32px] lg:pr-[32px] lg:pl-[102px]  py-[30px] lg:py-[74px]  flex-col md:flex-col bg-[#67231E]`}>
+      <div className="flex lg:gap-x-[102px] justify-between lg:flex-row flex-col">
+        <div className="lg:w-[10%] mb-5 lg:mb-0">
+          <Link className="text-center flex flex-col justify-center items-center" href={"/"}>
+            <Image src={footer.footer_logo} alt="RuthBerg" width={500} height={500} className="w-[94px] h-[181px] object-cover mb-[12.85px] lg:mr-auto" />
+            {/* <Image src={footer.header_logo} alt="RuthBerg" width={500} height={500} className="w-[142px] h-[15.78px] md:h-auto object-cover" /> */}
+          </Link>
+        </div>
+        <div className=" flex footer_descriptions flex-col md:gap-x-[30px]  lg:gap-x-[52px] lg:w-[50%] lg:justify-between  md:flex-row mb-[50px] lg:mb-[113px]">
+          <div className="contact md:w-[25%] lg:w-auto mb-5 lg:mb-0">
+            <PortableText value={footer.contact_email}/>
+          </div>
+          <div className="services md:w-[25%] lg:w-auto mb-5 lg:mb-0">
+            <PortableText value={footer.services}/>
+          </div>
+          <div className="about md:w-[25%] lg:w-auto mb-5 lg:mb-0">
+            <PortableText value={footer.about}/>
+          </div>
+          <div className="info md:w-[25%] lg:hidden lg:w-auto mb-5 lg:mb-0">
+            <PortableText value={footer.company_info}/>
+          </div>
+        </div>
+        <div className="info hidden lg:flex flex-col lg:w-[20%] ">
+          <PortableText value={footer.company_info}/>
+        </div>
       </div>
-      <div className="md:w-[80%] text-center md:text-left gap-x-5 flex flex-col justify-center md:flex-row md:justify-end">
-        <div className="footer_menu_links  md:w-[23.3333%] mb-[30px] md:mb-0">
-          <div className="links text-center md:text-left md:mb-[35px]">
-            {footer?.footer_menu.map((item: FooterMenuItem, index: number) => {
-              return (
-                <div className="menu_Link" key={index}>
-                  <Link href={`/${item.link}`} className="text-[12px] aktiv_regular relative pb-[5px] leading-[15px] text-[#0D988C]">
-                    {item.title}
-                  </Link>
-                </div>
-              )
-            })}
-          </div>
-          <div className="copywrite aktiv_regular hidden md:block ">
-            &copy;{footer.copywrite}
-          </div>
+      <div className="flex flex-col justify-between lg:justify-start md:flex-row items-center">
+        <div className="copywrite text-[13px] md:w-[20%] tracking-[0.26px] leading-[21px] text-[#F8F3E9] aktiv_regular lg:w-[30%]">
+              &copy;2025, JD SPIRITS
         </div>
-        <div className="contact-emails aktiv_regular text-center md:text-left mb-5 md:mb-0  md:w-[23.3333%]">
-          <PortableText value={footer.contact_email}/>
-        </div>
-        {footer.location &&
-        <div className="locations aktiv_regular mb-5 md:mb-0  md:w-[33.3333%]">
-          <PortableText value={footer.location} />
-        </div>
-        }
-        <div className="copywrite aktiv_regular md:hidden text-center md:text-left md:w-[33.3333%]">
-          &copy;{footer.copywrite}
+        <div className="footer_links flex flex-col md:flex-row items-center w-full md:justify-between md:w-[70%] lg:w-[62.5%] 2xl:w-[62.5%]">
+          <Link href={""} className="text-[13px] md:w-[20%] text-[#F8F3E9] tracking-[0.26px] leading-[21px]">
+            Imprint
+          </Link>
+          <Link href={""} className="text-[13px] md:w-[20%] text-[#F8F3E9] tracking-[0.26px] leading-[21px]">
+            Privacy Policy
+          </Link>
+          <Link href={""} className="text-[13px] md:w-[20%] text-[#F8F3E9] tracking-[0.26px] leading-[21px]">
+            Cookie Policy
+          </Link>
         </div>
       </div>
     </div>

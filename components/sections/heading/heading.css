@@ -8,6 +8,29 @@
 
 }
 
+.multiple_text_wrapper {
+  align-items: center;
+}
+
+.multiple_textitem {
+  font-size: 20px;
+  color: #0D0D0D;
+  letter-spacing: 2.8px;
+  line-height: 28px;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .multiple_textitem {
+    font-size: 40px;
+  line-height: 48px;
+  text-align: left;
+  }
+  .multiple_text_wrapper {
+    align-items: normal;
+  }
+}
+
 @media (min-width: 1536px) {
   .heading_description p {
     font-size: 1.042vw;

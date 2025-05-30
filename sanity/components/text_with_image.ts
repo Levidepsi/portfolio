@@ -12,16 +12,15 @@ export default defineType({
     }),
 
     defineField({
-      name: "layout",
-      title: "Layout",
-      type: "string",
-      options: {
-        list: [
-          { title: "Multiple Images", value: "multiple_images" },
-          { title: "Single Image", value: "single_image" },
-        ],
-        layout: "dropdown"
-      }
+      name: "paddingTop",
+      title: "paddingTop",
+      type: "number",
+    }),
+
+    defineField({
+      name: "paddingBottom",
+      title: "paddingBottom",
+      type: "number",
     }),
 
     defineField({
@@ -29,6 +28,13 @@ export default defineType({
       title: "title",
       type: "string",
     }),
+
+    defineField({
+      name: "content_title",
+      title: "Content title",
+      type: "string",
+    }),
+
     defineField({
       name: "sub_title",
       title: "Sub title",
@@ -43,8 +49,18 @@ export default defineType({
       name: "image",
       title: "Image",
       type: "image",
-       hidden: ({parent}) => parent?.layout != "single_image"
+    }),
 
+    defineField({
+      name: "button_label",
+      title: "button_label",
+      type: "string",
+    }),
+
+    defineField({
+      name: "button_url",
+      title: "Button Url",
+      type: "string",
     }),
 
     defineField({
@@ -60,70 +76,37 @@ export default defineType({
       }
     }),
 
-
-     defineField({
-        name: "slideshow_images",
-        title: "Slide Show Images",
-       type: 'array',
-       hidden: ({parent}) => parent?.layout != "multiple_images",
-        of: [
-          {
-                name: "slides",
-                type: "object",
-                fields: [
-                    
-                    {
-                      name: 'image',
-                      title: 'Image',
-                      type: 'image',
-                    },
-                   
-                ],
-                preview: {
-                  select: {
-                    title: "title", // Get the 'title' from the referenced 'projects' document
-                    media: "image", // Optional: Get the 'image' if available
-                  },
-                  prepare({ title, media }) {
-                    return {
-                      title: title,
-                      media: media || undefined, // Use image if available
-                    };
-                  },
-                },
-            }
-        ]
-    }),
-    
     defineField({
-      name: "multipleText",
-      title: "Multiple Text",
-      type: 'array',
-        of: [
-          {
-                name: "texts",
-                type: "object",
-                fields: [
-                    
-                  {
-                    name: "body",
-                    title: "Body",
-                    type: "blockContent",
-                  },
-                  
-                ],
-                preview: {
-                  select: {
-                    title: "Multiple Text", // Get the 'title' from the referenced 'projects' document
-                  },
-                  prepare({ title  }) {
-                    return {
-                      title: title,
-                    };
-                  },
-                },
-            }
-        ]
+      name: "section_position",
+      title: "Section Position",
+      type: "string",
+      options: {
+        list: [
+          { title: "image_right", value: "image_right" },
+          { title: "image_left", value: "image_left" },
+        ],
+        layout: "radio"
+      }
+    }),
+
+    defineField({
+      name: "image_size",
+      title: "Image Size",
+      type: "string",
+      options: {
+        list: [
+          { title: "small", value: "small",  },
+          { title: "medium", value: "medium" },
+          { title: "large", value: "large" },
+        ],
+        layout: "radio"
+      }
+    }),
+
+    defineField({
+      name: "enable_border",
+      title: "Enable Border",
+      type: "boolean",
     }),
     
   ],
@@ -133,11 +116,12 @@ export default defineType({
       title: "title",
       sub_title: "sub_title",
       media: "image",
+      content_title: "content_title"
     },
     prepare(selection) {
-      const { title, media, sub_title } = selection;
+      const { title, media, sub_title, content_title } = selection;
       return {
-        title: title || sub_title ||  "Text With Image Block",
+        title: title || sub_title || content_title ||  "Text With Image Block",
         media: media || undefined,
       };
     },

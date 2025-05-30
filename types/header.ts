@@ -35,6 +35,12 @@ export interface FooterMenuItem {
   link: string;
 }
 
+export interface AllMenusColor {
+  _type: string
+  menuColor: string
+  slug: string
+}
+
 
 export interface FooterValues {
   footer_logo: string;
@@ -50,6 +56,33 @@ export interface FooterValues {
     }>;
   }>;
   location:
+   Array<{
+    _type: string;
+    style?: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+    }>;
+   }>;
+   services:
+   Array<{
+    _type: string;
+    style?: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+    }>;
+  }>;
+   about:
+   Array<{
+    _type: string;
+    style?: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+    }>;
+   }>;
+   company_info:
    Array<{
     _type: string;
     style?: string;

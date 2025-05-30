@@ -152,47 +152,55 @@ export default defineType({
 
       }),
       defineField({
-        name: "location",
-        title: "Location",
+        name: "services",
+        title: "services",
+        type: "array",
+        of: [{ type: "block" }],
+      group: "content",
+
+      }),
+      defineField({
+        name: "about",
+        title: "about",
+        type: "array",
+        of: [{ type: "block" }],
+      group: "content",
+
+      }),
+      defineField({
+        name: "company_info",
+        title: "Company Info",
         type: "array",
         of: [{ type: "block" }],
       group: "content",
 
       }),
 
-      defineField({
-        name: "copywrite",
-        title: "Copywrite",
-        type: "string",
-      group: "content",
 
-      }),
+    // defineField({
+    //   name: "social_links",
+    //   title: "social links",
+    //   type: "array",
+    //   group: "links",
 
-
-    defineField({
-      name: "social_links",
-      title: "social links",
-      type: "array",
-      group: "links",
-
-      of: [
-        {
-          type: "object",
-          fields: [
-            {
-              name: "title",
-              title: "Title",
-              type: "string",
-            },
-            {
-              name: "link",
-              title: "Link",
-              type: "string",
-              initialValue: "about",
-            },
-          ],
-        },
-      ],
-    }),
+    //   of: [
+    //     {
+    //       type: "object",
+    //       fields: [
+    //         {
+    //           name: "title",
+    //           title: "Title",
+    //           type: "string",
+    //         },
+    //         {
+    //           name: "link",
+    //           title: "Link",
+    //           type: "string",
+    //           initialValue: "about",
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // }),
   ],
 });

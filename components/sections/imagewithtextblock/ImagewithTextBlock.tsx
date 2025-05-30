@@ -46,7 +46,7 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
 
   return (
     <div
-      className={`image-with-text-block--section px-[14px] md:px-[47px] flex flex-col justify-between`}
+      className={`image-with-text-block--section px-[32px] md:px-[32px] flex flex-col justify-between`}
       style={{
         backgroundColor: background_color,
         paddingTop: `${padding_top}px`,
@@ -58,12 +58,12 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
       <h2 className="text-[20px] 2xl:text-[1.302vw] 2xl:leading-[1.563vw] leading-[24px] mb-[30px] text-black  aktiv_medium">{sub_title}</h2>
 
       <div className="text-block-container  relative">
-        <div className="text-block-scroll-wrapper gap-[17px] hidden lg:flex lg:flex-row flex-col w-full h-auto justify-center">
+        <div className="text-block-scroll-wrapper gap-[14px] hidden lg:flex lg:flex-row flex-col w-full h-auto justify-center">
           {textblock_items &&
             textblock_items.map((item: ImageTextBlocks, index: number) => {
               return (
                 <motion.div
-                  className={`text-block-item relative w-full h-auto  ${item.data ? "bg-[#F5F7FA] min-h-[235px]" : ""}`}
+                  className={`text-block-item relative w-full h-auto  ${item.data ? "bg-[#F5F7FA] min-h-[235px] rounded-[10px]" : ""}`}
                   key={index}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -82,10 +82,10 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
                     </div>
                     : 
                     <div className="image-block-content w-full h-auto">
-                      <Image src={item.image} alt={item.title} width={500} priority height={500} className="w-full h-auto lg:aspect-[16/10.7] xl:aspect-[16/8.1] 2xl:aspect-[16/10.1] mb-[30px] object-cover" />
-                      <h2 className="aktiv_regular text-[#000] text-[16px] leading-[21px] 2xl:text-[1.042vw] 2xl:leading-[1.367vw] uppercase mb-5">{item.title}</h2>
-                      <div className="aktiv_regular max-w-[300px] mb-[30px]"><PortableText value={item.body} /></div>
-                      <Link className="text-[14px] button_url relative leading-[18px] 2xl:text-[0.911vw] 2xl:leading-[1.172vw] text-black aktiv_regular pb-[10px]" href={`${item.button_url}`}>Read more</Link>
+                      <Image src={item.image} alt={item.title} width={500} priority height={500} className="w-full rounded-[10px] h-auto lg:aspect-[16/20.7] xl:aspect-[16/23.65] 2xl:aspect-[16/18.85] mb-[25px] object-cover" />
+                      <h2 className="aktiv_regular text-[#000427] text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] uppercase mb-[20px]">{item.title}</h2>
+                      <div className="aktiv_regular mb-[25px]"><PortableText value={item.body} /></div>
+                      <Link className="text-[13px] button_url relative leading-[16px] 2xl:text-[0.846vw] 2xl:leading-[1.042vw] text-[#FFF5EF] aktiv_regular " href={`${item.button_url}`}>Read more</Link>
                     </div>
                   }
                   
@@ -123,8 +123,8 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
                 <motion.div
                   className={`text-block-item relative w-full h-auto  ${item.data ? "bg-[#F5F7FA] min-h-[235px]" : ""}`}
                   
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0,  }}
+                  whileInView={{ opacity: 1 }}
                   transition={{
                     duration: 0.6,
                     ease: "easeOut",
@@ -140,10 +140,10 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
                     </div>
                     : 
                     <div className="image-block-content w-full h-auto">
-                      <Image src={item.image} alt={item.title} priority width={500} height={500} className="w-full h-auto lg:aspect-[16/10.7] xl:aspect-[16/8.1] 2xl:aspect-[16/10.1] mb-[30px] object-cover" />
-                      <h2 className="aktiv_regular text-[#000] text-[16px] leading-[21px] uppercase mb-5">{item.title}</h2>
-                      <div className="aktiv_regular max-w-[300px] mb-[30px]"><PortableText value={item.body} /></div>
-                      <Link className="text-[14px] button_url relative leading-[18px] text-black aktiv_regular pb-[10px]" href={`${item.button_url}`}>Read more</Link>
+                      <Image src={item.image} alt={item.title} priority width={500} height={500} className="w-full rounded-[10px] h-[561px] lg:aspect-[16/20.7] xl:aspect-[16/23.65] 2xl:aspect-[16/25.65] mb-[30px] object-cover" />
+                      <h2 className="aktiv_regular text-[#000427] text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] uppercase mb-[20px]">{item.title}</h2>
+                      <div className="aktiv_regular mb-[25px]"><PortableText value={item.body} /></div>
+                      <Link className="text-[13px] button_url relative leading-[16px] 2xl:text-[0.846vw] 2xl:leading-[1.042vw] text-[#FFF5EF] aktiv_regular " href={`${item.button_url}`}>Read more</Link>
                     </div>
                   }
                   
@@ -226,7 +226,7 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
                         <Image src={item.image} alt={item.title} width={500} priority height={500} className="w-full h-auto lg:aspect-[16/10.7] xl:aspect-[16/8.1] 2xl:aspect-[16/10.1] mb-[30px] object-cover" />
                         <h2 className="aktiv_regular text-[#000] text-[16px] leading-[21px] 2xl:text-[1.042vw] 2xl:leading-[1.367vw] uppercase mb-5">{item.title}</h2>
                         <div className="aktiv_regular max-w-[300px] mb-[30px]"><PortableText value={item.body} /></div>
-                        <Link className="text-[14px] button_url relative leading-[18px] 2xl:text-[0.911vw] 2xl:leading-[1.172vw] text-black aktiv_regular pb-[10px]" href={`${item.button_url}`}>Read more</Link>
+                        <Link className="text-[14px] button_url relative leading-[18px] 2xl:text-[0.911vw] 2xl:leading-[1.172vw] text-black aktiv_regular pb-[10px]" href={`${item.button_url}`}>Find out more</Link>
                       </div>
                     }
                     

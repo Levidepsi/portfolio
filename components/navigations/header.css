@@ -1,51 +1,92 @@
 @import "tailwindcss";
 
+.menu_Link .menu_item {
+  color: #0D0D0D;
+}
 .menu_Link .menu_item::after {
   content: '';
   position: absolute;
   width: 100%;
-  transform: scaleX(0);
-  height: 1px;
+  height: 0.5px;
   bottom: 0;
   left: 0;
-  background-color: #0D988C;
-  transition: transform 0.3s ease-out;
+  background-color: #FFF5EF;
+  transition: 0.3s ease-out;
   display: block;
+  opacity: 0;
+}
+
+.contact .menu_item.dark {
+  color: #0D0D0D;
+  border: 0.5px solid #0D0D0D;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: 0.6s all;
+}
+.contact .menu_item.light {
+  color: #FFF5EF;
+  border: 0.5px solid #FFF5EF;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: 0.6s all;
+}
+
+.contact .menu_item.active.dark {
+  color: #FFF5EF;
+  background-color: #0D0D0D;
+}
+
+.contact .menu_item.active.light {
+  color: #0D0D0D;
+  background-color: #FFF5EF;
+}
+
+ .logo.dark {
+  color: #0D0D0D;
+}
+
+ .logo.light {
+  color: #FFF5EF;
+}
+
+.contact .menu_item.dark:hover {
+  color: #FFF5EF;
+  background-color: #0D0D0D;
+}
+
+.contact .menu_item.light:hover {
+  color: #0D0D0D;
+  background-color: #FFF5EF;
+}
+
+.menu_Link .menu_item.dark {
+  color: #0D0D0D;
+}
+
+.menu_Link .menu_item.light {
+  color: #FFF5EF;
+}
+
+.menu_Link .menu_item.dark::after {
+  background-color: #0D0D0D;
+}
+
+.menu_Link .menu_item.light::after {
+  background-color: #FFF5EF;
 }
 
 .menu_Link:hover .menu_item::after {
   transform-origin: bottom center;
-  transform: scaleX(1);
+}
+
+.menu_Link .menu_item:hover:after {
+  opacity: 1;
 }
 
 .menu_Link .menu_item.active::after {
-  transform-origin: bottom center;
-  transform: scaleX(1);
+  opacity: 1;
 }
 
-
-.menu_Link a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: #0D988C;
-  transition: transform 0.3s ease-out;
-  display: block;
-}
-
-.menu_Link:hover a::after {
-  transform-origin: bottom center;
-  transform: scaleX(1);
-}
-
-.menu_Link a.active::after {
-  transform-origin: bottom center;
-  transform: scaleX(1);
-}
 .mobile_icons {
   position: absolute;
   top: 0;
@@ -115,22 +156,41 @@
   transform: scaleX(1);
 }
 
-.contact-emails h5 {
-  font-weight: normal;
-  margin-bottom: 10px;
+.contact h2,
+.services h2,
+.about h2 {
+  font-size: 13px;
+  letter-spacing: 0.91px;
+  line-height: 21px;
+  color: #F8F3E9;
+}
+
+.contact p:empty,
+.services p:empty,
+.about p:empty {
+  margin: 20px;
+}
+
+.contact p,
+.services p,
+.about p {
+  font-size: 13px;
+  line-height: 0.26px;
+  line-height: 21px;
+  color: #F8F3E9;
+}
+
+.info p {
+  font-size: 10px;
+  color: #F8F3E9;
+  letter-spacing: -0.1px;
+  line-height: 19px;
 }
 
 .contact-emails p:empty {
   margin: 20px;
 }
 
-.contact-emails p,
-.copywrite,
-.contact-emails h5 {
-  font-size: 12px;
-  line-height: 15px;
-  color: #0D988C;
-}
 
 
 @media (min-width: 1024px) {
@@ -160,27 +220,11 @@
   max-height: 1000rem;
 }
 
-
-
-
-.contact-emails p {
-  position: relative;
-}
-
-.contact-emails p a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: #0D988C;
-  transition: transform 0.3s ease-out;
-  display: block;
-}
-
-.contact-emails p:hover a::after {
-  transform-origin: bottom center;
-  transform: scaleX(1);
+@media (width <= 768px) {
+  .footer_descriptions,
+  .info {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }

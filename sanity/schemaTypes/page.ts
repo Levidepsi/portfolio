@@ -44,6 +44,21 @@ export default defineType({
       group: "content",
     }),
     defineField({
+      name: "menuColor",
+      title: "Menu Color",
+      type: "string",
+      options: {
+        list: [
+          { title: "Dark", value: "dark" },
+          { title: "Light", value: "light" },
+          
+        ], // <-- predefined values
+        layout: "radio", // <-- defaults to 'dropdown'
+      },
+      group: "settings"
+
+    }),
+    defineField({
       name: "meta_description",
       title: "Meta Description",
       type: "string",
@@ -63,12 +78,13 @@ export default defineType({
       type: "array",
       group: "content",
       of: [
-        { type: "slider" },
+        // { type: "slider" },
         { type: "banner" },
         { type: "heading" },
-        { type: "multiple_text" },
+        // { type: "multiple_text" },
         { type: "text_with_image" },
-        { type: "featured_banner" },
+        { type: "text_with_image2" },
+        // { type: "featured_banner" },
         { type: "contact" },
         { type: "image_with_text_block" },
         { type: "richtext" },
@@ -89,6 +105,7 @@ export default defineType({
                 "multiple_text",
                 "richtext",
                 "text_with_image",
+                "text_with_image2"
               ],
             },
             {

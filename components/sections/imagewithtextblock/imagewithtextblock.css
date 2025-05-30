@@ -1,7 +1,7 @@
 .image-block-content p {
-  font-size: 14px;
-  line-height: 18px;
-  color: #000;
+  font-size: 13px;
+  line-height: 20px;
+  color: #000427;
 }
 /* .button_url::after {
   content: "";
@@ -20,7 +20,7 @@
   opacity: 0.7;
 } */
 
-.button_url::after{
+/* .button_url::after{
   content: '';
   position: absolute;
   width: 100%;
@@ -36,11 +36,24 @@
 .button_url:hover:after{
   transform-origin: bottom center;
   transform: scaleX(1);
+} */
+
+.button_url {
+  border-radius: 5px;
+  background-color: #000427;
+  padding: 3px 10px;
+  transition: 0.7s all;
+  border: 0.5px solid #000427;
+}
+
+.button_url:hover {
+  background-color: #FFF5EF;
+  color: #000427;
 }
 
 @media (min-width: 1024px) {
   .image-block-content {
-    font-size: 0.911vw;
-  line-height: 1.172vw;
+    font-size: 0.846vw;
+  line-height: 1.302vw;
   }
 }

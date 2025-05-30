@@ -17,6 +17,7 @@ import FeaturedBanner from "../sections/featuredBanner/FeaturedBanner";
 import { COMPONENTS } from "./components";
 import MapWithImage from "../sections/mapwithimage/MapWithImage";
 import Richtext from "../sections/richtext/Richtext";
+import TextWithImage2 from "../sections/textwithimage/TextWithImage2";
 
 
 
@@ -54,16 +55,27 @@ export default function SpreadComponents({ components }: { components: any }) {
                       key={component._key}
                       title={component.title}
                       background_color={component.background_color}
-                      layout={component.layout}
-                      body={component.body}
+                      content_title={component.content_title}
+                      enable_border={component.enable_border}
+                      button_label={component.button_label}
+                      button_url={component.button_url}
                       image={component.image}
-                      slideshow_images={component.slideshow_images}
+                      image_size={component.image_size}
+                      section_position={component.section_position}
                       content_position={component.content_position}
+                      body={component.body}
                       sub_title={component.sub_title}
-                      multipleText={component.multipleText}
 
-
-                    />
+                    />  
+                  ),
+                  text_with_image2: (
+                    <TextWithImage2
+                      key={component._key}
+                      title={component.title}
+                      paddingTop={component.paddingTop}
+                      paddingBottom={component.paddingBottom}
+                      items={component.items}
+                    />  
                   ),
                   multiple_text: (
                     <MultipleText
@@ -147,6 +159,7 @@ export default function SpreadComponents({ components }: { components: any }) {
                       descriptions_max_width={component.descriptions_max_width}
                       padding_top={component.padding_top}
                       description={component.description}
+                      multiple_text={component.multiple_text}
                     />
                   ),
                   slider: (

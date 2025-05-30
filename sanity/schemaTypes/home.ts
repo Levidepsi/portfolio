@@ -39,6 +39,21 @@ export default defineType({
 
     }),
     defineField({
+      name: "menuColor",
+      title: "Menu Color",
+      type: "string",
+      options: {
+        list: [
+          { title: "Dark", value: "dark" },
+          { title: "Light", value: "light" },
+          
+        ], // <-- predefined values
+        layout: "radio", // <-- defaults to 'dropdown'
+      },
+      group: "settings"
+
+    }),
+    defineField({
       name: "publishedAt",
       title: "Published at",
       type: "datetime",

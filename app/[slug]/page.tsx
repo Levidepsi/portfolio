@@ -34,7 +34,7 @@ export async function generateMetadata(props: {
     width = Math.round(height * aspectRatio);
   }
 
-  let metaTitle = `Ocean and Sea | ${slug}`;
+  let metaTitle = `JD Spirits | ${slug}`;
   const metadata = {
     title: metaTitle,
     description: "",
@@ -44,7 +44,7 @@ export async function generateMetadata(props: {
       description:
         page.data.meta_description != null
           ? page.data.meta_description
-          : "Ocean and Sea",
+          : "JD Spirits",
       url: `https://ocean-and-sea.vercel.app/${slug}`,
       siteName: `${metaTitle}`,
       images: [

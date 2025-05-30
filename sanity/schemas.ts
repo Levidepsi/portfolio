@@ -19,6 +19,7 @@ import imagewithtextblock from "./components/imagewithtextblock";
 import contact from "./components/contact";
 import destinations from "./schemaTypes/destinations";
 import mapwithimage from "./components/mapwithimage";
+import text_with_image2 from "./components/text_with_image2";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -32,6 +33,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     slideshow,
     banner,
     text_with_image,
+    text_with_image2,
     heading,
     richtext,
     multiple_text,

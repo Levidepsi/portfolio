@@ -5,12 +5,12 @@ import "@/components/navigations/header.css"
 import { ThemeProvider } from "@/components/global/ThemeProvider";
 import ProviderWrapper from "@/components/global/ProviderWrapper";
 import { draftMode } from "next/headers";
-import { FOOTER, HEADER, NAVIGATION } from "@/sanity/lib/client";
+import { FOOTER, GET_ALL_PAGE_MENU_COLOR, HEADER, NAVIGATION } from "@/sanity/lib/client";
 import { loadQuery } from "@/sanity/lib/store";
 import { SanityDocument } from "next-sanity";
 import LiveVisualEditing from "@/components/LiveVisualEditing";
 import Header from "@/components/navigations/Header";
-import { FooterValues, HeaderValues } from "@/types/header";
+import { AllMenusColor, FooterValues, HeaderValues } from "@/types/header";
 import logo from "@/public/Group 13.png";
 import Footer from "@/components/navigations/Footer";
 
@@ -42,6 +42,15 @@ export default async function RootLayout({
     }
   );
 
+  const allMenuColor = await loadQuery<AllMenusColor[]>(
+    GET_ALL_PAGE_MENU_COLOR,
+    {},
+    {
+      cache: "no-store",
+    }
+  );
+
+
   const { isEnabled } = await draftMode();
   return (
     <html lang="en">
@@ -50,7 +59,7 @@ export default async function RootLayout({
       {/* <link rel="preload" href="/public/fonts/AktivGrotesk-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/> */}
       </head>
       <body>
-        <ThemeProvider >
+        <ThemeProvider allMenuColor={allMenuColor.data}>
           <Header navigation={navigation.data} />
           <main>  
             <ProviderWrapper>{children}</ProviderWrapper>

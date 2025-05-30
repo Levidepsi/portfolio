@@ -32,6 +32,22 @@ export interface ImageTextBlocks {
     data: number
 }
 
+export interface Items2 {
+  title: string;
+  body: Array<{
+    _type: string;
+    style?: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+    }>;
+  }>;
+  image: string;
+  button_label: string;
+  button_url: string
+
+}
+
 export interface TextAccordions{
   title: string;
   body: Array<{
@@ -46,6 +62,10 @@ export interface TextAccordions{
 
 export interface Interests {
   title: string
+}
+export interface MultipleTextArray {
+  title: string;
+  position: string;
 }
 
 export interface MultipleTextProp {
@@ -195,4 +215,10 @@ export interface COMPONENTS {
   destinations: Destinations[];
   multipleText: MultipleTextProp[];
   allowSliderMobile: boolean;
+  multiple_text: MultipleTextArray[];
+  content_title: string;
+  section_position: string;
+  image_size: string;
+  enable_border: boolean;
+  items: Items2[]
 }

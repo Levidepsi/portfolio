@@ -39,6 +39,13 @@ export default defineType({
     }),
 
     defineField({
+      name: "largePaddingLeftRight",
+      title: "Large Padding Lefft & Right",
+      type: "boolean",
+      initialValue: true
+    }),
+
+    defineField({
       name: "layout",
       title: "Layout",
       type: "string",
@@ -46,6 +53,19 @@ export default defineType({
         list: [
           { title: "Text Within Image", value: "text_within_image" },
           { title: "Text Below Image", value: "text_below_image" },
+        ],
+        layout: "dropdown"
+      }
+    }),
+
+    defineField({
+      name: "image_size",
+      title: "Image Size",
+      type: "string",
+      options: {
+        list: [
+          { title: "medium", value: "medium" },
+          { title: "large", value: "large" },
         ],
         layout: "dropdown"
       }

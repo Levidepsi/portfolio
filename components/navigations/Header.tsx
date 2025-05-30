@@ -6,6 +6,7 @@ import { HeaderMenuItem, HeaderSubMenuItem, HeaderValues, PageObject } from "@/t
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
+import { GlobalContext } from "../global/ThemeProvider";
 
 const Header = ({ navigation }: { navigation: HeaderValues }) => {
   const homepage = "/"
@@ -30,22 +31,27 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
   if (pathname.includes("/admin")) {
     return null
   }
+  
+
+  const {menuColor} = GlobalContext()
 
     
   return (
-    <header className={`header-container flex justify-between lg:justify-center flex-row lg:flex-col bg-white w-full  items-center gap-x-5 px-[14px] lg:px-[56px] py-[20px] lg:py-[25.25px] ${openMenuMobile == true ? "active" : ""} fixed   top-0 left-0 z-[11]`}>
-      {navigation != null && navigation.header_logo ?
-        <Link href={"/"} className={``}>
-          <Image src={navigation.header_logo} alt={navigation.title} width={500} height={500} className="w-[140px] h-auto object-cover lg:mb-[25px]" />
-        </Link>
-        : 
-        <Link href={"/"} className={`logo  ${openMenuMobile == true ? "active" : ""} `}>
-          Ocean And Sea
-        </Link>
-      }
+    <header className={`header-container flex justify-between w-full  items-center gap-x-5 px-[32px] lg:px-[32px] py-[20px] lg:py-[42px] ${openMenuMobile == true ? "active" : ""} fixed   top-0 left-0 z-[11]`}>
+      <div className="lg:w-[20%]">
+        {navigation != null && navigation.header_logo ?
+          <Link href={"/"} className={``}>
+            <Image src={navigation.header_logo} alt={navigation.title} width={500} height={500} className="w-[215px] h-auto object-cover " />
+          </Link>
+          : 
+          <Link href={"/"} className={`logo text-[20px] tracking-[1.4px] leading-[29px] ${menuColor} ${openMenuMobile == true ? "active" : ""} `}>
+            JD SPIRITS
+          </Link>
+        }
+      </div>
 
-      <div className="Desktop_Menu hidden lg:flex justify-center">
-        <div className="Menu_Wrapper w-full justify-center flex gap-x-[50px]">
+      <div className="Desktop_Menu hidden lg:w-[80%] lg:flex justify-center">
+        <div className="Menu_Wrapper w-full justify-center flex gap-x-[27px]">
           {navigation?.header_menu.map((item: HeaderMenuItem, index: number) => {
              const titleSlug = item.title.replace(/\s+/g, '-').toLowerCase();
 
@@ -59,7 +65,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
                 {item.subMenu ? (
                   <button
                     type="button"
-                    className={`text-[14px]  menu_item relative pb-[5px] leading-[18px] aktiv_regular text-[#0D988C] ${
+                    className={`text-[14px]  menu_item relative  leading-[18px] aktiv_regular ${menuColor} ${
                       openSubMenu === index ? "active" : ""
                     }`}
                   >
@@ -67,8 +73,8 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
                   </button>
                 ) : (
                   <Link
-                    href={`/${item.page.slug.slug}`}
-                    className="text-[14px] menu_item aktiv_regular relative pb-[5px] leading-[18px] text-[#0D988C]"
+                    href={`/${item.page ? item.page.slug.slug : "/"}`}
+                    className={`text-[12px] menu_item tracking-[0.24px] aktiv_regular relative  leading-[16px] ${menuColor}`}
                   >
                     {item.title}
                   </Link>
@@ -101,6 +107,20 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
           })}
         </div>
       </div>
+      <div className="hidden contact lg:w-[20%] lg:flex flex gap-x-[15.45px] justify-end">
+        <Link
+          href={`https://myaccount.jdspirits.com/login`}
+          className={`text-[12px] tracking-[0.24px]  menu_item aktiv_regular relative leading-[16px] ${menuColor}`}
+        >
+          Customer Login
+        </Link>
+        <Link
+          href={`/contact-us`}
+          className={`text-[12px] tracking-[0.24px] menu_item aktiv_regular ${pathname == "/contact" ? "active" : ""} relative leading-[16px] ${menuColor}`}
+        >
+        Contact
+        </Link>
+      </div>  
 
       <div className="Burger relative lg:hidden">
         <div onClick={() => setOpenMenuMobile(true)} className={`mobile_icons open ${openMenuMobile ? "hide" : "show"}`}><BurgerIcon /></div>
@@ -143,7 +163,7 @@ const MobileMenu = (
       ) => {
         const titleSlug = item.title.replace(/\s+/g, '-').toLowerCase();
           return (
-            <li className={`menu-item ${path.includes(item.page.slug.slug) ? "active": "not-active"}  list-none`} key={index}>
+            <li className={`menu-item ${item.page && path.includes(item.page.slug.slug) ? "active": "not-active"}  list-none`} key={index}>
               {item.subMenu ? (
                 <button
                     onClick={() =>
@@ -160,7 +180,7 @@ const MobileMenu = (
                   <Link
                     onClick={() => setOpenMenuMobile(false)}
                     className={`text-[#0D988C] text-[16px]  leading-[21px] aktiv_regular`}
-                    href={`/${item.page.slug.slug}`}>{item.title}</Link>
+                    href={`/${item.page ? item.page.slug.slug : "/"}`}>{item.title}</Link>
                     )}
               {/* <Link
                 className={`text-[#0D988C] text-[16px]  leading-[21px] aktiv_regular`}
@@ -197,9 +217,9 @@ const BurgerIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="9" viewBox="0 0 22 9">
       <g id="Group_85" data-name="Group 85" transform="translate(-342 -30)">
-        <line id="Line_46" data-name="Line 46" x2="21" transform="translate(342.5 30.5)" fill="none" stroke="#07988c" strokeLinecap="round" strokeWidth="1"/>
-        <line id="Line_47" data-name="Line 47" x2="21" transform="translate(342.5 34.5)" fill="none" stroke="#07988c" strokeLinecap="round" strokeWidth="1"/>
-        <line id="Line_48" data-name="Line 48" x2="21" transform="translate(342.5 38.5)" fill="none" stroke="#07988c" strokeLinecap="round" strokeWidth="1"/>
+        <line id="Line_46" data-name="Line 46" x2="21" transform="translate(342.5 30.5)" fill="none" stroke="#0D0D0D" strokeLinecap="round" strokeWidth="1"/>
+        <line id="Line_47" data-name="Line 47" x2="21" transform="translate(342.5 34.5)" fill="none" stroke="#0D0D0D" strokeLinecap="round" strokeWidth="1"/>
+        <line id="Line_48" data-name="Line 48" x2="21" transform="translate(342.5 38.5)" fill="none" stroke="#0D0D0D" strokeLinecap="round" strokeWidth="1"/>
       </g>
     </svg>
   )
@@ -208,8 +228,8 @@ const BurgerIcon = () => {
 const CloseIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 24 24" fill="none">
-      <path d="M7 17L16.8995 7.10051" stroke="#0D988C" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M7 7.00001L16.8995 16.8995" stroke="#0D988C" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M7 17L16.8995 7.10051" stroke="#0D0D0D" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M7 7.00001L16.8995 16.8995" stroke="#0D0D0D" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   )
 }

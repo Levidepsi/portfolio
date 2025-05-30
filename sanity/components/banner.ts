@@ -31,8 +31,13 @@ export default defineType({
       type: "number",
     }),
     defineField({
-      name: "anchor_id",
-      title: "Anchor Id",
+      name: "description",
+      title: "Description",
+      type: "blockContent",
+    }),
+    defineField({
+      name: "url",
+      title: "Url",
       type: "string",
     }),
     defineField({

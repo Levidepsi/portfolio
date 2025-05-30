@@ -1,96 +1,40 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Aktiv Grotesk Armn Italaic';
-  src: url('/fonts/AktivGroteskArmn-Italic.eot');
-  src: url('/fonts/AktivGroteskArmn-Italic.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/AktivGroteskArmn-Italic.woff2') format('woff2'),
-    url('/fonts/AktivGroteskArmn-Italic.woff') format('woff'),
-    url('/fonts/AktivGroteskArmn-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aktiv Grotesk Armn Light Italic';
-  src: url('/fonts/AktivGroteskArmn-LightItalic.eot');
-  src: url('/fonts/AktivGroteskArmn-LightItalic.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/AktivGroteskArmn-LightItalic.woff2') format('woff2'),
-    url('/fonts/AktivGroteskArmn-LightItalic.woff') format('woff'),
-    url('/fonts/AktivGroteskArmn-LightItalic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aktiv Grotesk Armn Medium Italic';
-  src: url('/fonts/AktivGroteskArmn-MediumItalic.eot');
-  src: url('/fonts/AktivGroteskArmn-MediumItalic.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/AktivGroteskArmn-MediumItalic.woff2') format('woff2'),
-    url('/fonts/AktivGroteskArmn-MediumItalic.woff') format('woff'),
-    url('/fonts/AktivGroteskArmn-MediumItalic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aktiv Grotesk Armn Bold Italic';
-  src: url('/fonts/AktivGroteskArmn-SemiBoldItalic.eot');
-  src: url('/fonts/AktivGroteskArmn-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/AktivGroteskArmn-SemiBoldItalic.woff2') format('woff2'),
-    url('/fonts/AktivGroteskArmn-SemiBoldItalic.woff') format('woff'),
-    url('/fonts/AktivGroteskArmn-SemiBoldItalic.ttf') format('truetype');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aktiv Grotesk Regular';
-  src: url('/fonts/AktivGrotesk-Regular.eot');
-  src: url('/fonts/AktivGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/AktivGrotesk-Regular.woff2') format('woff2'),
-    url('/fonts/AktivGrotesk-Regular.woff') format('woff'),
-    url('/fonts/AktivGrotesk-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'AktivGrotesk Medium';
-  src: url('/fonts/AktivGrotesk-Medium.eot');
-  src: url('/fonts/AktivGrotesk-Medium.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/AktivGrotesk-Medium.woff2') format('woff2'),
-    url('/fonts/AktivGrotesk-Medium.woff') format('woff'),
-    url('/fonts/AktivGrotesk-Medium.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-
-.aktiv_regular {
-  font-family: 'Aktiv Grotesk Regular';
-}
-
-.aktiv_medium {
-  font-family: 'AktivGrotesk Medium';
-}
-
-.thin_italic {
-  font-family: 'Aktiv Grotesk Armn Light Italic';
-}
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-.regular {
-  font-family: 'Aktiv Grotesk Armn Italaic';
+@font-face {
+  font-family: 'Moister';
+  src: url('/fonts/Moister-Regular.eot');
+  src: url('/fonts/Moister-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Moister-Regular.woff2') format('woff2'),
+    url('/fonts/Moister-Regular.woff') format('woff'),
+    url('/fonts/Moister-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Forma DJR Banner';
+  src: url('/fonts/FFormaDJRText-Regular.eot');
+  src: url('/fonts/FFormaDJRText-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/FFormaDJRText-Regular.woff2') format('woff2'),
+    url('/fonts/FFormaDJRText-Regular.woff') format('woff'),
+    url('/fonts/FFormaDJRText-Regular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+.moinster_regular {
+  font-family: 'Moister';
+}
+
+.forma_djr {
+  font-family: 'Forma DJR Banner';
 }
 
 @theme inline {
@@ -113,7 +57,7 @@ html, body {
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #FFF5EF;
   min-height: 100vh;
   overflow-x: hidden;
   font-family: "Aktiv Grotesk Regular", Arial, sans-serif;
@@ -125,4 +69,11 @@ body {
 
 .white {
   background-color: #fff;
+}
+
+.landing_logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -324,36 +324,36 @@ const Contact = (
               <h2 className="text-[20px] form_title text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular mb-[25px]">SIGN IN</h2>
               <form ref={form} onSubmit={(e) => sendEmail(e)}>
                 <div className="user-info flex flex-col md:flex-row gap-[16px] mb-[30px]">
-                  <div className="firstName flex flex-col md:w-[100%] lg:w-[50%]">
+                  <div className="firstName flex flex-col md:w-[100%] ">
                     <input
                       type="name"
                       name="first_name"
                       id="first_name"
                       placeholder="First Name"
-                      className="border-b-[0.5px] lg:max-w-[215px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                      className="border-b-[0.5px] lg:max-w-[292px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                   </div>
                   
                 </div>
 
                 <div className="user-info flex flex-col md:flex-row gap-[16px] mb-[30px]">
-                  <div className="email flex flex-col md:w-[100%] lg:w-[50%]">
+                  <div className="email flex flex-col md:w-[100%] ">
                     <input
                       type="email"
                       name="email"
                       id="email"
                       placeholder="Email"
-                      className="border-b-[0.5px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                      className="border-b-[0.5px] lg:max-w-[292px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                   </div>
                   </div>
                   
                   <div className="user-info flex flex-col md:flex-row gap-[16px] mb-[30px]">
-                    <div className="email flex flex-col md:w-[100%] lg:w-[50%]">
+                    <div className="email flex flex-col md:w-[100%] ">
                       <input
                         type="number"
                         name="cask_number"
                         id="cask_number"
                         placeholder="Cask Number"
-                        className="border-b-[0.5px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                        className="border-b-[0.5px] lg:max-w-[292px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                     </div>
                   </div>
 

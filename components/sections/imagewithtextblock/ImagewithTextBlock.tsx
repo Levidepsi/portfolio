@@ -56,8 +56,8 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
       }}
     >
 
-      <h2 className="text-[14px] 2xl:text-[0.911vw] 2xl:leading-[1.172vw] leading-[18px] mb-[20px] text-black uppercase aktiv_regular">{title}</h2>
-      <h2 className="text-[20px] 2xl:text-[1.302vw] 2xl:leading-[1.563vw] leading-[24px] mb-[30px] text-black  aktiv_medium">{sub_title}</h2>
+      {title && <h2 className="text-[14px] 2xl:text-[0.911vw] 2xl:leading-[1.172vw] leading-[18px] mb-[20px] text-black uppercase aktiv_regular">{title}</h2>}
+      {sub_title && <h2 className="text-[20px] 2xl:text-[1.302vw] 2xl:leading-[1.563vw] leading-[24px] mb-[30px] text-black  aktiv_medium">{sub_title}</h2>}
 
       <div className="text-block-container  relative">
         <div className={`text-block-scroll-wrapper gap-[14px] hidden lg:flex lg:flex-row ${largePaddingLeftRight ? "lg:flex-wrap" : ""}  flex-col w-full h-auto justify-center`}>

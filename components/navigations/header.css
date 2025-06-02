@@ -2,6 +2,7 @@
 
 .menu_Link .menu_item {
   color: #0D0D0D;
+  
 }
 .menu_Link .menu_item::after {
   content: '';
@@ -22,6 +23,7 @@
   border-radius: 5px;
   padding: 5px 10px;
   transition: 0.6s all;
+  width: max-content;
 }
 .contact .menu_item.light {
   color: #FFF5EF;
@@ -29,16 +31,19 @@
   border-radius: 5px;
   padding: 5px 10px;
   transition: 0.6s all;
+  width: max-content;
 }
 
 .contact .menu_item.active.dark {
   color: #FFF5EF;
   background-color: #0D0D0D;
+  width: max-content;
 }
 
 .contact .menu_item.active.light {
   color: #0D0D0D;
   background-color: #FFF5EF;
+  width: max-content;
 }
 
  .logo.dark {
@@ -128,14 +133,14 @@
 .Mobile_Header {
   opacity: 0;
   visibility: hidden;
-  height: auto;
-  max-height: 0;
   transition: 0.7s all;
+  top: -55px;
+  left: 0;
 }
 .Mobile_Header.show {
   opacity: 1;
   visibility: visible;
-  max-height: 1000rem;
+  top: 0;
 }
 
 .Mobile_Header::after {
@@ -146,7 +151,7 @@
   height: 1px;
   top: 0;
   left: 0;
-  background-color: #0D988C;
+  background-color: #0D0D0D;
   transition: transform 0.3s ease-out;
   display: block;
 }

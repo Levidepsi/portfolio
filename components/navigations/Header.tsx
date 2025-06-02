@@ -74,7 +74,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
                 ) : (
                   <Link
                     href={`/${item.page ? item.page.slug.slug : "/"}`}
-                    className={`text-[12px] forma_regular menu_item tracking-[0.24px] aktiv_regular relative  leading-[16px] ${menuColor}`}
+                    className={`text-[12px] forma_regular menu_item tracking-[0.24px] forma_regular relative  leading-[16px] ${menuColor}`}
                   >
                     {item.title}
                   </Link>
@@ -94,7 +94,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
                         }}
                         key={subIndex}
                         href={`/${titleSlug}/${sub.page ? `${sub.page.slug.slug}` : "/"}`}
-                        className="text-[#0D988C] aktiv_regular text-[14px] lg:text-[14px] pb-[10px] leading-[18px] lg:leading-[18px] subMenu-Item w-max"
+                        className="text-[#0D0D0D] forma_regular text-[14px] lg:text-[14px] pb-[10px] leading-[18px] lg:leading-[18px] subMenu-Item w-max"
                       >
                         {sub.title}
                       </Link>
@@ -127,8 +127,44 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
         <div onClick={() => setOpenMenuMobile(false)} className={`mobile_icons close ${openMenuMobile ? "show" : "hide"}`}><CloseIcon /></div>
       </div>
 
-      <div className={`Mobile_Header w-full flex justify-center ${openMenuMobile ? "show" : ""} bg-white pb-[250px] absolute top-[55px] left-0  lg:hidden`}>
-          <MobileMenu setOpenMenuMobile={setOpenMenuMobile} setOpenSubMenu={setOpenSubMenu} openSubMenu={openSubMenu} menu={navigation.header_menu} path={pathname} homepage={homepage} />
+      <div className={`Mobile_Header w-full h-full flex flex-col pt-[30px] ${openMenuMobile ? "show" : ""} bg-[#fff5ef] fixed top-[55px] left-0  lg:hidden`}>
+        <div className="flex justify-between px-[32px]">
+          <div className="lg:w-[20%]">
+            {navigation != null && navigation.header_logo ?
+              <Link href={"/"} className={``}>
+                <Image src={navigation.header_logo} alt={navigation.title} width={500} height={500} className="w-[215px] h-auto object-cover " />
+              </Link>
+              : 
+              <Link href={"/"} className={`logo text-[20px] tracking-[1.4px] leading-[29px] moinster_regular ${menuColor} ${openMenuMobile == true ? "active" : ""} `}>
+                JD SPIRITS
+              </Link>
+            }
+          </div>
+          <div onClick={() => setOpenMenuMobile(false)} className={` open `}><CloseIcon /></div>
+
+        </div>
+        <MobileMenu
+          setOpenMenuMobile={setOpenMenuMobile}
+          setOpenSubMenu={setOpenSubMenu}
+          openSubMenu={openSubMenu}
+          menu={navigation.header_menu}
+          path={pathname}
+          homepage={homepage}
+        />
+        <div className="flex absolute bottom-[50px]  contact lg:w-[20%] lg:hidden  gap-x-[15.45px] px-[32px]">
+          <Link
+            href={`https://myaccount.jdspirits.com/login`}
+            className={`text-[12px] tracking-[0.24px] forma_regular menu_item forma_regular relative leading-[16px] ${menuColor}`}
+          >
+            Customer Login
+          </Link>
+          <Link
+            href={`/contact`}
+            className={`text-[12px]  tracking-[0.24px] menu_item forma_regular ${pathname == "/contact" ? "active" : ""} relative leading-[16px] ${menuColor}`}
+          >
+          Contact
+          </Link>
+        </div> 
       </div>
 
     </header>
@@ -156,7 +192,7 @@ const MobileMenu = (
       setOpenSubMenu: any
     }) => {
   return (
-    <div className="flex w-full mobile_header_wrapper pt-[30px] text-center justify-center flex-col gap-y-5">
+    <div className="flex w-full mobile_header_wrapper pt-[30px] px-[32px] flex-col gap-y-5">
       {menu.map((
         item: HeaderMenuItem,
         index: number
@@ -170,7 +206,7 @@ const MobileMenu = (
                       setOpenSubMenu(openSubMenu === index ? null : index)
                     }
                     type="button"
-                    className={`text-[14px] cursor-pointer menu_item relative pb-[5px] leading-[18px] aktiv_regular text-[#0D988C] ${
+                    className={`text-[14px] cursor-pointer menu_item relative pb-[5px] leading-[18px] forma_regular text-[#0D0D0D] ${
                       openSubMenu === index ? "active" : ""
                     }`}
                   >
@@ -179,7 +215,7 @@ const MobileMenu = (
                 ) : (
                   <Link
                     onClick={() => setOpenMenuMobile(false)}
-                    className={`text-[#0D988C] text-[16px]  leading-[21px] aktiv_regular`}
+                    className={`text-[#forma_regular] text-[16px]  leading-[21px] aktiv_regular`}
                     href={`/${item.page ? item.page.slug.slug : "/"}`}>{item.title}</Link>
                     )}
               {/* <Link

@@ -233,3 +233,19 @@
     text-align: center;
   }
 }
+
+@media (width >= 500px) and (width <= 767px) {
+  .footer_descriptions {
+    flex-direction: row;
+    justify-content: space-between !important;
+    align-items: self-start;
+    flex-wrap: wrap;
+  }
+
+  .footer_descriptions .contact, 
+  .footer_descriptions .services,  
+  .footer_descriptions .about, 
+  .footer_descriptions .info {
+    width: 50%;
+  }
+}

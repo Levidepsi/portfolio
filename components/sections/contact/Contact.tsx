@@ -108,7 +108,7 @@ const Contact = (
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: api ? api : "AIzaSyDeUY4gzlFSwqiLXOjBqkGZbOaBzwTVn7E",
+    googleMapsApiKey: "AIzaSyD1ok-cdrF_SKmNb2E3yFCsJTBChFjwUmQ",
   });
 
   if (api) {
@@ -321,7 +321,7 @@ const Contact = (
               </div>
             </div>
             <div className="form md:w-[60%]">
-              <h2 className="text-[20px] form_title text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular mb-[25px]">SIGN IN</h2>
+              <h2 className="text-[20px] form_title text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular mb-[25px]">Request a Meeting </h2>
               <form ref={form} onSubmit={(e) => sendEmail(e)}>
                 <div className="user-info flex flex-col md:flex-row gap-[16px] mb-[30px]">
                   <div className="firstName flex flex-col md:w-[100%] ">
@@ -357,7 +357,7 @@ const Contact = (
                     </div>
                   </div>
 
-                <button type="submit" className="text-[12px] leading-[16px] tracking-[0.24px] flex  cursor-pointer  text-[#0D0D0D] forma_regular">Sign in</button>
+                <button type="submit" className="text-[12px] leading-[16px] tracking-[0.24px] flex  cursor-pointer  text-[#0D0D0D] forma_regular">Send Request</button>
               </form>
             </div>
             </div>

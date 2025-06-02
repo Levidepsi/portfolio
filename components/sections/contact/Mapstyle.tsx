@@ -2,37 +2,92 @@
 export default [
   {
     "featureType": "all",
-    "elementType": "geometry",
-    "stylers": [{ "color": "#d9d1c7" }]
+    "elementType": "all",
+    "stylers": [
+      { "saturation": -80 },
+      { "lightness": 20 },
+      { "gamma": 0.8 }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#666666" },
+      { "weight": 0.8 }
+    ]
+  },
+  {
+    "featureType": "administrative.country",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "color": "#d4b5d4" },
+      { "weight": 1.5 }
+    ]
+  },
+  {
+    "featureType": "administrative.province",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "color": "#d4b5d4" },
+      { "weight": 1 }
+    ]
+  },
+  {
+    "featureType": "landscape",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#f5f1f5" }
+    ]
   },
   {
     "featureType": "road",
-    "elementType": "geometry",
-    "stylers": [{ "color": "#ffffff" }, { "weight": 1.5 }]
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#ffffff" }
+    ]
   },
   {
     "featureType": "road",
     "elementType": "geometry.stroke",
-    "stylers": [{ "color": "#d9d1c7" }, { "weight": 0.5 }]
+    "stylers": [
+      { "color": "#cccccc" },
+      { "weight": 0.5 }
+    ]
   },
   {
-    "featureType": "poi",
-    "elementType": "geometry",
-    "stylers": [{ "color": "#d9d1c7" }]
+    "featureType": "road.highway",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#e6e6e6" }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#666666" }
+    ]
   },
   {
     "featureType": "water",
-    "elementType": "geometry",
-    "stylers": [{ "color": "#d9d1c7" }]
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#e6e0e6" }
+    ]
   },
   {
-    "elementType": "labels",
-    "stylers": [{ "visibility": "off" }]
+    "featureType": "poi",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#f0f0f0" }
+    ]
   },
   {
-    "featureType": "administrative",
-    "elementType": "geometry",
-    "stylers": [{ "color": "#d9d1c7" }]
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#888888" }
+    ]
   }
-
-]
+];

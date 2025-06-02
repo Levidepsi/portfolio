@@ -10,9 +10,10 @@ import { useWindowWide } from "../../../hooks/ScreenSize";
 function Map() {
   const desktop = useWindowWide(1024);
 
+
   const center = {
-    lat:25.211609932247228,
-    lng: 55.28030908247188,
+    lat: 56.29819064522684,
+    lng: -3.3917659538080476,
   };
 
   const mapContainerStyle = {
@@ -36,9 +37,9 @@ function Map() {
       >
         <Marker
           position={center}
-          icon={{
-            url: markerImage.src, // Use .src to get the string URL
-          }}
+          // icon={{
+          //   url: markerImage.src, // Use .src to get the string URL
+          // }}
         />
       </GoogleMap>
     </>

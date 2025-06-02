@@ -108,7 +108,7 @@ const Contact = (
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyD1ok-cdrF_SKmNb2E3yFCsJTBChFjwUmQ",
+    googleMapsApiKey: "AIzaSyCx9PPasQKgU6dUcs6nJ7kFs-G6stdcwkA",
   });
 
   if (api) {
@@ -375,7 +375,7 @@ const Contact = (
                   object-cover
                   lg:aspect-[16/16]   // at md ≥768px (good for 1280)
                   xl:aspect-[16/16.8]   // at xl ≥1280px (for 1536)
-                  2xl:aspect-[16 / 14.8]
+                  2xl:aspect-[16 / 13.9]
                 "
                 />
               </div>

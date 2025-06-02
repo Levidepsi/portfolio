@@ -105,14 +105,15 @@ const Contact = (
 		setOpenSelect(!openSelect);
   };
   
-  
-  
-  let { isLoaded } = useJsApiLoader({
-        id: "google-map-script",
-        googleMapsApiKey: `${api}`,
-    });
-  
-  
+
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: api ? api : "AIzaSyDeUY4gzlFSwqiLXOjBqkGZbOaBzwTVn7E",
+  });
+
+  if (api) {
+    
+  }
 
 
   return (
@@ -303,7 +304,7 @@ const Contact = (
             </div>
             
           </div>
-          {isLoaded && 
+          {isLoaded && api != null && 
             <div className="lg:w-[50%] rounded-[10px] map">
               <Map />
             </div>

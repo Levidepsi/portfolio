@@ -23,7 +23,8 @@ interface ImagewithTextBlockProps {
   padding_bottom: number;
   textblock_items: ImageTextBlocks[];
   sub_title: string
-  allowSliderMobile: boolean
+  allowSliderMobile: boolean;
+  largePaddingLeftRight: boolean
 }
 
 const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
@@ -34,7 +35,8 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
   padding_top,
   padding_bottom,
   sub_title,
-  allowSliderMobile
+  allowSliderMobile,
+  largePaddingLeftRight
 }) => {
   const sectionPT: number = padding_top;
   const desktop = useWindowWide(1024);
@@ -46,7 +48,7 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
 
   return (
     <div
-      className={`image-with-text-block--section px-[32px] md:px-[32px] flex flex-col justify-between`}
+      className={`image-with-text-block--section ${largePaddingLeftRight ? "px-[32px] md:px-[32px] lg:px-[109px]" : "px-[32px] md:px-[32px]"}  flex flex-col justify-between `}
       style={{
         backgroundColor: background_color,
         paddingTop: `${padding_top}px`,
@@ -58,12 +60,12 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
       <h2 className="text-[20px] 2xl:text-[1.302vw] 2xl:leading-[1.563vw] leading-[24px] mb-[30px] text-black  aktiv_medium">{sub_title}</h2>
 
       <div className="text-block-container  relative">
-        <div className="text-block-scroll-wrapper gap-[14px] hidden lg:flex lg:flex-row flex-col w-full h-auto justify-center">
+        <div className={`text-block-scroll-wrapper gap-[14px] hidden lg:flex lg:flex-row ${largePaddingLeftRight ? "lg:flex-wrap" : ""}  flex-col w-full h-auto justify-center`}>
           {textblock_items &&
             textblock_items.map((item: ImageTextBlocks, index: number) => {
               return (
                 <motion.div
-                  className={`text-block-item relative w-full h-auto  ${item.data ? "bg-[#F5F7FA] min-h-[235px] rounded-[10px]" : ""}`}
+                  className={`text-block-item relative w-full ${largePaddingLeftRight ? "lg:w-[32.3333%]" : ""}  h-auto  ${item.data ? "bg-[#F5F7FA] min-h-[235px] rounded-[10px]" : ""}`}
                   key={index}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +87,9 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
                       <Image src={item.image} alt={item.title} width={500} priority height={500} className="w-full rounded-[10px] h-auto lg:aspect-[16/20.7] xl:aspect-[16/23.65] 2xl:aspect-[16/18.85] mb-[25px] object-cover" />
                       <h2 className="aktiv_regular text-[#000427] text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] uppercase mb-[20px]">{item.title}</h2>
                       <div className="aktiv_regular mb-[25px]"><PortableText value={item.body} /></div>
-                      <Link className="text-[13px] button_url relative leading-[16px] 2xl:text-[0.846vw] 2xl:leading-[1.042vw] text-[#FFF5EF] aktiv_regular " href={`${item.button_url}`}>Read more</Link>
+                      {item.button_url && 
+                        <Link className="text-[13px] button_url relative leading-[16px] 2xl:text-[0.846vw] 2xl:leading-[1.042vw] text-[#FFF5EF] aktiv_regular " href={`${item.button_url}`}>Read more</Link>
+                      }
                     </div>
                   }
                   

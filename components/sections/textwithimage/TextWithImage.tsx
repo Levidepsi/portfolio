@@ -77,12 +77,12 @@ const TextWithImage: React.FC<TextWithImageProps> = ({
         {sub_title && 
           <h2 className=" moinster_regular text-[15px] lg:text-[20px] tracking-[1.4px] leading-[29px] mb-[30px] lg:mb-[50px]">{sub_title}</h2>
         }
-        <div className={`description forma_djr  ${button_label ? "mb-[40px] lg:mb-[73px]" : ""}`}>
+        <div className={`description forma_regular  ${button_label ? "mb-[40px] lg:mb-[73px]" : ""}`}>
           <PortableText value={body}/>
         </div>
         {button_label && 
           <Link
-            className="border-solid button forma_djr border-[#0D0D0D] border-[0.5px] rounded-[5px] text-[12px] tracking-[0.24px] leading-[16px] text-[#0D0D0D] px-[10px] py-[5px] w-max"
+            className="border-solid button forma_regular border-[#0D0D0D] border-[0.5px] rounded-[5px] text-[12px] tracking-[0.24px] leading-[16px] text-[#0D0D0D] px-[10px] py-[5px] w-max"
             href={`${button_url ? button_url : "/"}`}>
             {button_label}
           </Link>

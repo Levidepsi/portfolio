@@ -15,7 +15,6 @@ export interface SlideShowImagesValues {
   image: string
 }
 
-
 export interface ImageTextBlocks {
     title: string;
     sub_title: string;
@@ -60,8 +59,9 @@ export interface TextAccordions{
     }>;
 }
 
-export interface Interests {
-  title: string
+export interface Socials {
+  image: string;
+  url: string
 }
 export interface MultipleTextArray {
   title: string;
@@ -93,6 +93,9 @@ export interface Destinations {
   image: string
 }
 
+export interface Requests {
+  title: string
+}
 export interface COMPONENTS {
   _key: Key | null | undefined;
   _type: string | number;
@@ -211,7 +214,7 @@ export interface COMPONENTS {
     }>;
    }>;
   texts_accordions: TextAccordions[];
-  interests: Interests[];
+  socials: Socials[];
   destinations: Destinations[];
   multipleText: MultipleTextProp[];
   allowSliderMobile: boolean;
@@ -220,5 +223,8 @@ export interface COMPONENTS {
   section_position: string;
   image_size: string;
   enable_border: boolean;
-  items: Items2[]
+  items: Items2[];
+  largePaddingLeftRight: boolean;
+  url: string;
+  requests: Requests[]
 }

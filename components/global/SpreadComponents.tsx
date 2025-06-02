@@ -115,6 +115,7 @@ export default function SpreadComponents({ components }: { components: any }) {
                       textblock_items={component.textblock_items}
                       sub_title={component.sub_title}
                       allowSliderMobile={component.allowSliderMobile}
+                      largePaddingLeftRight={component.largePaddingLeftRight}
                     />
                   ),
                   featured_article: (
@@ -149,7 +150,11 @@ export default function SpreadComponents({ components }: { components: any }) {
                       telephone={component.telephone}
                       email={component.email}
                       address={component.address}
-                      interests={component.interests}
+                      socials={component.socials}
+                      description={component.description}
+                      layout={component.layout}
+                      requests={component.requests}
+                      image={component.image}
                     />
                   ),
                   heading: (

@@ -231,9 +231,7 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
      
       "image": image.asset->url,
     },
-    interests[] {
-      title
-    },
+
     multipleText[] {
       body
     },
@@ -242,6 +240,13 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
       "image": image.asset->url,
       body
     },
+    socials[] {
+      "image": image.asset->url,
+      url
+
+    },
+    requests[] {
+    title}
   }
 }`;
 

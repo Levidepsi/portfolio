@@ -17,7 +17,7 @@ function Map() {
 
   const mapContainerStyle = {
     width: "100%",
-    height: "400px",
+    height: desktop ? "100%" : "400px",
   };
 
   const options = {

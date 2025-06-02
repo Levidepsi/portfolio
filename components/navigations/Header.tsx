@@ -44,7 +44,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
             <Image src={navigation.header_logo} alt={navigation.title} width={500} height={500} className="w-[215px] h-auto object-cover " />
           </Link>
           : 
-          <Link href={"/"} className={`logo text-[20px] tracking-[1.4px] leading-[29px] ${menuColor} ${openMenuMobile == true ? "active" : ""} `}>
+          <Link href={"/"} className={`logo text-[20px] tracking-[1.4px] leading-[29px] moinster_regular ${menuColor} ${openMenuMobile == true ? "active" : ""} `}>
             JD SPIRITS
           </Link>
         }
@@ -65,7 +65,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
                 {item.subMenu ? (
                   <button
                     type="button"
-                    className={`text-[14px]  menu_item relative  leading-[18px] aktiv_regular ${menuColor} ${
+                    className={`text-[14px]  menu_item relative forma_regular leading-[18px] aktiv_regular ${menuColor} ${
                       openSubMenu === index ? "active" : ""
                     }`}
                   >
@@ -74,7 +74,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
                 ) : (
                   <Link
                     href={`/${item.page ? item.page.slug.slug : "/"}`}
-                    className={`text-[12px] menu_item tracking-[0.24px] aktiv_regular relative  leading-[16px] ${menuColor}`}
+                    className={`text-[12px] forma_regular menu_item tracking-[0.24px] aktiv_regular relative  leading-[16px] ${menuColor}`}
                   >
                     {item.title}
                   </Link>
@@ -110,13 +110,13 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
       <div className="hidden contact lg:w-[20%] lg:flex flex gap-x-[15.45px] justify-end">
         <Link
           href={`https://myaccount.jdspirits.com/login`}
-          className={`text-[12px] tracking-[0.24px]  menu_item aktiv_regular relative leading-[16px] ${menuColor}`}
+          className={`text-[12px] tracking-[0.24px] forma_regular menu_item forma_regular relative leading-[16px] ${menuColor}`}
         >
           Customer Login
         </Link>
         <Link
-          href={`/contact-us`}
-          className={`text-[12px] tracking-[0.24px] menu_item aktiv_regular ${pathname == "/contact" ? "active" : ""} relative leading-[16px] ${menuColor}`}
+          href={`/contact`}
+          className={`text-[12px]  tracking-[0.24px] menu_item forma_regular ${pathname == "/contact" ? "active" : ""} relative leading-[16px] ${menuColor}`}
         >
         Contact
         </Link>

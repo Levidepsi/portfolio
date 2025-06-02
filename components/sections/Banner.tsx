@@ -95,13 +95,13 @@ const Banner: React.FC<BannerProps> = ({
         
       </motion.div>
       <div className={`contents_banner ${content_position} absolute `}>
-        <div className={`title moinster_regular text-[#FFF5EF] text-[30px]  lg:text-[40px] lg:tracking-[2.8px] lg:leading-[42px] max-w-[677px] mb-[25px]`}>
+        <div className={`title forma_regular moinster_regular text-[#FFF5EF] text-[30px]  lg:text-[40px] lg:tracking-[2.8px] lg:leading-[42px] max-w-[677px] mb-[25px]`}>
           {title}
         </div>
         <div className="banner_description mb-[22px]">
           <PortableText  value={description}/>
         </div>
-        <Link href={"/"} className="border-solid rounded-[5px] border-[#FFF5EF] text-[#FFF5EF] border-[0.5px] block py-[5px] px-[10px] text-[13px] tracking-[0.26px] leading-[16px] w-max">
+        <Link href={"/"} className="border-solid forma_regular rounded-[5px] border-[#FFF5EF] text-[#FFF5EF] border-[0.5px] block py-[5px] px-[10px] text-[13px] tracking-[0.26px] leading-[16px] w-max">
           Get in touch
         </Link>
       </div>

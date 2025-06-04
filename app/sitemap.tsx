@@ -4,7 +4,7 @@ import { MetadataRoute } from "next";
 import { SanityDocument } from "next-sanity";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const ROOT_URL = "https://ocean-and-sea.vercel.app";
+  const ROOT_URL = "https://jd-spirits.vercel.app";
 
   const allslug = await loadQuery<SanityDocument[]>(ALLPAGE_QUERY, {}, { cache: "no-store" });
 

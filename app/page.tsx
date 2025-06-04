@@ -39,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
         page.data && page.data.meta_description != null
           ? page.data.meta_description
           : "JD Spirits",
-      url: `https://ocean-and-sea.vercel.app/`,
+      url: `https://jd-spirits.vercel.app/`,
       siteName: `${metaTitle}`,
       images: [
         {

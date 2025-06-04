@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://ocean-and-sea.vercel.app/sitemap.xml",
+    sitemap: "https://jd-spirits.vercel.app/sitemap.xml",
   };
 }

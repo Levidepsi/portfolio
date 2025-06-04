@@ -11,11 +11,11 @@ import { SanityDocument } from "next-sanity";
 import LiveVisualEditing from "@/components/LiveVisualEditing";
 import Header from "@/components/navigations/Header";
 import { AllMenusColor, FooterValues, HeaderValues } from "@/types/header";
-import logo from "@/public/Group 13.png";
+import logo from "@/public/logo.png";
 import Footer from "@/components/navigations/Footer";
 
 export const metadata: Metadata = {
-  title: "Ocean and Sea",
+  title: "JD Spirits",
   icons: {
     icon: `${logo}`,
     shortcut: `${logo}`,

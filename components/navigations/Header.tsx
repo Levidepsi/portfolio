@@ -123,7 +123,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
       </div>  
 
       <div className="Burger relative lg:hidden">
-        <div onClick={() => setOpenMenuMobile(true)} className={`mobile_icons open ${openMenuMobile ? "hide" : "show"}`}><BurgerIcon /></div>
+        <div onClick={() => setOpenMenuMobile(true)} className={`mobile_icons open ${openMenuMobile ? "hide" : "show"}`}><BurgerIcon menuColor={menuColor} /></div>
         <div onClick={() => setOpenMenuMobile(false)} className={`mobile_icons close ${openMenuMobile ? "show" : "hide"}`}><CloseIcon /></div>
       </div>
 
@@ -135,7 +135,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
                 <Image src={navigation.header_logo} alt={navigation.title} width={500} height={500} className="w-[215px] h-auto object-cover " />
               </Link>
               : 
-              <Link href={"/"} className={`logo text-[20px] tracking-[1.4px] leading-[29px] moinster_regular ${menuColor} ${openMenuMobile == true ? "active" : ""} `}>
+              <Link href={"/"} className={` text-[20px] tracking-[1.4px] leading-[29px] moinster_regular ${menuColor} ${openMenuMobile == true ? "active" : ""} `}>
                 JD SPIRITS
               </Link>
             }
@@ -249,9 +249,10 @@ const MobileMenu = (
   ) 
 }
 
-const BurgerIcon = () => {
+const BurgerIcon = ({menuColor}: { menuColor: string }) => {
+  console.log(menuColor)
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="9" viewBox="0 0 22 9">
+    <svg className={`${menuColor}`} xmlns="http://www.w3.org/2000/svg" width="22" height="9" viewBox="0 0 22 9">
       <g id="Group_85" data-name="Group 85" transform="translate(-342 -30)">
         <line id="Line_46" data-name="Line 46" x2="21" transform="translate(342.5 30.5)" fill="none" stroke="#0D0D0D" strokeLinecap="round" strokeWidth="1"/>
         <line id="Line_47" data-name="Line 47" x2="21" transform="translate(342.5 34.5)" fill="none" stroke="#0D0D0D" strokeLinecap="round" strokeWidth="1"/>

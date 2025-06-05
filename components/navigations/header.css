@@ -76,6 +76,14 @@
   background-color: #0D0D0D;
 }
 
+svg.light g line {
+  stroke: #FFF5EF;
+}
+
+svg.dark g line {
+  stroke: #0D0D0D;
+}
+
 .menu_Link .menu_item.light::after {
   background-color: #FFF5EF;
 }
@@ -190,6 +198,12 @@
 .about p a {
   position: relative;
 }
+.contact  a,
+.services  a,
+.about  a {
+  position: relative;
+  width: max-content;
+}
 
 .contact p a::after,
 .services p a::after,
@@ -206,9 +220,53 @@
   display: block;
 }
 
+.contact  a::after,
+.services  a::after,
+.about  a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #F8F3E9;
+  transition: transform 0.3s ease-out;
+  display: block;
+}
+
+.footer_links > a {
+  position: relative;
+}
+
+.footer_links>a::after {
+  content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #F8F3E9;
+    transition: transform 0.3s ease-out;
+    display: block;
+}
+
+.footer_links>a:hover:after {
+  transform-origin: bottom center;
+    transform: scaleX(1);
+}
+
 .contact p a:hover:after,
 .services p a:hover:after,
 .about p a:hover:after {
+  transform-origin: bottom center;
+  transform: scaleX(1);
+}
+
+.contact  a:hover:after,
+.services  a:hover:after,
+.about  a:hover:after {
   transform-origin: bottom center;
   transform: scaleX(1);
 }

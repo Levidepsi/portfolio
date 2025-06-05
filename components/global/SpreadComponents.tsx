@@ -46,7 +46,7 @@ export default function SpreadComponents({ components }: { components: any }) {
                       description={component.description}
                       max_width={component.max_width}
                       content_position={component.content_position}
-                      anchor_id={component.anchor_id}
+                      url={component.url}
                       title={component.title}
                     />
                   ),

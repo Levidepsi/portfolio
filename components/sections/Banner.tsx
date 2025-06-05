@@ -25,7 +25,7 @@ interface BannerProps {
   description: Description[];
   content_position: string;
   max_width: number;
-  anchor_id: string
+  url: string
   title: string;
 }
 
@@ -36,7 +36,7 @@ const Banner: React.FC<BannerProps> = ({
   image_title,
   content_position,
   max_width,
-  anchor_id,
+  url,
   title
 }) => {
 
@@ -101,9 +101,12 @@ const Banner: React.FC<BannerProps> = ({
         <div className="banner_description mb-[22px]">
           <PortableText  value={description}/>
         </div>
-        <Link href={"/"} className="border-solid forma_regular rounded-[5px] border-[#FFF5EF] text-[#FFF5EF] border-[0.5px] block py-[5px] px-[10px] text-[13px] tracking-[0.26px] leading-[16px] w-max">
-          Get in touch
-        </Link>
+        {url && 
+            <Link href={url ? `${url}` :"/"} className="border-solid forma_regular rounded-[5px] border-[#FFF5EF] text-[#FFF5EF] border-[0.5px] block py-[5px] px-[10px] text-[13px] tracking-[0.26px] leading-[16px] w-max">
+            Get in touch
+          </Link>
+        }
+
       </div>
       {video && 
       <div onClick={() => window.scrollBy({ top: 500, behavior: 'smooth' })} className="anchorArrow absolute bottom-[36px] left-0 right-0 mx-auto w-max cursor-pointer">

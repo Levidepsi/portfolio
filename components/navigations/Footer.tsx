@@ -25,7 +25,7 @@ const Footer = ({ footer }: { footer: FooterValues }) => {
             <Image src={footer.footer_logo} alt="RuthBerg" width={500} height={500} className="w-[94px] h-[181px] object-cover mb-[12.85px] lg:mr-auto" />
             {/* <Image src={footer.header_logo} alt="RuthBerg" width={500} height={500} className="w-[142px] h-[15.78px] md:h-auto object-cover" /> */}
           </Link>
-          <div className="copywrite forma_regular text-[13px] tracking-[0.26px] leading-[21px] text-[#F8F3E9] aktiv_regular  w-max">
+          <div className="copywrite hidden lg:block forma_regular text-[13px] tracking-[0.26px] leading-[21px] text-[#F8F3E9] aktiv_regular  w-max">
                 &copy;2025, JD SPIRITS
           </div>
         </div>

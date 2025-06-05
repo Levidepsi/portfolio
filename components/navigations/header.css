@@ -185,6 +185,34 @@
   color: #F8F3E9;
 }
 
+.contact p a,
+.services p a,
+.about p a {
+  position: relative;
+}
+
+.contact p a::after,
+.services p a::after,
+.about p a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #F8F3E9;
+  transition: transform 0.3s ease-out;
+  display: block;
+}
+
+.contact p a:hover:after,
+.services p a:hover:after,
+.about p a:hover:after {
+  transform-origin: bottom center;
+  transform: scaleX(1);
+}
+
 .info p {
   font-size: 10px;
   color: #F8F3E9;

@@ -4,6 +4,8 @@ import { Items2 } from "@/components/global/components";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import Link from "next/link";
+import {motion, useScroll, useTransform} from "motion/react"
+import { useWindowWide } from "@/hooks/ScreenSize";
 
 const TextWithImage2 = (
   {
@@ -21,6 +23,9 @@ const TextWithImage2 = (
   }
 ) => {
 
+    const desktop = useWindowWide(1024);
+  
+
   return (
     <div className="mx-[32px] lg:mx-[109px] lg:pt-[100px] ">
       {title && <h1 className="text-[20px] tracking-[1.4px] leading-[29px] text-[#000427] moinster_regular mb-[32px] lg:mb-[64px]">{title}</h1>}
@@ -28,7 +33,16 @@ const TextWithImage2 = (
         {items && items.map((item: Items2, index: number) => {
           return (
             <div className="item flex flex-col justify-between lg:flex-row border-b-[0.5px] border-solid border-[#000427] pb-[38px] mb-[38px]" key={index}>
-              <div className="lg:w-[50%] flex flex-col justify-end lg:max-w-[446px] mb-[30px] lg:mb-0">
+              <motion.div
+                initial={{ opacity: 0, transform: "translateX(-50px)"  }}
+                whileInView={{ opacity: 1, transform: "translateX(0px)" }}
+                transition={{
+                  duration: 1.2,
+                  delay: 0.3,
+                  easing: [0.19, 1, 0.22, 1],
+                }}
+                viewport={{once: true}}
+                className="lg:w-[50%] flex flex-col justify-end lg:max-w-[446px] mb-[30px] lg:mb-0">
                 <h2 className="moinster_regular text-[20px] text-[#000427] tracking-[1.4px] leading-[23px] mb-[30px] lg:mb-[50px]">{item.title}</h2>
                 <div className={`item_description forma_regular ${item.button_label ? "mb-[30px]" : ""}`}>
                   <PortableText value={item.body}/>
@@ -40,10 +54,20 @@ const TextWithImage2 = (
                     {item.button_label}
                   </Link>
                 }
-              </div>
-              <div className="lg:w-[50%] ">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, transform: "translateX(50px)"  }}
+                whileInView={{ opacity: 1, transform: "translateX(0px)" }}
+                transition={{
+                  duration: 1.2,
+                  delay: 0.3,
+                  easing: [0.19, 1, 0.22, 1],
+                }}
+                viewport={{once: true}}
+
+                className="lg:w-[50%] ">
                   <Image src={item.image} alt={title} width={1000} height={1000} className="w-full h-[500px] lg:h-auto object-cover rounded-[10px]" />
-                </div>
+                </motion.div>
             </div>
           )
         })}

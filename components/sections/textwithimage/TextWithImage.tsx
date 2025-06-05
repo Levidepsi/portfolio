@@ -60,6 +60,22 @@ const TextWithImage: React.FC<TextWithImageProps> = ({
 
   const imageRef = useRef<HTMLImageElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
+
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: !desktop ? 0 : 100,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
   
 
   return (
@@ -67,7 +83,15 @@ const TextWithImage: React.FC<TextWithImageProps> = ({
       background: `${background_color}`
     }} 
       className={`px-[32px] text_with_image_wrapper ${background_color ? "addPaddingTop" : ""} lg:px-[109px] flex flex-col-reverse ${section_position} ${section_position == "image_right" ? "lg:flex-row" : section_position == "image_left" ? "lg:flex-row-reverse" : "flex-row"} lg:justify-between relative`}>
-      <div
+      <motion.div
+        initial={{ opacity: 0, transform: section_position == "image_right"? "translateX(-50px)" : "translateX(50px)" }}
+        whileInView={{ opacity: 1, transform: "translateX(0px)" }}
+        transition={{
+          duration: 1.2,
+          delay: 0.3,
+          easing: [0.19, 1, 0.22, 1],
+        }}
+        viewport={{once: true}}
         ref={divRef}
         className={`text_with_image_contents flex flex-col ${content_position == "top" ? "justify-end" : content_position == "top" ? "justify-end" : ""} mb-[40px] lg:pt-[50px] lg:mb-0 lg:w-[40%]`}>
         {content_title && 
@@ -88,10 +112,20 @@ const TextWithImage: React.FC<TextWithImageProps> = ({
           </Link>
         }
         
-      </div>
-      <div ref={imageRef} className="lg:w-[50%]">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, transform: "translateY(50px)" }}
+        whileInView={{ opacity: 1, transform: "translateX(0px)" }}
+        transition={{
+          duration: 1.2,
+          delay: 0.3,
+          easing: [0.19, 1, 0.22, 1],
+        }}
+        viewport={{ once: true }}
+        ref={imageRef}
+        className="lg:w-[50%]">
         <Image src={image} alt={content_title} width={1000} height={1000} className={`rounded-[10px] mb-[30px] lg:mb-0 object-cover h-[500px] lg:h-auto ${image_size}`} />
-      </div>
+      </motion.div>
     </div>
   );
 };

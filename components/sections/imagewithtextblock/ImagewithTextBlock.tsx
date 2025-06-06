@@ -25,6 +25,7 @@ interface ImagewithTextBlockProps {
   sub_title: string
   allowSliderMobile: boolean;
   largePaddingLeftRight: boolean
+  addpaddingTop: boolean
 }
 
 const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
@@ -36,7 +37,8 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
   padding_bottom,
   sub_title,
   allowSliderMobile,
-  largePaddingLeftRight
+  largePaddingLeftRight,
+  addpaddingTop
 }) => {
   const sectionPT: number = padding_top;
   const desktop = useWindowWide(1024);
@@ -45,10 +47,12 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
 
     const prevRef = useRef<HTMLDivElement | null>(null)
     const nextRef = useRef<HTMLDivElement | null>(null)
+    
+  let pt: number = addpaddingTop ? 100 : 0
 
   return (
     <div
-      className={`image-with-text-block--section ${largePaddingLeftRight ? "px-[32px] md:px-[32px] lg:px-[109px]" : "px-[32px] md:px-[32px]"}  flex flex-col justify-between `}
+      className={`image-with-text-block--section  ${largePaddingLeftRight ? "px-[32px] md:px-[32px] lg:px-[109px]" : "px-[32px] md:px-[32px]"}  flex flex-col justify-between `}
       style={{
         backgroundColor: background_color,
         paddingTop: `${padding_top}px`,

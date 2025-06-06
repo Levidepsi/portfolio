@@ -5,7 +5,7 @@
   font-size: 14px;
   line-height: 18px;
   color: #000;
-  font-family: 'Aktiv Grotesk Regular';
+  font-family: 'Forma DJRText Regular';
 }
 
 .richtext_Container h2 {
@@ -13,7 +13,7 @@
   font-size: 20px;
   line-height: 24px;
   color: #000;
-  font-family: 'AktivGrotesk Medium';
+  font-family: 'Moister';
   margin-bottom: 20px;
 }
 
@@ -22,7 +22,7 @@
   font-size: 14px;
   line-height: 16px;
   color: #000;
-  font-family: 'AktivGrotesk Medium';
+  font-family: 'Moister';
   margin-bottom: 10px;
 }
 
@@ -35,7 +35,7 @@
   font-size: 14px;
   line-height: 24px;
   color: #000;
-  font-family: 'Aktiv Grotesk Regular';
+  font-family: 'Forma DJRText Regular';
 }
 
 @media (min-width: 1024px) {

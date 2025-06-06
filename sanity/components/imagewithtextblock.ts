@@ -44,6 +44,12 @@ export default defineType({
       type: "boolean",
       initialValue: true
     }),
+    defineField({
+      name: "addpaddingTop",
+      title: "addpaddingTop",
+      type: "boolean",
+      initialValue: false
+    }),
 
     defineField({
       name: "layout",

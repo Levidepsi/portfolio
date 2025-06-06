@@ -44,7 +44,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
             <Image src={navigation.header_logo} alt={navigation.title} width={500} height={500} className="w-[215px] h-auto object-cover " />
           </Link>
           : 
-          <Link href={"/"} className={`logo text-[20px] tracking-[1.4px] leading-[29px] moinster_regular ${menuColor} ${openMenuMobile == true ? "active" : ""} `}>
+          <Link href={"/"} className={`logo text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] 2xl:tracking-[0.091vw] moinster_regular ${menuColor} ${openMenuMobile == true ? "active" : ""} `}>
             JD SPIRITS
           </Link>
         }
@@ -65,7 +65,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
                 {item.subMenu ? (
                   <button
                     type="button"
-                    className={`text-[14px]  menu_item relative forma_regular leading-[18px] aktiv_regular ${menuColor} ${
+                    className={`text-[14px]  menu_item relative forma_regular leading-[18px] 2xl:text-[0.911vw] 2xl:leading-[1.172vw] aktiv_regular ${menuColor} ${
                       openSubMenu === index ? "active" : ""
                     }`}
                   >
@@ -74,7 +74,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
                 ) : (
                   <Link
                     href={`/${item.page ? item.page.slug.slug : "/"}`}
-                    className={`text-[12px] forma_regular menu_item tracking-[0.24px] forma_regular relative  leading-[16px] ${menuColor}`}
+                    className={`text-[12px] forma_regular menu_item tracking-[0.24px] forma_regular relative 2xl:text-[0.781vw] 2xl:leading-[1.042vw] 2xl:tracking-[0.016vw] leading-[16px] ${menuColor}`}
                   >
                     {item.title}
                   </Link>
@@ -109,14 +109,15 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
       </div>
       <div className="hidden contact lg:w-[20%] lg:flex flex gap-x-[15.45px] justify-end">
         <Link
+            target="_blank"
           href={`https://myaccount.jdspirits.com/login`}
-          className={`text-[12px] tracking-[0.24px] forma_regular menu_item forma_regular relative leading-[16px] ${menuColor}`}
+          className={`text-[12px] tracking-[0.24px] forma_regular menu_item forma_regular relative leading-[16px] 2xl:text-[0.781vw] 2xl:leading-[1.042vw] 2xl:tracking-[0.016vw] ${menuColor}`}
         >
           Customer Login
         </Link>
         <Link
           href={`/contact`}
-          className={`text-[12px]  tracking-[0.24px] menu_item forma_regular ${pathname == "/contact" ? "active" : ""} relative leading-[16px] ${menuColor}`}
+          className={`text-[12px]  tracking-[0.24px] menu_item forma_regular ${pathname == "/contact" ? "active" : ""} relative leading-[16px] 2xl:text-[0.781vw] 2xl:leading-[1.042vw] 2xl:tracking-[0.016vw] ${menuColor}`}
         >
         Contact
         </Link>
@@ -140,7 +141,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
               </Link>
             }
           </div>
-          <div onClick={() => setOpenMenuMobile(false)} className={` open `}><CloseIcon /></div>
+          <div onClick={() => setOpenMenuMobile(false)} className={` mt-[-2px] open `}><CloseIcon /></div>
 
         </div>
         <MobileMenu
@@ -154,13 +155,14 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
         <div className="flex absolute bottom-[50px]  contact lg:w-[20%] lg:hidden  gap-x-[15.45px] px-[32px]">
           <Link
             href={`https://myaccount.jdspirits.com/login`}
-            className={`text-[12px] tracking-[0.24px] forma_regular menu_item forma_regular relative leading-[16px] ${menuColor}`}
+            target="_blank"
+            className={`text-[12px] tracking-[0.24px] forma_regular menu_item forma_regular relative leading-[16px] `}
           >
             Customer Login
           </Link>
           <Link
             href={`/contact`}
-            className={`text-[12px]  tracking-[0.24px] menu_item forma_regular ${pathname == "/contact" ? "active" : ""} relative leading-[16px] ${menuColor}`}
+            className={`text-[12px]  tracking-[0.24px] menu_item forma_regular ${pathname == "/contact" ? "active" : ""} relative leading-[16px] `}
           >
           Contact
           </Link>

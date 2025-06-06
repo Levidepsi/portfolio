@@ -28,7 +28,7 @@ const TextWithImage2 = (
 
   return (
     <div className="mx-[32px] lg:mx-[109px] lg:pt-[100px] ">
-      {title && <h1 className="text-[20px] tracking-[1.4px] leading-[29px] text-[#000427] moinster_regular mb-[32px] lg:mb-[64px]">{title}</h1>}
+      {title && <h1 className="text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] text-[#000427] moinster_regular mb-[32px] lg:mb-[64px]">{title}</h1>}
       <div>
         {items && items.map((item: Items2, index: number) => {
           return (
@@ -43,13 +43,13 @@ const TextWithImage2 = (
                 }}
                 viewport={{once: true}}
                 className="lg:w-[50%] flex flex-col justify-end lg:max-w-[446px] mb-[30px] lg:mb-0">
-                <h2 className="moinster_regular text-[20px] text-[#000427] tracking-[1.4px] leading-[23px] mb-[30px] lg:mb-[50px]">{item.title}</h2>
+                <h2 className="moinster_regular text-[20px] text-[#000427] tracking-[1.4px] leading-[23px] 2xl:text-[1.302vw] 2x:leading-[1.497vw] 2xl:tracking-[0.091vw] mb-[30px] lg:mb-[50px]">{item.title}</h2>
                 <div className={`item_description forma_regular ${item.button_label ? "mb-[30px]" : ""}`}>
                   <PortableText value={item.body}/>
                 </div>
                 {item.button_label && 
                   <Link
-                    className="border-solid button forma_regular border-[#0D0D0D] border-[0.5px] rounded-[5px] text-[12px] tracking-[0.24px] leading-[16px] text-[#0D0D0D] px-[10px] py-[5px] w-max"
+                    className="border-solid button forma_regular border-[#0D0D0D] border-[0.5px] rounded-[5px] text-[12px] tracking-[0.24px] leading-[16px] 2xl:text-[0.781vw] 2x:leading-[1.042vw] 2xl:tracking-[0.016vw] text-[#0D0D0D] px-[10px] py-[5px] w-max"
                     href={`${item.button_url ? item.button_url : "/"}`}>
                     {item.button_label}
                   </Link>

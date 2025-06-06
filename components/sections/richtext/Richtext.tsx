@@ -22,7 +22,7 @@ const Richtext = (
   }
 ) => {
   return (
-    <div className="richtext_Container px-[14px] pt-[106px] max-w-[695px] mx-auto 2xl:max-w-[45.247vw]">
+    <div className="richtext_Container px-[32px] lg:px-[109px] pt-[75px] pb-[75px] lg:pb-0 ">
       <PortableText value={description} />
     </div>
   )

@@ -36,4 +36,9 @@
     font-size: 1.042vw;
     line-height: 1.367vw;
   }
+
+  .multiple_textitem {
+    font-size: 2.604vw;
+    line-height: 3.125vw;
+  }
 }

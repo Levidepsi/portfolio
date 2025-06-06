@@ -151,3 +151,12 @@
     text-align: center;
   }
 }
+
+@media (width >= 1536px) {
+  .banner_description p {
+      color: #FFF5EF;
+      font-size: 0.846vw;
+      letter-spacing: 0.017vw;
+      line-height: 1.042vw;
+      max-width: 30.534vw; }
+}

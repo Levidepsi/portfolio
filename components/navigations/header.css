@@ -102,7 +102,7 @@ svg.dark g line {
 
 .mobile_icons {
   position: absolute;
-  top: 0;
+  top: -3px;
   right: 0;
   cursor: pointer;
   transition: 0.7s all;
@@ -317,6 +317,27 @@ svg.dark g line {
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+
+  .footer_descriptions .contact,
+  .footer_descriptions .services,  
+  .footer_descriptions .about, 
+  .footer_descriptions .info {
+    max-height: 20px;
+    margin-bottom: 0px;
+    height: auto;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+    margin-bottom: 20px;
+    
+  }
+
+  .footer_descriptions .contact.active,
+  .footer_descriptions .services.active,  
+  .footer_descriptions .about.active, 
+  .footer_descriptions .info.active {
+    max-height: 1000rem;
+
   }
 }
 

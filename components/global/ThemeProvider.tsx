@@ -7,7 +7,7 @@ import { AllMenusColor } from "@/types/header";
 import Image from "next/image";
 import landing from "./landing.jpg"
 import logo from "./logo.png"
-import {motion, useScroll, useTransform} from "motion/react"
+import { motion, useScroll, useTransform } from "motion/react"
 
 
 interface IThemeContext {
@@ -125,13 +125,15 @@ export const ThemeProvider = ({
             }}
             className={`fixed cursor-pointer transition-all duration-[1s] delay-[1s] ${hideLanding} ${hidePerm ? "hidden" : ""} top-0 left-0 w-full h-full`}
           >
-            <Image src={landing} alt="Landing" width={2000} height={2000} className="w-full h-full object-cover relative" />
+              <video className="absolute top-0 left-0 w-full h-full object-cover" autoPlay loop playsInline muted title="">
+                <source src={`/video-jd.mp4`} type="video/mp4" /> <track kind="captions" />
+              </video>
             <motion.div
               initial={{ opacity: 0, }}
               whileInView={{ opacity: 1,}}
               transition={{
                 duration: 1.5,
-                delay: 0.3,
+                delay: 2,
                 ease: [0.19, 1, 0.22, 1],
               }}
               viewport={{ once: true }}
@@ -186,9 +188,9 @@ const Popup = (
   }) => {
   return (
     <div className={`pop_up ${closePopup ? "active" : ""}  `}>
-      <div className={`loader_wrapper ${nextContent ? "active" : ""}`}>
+      {/* <div className={`loader_wrapper ${nextContent ? "active" : ""}`}>
         <div className="loader"></div>
-      </div>
+      </div> */}
       <div className="firstContent py-[44px] lg:pt-[88px] lg:py-[60px] px-[50px]">
         <h1 className="text-[30px] tracking-[2.1px] leading-[42px] text-[#0D0D0D] text-center moinster_regular mb-[35px] lg:mb-[50px]">ARE YOU ABOVE 18?</h1>
         <div className="flex justify-center items-center gap-8 mb-[30px] lg:mb-[50px]">

@@ -29,6 +29,13 @@
   padding-bottom: 50px;
 }
 
+.item_description {
+  font-size: 12px;
+  letter-spacing: 0.24px;
+  line-height: 20px;
+  color: #0D0D0D;
+}
+
 @media (width >= 1024px) {
     .large {
       aspect-ratio: 16/18.1;
@@ -83,12 +90,19 @@
   .item img {
     aspect-ratio: 16/8;
   }
-    
+
+  .description {
+    color: #000427;
+    font-size: 0.846vw;
+    line-height: 1.302vw;
+    letter-spacing: 0.017vw;
+  }
+
+
+  .item_description {
+    font-size: 0.781vw;
+    letter-spacing: 0.016vw;
+    line-height: 1.302vw;
+    color: #0D0D0D; }
 }
 
-.item_description {
-  font-size: 12px;
-  letter-spacing: 0.24px;
-  line-height: 20px;
-  color: #0D0D0D;
-}

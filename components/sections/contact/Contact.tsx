@@ -125,7 +125,7 @@ const Contact = (
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="contact_details lg:w-[50%] flex gap-5 justify-between md:flex-row lg:flex-col flex-col mb-[50px] ">
             <div className="md:w-[50%] lg:w-[100%] ]">
-              <h1 className=" mb-[25px] text-[30px] leading-[40px] lg:text-[40px] lg:leading-[42px] text-[#0D0D0D] moinster_regular">{title}</h1>
+              <h1 className=" mb-[25px] text-[30px] leading-[40px] lg:text-[40px] lg:leading-[42px] text-[#0D0D0D] 2xl:text-[2.604vw] 2x:leading-[2.734vw] 2xl:tracking-[0.182vw] moinster_regular">{title}</h1>
               <div className="contact_description mb-5">
                 <PortableText value={description}/>
               </div>
@@ -154,7 +154,7 @@ const Contact = (
               
               </motion.div>
               <div className="mb-[30px] lg:mb-[30px]">
-                <h2  className="text-[20px] form_title tracking-[1.4px] leading-[29px] moinster_regular text-[#0D0D0D] mb-[14px]">FOLLOW US</h2>
+                <h2  className="text-[20px] form_title tracking-[1.4px] leading-[29px] moinster_regular text-[#0D0D0D] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] mb-[14px]">FOLLOW US</h2>
                 <div className="flex gap-5 items-center">
                   {socials && socials.map((soc: Socials, index: number) => {
                     console.log(soc)
@@ -168,7 +168,7 @@ const Contact = (
               </div>
             </div>
             <div className="form md:w-[60%]">
-              <h2 className="text-[20px] form_title text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular mb-[25px]">WRITE US</h2>
+              <h2 className="text-[20px] form_title text-[#0D0D0D] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] moinster_regular mb-[25px]">WRITE US</h2>
               <form ref={form} onSubmit={(e) => sendEmail(e)}>
                 <div className="user-info flex flex-col md:flex-row gap-[16px] mb-[30px]">
                   <div className="firstName flex flex-col md:w-[50%]">

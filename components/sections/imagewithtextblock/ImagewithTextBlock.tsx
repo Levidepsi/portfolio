@@ -25,7 +25,6 @@ interface ImagewithTextBlockProps {
   sub_title: string
   allowSliderMobile: boolean;
   largePaddingLeftRight: boolean
-  addpaddingTop: boolean
 }
 
 const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
@@ -38,7 +37,6 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
   sub_title,
   allowSliderMobile,
   largePaddingLeftRight,
-  addpaddingTop
 }) => {
   const sectionPT: number = padding_top;
   const desktop = useWindowWide(1024);
@@ -48,7 +46,6 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
     const prevRef = useRef<HTMLDivElement | null>(null)
     const nextRef = useRef<HTMLDivElement | null>(null)
     
-  let pt: number = addpaddingTop ? 100 : 0
 
   return (
     <div

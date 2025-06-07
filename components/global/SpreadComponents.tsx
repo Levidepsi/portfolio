@@ -18,6 +18,7 @@ import { COMPONENTS } from "./components";
 import MapWithImage from "../sections/mapwithimage/MapWithImage";
 import Richtext from "../sections/richtext/Richtext";
 import TextWithImage2 from "../sections/textwithimage/TextWithImage2";
+import AccordionWithText from "../sections/richtext/AccordionWithText";
 
 
 
@@ -193,6 +194,14 @@ export default function SpreadComponents({ components }: { components: any }) {
                       key={component._key}
                       title={component.title}
                       description={component.description}
+                    />
+                  ),
+                  accordions: (
+                    <AccordionWithText
+                      key={component._key}
+                      title={component.title}
+                      description={component.description}
+                      accordionData={component.accordionData}
                     />
                   )
                 }[component._type]

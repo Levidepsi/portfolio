@@ -88,6 +88,7 @@ export default defineType({
         { type: "contact" },
         { type: "image_with_text_block" },
         { type: "richtext" },
+        { type: "accordions" },
       ],
       options: {
         insertMenu: {
@@ -105,7 +106,8 @@ export default defineType({
                 "multiple_text",
                 "richtext",
                 "text_with_image",
-                "text_with_image2"
+                "text_with_image2",
+                "accordions" 
               ],
             },
             {

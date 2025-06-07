@@ -246,7 +246,22 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
 
     },
     requests[] {
-    title}
+    title
+    },
+    accordionData[] {
+      title,
+      subtitle,
+      enableCheckBox,
+      cookieGroups[]{
+        groupTitle,
+        cookies[]{
+          name,
+          expiration,
+          function,
+          externalLink
+        }
+      }
+    }
   }
 }`;
 

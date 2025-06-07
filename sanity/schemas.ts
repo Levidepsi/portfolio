@@ -20,6 +20,7 @@ import contact from "./components/contact";
 import destinations from "./schemaTypes/destinations";
 import mapwithimage from "./components/mapwithimage";
 import text_with_image2 from "./components/text_with_image2";
+import accordions from "./components/accordions";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -45,7 +46,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     quotewithrichtext,
     imagewithtextblock,
     contact,
-    mapwithimage
+    mapwithimage,
+    accordions
     // featured_projects,
   ],
 };

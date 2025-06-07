@@ -4,24 +4,26 @@
 .richtext_Container p {
   font-size: 14px;
   line-height: 18px;
-  color: #000;
+  color: #000427;
   font-family: 'Forma DJRText Regular';
 }
 
-.richtext_Container h2 {
+.richtext_Container h2,
+.accordionTitleWrapper h2 {
   margin-top: 30px;
   font-size: 20px;
   line-height: 24px;
-  color: #000;
+  color: #000427;
   font-family: 'Moister';
   margin-bottom: 20px;
 }
 
 
+
 .richtext_Container h3 {
   font-size: 14px;
   line-height: 16px;
-  color: #000;
+  color: #000427;
   font-family: 'Moister';
   margin-bottom: 10px;
 }
@@ -34,7 +36,16 @@
   list-style: disc;
   font-size: 14px;
   line-height: 24px;
-  color: #000;
+  color: #000427;
+  font-family: 'Forma DJRText Regular';
+}
+
+.name p,
+.expiration p,
+.function p {
+  font-size: 14px;
+  line-height: 18px;
+  color: #000427;
   font-family: 'Forma DJRText Regular';
 }
 
@@ -49,7 +60,14 @@
     font-size: 0.911vw;
     line-height: 1.172vw;
   }
-  .richtext_Container h2 {
+  .name p,
+.expiration p,
+.function p {
+  font-size: 0.911vw;
+    line-height: 1.172vw;
+}
+  .richtext_Container h2,
+  .accordionTitleWrapper h2 {
     font-size: 1.302vw;
     line-height: 1.563vw;
   }
@@ -60,5 +78,45 @@
   .richtext_Container ul li {
     font-size: 0.911vw;
     line-height: 1.563vw;
+  }
+}
+
+.cookieGroup_Wrapper {
+  max-height: 0;
+  height: auto;
+  padding-top: 10px;
+  transition: 1s all;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.cookieGroup_Wrapper.active {
+  max-height: 1000rem;
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* accordion */
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.checkbox input {
+  margin-right: 0.5rem;
+}
+.accordionItem_Wrapper {
+  background-color: #cac2bd;
+}
+
+.accordionItem_Wrapper:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+@media (width <= 768px) {
+  .cookieGroup_Wrapper {
+    overflow-x: scroll;
   }
 }

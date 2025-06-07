@@ -82,7 +82,7 @@ const TextWithImage: React.FC<TextWithImageProps> = ({
     <div style={{
       background: `${background_color}`
     }} 
-      className={`px-[32px] text_with_image_wrapper ${background_color ? "addPaddingTop" : ""} lg:px-[109px] flex flex-col-reverse ${section_position} ${section_position == "image_right" ? "lg:flex-row" : section_position == "image_left" ? "lg:flex-row-reverse" : "flex-row"} lg:justify-between relative`}>
+      className={`px-[32px] text_with_image_wrapper ${background_color ? "addPaddingTop mt-[75px]" : ""} lg:px-[109px] flex flex-col-reverse ${section_position} ${section_position == "image_right" ? "lg:flex-row" : section_position == "image_left" ? "lg:flex-row-reverse" : "flex-row"} lg:justify-between relative`}>
       <motion.div
         initial={{ opacity: 0, transform: section_position == "image_right"? "translateX(-50px)" : "translateX(50px)" }}
         whileInView={{ opacity: 1, transform: "translateX(0px)" }}

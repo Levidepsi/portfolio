@@ -227,4 +227,45 @@ export interface COMPONENTS {
   largePaddingLeftRight: boolean;
   url: string;
   requests: Requests[]
+  accordionData: AccordionDataProp[]
 }
+
+export interface AccordionDataProp {
+  title: string;
+  subtitle: string;
+  enableCheckBox: boolean;
+  cookieGroups: CookieGroupsProp[]
+}
+
+export interface CookieGroupsProp {
+  groupTitle: string;
+  cookies: CookiesProp[]
+}
+
+export interface CookiesProp {
+  name:  Array<{
+    _type: string;
+    style?: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+    }>;
+  }>;
+  expiration:  Array<{
+    _type: string;
+    style?: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+    }>;
+  }>;
+  function:  Array<{
+    _type: string;
+    style?: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+    }>;
+  }>;
+}
+

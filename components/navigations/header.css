@@ -324,7 +324,7 @@ svg.dark g line {
     margin-bottom: 0px;
     height: auto;
     overflow: hidden;
-    transition: 1s ease-in-out;
+    transition: 0.6s ease-in-out;
   }
 
   .descriptions_relative.active {

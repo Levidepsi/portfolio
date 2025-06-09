@@ -32,6 +32,9 @@ const AccordionWithText = (
     <div className="px-[32px] lg:px-[109px]">
       <div className="accordionTitleWrapper">
         <h2>{title}</h2>
+        <div className="max-w-[800px] description mb-5">
+          <PortableText value={description} />
+        </div>
       </div>
       <div className="accordionData_Wrapper max-w-[900px]">
         {accordionData && accordionData.map((item: AccordionDataProp, index: number) => {

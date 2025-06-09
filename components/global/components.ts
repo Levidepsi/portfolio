@@ -234,7 +234,32 @@ export interface AccordionDataProp {
   title: string;
   subtitle: string;
   enableCheckBox: boolean;
-  cookieGroups: CookieGroupsProp[]
+  alwaysActive: boolean;
+  cookieGroups: CookieGroupsProp[];
+  left_content: Array<{
+    _type: string;
+    style?: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+    }>;
+  }>;
+  description: Array<{
+    _type: string;
+    style?: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+    }>;
+  }>;
+  right_content: Array<{
+    _type: string;
+    style?: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+    }>;
+  }>;
 }
 
 export interface CookieGroupsProp {

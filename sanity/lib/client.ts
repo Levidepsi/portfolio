@@ -252,6 +252,10 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
       title,
       subtitle,
       enableCheckBox,
+      left_content,
+      description,
+      right_content,
+      alwaysActive,
       cookieGroups[]{
         groupTitle,
         cookies[]{

@@ -17,6 +17,11 @@ export default defineType({
       type: "blockContent",
     }),
     defineField({
+      name: "enablePaddingTop",
+      title: "Enable Padding Top",
+      type: "boolean",
+    }),
+    defineField({
       name: "accordionData",
       title: "Accordion Data",
       type: "array",
@@ -36,10 +41,34 @@ export default defineType({
               type: "string",
             }),
             defineField({
+              name: "description",
+              title: "Description",
+              type: "array",
+              of: [{ type: "block" }],
+            }),
+            defineField({
               name: "enableCheckBox",
               title: "Enable Check Box",
               type: "boolean",
             }),
+            defineField({
+              name: "alwaysActive",
+              title: "Always Active",
+              type: "boolean",
+            }),
+            defineField({
+              name: "left_content",
+              title: "Usage",
+              type: "array",
+              of: [{ type: "block" }],
+            }),
+            defineField({
+              name: "right_content",
+              title: "Sharing Data",
+              type: "array",
+              of: [{ type: "block" }],
+            }),
+            
             defineField({
               name: "cookieGroups",
               title: "Cookie Groups",

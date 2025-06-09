@@ -206,3 +206,7 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.richtext:last-child .richtext_Container {
+  padding-top: 0 !important;
+}

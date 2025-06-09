@@ -49,6 +49,12 @@
   font-family: 'Forma DJRText Regular';
 }
 
+.name p a,
+.expiration p a,
+.function p a {
+  text-decoration: underline;
+}
+
 @media (min-width: 1024px) {
   .richtext_Container h2 {
     margin-top: 40px;
@@ -94,6 +100,7 @@
   max-height: 1000rem;
   visibility: visible;
   opacity: 1;
+  padding-bottom: 20px;
 }
 
 
@@ -120,3 +127,42 @@
     overflow-x: scroll;
   }
 }
+
+.left_content h3,
+.right_content h3 {
+  font-family: 'Moister';
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.left_content p,
+.right_content p,
+.description p{
+  font-size: 14px;
+  line-height: 18px;
+  color: #000427;
+  font-family: 'Forma DJRText Regular';
+}
+
+.left_content p a,
+.right_content p a
+ {
+  text-decoration: underline;
+}
+
+@media (width >= 1536px) {
+  .left_content h3,
+  .right_content h3 {
+    font-family: 'Moister';
+    font-size: 0.977vw;
+    line-height: 1.628vw;
+  }
+
+  .left_content p,
+  .right_content p,
+  .description p {
+    font-size: 0.911vw;
+      line-height: 1.172vw;
+  }
+}
+

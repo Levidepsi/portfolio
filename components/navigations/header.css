@@ -339,6 +339,13 @@ svg.dark g line {
     max-height: 1000rem;
 
   }
+
+  .footer_descriptions .contact h2,
+  .footer_descriptions .services h2,  
+  .footer_descriptions .about h2, 
+  .footer_descriptions .info h2 {
+    text-transform: uppercase;
+  }
 }
 
 @media (width >= 500px) and (width <= 767px) {

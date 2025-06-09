@@ -319,24 +319,40 @@ svg.dark g line {
     text-align: center;
   }
 
-  .footer_descriptions .contact,
-  .footer_descriptions .services,  
-  .footer_descriptions .about, 
-  .footer_descriptions .info {
-    max-height: 20px;
+  .descriptions_relative {
+    min-height: 0;
     margin-bottom: 0px;
     height: auto;
     overflow: hidden;
     transition: 1s ease-in-out;
-    margin-bottom: 20px;
-    
+  }
+
+  .descriptions_relative.active {
+    min-height: 200px;
+  }
+
+  .footer_descriptions .contact,
+  .footer_descriptions .services,  
+  .footer_descriptions .about, 
+  .footer_descriptions .info {
+    opacity: 0;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    z-index: 0;
+    transition: 0.6s all;
   }
 
   .footer_descriptions .contact.active,
   .footer_descriptions .services.active,  
   .footer_descriptions .about.active, 
   .footer_descriptions .info.active {
-    max-height: 1000rem;
+    opacity: 1;
+    z-index: 10;
 
   }
 
@@ -346,14 +362,20 @@ svg.dark g line {
   .footer_descriptions .info h2 {
     text-transform: uppercase;
   }
+
+  .footer_descriptions .contact p,
+  .footer_descriptions .services p,  
+  .footer_descriptions .about p, 
+  .footer_descriptions .info p {
+    text-transform: uppercase;
+  }
 }
 
-@media (width >= 500px) and (width <= 767px) {
+/* @media (width >= 500px) and (width <= 767px) {
   .footer_descriptions {
     flex-direction: row;
     justify-content: space-between !important;
     align-items: self-start;
-    flex-wrap: wrap;
   }
 
   .footer_descriptions .contact, 
@@ -362,4 +384,12 @@ svg.dark g line {
   .footer_descriptions .info {
     width: 50%;
   }
+} */
+
+.footer_menus div:not(:last-child)::after {
+  content: "/";
+  position: relative;
+  width: 1px;
+  height: 100%;
+  margin-left: 10px;
 }

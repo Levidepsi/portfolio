@@ -196,7 +196,8 @@ const Popup = (
         <div className="flex justify-center items-center gap-8 mb-[30px] lg:mb-[50px]">
           <label className="flex items-center gap-2 cursor-pointer text-[#1C1C1C] text-[12px] forma_regular tracking-[0.24px] leading-[20px]">
             <input
-              onClick={() => setNextContent(true)}
+              // onClick={() => setNextContent(true)}
+              onClick={() => setClosePopup(true)}
               type="checkbox"
               className="w-[10px] h-[10px] border border-[#000427] rounded-[2px] appearance-none checked:bg-[#000427] checked:border-[#000427] transition-all duration-150"
             />
@@ -205,7 +206,8 @@ const Popup = (
 
           <label className="flex items-center gap-2 cursor-pointer text-[#1C1C1C] text-[12px] forma_regular tracking-[0.24px] leading-[20px]">
             <input
-              onClick={() => setNextContent(true)}
+              // onClick={() => setNextContent(true)}
+              onClick={() => setClosePopup(true)}
               type="checkbox"
               className="w-[10px] h-[10px] border border-[#000427] rounded-[2px] appearance-none checked:bg-[#000427] checked:border-[#000427] transition-all duration-150"
             />

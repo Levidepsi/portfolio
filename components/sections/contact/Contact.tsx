@@ -117,7 +117,7 @@ const Contact = (
 
 
   return (
-    <div className="px-[32px] py-[101px] lg:py-[161px]">
+    <div className="px-[32px] py-[101px] lg:pt-[161px] pb-[32px]">
       
       
       {layout == "layout1"

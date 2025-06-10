@@ -33,18 +33,52 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
   }
   
 
-  const {menuColor} = GlobalContext()
+  const { menuColor } = GlobalContext()
+  
+  useEffect(() => {
+    let lastScroll = 0
+    let stickyHeaderHome = document.querySelector(".header-container")
+    
+
+
+    const scrollHandler = () => {
+      let currentScrollPos = window.scrollY
+
+      let currentScroll = window.scrollY
+
+      if (currentScrollPos >= 300 && currentScroll > lastScroll ) {
+        // Scrolling down
+        stickyHeaderHome?.classList.add("active")
+
+      } else {
+        if (currentScrollPos < 300) {
+          stickyHeaderHome?.classList.remove("active")
+
+
+        } 
+      }
+
+      
+      lastScroll = currentScroll
+    }
+    window.addEventListener("scroll", scrollHandler)
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler)
+    }
+  }, [])
+
 
     
   return (
-    <header className={`header-container flex justify-between w-full  items-center gap-x-5 px-[32px] lg:px-[32px] py-[20px] lg:py-[42px] ${openMenuMobile == true ? "active" : ""} fixed   top-0 left-0 z-[11]`}>
+    <header className={`header-container flex justify-between w-full  items-center gap-x-5 px-[32px] lg:px-[32px] py-[20px] lg:py-[42px] ${menuColor} ${openMenuMobile == true ? "active" : ""} fixed   top-0 left-0 z-[11]`}>
       <div className="lg:w-[20%]">
         {navigation != null && navigation.header_logo ?
           <Link href={"/"} className={``}>
             <Image src={navigation.header_logo} alt={navigation.title} width={500} height={500} className="w-[215px] h-auto object-cover " />
           </Link>
           : 
-          <Link href={"/"} className={`logo text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] 2xl:tracking-[0.091vw] moinster_regular ${menuColor} ${openMenuMobile == true ? "active" : ""} `}>
+          <Link href={"/"} className={`logo text-[20px] lg:text-[18px] xl:text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] 2xl:tracking-[0.091vw] moinster_regular ${menuColor} ${openMenuMobile == true ? "active" : ""} `}>
             JD SPIRITS
           </Link>
         }

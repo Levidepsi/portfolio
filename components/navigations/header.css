@@ -356,6 +356,13 @@ svg.dark g line {
     }
 }
 
+@media (width >= 1536px) {
+  .header-container.active {
+    padding-top: 1.953vw;
+    padding-bottom: 1.953vw;
+  }
+}
+
 .subMenuItems-Wrapper.mobile {
   transition: 1s ease-in-out;
 }

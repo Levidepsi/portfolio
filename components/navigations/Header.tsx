@@ -71,7 +71,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
 
     
   return (
-    <header className={`header-container flex justify-between w-full  items-center gap-x-5 px-[32px] lg:px-[32px] py-[20px] lg:py-[42px] ${menuColor} ${openMenuMobile == true ? "active" : ""} fixed   top-0 left-0 z-[11]`}>
+    <header className={`header-container flex justify-between w-full  items-center gap-x-5 px-[32px] lg:px-[32px] py-[20px] lg:py-[42px] 2xl:py-[2.734vw] ${menuColor} ${openMenuMobile == true ? "active" : ""} fixed   top-0 left-0 z-[11]`}>
       <div className="lg:w-[20%]">
         {navigation != null && navigation.header_logo ?
           <Link href={"/"} className={``}>

@@ -99,7 +99,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
                 {item.subMenu ? (
                   <button
                     type="button"
-                    className={`text-[14px]  menu_item relative forma_regular leading-[18px] 2xl:text-[0.911vw] 2xl:leading-[1.172vw] aktiv_regular ${menuColor} ${
+                    className={`text-[14px]  menu_item  relative forma_regular leading-[18px] 2xl:text-[0.911vw] 2xl:leading-[1.172vw] aktiv_regular ${menuColor} ${
                       openSubMenu === index ? "active" : ""
                     }`}
                   >
@@ -108,7 +108,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
                 ) : (
                   <Link
                     href={`/${item.page ? item.page.slug.slug : "/"}`}
-                    className={`text-[13px] forma_regular menu_item tracking-[0.24px] forma_regular relative 2xl:text-[0.881vw] 2xl:leading-[1.042vw] 2xl:tracking-[0.016vw] leading-[16px] ${menuColor}`}
+                    className={`text-[13px] forma_regular menu_item ${pathname == `/${item.page.slug.slug }` ? "active" : ""} tracking-[0.24px] forma_regular relative 2xl:text-[0.881vw] 2xl:leading-[1.042vw] 2xl:tracking-[0.016vw] leading-[16px] ${menuColor}`}
                   >
                     {item.title}
                   </Link>

@@ -109,7 +109,7 @@ const Banner: React.FC<BannerProps> = ({
           <PortableText  value={description}/>
         </div>
         {url && 
-            <Link href={url ? `${url}` :"/"} className="border-solid forma_regular rounded-[5px] border-[#FFF5EF] text-[#FFF5EF] border-[0.5px]  text-[13px] tracking-[0.26px] leading-[16px] 2xl:text-[0.846vw] 2x:leading-[1.042vw] 2xl:tracking-[0.017vw] px-[10px] inline-flex justify-center py-[2.5px] w-[110px]">
+            <Link href={url ? `${url}` :"/"} className="border-solid bannerLink forma_regular rounded-[5px] border-[#FFF5EF] text-[#FFF5EF] border-[0.5px]  text-[13px] tracking-[0.26px] leading-[16px] 2xl:text-[0.846vw] 2x:leading-[1.042vw] 2xl:tracking-[0.017vw] px-[10px] inline-flex justify-center py-[2.5px] w-[110px]">
             Get in touch
           </Link>
         }

@@ -186,3 +186,13 @@
     letter-spacing: 0.182vw;
   }
 }
+
+
+.bannerLink {
+  transition: 0.7s all;
+}
+
+.bannerLink:hover {
+  background-color: #0D0D0D;
+  color: #FFF5EF;
+}

@@ -88,6 +88,14 @@ svg.dark g line {
   background-color: #FFF5EF;
 }
 
+.menu_Link .menu_item.active.light::after {
+  background-color: #FFF5EF;
+}
+
+.menu_Link .menu_item.active.dark::after {
+  background-color: #0D0D0D;
+}
+
 .menu_Link:hover .menu_item::after {
   transform-origin: bottom center;
 }
@@ -227,9 +235,9 @@ svg.dark g line {
   display: block;
 }
 
-.contact  a::after,
-.services  a::after,
-.about  a::after {
+.footer_descriptions .contact  a::after,
+.footer_descriptions .services  a::after,
+.footer_descriptions .about  a::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -259,14 +267,14 @@ svg.dark g line {
     display: block;
 }
 
-.footer_links>a:hover:after {
+.footer_descriptions .footer_links>a:hover:after {
   transform-origin: bottom center;
     transform: scaleX(1);
 }
 
-.contact p a:hover:after,
-.services p a:hover:after,
-.about p a:hover:after {
+.footer_descriptions .contact p a:hover:after,
+.footer_descriptions.services p a:hover:after,
+.footer_descriptions .about p a:hover:after {
   transform-origin: bottom center;
   transform: scaleX(1);
 }

@@ -114,3 +114,8 @@ button {
   width: 110px;
   align-items: center;
 }
+
+button:hover {
+  background-color: #000427;
+  color: #FFF5EF;
+}

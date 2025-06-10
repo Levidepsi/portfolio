@@ -105,7 +105,11 @@
 button {
   border-radius: 5px;
   background-color: transparent;
-  padding: 3px 30px;
+  padding: 2px 5px;
   transition: 0.7s all;
   border: 0.5px solid #000427;
+  display: inline-flex;
+  justify-content: center;
+  width: 110px;
+  align-items: center;
 }

@@ -27,6 +27,7 @@ interface BannerProps {
   max_width: number;
   url: string
   title: string;
+  content_titleArray: Description[]
 }
 
 const Banner: React.FC<BannerProps> = ({
@@ -37,7 +38,8 @@ const Banner: React.FC<BannerProps> = ({
   content_position,
   max_width,
   url,
-  title
+  title,
+  content_titleArray
 }) => {
 
   const desktop = useWindowWide(1024)
@@ -95,14 +97,19 @@ const Banner: React.FC<BannerProps> = ({
         
       </motion.div>
       <div className={`contents_banner ${content_position} absolute `}>
-        <div className={`title forma_regular moinster_regular text-[#FFF5EF] text-[30px]  lg:text-[40px] lg:tracking-[2.8px]  lg:leading-[42px] 2xl:text-[2.604vw] 2x:leading-[2.734vw] 2xl:tracking-[0.182vw] max-w-[677px] mb-[25px]`}>
+        <div className={`title lg:hidden  moinster_regular text-[#FFF5EF] text-[30px]  lg:text-[40px] lg:tracking-[2.8px]  lg:leading-[42px] 2xl:text-[2.604vw] 2x:leading-[2.734vw] 2xl:tracking-[0.182vw] max-w-[677px] mb-[25px]`}>
           {title}
         </div>
+        {content_titleArray && 
+          <div className="content_title hidden lg:block mb-[25px]">
+            <PortableText value={content_titleArray}/>
+          </div>
+        }
         <div className="banner_description mb-[22px]">
           <PortableText  value={description}/>
         </div>
         {url && 
-            <Link href={url ? `${url}` :"/"} className="border-solid forma_regular rounded-[5px] border-[#FFF5EF] text-[#FFF5EF] border-[0.5px] block py-[5px] px-[10px] text-[13px] tracking-[0.26px] leading-[16px] 2xl:text-[0.846vw] 2x:leading-[1.042vw] 2xl:tracking-[0.017vw] w-max">
+            <Link href={url ? `${url}` :"/"} className="border-solid forma_regular rounded-[5px] border-[#FFF5EF] text-[#FFF5EF] border-[0.5px]  text-[13px] tracking-[0.26px] leading-[16px] 2xl:text-[0.846vw] 2x:leading-[1.042vw] 2xl:tracking-[0.017vw] px-[10px] inline-flex justify-center py-[2.5px] w-[110px]">
             Get in touch
           </Link>
         }

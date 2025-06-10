@@ -16,6 +16,11 @@ export default defineType({
       type: "image",
     }),
     defineField({
+      name: "content_titleArray",
+      title: "content_title",
+      type: "blockContent",
+    }),
+    defineField({
       name: "video",
       title: "Video",
       type: "file",

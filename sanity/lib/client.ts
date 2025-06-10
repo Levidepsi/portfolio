@@ -238,7 +238,9 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
     items[]{
       title,
       "image": image.asset->url,
-      body
+      body,
+      button_label,
+      button_url
     },
     socials[] {
       "image": image.asset->url,

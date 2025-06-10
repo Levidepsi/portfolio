@@ -89,7 +89,7 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
                       <h2 className="aktiv_regular text-[#000427] text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] uppercase mb-[20px]">{item.title}</h2>
                       <div className="aktiv_regular mb-[25px]"><PortableText value={item.body} /></div>
                       {item.button_url && 
-                        <Link className="text-[13px] button_url relative leading-[16px] 2xl:text-[0.846vw] 2xl:leading-[1.042vw] text-[#FFF5EF] aktiv_regular " href={`${item.button_url}`}>Read more</Link>
+                        <Link className="text-[13px] button_url relative leading-[16px] 2xl:text-[0.846vw] 2xl:leading-[1.042vw] text-[#FFF5EF] aktiv_regular " href={`${item.button_url}`}>Find out more</Link>
                       }
                     </div>
                   }

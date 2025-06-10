@@ -213,6 +213,14 @@ export interface COMPONENTS {
       text?: string;
     }>;
    }>;
+  content_titleArray: Array<{
+    _type: string;
+    style?: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+    }>;
+   }>;
   texts_accordions: TextAccordions[];
   socials: Socials[];
   destinations: Destinations[];

@@ -160,3 +160,29 @@
       line-height: 1.042vw;
       max-width: 30.534vw; }
 }
+
+.content_title > p {
+  font-family: 'Moister';
+  /* assuming custom font */
+  color: #FFF5EF;
+  font-size: 30px;
+  max-width: 677px;
+}
+
+/* Large screens (≥1024px) */
+@media (width>= 1024px) {
+  .content_title > p {
+    font-size: 40px;
+    letter-spacing: 2.8px;
+    line-height: 42px;
+  }
+}
+
+/* Extra Extra Large screens (≥1536px) */
+@media (width >= 1536px) {
+  .content_title > p {
+    font-size: 2.604vw;
+    line-height: 2.734vw;
+    letter-spacing: 0.182vw;
+  }
+}

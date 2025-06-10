@@ -84,7 +84,7 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+body, html {
   background-color: #FFF5EF;
   min-height: 100vh;
   overflow-x: hidden;

@@ -93,7 +93,7 @@ const TextWithImage: React.FC<TextWithImageProps> = ({
         }}
         viewport={{once: true}}
         ref={divRef}
-        className={`text_with_image_contents flex flex-col ${content_position == "top" ? "justify-end" : content_position == "top" ? "justify-end" : ""} mb-[40px] lg:pt-[50px] lg:mb-0 lg:w-[40%]`}>
+        className={`text_with_image_contents flex flex-col ${content_position} ${content_position == "bottom" ? "justify-end" : content_position == "top" ? "justify-start" : ""} mb-[40px] lg:pt-[50px] lg:mb-0 lg:w-[40%]`}>
         {content_title && 
       <h1 className=" moinster_regular text-[20px] lg:text-[40px] tracking-[2.8px] leading-[42px] 2xl:text-[2.604vw] 2x:leading-[2.734vw] 2xl:tracking-[0.182vw]  mb-[30px] lg:mb-[50px]">{content_title}</h1>
 
@@ -106,7 +106,7 @@ const TextWithImage: React.FC<TextWithImageProps> = ({
         </div>
         {button_label && 
           <Link
-            className="border-solid button forma_regular border-[#0D0D0D] border-[0.5px] rounded-[5px] text-[12px] tracking-[0.24px] leading-[16px] 2xl:text-[0.781vw] 2x:leading-[1.042vw] 2xl:tracking-[0.016vw] text-[#0D0D0D] px-[10px] py-[5px] w-max"
+            className="border-solid button forma_regular border-[#0D0D0D] border-[0.5px] rounded-[5px] text-[12px] tracking-[0.24px] leading-[16px] 2xl:text-[0.781vw] 2x:leading-[1.042vw] 2xl:tracking-[0.016vw] text-[#0D0D0D] px-[10px] inline-flex justify-center py-[2px] w-[110px]"
             href={`${button_url ? button_url : "/"}`}>
             {button_label}
           </Link>

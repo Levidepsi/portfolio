@@ -49,6 +49,7 @@ export default function SpreadComponents({ components }: { components: any }) {
                       content_position={component.content_position}
                       url={component.url}
                       title={component.title}
+                      content_titleArray={component.content_titleArray}
                     />
                   ),
                   text_with_image: (

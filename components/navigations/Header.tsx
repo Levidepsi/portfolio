@@ -74,7 +74,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
                 ) : (
                   <Link
                     href={`/${item.page ? item.page.slug.slug : "/"}`}
-                    className={`text-[12px] forma_regular menu_item tracking-[0.24px] forma_regular relative 2xl:text-[0.781vw] 2xl:leading-[1.042vw] 2xl:tracking-[0.016vw] leading-[16px] ${menuColor}`}
+                    className={`text-[13px] forma_regular menu_item tracking-[0.24px] forma_regular relative 2xl:text-[0.881vw] 2xl:leading-[1.042vw] 2xl:tracking-[0.016vw] leading-[16px] ${menuColor}`}
                   >
                     {item.title}
                   </Link>

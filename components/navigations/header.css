@@ -312,6 +312,10 @@ svg.dark g line {
   transition: 0.7s all;
 }
 
+.header-container {
+  transition: 0.7s all;
+}
+
 .header-container.light::after {
   position: absolute;
   content: "";
@@ -339,12 +343,16 @@ svg.dark g line {
 
 
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .contact-emails p:empty {
       margin: 40px;
     }
     .contact-emails p  {
       width: max-content;
+    }
+    .header-container.active {
+      padding-top: 30px;
+      padding-bottom: 30px;
     }
 }
 

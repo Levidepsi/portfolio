@@ -42,6 +42,7 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
 }) => {
   const sectionPT: number = padding_top;
   const desktop = useWindowWide(1024);
+   const bigScreen = useWindowWide(1536);
 
   const [currentSlide, setCurrentSlide] = useState(1)
 
@@ -67,6 +68,7 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
           {textblock_items &&
             textblock_items.map((item: ImageTextBlocks, index: number) => {
               const titleMHeight: number = titleMinHeight ? titleMinHeight : 0
+              
               return (
                 <motion.div
                   className={`text-block-item relative w-full ${largePaddingLeftRight ? "lg:w-[32.3333%]" : ""}  h-auto  ${item.data ? "bg-[#F5F7FA] min-h-[235px] rounded-[10px]" : ""}`}
@@ -93,7 +95,7 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
                         style={{
                           height: desktop && titleMinHeight ? `${titleMHeight}px`: ``
                         }}
-                        className={`text-[#000427] max-w-[310px] lg:h-[${titleMHeight}px] moinster_regular text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] uppercase mb-[20px]`}>
+                        className={`text-[#000427] max-w-[310px] 2xl:max-w-[20.182vw] lg:h-[${titleMHeight}px] moinster_regular text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] uppercase mb-[20px]`}>
                         {item.title}
                       </h2>
                       <div className="aktiv_regular mb-[25px]"><PortableText value={item.body} /></div>

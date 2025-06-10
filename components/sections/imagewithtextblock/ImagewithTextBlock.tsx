@@ -25,6 +25,7 @@ interface ImagewithTextBlockProps {
   sub_title: string
   allowSliderMobile: boolean;
   largePaddingLeftRight: boolean
+  titleMinHeight: number
 }
 
 const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
@@ -37,6 +38,7 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
   sub_title,
   allowSliderMobile,
   largePaddingLeftRight,
+  titleMinHeight
 }) => {
   const sectionPT: number = padding_top;
   const desktop = useWindowWide(1024);
@@ -64,6 +66,7 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
         <div className={`text-block-scroll-wrapper gap-[14px] hidden lg:flex lg:flex-row ${largePaddingLeftRight ? "lg:flex-wrap" : ""}  flex-col w-full h-auto justify-center`}>
           {textblock_items &&
             textblock_items.map((item: ImageTextBlocks, index: number) => {
+              const titleMHeight: number = titleMinHeight ? titleMinHeight : 0
               return (
                 <motion.div
                   className={`text-block-item relative w-full ${largePaddingLeftRight ? "lg:w-[32.3333%]" : ""}  h-auto  ${item.data ? "bg-[#F5F7FA] min-h-[235px] rounded-[10px]" : ""}`}
@@ -86,7 +89,7 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
                     : 
                     <div className="image-block-content w-full h-auto">
                       <Image src={item.image} alt={item.title} width={500} priority height={500} className="w-full rounded-[10px] h-auto lg:aspect-[16/20.7] xl:aspect-[16/23.65] 2xl:aspect-[16/18.85] mb-[25px] object-cover" />
-                      <h2 className=" text-[#000427] max-w-[310px] lg:h-[60px] moinster_regular text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] uppercase mb-[20px]">{item.title}</h2>
+                      <h2 className={`text-[#000427] max-w-[310px] lg:h-[${titleMHeight}px] moinster_regular text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] uppercase mb-[20px]`}>{item.title}</h2>
                       <div className="aktiv_regular mb-[25px]"><PortableText value={item.body} /></div>
                       {item.button_url && 
                         <Link className="text-[13px] button_url relative leading-[16px] 2xl:text-[0.846vw] 2xl:leading-[1.042vw] text-[#FFF5EF] aktiv_regular " href={`${item.button_url}`}>Find out more</Link>

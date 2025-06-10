@@ -28,7 +28,7 @@ export interface ImageTextBlocks {
     }>;
     button_url: string;
     image: string;
-    data: number
+    data: number;
 }
 
 export interface Items2 {
@@ -155,6 +155,7 @@ export interface COMPONENTS {
   featured_article_items: any;
   tableData: any;
   padding_bottom: number;
+  titleMinHeight: number
   body: Array<{
     _type: string;
     style?: string;

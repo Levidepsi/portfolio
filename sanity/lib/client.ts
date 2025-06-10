@@ -122,7 +122,8 @@ export const HOME_QUERY = groq`*[_type == "home"][0]{
     body,
     button_url,
    "image": image.asset->url,
-    data
+    data,
+    titleMinHeight
     },
     slider_items[]{
       title,
@@ -171,6 +172,7 @@ export const ALLPAGE_QUERY = groq`*[_type == "page"]{
     button_label,
     button_url,
     right_content,
+    titleMinHeight,
     tableData[] {
       column1,
       column2
@@ -215,7 +217,7 @@ export const PAGE_QUERY = groq`*[_type == "page" && slug.current == $slug][0]{
       body,
       button_url,
       "image": image.asset->url,
-      data
+      data,
     },
     texts_accordions[] {
       title,

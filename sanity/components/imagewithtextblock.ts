@@ -65,6 +65,12 @@ export default defineType({
     }),
 
     defineField({
+      name: "titleMinHeight",
+      title: "titleMinHeight",
+      type: "number",
+    }),
+
+    defineField({
       name: "image_size",
       title: "Image Size",
       type: "string",

@@ -118,6 +118,7 @@ export default function SpreadComponents({ components }: { components: any }) {
                       sub_title={component.sub_title}
                       allowSliderMobile={component.allowSliderMobile}
                       largePaddingLeftRight={component.largePaddingLeftRight}
+                      titleMinHeight={component.titleMinHeight}
                     />
                   ),
                   featured_article: (

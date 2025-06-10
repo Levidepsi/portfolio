@@ -157,7 +157,6 @@ const Contact = (
                 <h2  className="text-[20px] form_title tracking-[1.4px] leading-[29px] moinster_regular text-[#0D0D0D] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] mb-[14px]">FOLLOW US</h2>
                 <div className="flex gap-5 items-center">
                   {socials && socials.map((soc: Socials, index: number) => {
-                    console.log(soc)
                     return (
                       <Link key={index} href={soc.url ? soc.url : ""}>
                         <Image src={soc.image} alt="" width={500} height={500} className="w-[23px] h-auto"/>

@@ -252,7 +252,6 @@ const MobileMenu = (
 }
 
 const BurgerIcon = ({menuColor}: { menuColor: string }) => {
-  console.log(menuColor)
   return (
     <svg className={`${menuColor}`} xmlns="http://www.w3.org/2000/svg" width="22" height="9" viewBox="0 0 22 9">
       <g id="Group_85" data-name="Group 85" transform="translate(-342 -30)">

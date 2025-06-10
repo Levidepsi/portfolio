@@ -31,7 +31,6 @@ const TextWithImage2 = (
       {title && <h1 className="text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] text-[#000427] moinster_regular mb-[32px] lg:mb-[64px]">{title}</h1>}
       <div>
         {items && items.map((item: Items2, index: number) => {
-          console.log(item)
           return (
             <div className="item flex flex-col justify-between lg:flex-row border-b-[0.5px] border-solid border-[#000427] pb-[38px] mb-[38px]" key={index}>
               <motion.div

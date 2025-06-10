@@ -40,7 +40,6 @@ const AccordionWithText = (
       </div>
       <div className="accordionData_Wrapper max-w-[900px]">
         {accordionData && accordionData.map((item: AccordionDataProp, index: number) => {
-          console.log(item)
           return (
             <div
               className="accordionItem_Wrapper px-[20px]  rounded-[10px]"

@@ -283,6 +283,7 @@ svg.dark g line {
   color: #F8F3E9;
   letter-spacing: -0.1px;
   line-height: 19px;
+  margin-bottom: 1px;
 }
 
 .contact-emails p:empty {

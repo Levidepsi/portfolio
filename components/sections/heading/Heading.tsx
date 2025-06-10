@@ -49,7 +49,7 @@ const Heading: React.FC<HeadingProps> =
         className="heading_description aktiv_regular mx-auto text-center">
           <PortableText value={description} />
       </motion.div>
-      <div className="flex flex-col multiple_text_wrapper max-w-[1100px] mx-auto px-[14px] lg:px-0">
+      <div className="flex flex-col multiple_text_wrapper max-w-[1100px] 2xl:max-w-[71.615vw] mx-auto px-[14px] lg:px-0">
         {multiple_text && multiple_text.map((item: MultipleTextArray, index: number) => {
           return (
             <div className={`flex w-auto multiple_textitem moinster_regular ${item.position == "start" ? " lg:justify-start " : item.position == "end" ? "  lg:justify-end" : ""}`}

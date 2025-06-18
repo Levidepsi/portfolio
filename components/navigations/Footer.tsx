@@ -26,7 +26,7 @@ const Footer = ({ footer }: { footer: FooterValues }) => {
   }
   
   return (
-    <div className={`flex overflow-hidden justify-center md:justify-between gap-x-[50px] px-[32px] lg:pr-[32px] lg:pl-[102px]  py-[30px] lg:py-[74px]  flex-col md:flex-col bg-[#67231E]`}>
+    <div className={`flex overflow-hidden justify-center md:justify-between gap-x-[50px] px-[32px] lg:pr-[32px] lg:pl-[102px]  py-[30px] lg:py-[74px]  flex-col md:flex-col bg-[#412A24]`}>
       <div className="flex lg:gap-x-[102px] justify-between lg:flex-row flex-col">
         <div className="lg:w-[10%]  lg:gap-y-[139px] flex flex-col justify-between mb-5 lg:mb-0">
           <Link className="text-center flex flex-col justify-center items-center" href={"/"}>

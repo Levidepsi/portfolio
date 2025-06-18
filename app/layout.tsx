@@ -5,7 +5,7 @@ import "@/components/navigations/header.css"
 import { ThemeProvider } from "@/components/global/ThemeProvider";
 import ProviderWrapper from "@/components/global/ProviderWrapper";
 import { draftMode } from "next/headers";
-import { FOOTER, GET_ALL_PAGE_MENU_COLOR, HEADER, NAVIGATION } from "@/sanity/lib/client";
+import { FOOTER, GET_ALL_PAGE_MENU_COLOR, HEADER, NAVIGATION, SETTINGS } from "@/sanity/lib/client";
 import { loadQuery } from "@/sanity/lib/store";
 import { SanityDocument } from "next-sanity";
 import LiveVisualEditing from "@/components/LiveVisualEditing";
@@ -50,6 +50,15 @@ export default async function RootLayout({
     }
   );
 
+  const settings = await loadQuery<SanityDocument[]>(
+    SETTINGS,
+    {},
+    {
+      cache: "no-store",
+    }
+  );
+
+
 
   const { isEnabled } = await draftMode();
   return (
@@ -59,7 +68,7 @@ export default async function RootLayout({
       {/* <link rel="preload" href="/public/fonts/AktivGrotesk-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/> */}
       </head>
       <body>
-        <ThemeProvider allMenuColor={allMenuColor.data}>
+        <ThemeProvider allMenuColor={allMenuColor.data} settings={settings}>
           <Header navigation={navigation.data} />
           <main>  
             <ProviderWrapper>{children}</ProviderWrapper>

@@ -61,3 +61,9 @@
   line-height: 1.302vw;
   }
 }
+
+@media (min-width: 1536px) {
+  .button_url {
+    width: 7.161vw;
+  }
+}

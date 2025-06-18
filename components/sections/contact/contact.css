@@ -119,3 +119,7 @@ button:hover {
   background-color: #000427;
   color: #FFF5EF;
 }
+
+.meetingTypeItem:not(:last-child) {
+  border-bottom: 1px solid #0D0D0D;
+}

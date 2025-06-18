@@ -115,6 +115,10 @@ const Contact = (
     
   }
 
+  const [meetingType, setMeetingType] = useState("Request a cask visit");
+  const [openMeetingType, setOpenMeetingType] = useState(false)
+
+
 
   return (
     <div className="px-[32px] py-[101px] lg:pt-[161px] pb-[32px]">
@@ -159,7 +163,7 @@ const Contact = (
                   {socials && socials.map((soc: Socials, index: number) => {
                     return (
                       <Link key={index} href={soc.url ? soc.url : ""}>
-                        <Image src={soc.image} alt="" width={500} height={500} className="w-[23px] h-auto"/>
+                        <Image src={soc.image} alt="" width={500} height={500} className={`${index == 1 ? "w-[26px] mt-[1px]" : "w-[23px]"} h-auto object-cover`} />
                       </Link>
                     )
                   })}
@@ -320,8 +324,49 @@ const Contact = (
               </div>
             </div>
             <div className="form md:w-[60%]">
-              <h2 className="text-[20px] form_title text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular mb-[25px]">Request a Meeting </h2>
-              <form ref={form} onSubmit={(e) => sendEmail(e)}>
+              <form className="relative" ref={form} onSubmit={(e) => sendEmail(e)}>
+                  <h2
+                    onClick={() => setOpenMeetingType(!openMeetingType)}
+                    className="text-[20px] flex justify-between items-center gap-x-5 w-max form_title text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular mb-[25px] cursor-pointer">
+                    {meetingType}
+                    <svg
+                      className="w-[5.98px] rotate-[90deg]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="5.98"
+                      height="11.343"
+                      viewBox="0 0 5.98 11.343">
+                      <path
+                        id="Path_64"
+                        data-name="Path 64"
+                        d="M1651.453,16296.816l5.2,5.135,5.151-5.135"
+                        transform="translate(-16296.321 1662.301) rotate(-90)"
+                        fill="none"
+                        stroke="#0D0D0D"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="0.7" />
+                    </svg>
+                  </h2>
+                <div className={`meetingType  bg-[#fff5ef] absolute top-0 left-0 border-[1px] border-solid border-[#0D0D0D] rounded-[5px] transition-all duration-[0.4s] ${openMeetingType ? "opacity-[1] visible z-10 top-[30px]" : " opacity-0 invisible z-0 top-0"}`}>
+                    <div
+                      className="text-[15px]  cursor-pointer px-[10px] py-[10px] hover:bg-[#0D0D0D] hover:text-[#fff5ef] text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular "
+                      onClick={() => {
+                        setMeetingType("Request a cask visit")
+                        setOpenMeetingType(false)
+                      }}>Request a cask visit</div>
+                    <div
+                      className="text-[15px]  cursor-pointer px-[10px] py-[3px] hover:bg-[#0D0D0D] hover:text-[#fff5ef] text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular "
+                      onClick={() => {
+                        setMeetingType("Request a sample")
+                        setOpenMeetingType(false)
+                      }}>Request a sample</div>
+                    <div
+                      className="text-[15px]  cursor-pointer px-[10px] py-[10px] hover:bg-[#0D0D0D] hover:text-[#fff5ef] text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular "
+                      onClick={() => {
+                        setMeetingType("Request a delivery order")
+                        setOpenMeetingType(false)
+                      }}>Request a delivery order</div>
+                </div>
                 <div className="user-info flex flex-col md:flex-row gap-[16px] mb-[30px]">
                   <div className="firstName flex flex-col md:w-[100%] ">
                     <input

@@ -21,6 +21,7 @@ import destinations from "./schemaTypes/destinations";
 import mapwithimage from "./components/mapwithimage";
 import text_with_image2 from "./components/text_with_image2";
 import accordions from "./components/accordions";
+import settings from "./schemaTypes/settings";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -29,7 +30,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     home,
     page,
     destinations,
-    
+    settings,
     blockContent,
     slideshow,
     banner,

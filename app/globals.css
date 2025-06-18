@@ -210,3 +210,30 @@ body, html {
 .richtext:last-child .richtext_Container {
   padding-top: 0 !important;
 }
+
+.pop_up.hide,
+.overlay.hide {
+  z-index: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pop_up.firstContent {
+  z-index: 9999;
+}
+.pop_up.hide.secondContent {
+  opacity: 1;
+  visibility: visible;
+  z-index: 9999;
+}
+
+.pop_up.secondContent .secondContent,
+.pop_up.secondContent {
+  opacity: 1;
+  z-index: 9999;
+}
+
+.pop_up.secondContent .secondContent.hide {
+  opacity: 0;
+  z-index: 0;
+}

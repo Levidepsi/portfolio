@@ -163,7 +163,7 @@ const Contact = (
                   {socials && socials.map((soc: Socials, index: number) => {
                     return (
                       <Link key={index} href={soc.url ? soc.url : ""}>
-                        <Image src={soc.image} alt="" width={500} height={500} className={`${index == 1 ? "w-[26px] mt-[1px]" : "w-[23px]"} h-auto object-cover`} />
+                        <Image src={soc.image} alt="" width={500} height={500} className={`w-[23px] h-auto object-cover`} />
                       </Link>
                     )
                   })}

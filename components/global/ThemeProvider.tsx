@@ -88,7 +88,7 @@ export const ThemeProvider = ({
     }
   }, []);
 
-  console.log(showOverlay )
+  const [showText, setShowText] = useState(false)
 
   return (
     <ThemeContext.Provider
@@ -108,12 +108,26 @@ export const ThemeProvider = ({
               <source src={`/video-jd.mp4`} type="video/mp4" />
             </video>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1.5, delay: 2, ease: [0.19, 1, 0.22, 1] }}
-              viewport={{ once: true }}
             >
-              <Image src={logo} alt="Landing" width={500} height={500} className="w-full max-w-[137.53px] landing_logo h-auto object-cover" />
+              <div className="landing_logo">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1.5, delay: 2, ease: [0.19, 1, 0.22, 1] }}
+                  viewport={{ once: true }}
+                  className="flex justify-center mb-[25px]"
+                >
+                  <Image src={logo} alt="Landing" width={500} height={500} className="w-full max-w-[137.53px]  h-auto object-cover" />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1.5, delay: 3, ease: [0.19, 1, 0.22, 1] }}
+                  viewport={{ once: true }}
+                  className="uppercase landing_label text-[#fff5ef]  moinster_regular text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw]  mb-[20px]">
+                  Welcome to JD Spirits
+              </motion.div>
+              </div>
             </motion.div>
           </div>
         ) : (

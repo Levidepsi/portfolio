@@ -49,7 +49,7 @@ const TextWithImage2 = (
                 </div>
                 {item.button_label && 
                   <Link
-                    className="border-solid button forma_regular border-[#0D0D0D] border-[0.5px] rounded-[5px] text-[12px] tracking-[0.24px] leading-[16px] 2xl:text-[0.781vw] 2x:leading-[1.042vw] 2xl:tracking-[0.016vw] text-[#0D0D0D] px-[10px] inline-flex justify-center py-[2px] pt-[4px] w-[110px]"
+                    className="border-solid button forma_regular border-[#0D0D0D] border-[0.5px] rounded-[5px] text-[12px] tracking-[0.24px] leading-[16px] 2xl:text-[0.781vw] 2x:leading-[1.042vw] 2xl:tracking-[0.016vw] text-[#0D0D0D] px-[10px] inline-flex justify-center py-[2px] pt-[4px] w-[110px] 2xl:w-[7.161vw]"
                     href={`${item.button_url ? item.button_url : "/"}`}>
                     {item.button_label}
                   </Link>

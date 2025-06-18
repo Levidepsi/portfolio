@@ -82,7 +82,7 @@ export const ThemeProvider = ({
         setNextContent(true);
         setShowPopup(true);
         setShowOverlay(true);
-      }, 30000);
+      }, 40000);
   
       return () => clearTimeout(timer);
     }

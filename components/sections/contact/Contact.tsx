@@ -74,10 +74,10 @@ const Contact = (
     e.preventDefault();
     emailjs
       .sendForm(
-        `service_mm4n9tg`,
-        `template_dy9miw4`,
+        `service_t64gm5n`,
+        `template_yjv8hka`,
         form.current,
-        `hyoP__E0E9QikO5ZG`
+        `Q9prPUg0Ljw1kFYA5`
       )
       .then(
         (result: any) => {

@@ -70,12 +70,37 @@ const Contact = (
   const [emailSent, setEmailSent] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  const sendEmail = (e: any) => {
+  const sendEmail1 = (e: any) => {
     e.preventDefault();
     emailjs
       .sendForm(
         `service_t64gm5n`,
-        `template_yjv8hka`,
+        `template_zbj5uj1`,
+        form.current,
+        `Q9prPUg0Ljw1kFYA5`
+      )
+      .then(
+        (result: any) => {
+          console.log(result);
+          setEmailSent(true);
+          setHasError(false);
+          return result;
+        },
+        (error: any) => {
+          console.log(error);
+          setEmailSent(false);
+          setHasError(true);
+
+          return error;
+        }
+      );
+  };
+  const sendEmail2 = (e: any) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        `service_t64gm5n`,
+        `template_b9en2ry`,
         form.current,
         `Q9prPUg0Ljw1kFYA5`
       )
@@ -172,7 +197,7 @@ const Contact = (
             </div>
             <div className="form md:w-[60%]">
               <h2 className="text-[20px] form_title text-[#0D0D0D] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] moinster_regular mb-[25px]">WRITE US</h2>
-              <form ref={form} onSubmit={(e) => sendEmail(e)}>
+              <form ref={form} onSubmit={(e) => sendEmail1(e)}>
                 <div className="user-info flex flex-col md:flex-row gap-[16px] mb-[30px]">
                   <div className="firstName flex flex-col md:w-[50%]">
                     <input
@@ -324,9 +349,11 @@ const Contact = (
               </div>
             </div>
             <div className="form md:w-[60%]">
-              <form className="relative" ref={form} onSubmit={(e) => sendEmail(e)}>
+                <form className="relative" ref={form} onSubmit={(e) => sendEmail2(e)}>
+                  <input type="hidden" name="meeting_type" value={meetingType} />
                   <h2
                     onClick={() => setOpenMeetingType(!openMeetingType)}
+                    id="meetingType"
                     className="text-[20px] flex justify-between items-center gap-x-5 w-max form_title text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular mb-[25px] cursor-pointer">
                     {meetingType}
                     <svg

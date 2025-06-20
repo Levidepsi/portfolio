@@ -19,7 +19,25 @@ export default defineType({
       title: "Enable Popup Second",
       type: "boolean",
     }),
-
-    
+    defineField({
+      name: "popup1_title",
+      title: "First Popup Title",
+      type: 'string',
+    }),
+    defineField({
+      name: "popup2_title",
+      title: "Second Popup Title",
+      type: 'string',
+    }),
+    defineField({
+      name: "popup1",
+      title: "First Popup Description",
+      type: 'blockContent',
+    }),
+    defineField({
+      name: "popup2",
+      title: "Second Popup Description",
+      type: 'blockContent',
+    }),
   ],
 });

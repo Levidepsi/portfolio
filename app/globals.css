@@ -240,3 +240,15 @@ body, html {
   opacity: 0;
   z-index: 0;
 }
+
+/* forma_regular text-center text-[#00042780] text-[10px] tracking-[0.2px] leading-[20px] */
+
+.popup1_description > p,
+.popup2_description > p {
+  text-align: center;
+  font-size: 10px;
+  color: #00042780;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+  font-family: 'Forma DJRText Regular';
+}

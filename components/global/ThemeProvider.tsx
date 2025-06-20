@@ -8,6 +8,7 @@ import Image from "next/image";
 import logo from "./logo.png";
 import { motion } from "motion/react";
 import { TruncateIcon } from "@sanity/icons";
+import { PortableText } from "next-sanity";
 
 interface IThemeContext {
   initialLoaded: boolean;
@@ -141,6 +142,10 @@ export const ThemeProvider = ({
                   setNextContent={setNextContent}
                   nextContent={nextContent}
                   enablePopup={settings.data.enablePopup}
+                  popup1={settings.data.popup1}
+                  popup2={settings.data.popup2}
+                  popup1_title={settings.data.popup1_title}
+                  popup2_title={settings.data.popup1_title}
                 />
                 <div className={`overlay fixed top-0 left-0 w-full h-full bg-[#0D0D0D83] transition-all duration-[0.7s] ${nextContent && settings.data.enablePopup ? "active" : ""} ${showOverlay ? "opacity-[1] visible z-999" : "opacity-[0] invisible z-0"}`}></div>
               </>
@@ -161,7 +166,11 @@ const Popup = ({
   setShowOverlay,
   setNextContent,
   nextContent,
-  enablePopup
+  enablePopup,
+  popup2,
+  popup1,
+  popup1_title,
+  popup2_title
 }: {
   showPopup: boolean;
   setShowPopup: React.Dispatch<SetStateAction<boolean>>;
@@ -169,12 +178,19 @@ const Popup = ({
   setNextContent: React.Dispatch<SetStateAction<boolean>>;
     nextContent: boolean;
     enablePopup: boolean
+    popup2: any
+    popup1: any
+    popup1_title: string;
+    popup2_title: string
 }) => {
   return (
     <div className={`pop_up ${showPopup ? "" : "hide"} ${nextContent ? "secondContent" : "firstContent"}`}>
       {!nextContent ? (
         <div className="firstContent py-[44px] lg:pt-[88px] lg:py-[60px] px-[50px]">
-          <h1 className="text-[30px] tracking-[2.1px] leading-[42px] text-[#0D0D0D] text-center moinster_regular mb-[35px] lg:mb-[50px]">ARE YOU ABOVE 18?</h1>
+          <h1
+            className="text-[30px] tracking-[2.1px] leading-[42px] text-[#0D0D0D] text-center moinster_regular mb-[35px] lg:mb-[50px]">
+            {popup1_title ? popup1_title : "ARE YOU ABOVE 18?" }
+          </h1>
           <div className="flex justify-center items-center gap-8 mb-[30px] lg:mb-[50px]">
             {["YES", "NO"].map((text) => (
               <label key={text} className="flex items-center gap-2 cursor-pointer text-[#1C1C1C] text-[12px] forma_regular tracking-[0.24px] leading-[20px]">
@@ -191,21 +207,20 @@ const Popup = ({
               </label>
             ))}
           </div>
-          <div className="max-w-[400px] mx-auto">
-            <p className="forma_regular text-center text-[#00042780] text-[10px] tracking-[0.2px] leading-[20px]">
-              You must be of legal drinking age in your country to enter. By entering,<br />
-              you accept our terms and conditions and our privacy policy. <br />
-              Please drink responsibly.
+          <div className="max-w-[400px] popup1_description mx-auto">
+            <p className="">
+              <PortableText value={popup1}/>
+              
             </p>
           </div>
         </div>
       ) : (
         enablePopup &&
         <div className={`secondContent text-center py-[44px] lg:pt-[88px] lg:py-[60px] px-[50px] ${showPopup == false ? "hide" : ""}`}>
-          <h1 className="text-[30px] tracking-[2.1px] leading-[42px] text-[#0D0D0D] text-center moinster_regular mb-[35px] lg:mb-[50px]">SPACE IS AVAILABLE</h1>
+          <h1 className="text-[30px] tracking-[2.1px] leading-[42px] text-[#0D0D0D] text-center moinster_regular mb-[35px] lg:mb-[50px]">{popup2_title ? popup2_title : "SPACE IS AVAILABLE" }</h1>
           <div className="max-w-[400px] mx-auto mb-[30px] lg:mb-[50px]">
-            <p className="forma_regular text-center text-[#00042780] text-[10px] tracking-[0.2px] leading-[20px]">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br /> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            <p className="forma_regular popup2_description text-center text-[#00042780] text-[10px] tracking-[0.2px] leading-[20px]">
+              <PortableText value={popup2}/>
             </p>
           </div>
           <button

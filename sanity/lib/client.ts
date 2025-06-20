@@ -19,7 +19,11 @@ export const client = createClient({
 export const SETTINGS = groq`*[_type == "settings"][0]{
   title,
   _type,
-  enablePopup
+  enablePopup,
+  popup1,
+  popup2,
+  popup1_title,
+  popup2_title
 }`;
 
 export const NAVIGATION = groq`*[_type == "navigation"][0]{

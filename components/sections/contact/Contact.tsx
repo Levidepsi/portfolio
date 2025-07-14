@@ -168,7 +168,7 @@ const Contact = (
             }}
             className="contactPopupSent text-center py-[44px] lg:pt-[88px] lg:py-[60px] px-[50px]"
           >
-            <h1 className="text-[30px] tracking-[2.1px] leading-[42px] text-[#0D0D0D] text-center moinster_regular mb-[35px] lg:mb-[50px]">
+            <h1 className="text-[28px] tracking-[2.1px] leading-[42px] text-[#0D0D0D] text-center moinster_regular mb-[35px] lg:mb-[50px]">
               Thank you! Your submission has been received.
             </h1>
           </motion.div>

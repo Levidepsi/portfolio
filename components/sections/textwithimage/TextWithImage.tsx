@@ -77,6 +77,7 @@ const TextWithImage: React.FC<TextWithImageProps> = ({
     },
   };
   
+  
 
   return (
     <div style={{
@@ -93,7 +94,7 @@ const TextWithImage: React.FC<TextWithImageProps> = ({
         }}
         viewport={{once: true}}
         ref={divRef}
-        className={`text_with_image_contents flex flex-col ${content_position} ${content_position == "bottom" ? "justify-end" : content_position == "top" ? "justify-start" : ""} mb-[40px] lg:pt-[50px] lg:mb-0 lg:w-[40%]`}>
+        className={`text_with_image_contents ${image == null ? "lg:w-[60%] mx-auto center_contents" : "lg:w-[40%]"} flex flex-col ${content_position} ${content_position == "bottom" ? "justify-end" : content_position == "top" ? "justify-start" : ""} mb-[40px] lg:pt-[50px] lg:mb-0 `}>
         {content_title && 
       <h1 className=" moinster_regular text-[20px] lg:text-[40px] tracking-[2.8px] leading-[42px] 2xl:text-[2.604vw] 2x:leading-[2.734vw] 2xl:tracking-[0.182vw]  mb-[30px] lg:mb-[50px]">{content_title}</h1>
 
@@ -113,19 +114,21 @@ const TextWithImage: React.FC<TextWithImageProps> = ({
         }
         
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0, transform: "translateY(50px)" }}
-        whileInView={{ opacity: 1, transform: "translateX(0px)" }}
-        transition={{
-          duration: 1.2,
-          delay: 0.3,
-          easing: [0.19, 1, 0.22, 1],
-        }}
-        viewport={{ once: true }}
-        ref={imageRef}
-        className="lg:w-[50%]">
-        <Image src={image} alt={content_title} width={1000} height={1000} className={`rounded-[10px] mb-[30px] lg:mb-0 object-cover h-[500px] lg:h-auto ${image_size}`} />
-      </motion.div>
+      {image && 
+        <motion.div
+          initial={{ opacity: 0, transform: "translateY(50px)" }}
+          whileInView={{ opacity: 1, transform: "translateX(0px)" }}
+          transition={{
+            duration: 1.2,
+            delay: 0.3,
+            easing: [0.19, 1, 0.22, 1],
+          }}
+          viewport={{ once: true }}
+          ref={imageRef}
+          className="lg:w-[50%]">
+          <Image src={image} alt={content_title} width={1000} height={1000} className={`rounded-[10px] mb-[30px] lg:mb-0 object-cover h-[500px] lg:h-auto ${image_size}`} />
+        </motion.div>
+      }
     </div>
   );
 };

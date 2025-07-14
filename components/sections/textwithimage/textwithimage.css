@@ -64,6 +64,12 @@
   .item img {
     aspect-ratio: 16/12.65;
   }
+
+  .text_with_image_contents.center_contents {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (width >= 1280px) {

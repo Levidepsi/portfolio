@@ -3,8 +3,8 @@ import {useJsApiLoader} from "@react-google-maps/api"
 import Map from "./Map";
 import { PortableText } from "@portabletext/react";
 import "./contact.css"
-import {motion} from "motion/react"
-import { useRef, useState } from "react";
+import {AnimatePresence, motion} from "motion/react"
+import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Requests, Socials } from "@/components/global/components";
 import Link from "next/link";
@@ -143,12 +143,38 @@ const Contact = (
   const [meetingType, setMeetingType] = useState("Request a cask visit");
   const [openMeetingType, setOpenMeetingType] = useState(false)
 
+  useEffect(() => {
+    if (emailSent) {
+      const timeout = setTimeout(() => {
+        setEmailSent(false)
+      }, 2000)
+      return () => clearTimeout(timeout)
+    }
+  }, [emailSent])
 
 
   return (
     <div className="px-[32px] py-[101px] lg:pt-[161px] pb-[32px]">
-      
-      
+
+      <AnimatePresence>
+        {emailSent && (
+          <motion.div
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0}}
+            transition={{
+              duration: 1.5,
+              ease: [0.19, 1, 0.22, 1],
+            }}
+            className="contactPopupSent text-center py-[44px] lg:pt-[88px] lg:py-[60px] px-[50px]"
+          >
+            <h1 className="text-[30px] tracking-[2.1px] leading-[42px] text-[#0D0D0D] text-center moinster_regular mb-[35px] lg:mb-[50px]">
+              Thank you! Your submission has been received.
+            </h1>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {layout == "layout1"
         ?
         <div className="flex flex-col lg:flex-row justify-between">

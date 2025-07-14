@@ -123,3 +123,14 @@ button:hover {
 .meetingTypeItem:not(:last-child) {
   border-bottom: 1px solid #0D0D0D;
 }
+
+.contactPopupSent {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: #fff5ef;
+  border: 1px solid #000427;
+  border-radius: 15px;
+}

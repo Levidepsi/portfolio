@@ -36,6 +36,17 @@
   color: #0D0D0D;
 }
 
+  .text_with_image .text_with_image_wrapper.randomPY {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .text_with_image_contents.center_contents {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
 @media (width >= 1024px) {
     .large {
       aspect-ratio: 16/18.1;
@@ -69,6 +80,11 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+  }
+
+  .text_with_image .text_with_image_wrapper.randomPY {
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
 

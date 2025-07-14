@@ -82,8 +82,8 @@ const TextWithImage: React.FC<TextWithImageProps> = ({
   return (
     <div style={{
       background: `${background_color}`
-    }} 
-      className={`px-[32px] text_with_image_wrapper ${background_color ? "addPaddingTop mt-[75px]" : ""} lg:px-[109px] flex flex-col-reverse ${section_position} ${section_position == "image_right" ? "lg:flex-row" : section_position == "image_left" ? "lg:flex-row-reverse" : "flex-row"} lg:justify-between relative`}>
+    }}
+      className={`px-[32px] text_with_image_wrapper ${background_color && image != null ? "addPaddingTop mt-[75px]" : background_color ? "randomPY" : "py-[]"} lg:px-[109px] flex flex-col-reverse ${section_position} ${section_position == "image_right" ? "lg:flex-row" : section_position == "image_left" ? "lg:flex-row-reverse" : "flex-row"} lg:justify-between relative`}>
       <motion.div
         initial={{ opacity: 0, transform: section_position == "image_right"? "translateX(-50px)" : "translateX(50px)" }}
         whileInView={{ opacity: 1, transform: "translateX(0px)" }}
@@ -94,7 +94,7 @@ const TextWithImage: React.FC<TextWithImageProps> = ({
         }}
         viewport={{once: true}}
         ref={divRef}
-        className={`text_with_image_contents ${image == null ? "lg:w-[60%] mx-auto center_contents" : "lg:w-[40%]"} flex flex-col ${content_position} ${content_position == "bottom" ? "justify-end" : content_position == "top" ? "justify-start" : ""} mb-[40px] lg:pt-[50px] lg:mb-0 `}>
+        className={`text_with_image_contents ${image == null ? "lg:w-[60%] mx-auto center_contents" : "lg:w-[40%] lg:pt-[50px] "} flex flex-col ${content_position} ${content_position == "bottom" ? "justify-end" : content_position == "top" ? "justify-start" : ""} mb-[40px] lg:mb-0 `}>
         {content_title && 
       <h1 className=" moinster_regular text-[20px] lg:text-[40px] tracking-[2.8px] leading-[42px] 2xl:text-[2.604vw] 2x:leading-[2.734vw] 2xl:tracking-[0.182vw]  mb-[30px] lg:mb-[50px]">{content_title}</h1>
 

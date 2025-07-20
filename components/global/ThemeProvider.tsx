@@ -145,7 +145,7 @@ export const ThemeProvider = ({
                   popup1={settings.data.popup1}
                   popup2={settings.data.popup2}
                   popup1_title={settings.data.popup1_title}
-                  popup2_title={settings.data.popup1_title}
+                  popup2_title={settings.data.popup2_title}
                 />
                 <div className={`overlay fixed top-0 left-0 w-full h-full bg-[#0D0D0D83] transition-all duration-[0.7s] ${nextContent && settings.data.enablePopup ? "active" : ""} ${showOverlay ? "opacity-[1] visible z-999" : "opacity-[0] invisible z-0"}`}></div>
               </>

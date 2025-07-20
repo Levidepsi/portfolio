@@ -407,6 +407,12 @@ const Contact = (
                         setMeetingType("Request a cask visit")
                         setOpenMeetingType(false)
                       }}>Request a cask visit</div>
+			<div
+                      className="text-[15px]  cursor-pointer px-[10px] py-[3px] hover:bg-[#0D0D0D] hover:text-[#fff5ef] text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular "
+                      onClick={() => {
+                        setMeetingType("Request a Site Visit")
+                        setOpenMeetingType(false)
+                      }}>Request a Site Visit</div>
                     <div
                       className="text-[15px]  cursor-pointer px-[10px] py-[3px] hover:bg-[#0D0D0D] hover:text-[#fff5ef] text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular "
                       onClick={() => {

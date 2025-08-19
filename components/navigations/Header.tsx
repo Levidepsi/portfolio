@@ -79,7 +79,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
           </Link>
           : 
           <Link href={"/"} className={`logo text-[20px] lg:text-[18px] xl:text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] 2xl:tracking-[0.091vw] moinster_regular ${menuColor} ${openMenuMobile == true ? "active" : ""} `}>
-            JD SPIRITS
+            Portfolio
           </Link>
         }
       </div>

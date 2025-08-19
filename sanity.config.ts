@@ -13,7 +13,7 @@ import { presentationTool } from 'sanity/presentation'
 
 export default defineConfig({
   basePath: '/admin',
-  title: "JD SPIRITS" ,
+  title: "Portfolio" ,
   projectId,
   dataset,
   schema,

@@ -35,7 +35,7 @@ export async function generateMetadata(props: {
     width = Math.round(height * aspectRatio);
   }
 
-  let metaTitle = `JD Spirits | ${slug}`;
+  let metaTitle = `Portfolio | ${slug}`;
   const metadata = {
     title: metaTitle,
     description: "",
@@ -45,7 +45,7 @@ export async function generateMetadata(props: {
       description:
         page.data.meta_description != null
           ? page.data.meta_description
-          : "JD Spirits",
+          : "Portfolio",
       url: `https://jd-spirits.vercel.app/${slug}`,
       siteName: `${metaTitle}`,
       images: [

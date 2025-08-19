@@ -126,7 +126,7 @@ export const ThemeProvider = ({
                   transition={{ duration: 1.5, delay: 3, ease: [0.19, 1, 0.22, 1] }}
                   viewport={{ once: true }}
                   className="uppercase landing_label text-[#fff5ef] text-center  moinster_regular text-[17px] tracking-[1.4px] leading-[29px] lg:text-[20px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw]  mb-[20px]">
-                  Welcome to JD Spirits
+                  Welcome to Portfolio
               </motion.div>
               </div>
             </motion.div>

@@ -34,7 +34,7 @@ const Footer = ({ footer }: { footer: FooterValues }) => {
             {/* <Image src={footer.header_logo} alt="RuthBerg" width={500} height={500} className="w-[142px] h-[15.78px] md:h-auto object-cover" /> */}
           </Link>
           <div className="copywrite hidden lg:block forma_regular text-[13px] tracking-[0.26px] leading-[21px] text-[#F8F3E9] aktiv_regular  w-max">
-                &copy;2025, JD SPIRITS
+                &copy;2025, Portfolio
           </div>
         </div>
         <div className="footer_menus gap-[10px] justify-center flex flex-wrap">
@@ -163,7 +163,7 @@ const Footer = ({ footer }: { footer: FooterValues }) => {
       </div>
       <div className="flex lg:hidden flex-col justify-between lg:justify-start md:flex-row items-center">
         <div className="copywrite forma_regular text-[13px] md:w-[20%] tracking-[0.26px] leading-[21px] text-[#F8F3E9] aktiv_regular lg:w-[30%]">
-              &copy;2025, JD SPIRITS
+              &copy;2025, Portfolio
         </div>
         <div className="footer_links flex flex-col md:flex-row items-center w-full md:justify-between md:w-[70%] lg:w-[62.5%] 2xl:w-[62.5%]">
           <Link href={"/imprint"} className="text-[13px] forma_regular md:w-[20%] text-[#F8F3E9] tracking-[0.26px] leading-[21px]">

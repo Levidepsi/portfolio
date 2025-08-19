@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
     width = Math.round(height * aspectRatio);
   }
 
-  let metaTitle = `JD Spirits`;
+  let metaTitle = `Portfolio`;
   const metadata = {
     title: metaTitle,
     description: "",
@@ -38,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description:
         page.data && page.data.meta_description != null
           ? page.data.meta_description
-          : "JD Spirits",
+          : "Portfolio",
       url: `https://jd-spirits.vercel.app/`,
       siteName: `${metaTitle}`,
       images: [

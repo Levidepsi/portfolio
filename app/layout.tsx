@@ -15,7 +15,7 @@ import logo from "@/public/logo.png";
 import Footer from "@/components/navigations/Footer";
 
 export const metadata: Metadata = {
-  title: "JD Spirits",
+  title: "Portfolio",
   icons: {
     icon: `${logo}`,
     shortcut: `${logo}`,

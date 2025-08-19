@@ -171,7 +171,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
               </Link>
               : 
               <Link href={"/"} className={` text-[20px] tracking-[1.4px] leading-[29px] moinster_regular ${menuColor} ${openMenuMobile == true ? "active" : ""} `}>
-                JD SPIRITS
+                Portfolio
               </Link>
             }
           </div>

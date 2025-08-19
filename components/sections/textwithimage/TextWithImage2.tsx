@@ -39,7 +39,7 @@ const TextWithImage2 = (
                 transition={{
                   duration: 1.2,
                   delay: 0.3,
-                  easing: [0.19, 1, 0.22, 1],
+                  ease: [0.19, 1, 0.22, 1],
                 }}
                 viewport={{once: true}}
                 className="lg:w-[50%] flex flex-col justify-end lg:max-w-[446px] mb-[30px] lg:mb-0">
@@ -61,7 +61,7 @@ const TextWithImage2 = (
                 transition={{
                   duration: 1.2,
                   delay: 0.3,
-                  easing: [0.19, 1, 0.22, 1],
+                  ease: [0.19, 1, 0.22, 1],
                 }}
                 viewport={{once: true}}
 

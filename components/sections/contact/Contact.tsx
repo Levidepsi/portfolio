@@ -190,7 +190,7 @@ const Contact = (
                 transition={{
                   duration: 1.2,
                   delay: 0.3,
-                  easing: [0.19, 1, 0.22, 1],
+                  ease: [0.19, 1, 0.22, 1],
                 }}
                 viewport={{ once: true }}
                 className="mb-[30px]">

@@ -95,7 +95,7 @@ export const ThemeProvider = ({
     <ThemeContext.Provider
       value={{ initialLoaded, setInitialLoaded, menuColor, setMenuColor }}
     >
-      {!loading && (
+      {/* {!loading && (
         closeLanding !== true ? (
           <div
             onClick={() => {
@@ -155,7 +155,10 @@ export const ThemeProvider = ({
             </div>
           </>
         )
-      )}
+      )} */}
+      <div className={`children relative`}>
+        <div className="min-h-[100vh] flex flex-col relative justify-between">{children}</div>
+      </div>
     </ThemeContext.Provider>
   );
 };

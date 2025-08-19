@@ -178,7 +178,7 @@ const Contact = (
       {layout == "layout1"
         ?
         <div className="flex flex-col lg:flex-row justify-between">
-          <div className="contact_details lg:w-[50%] flex gap-5 justify-between md:flex-row lg:flex-col flex-col mb-[50px] ">
+          <div className="contact_details lg:w-[100%] flex gap-5 justify-between md:flex-row lg:flex-row flex-col mb-[50px] ">
             <div className="md:w-[50%] lg:w-[100%] ]">
               <h1 className=" mb-[25px] text-[30px] leading-[40px] lg:text-[40px] lg:leading-[42px] text-[#0D0D0D] 2xl:text-[2.604vw] 2x:leading-[2.734vw] 2xl:tracking-[0.182vw] moinster_regular">{title}</h1>
               <div className="contact_description mb-5">
@@ -203,12 +203,12 @@ const Contact = (
                 </div>
                 }
 
-                <div className="address details mb-[20px] lg:mb-0">
+                {/* <div className="address details mb-[20px] lg:mb-0">
                   <PortableText value={address}/>
-                </div>
+                </div> */}
               
               </motion.div>
-              <div className="mb-[30px] lg:mb-[30px]">
+              {/* <div className="mb-[30px] lg:mb-[30px]">
                 <h2  className="text-[20px] form_title tracking-[1.4px] leading-[29px] moinster_regular text-[#0D0D0D] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] mb-[14px]">FOLLOW US</h2>
                 <div className="flex gap-5 items-center">
                   {socials && socials.map((soc: Socials, index: number) => {
@@ -219,7 +219,7 @@ const Contact = (
                     )
                   })}
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="form md:w-[60%]">
               <h2 className="text-[20px] form_title text-[#0D0D0D] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] moinster_regular mb-[25px]">WRITE US</h2>
@@ -231,7 +231,7 @@ const Contact = (
                       name="first_name"
                       id="first_name"
                       placeholder="First Name"
-                      className="border-b-[0.5px] lg:max-w-[215px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                      className="border-b-[0.5px] lg:max-w-[258 px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                   </div>
                   <div className="secondName flex flex-col md:w-[50%]">
                     <input
@@ -239,7 +239,7 @@ const Contact = (
                       name="second_name"
                       id="second_name"
                       placeholder="Second Name"
-                      className="border-b-[0.5px] lg:max-w-[215px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                      className="border-b-[0.5px] lg:max-w-[258 px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                   </div>
                 </div>
 
@@ -258,11 +258,11 @@ const Contact = (
                       name="phoneNumber"
                       id="phoneNumber"
                       placeholder="Phone Number"
-                      className="border-b-[0.5px] lg:max-w-[215px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                      className="border-b-[0.5px] lg:max-w-[258 px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                   </div>
                 </div>
 
-                <div className="interests flex flex-col lg:max-w-[215px] lg:w-[50%] relative mb-[15px]">
+                <div className="interests flex flex-col lg:max-w-[258 px] lg:w-[50%] relative mb-[15px]">
                     <select
                       name='interest'
                       id='interest'
@@ -289,7 +289,7 @@ const Contact = (
                   </select>
                   <div
                     onClick={openCustomSelect}
-                    className='border-b-[0.5px] lg:max-w-[215px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] outline-none cursor-pointer'
+                    className='border-b-[0.5px] lg:max-w-[258 px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] outline-none cursor-pointer'
                   >
                     {interestsValue
                       ? interestsValue?.length > 25
@@ -358,11 +358,11 @@ const Contact = (
             </div>
             
           </div>
-          {isLoaded && api != null && 
+          {/* {isLoaded && api != null && 
             <div className="lg:w-[50%] rounded-[10px] map">
               <Map />
             </div>
-          }
+          } */}
         </div>
         : layout == "layout2" 
         ?

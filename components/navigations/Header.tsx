@@ -84,7 +84,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
         }
       </div>
 
-      <div className="Desktop_Menu hidden lg:w-[80%] lg:flex justify-center">
+      <div className="Desktop_Menu hidden lg:w-auto lg:flex justify-center">
         <div className="Menu_Wrapper w-full justify-center flex gap-x-[27px]">
           {navigation?.header_menu.map((item: HeaderMenuItem, index: number) => {
              const titleSlug = item.title.replace(/\s+/g, '-').toLowerCase();
@@ -141,7 +141,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
           })}
         </div>
       </div>
-      <div className="hidden contact lg:w-[20%] lg:flex flex gap-x-[15.45px] justify-end">
+      {/* <div className="hidden contact lg:w-[20%] lg:flex flex gap-x-[15.45px] justify-end">
         <Link
             target="_blank"
           href={`https://myaccount.jdspirits.com/login`}
@@ -155,7 +155,7 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
         >
         Contact
         </Link>
-      </div>  
+      </div>   */}
 
       <div className="Burger relative lg:hidden">
         <div onClick={() => setOpenMenuMobile(true)} className={`mobile_icons open ${openMenuMobile ? "hide" : "show"}`}><BurgerIcon menuColor={menuColor} /></div>
@@ -187,19 +187,19 @@ const Header = ({ navigation }: { navigation: HeaderValues }) => {
           homepage={homepage}
         />
         <div className="flex absolute bottom-[50px]  contact lg:w-[20%] lg:hidden  gap-x-[15.45px] px-[32px]">
-          <Link
+          {/* <Link
             href={`https://myaccount.jdspirits.com/login`}
             target="_blank"
             className={`text-[12px] tracking-[0.24px] forma_regular menu_item forma_regular relative leading-[16px] `}
           >
             Customer Login
-          </Link>
-          <Link
+          </Link> */}
+          {/* <Link
             href={`/contact`}
             className={`text-[12px]  tracking-[0.24px] menu_item forma_regular ${pathname == "/contact" ? "active" : ""} relative leading-[16px] `}
           >
           Contact
-          </Link>
+          </Link> */}
         </div> 
       </div>
 

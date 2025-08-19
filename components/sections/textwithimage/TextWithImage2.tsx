@@ -28,11 +28,11 @@ const TextWithImage2 = (
 
   return (
     <div className="mx-[32px] lg:mx-[109px] lg:pt-[100px] ">
-      {title && <h1 className="text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] text-[#000427] moinster_regular mb-[32px] lg:mb-[64px]">{title}</h1>}
+      {title && <h1 className="text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] text-[#fff] moinster_regular mb-[32px] lg:mb-[64px]">{title}</h1>}
       <div>
         {items && items.map((item: Items2, index: number) => {
           return (
-            <div className="item flex flex-col justify-between lg:flex-row border-b-[0.5px] border-solid border-[#000427] pb-[38px] mb-[38px]" key={index}>
+            <div className="item flex flex-col justify-between lg:flex-row border-b-[0.5px] border-solid border-[#fff] pb-[38px] mb-[38px]" key={index}>
               <motion.div
                 initial={{ opacity: 0, transform: "translateX(-50px)"  }}
                 whileInView={{ opacity: 1, transform: "translateX(0px)" }}
@@ -43,7 +43,7 @@ const TextWithImage2 = (
                 }}
                 viewport={{once: true}}
                 className="lg:w-[50%] flex flex-col justify-end lg:max-w-[446px] mb-[30px] lg:mb-0">
-                <h2 className="moinster_regular text-[20px] text-[#000427] tracking-[1.4px] leading-[23px] 2xl:text-[1.302vw] 2x:leading-[1.497vw] 2xl:tracking-[0.091vw] mb-[30px] lg:mb-[50px]">{item.title}</h2>
+                <h2 className="moinster_regular text-[20px] text-[#fff] tracking-[1.4px] leading-[23px] 2xl:text-[1.302vw] 2x:leading-[1.497vw] 2xl:tracking-[0.091vw] mb-[30px] lg:mb-[50px]">{item.title}</h2>
                 <div className={`item_description forma_regular ${item.button_label ? "mb-[30px]" : ""}`}>
                   <PortableText value={item.body}/>
                 </div>

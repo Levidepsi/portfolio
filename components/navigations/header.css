@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .menu_Link .menu_item {
-  color: #0D0D0D;
+  color: #fff;
   
 }
 .menu_Link .menu_item::after {
@@ -19,15 +19,14 @@
 
 .contact .menu_item.dark {
   color: #0D0D0D;
-  border: 0.5px solid #0D0D0D;
   border-radius: 5px;
   padding: 5px 10px;
   transition: 0.6s all;
   width: max-content;
 }
 .contact .menu_item.light {
-  color: #FFF5EF;
-  border: 0.5px solid #FFF5EF;
+  color: #fff;
+  border: 0.5px solid #fff;
   border-radius: 5px;
   padding: 5px 10px;
   transition: 0.6s all;
@@ -35,19 +34,19 @@
 }
 
 .contact .menu_item.active.dark {
-  color: #FFF5EF;
+  color: #fff;
   background-color: #0D0D0D;
   width: max-content;
 }
 
 .contact .menu_item.active.light {
   color: #0D0D0D;
-  background-color: #FFF5EF;
+  background-color: #fff;
   width: max-content;
 }
 
  .logo.dark {
-  color: #0D0D0D;
+  color: #fff;
 }
 
  .logo.light {
@@ -56,16 +55,16 @@
 
 .contact .menu_item.dark:hover {
   color: #FFF5EF;
-  background-color: #0D0D0D;
+  background-color: #fff;
 }
 
 .contact .menu_item.light:hover {
-  color: #0D0D0D;
+  color: #fff;
   background-color: #FFF5EF;
 }
 
 .menu_Link .menu_item.dark {
-  color: #0D0D0D;
+  color: #fff;
 }
 
 .menu_Link .menu_item.light {
@@ -73,7 +72,7 @@
 }
 
 .menu_Link .menu_item.dark::after {
-  background-color: #0D0D0D;
+  background-color: #fff;
 }
 
 svg.light g line {
@@ -81,7 +80,7 @@ svg.light g line {
 }
 
 svg.dark g line {
-  stroke: #0D0D0D;
+  stroke: #fff;
 }
 
 .menu_Link .menu_item.light::after {
@@ -93,7 +92,7 @@ svg.dark g line {
 }
 
 .menu_Link .menu_item.active.dark::after {
-  background-color: #0D0D0D;
+  background-color: #fff;
 }
 
 .menu_Link:hover .menu_item::after {
@@ -167,7 +166,7 @@ svg.dark g line {
   height: 1px;
   top: 0;
   left: 0;
-  background-color: #0D0D0D;
+  background-color: #fff;
   transition: transform 0.3s ease-out;
   display: block;
 }
@@ -183,7 +182,7 @@ svg.dark g line {
   font-size: 13px;
   letter-spacing: 0.91px;
   line-height: 21px;
-  color: #F8F3E9;
+  color: #fff;
   font-family: 'Moister';
 }
 
@@ -199,7 +198,7 @@ svg.dark g line {
   font-size: 13px;
   line-height: 0.26px;
   line-height: 21px;
-  color: #F8F3E9;
+  color: #fff;
 }
 
 .contact p:not(:empty),
@@ -230,7 +229,7 @@ svg.dark g line {
   height: 1px;
   bottom: 0;
   left: 0;
-  background-color: #F8F3E9;
+  background-color: #fff;
   transition: transform 0.3s ease-out;
   display: block;
 }
@@ -262,7 +261,7 @@ svg.dark g line {
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: #F8F3E9;
+    background-color: #fff;
     transition: transform 0.3s ease-out;
     display: block;
 }
@@ -288,7 +287,7 @@ svg.dark g line {
 
 .info p {
   font-size: 10px;
-  color: #F8F3E9;
+  color: #fff;
   letter-spacing: -0.1px;
   line-height: 19px;
   margin-bottom: 1px;
@@ -299,10 +298,10 @@ svg.dark g line {
 }
 
 .header-container.dark::after {
-  background-color: #fff5ef;
+  background-color: #000;
 }
 .header-container.light::after {
-  background-color: #0D0D0D;
+  background-color: #000;
 }
 
 .header-container.dark::after {
@@ -470,4 +469,16 @@ svg.dark g line {
   width: 1px;
   height: 100%;
   margin-left: 10px;
+}
+
+/* footer bg */
+.footer-container {
+    background: linear-gradient(
+    90deg, 
+    #0c0c23 0%,        
+    #021831 25%,       
+    #0d244a 50%,       
+    #1a2a7c 75%,
+    #1b2d46 100%     
+  );
 }

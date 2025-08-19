@@ -50,7 +50,7 @@ const AccordionWithText = (
                 className={`flex cursor-pointer justify-between items-center accordionItemTitle_Wrapper pt-[10px] ${openAccordion == index ? "active" : ""} `}>
                 <h3
                   className="
-                  text-[#000427]
+                  text-[#fff]
                   moinster_regular
                   text-[12px]
                   lg:text-[17px]
@@ -122,24 +122,24 @@ const AccordionWithText = (
                 }
                 {item.cookieGroups && item.cookieGroups.map((cookie: CookieGroupsProp, jindex: number) => (
                   <div key={jindex} className="my-6">
-                    <h4 className="text-xs lg:text-sm 2xl:text-[0.846vw] border-b border-[#000427]  pb-[10px] moinster_regular">
+                    <h4 className="text-xs lg:text-sm 2xl:text-[0.846vw] border-b border-[#fff]  pb-[10px] moinster_regular">
                       {cookie.groupTitle}
                     </h4>
 
                     <div className="w-full overflow-auto">
                       <div className="min-w-[600px]">
-                        <div className="grid grid-cols-3  border-r-[1px] border-l-[1px] border-b-[1px] border-[#000427]">
-                          <div className="moinster_regular border-r-[1px] pl-[16px]  pb-2 pt-2 border-solid border-[#000427] ">Name</div>
-                          <div className="moinster_regular border-r-[1px] pl-[16px] pb-2 pt-2 border-solid border-[#000427]">Expiration</div>
+                        <div className="grid grid-cols-3  border-r-[1px] border-l-[1px] border-b-[1px] border-[#fff]">
+                          <div className="moinster_regular border-r-[1px] pl-[16px]  pb-2 pt-2 border-solid border-[#fff] ">Name</div>
+                          <div className="moinster_regular border-r-[1px] pl-[16px] pb-2 pt-2 border-solid border-[#fff]">Expiration</div>
                           <div className="moinster_regular pl-[16px] pb-2 pt-2">Function</div>
                         </div>
 
                         {cookie.cookies && cookie.cookies.map((cok: CookiesProp, kindex: number) => (
-                          <div key={kindex} className="grid grid-cols-3 border-r-[1px] border-l-[1px] border-b-[1px] border-[#000427] ">
-                            <div className="name  border-r-[1px] pl-[16px]  pb-2 pt-2 border-solid border-[#000427] ">
+                          <div key={kindex} className="grid grid-cols-3 border-r-[1px] border-l-[1px] border-b-[1px] border-[#fff] ">
+                            <div className="name  border-r-[1px] pl-[16px]  pb-2 pt-2 border-solid border-[#fff] ">
                               <PortableText value={cok.name} />
                             </div>
-                            <div className="expiration  border-r-[1px] pl-[16px]  pb-2 pt-2 border-solid border-[#000427]">
+                            <div className="expiration  border-r-[1px] pl-[16px]  pb-2 pt-2 border-solid border-[#fff]">
                               <PortableText value={cok.expiration} />
                             </div>
                             <div className="function pl-[16px]  pb-2 pt-2">

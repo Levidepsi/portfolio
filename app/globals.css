@@ -85,7 +85,7 @@ html, body {
 }
 
 body, html {
-  background-color: #FFF5EF;
+  background-color: #000;
   min-height: 100vh;
   overflow-x: hidden;
   font-family: 'Forma DJRText Regular';
@@ -191,7 +191,7 @@ body, html {
 .loader {
   border: 5px solid #f3f3f3;
   /* Light grey */
-  border-top: 5px solid #00042780;
+  border-top: 5px solid #fff;
   /* Blue */
   border-radius: 50%;
   width: 30px;
@@ -241,13 +241,13 @@ body, html {
   z-index: 0;
 }
 
-/* forma_regular text-center text-[#00042780] text-[10px] tracking-[0.2px] leading-[20px] */
+/* forma_regular text-center text-[#fff80] text-[10px] tracking-[0.2px] leading-[20px] */
 
 .popup1_description > p,
 .popup2_description > p {
   text-align: center;
   font-size: 12px;
-  color: #00042780;
+  color: #fff;
   letter-spacing: 0.2px;
   line-height: 20px;
   font-family: 'Forma DJRText Regular';

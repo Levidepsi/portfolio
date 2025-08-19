@@ -204,7 +204,7 @@ const Popup = ({
                     setTimeout(() => setNextContent(true), 30000);
                   }}
                   type="checkbox"
-                  className="w-[10px] h-[10px] border border-[#000427] rounded-[2px] appearance-none checked:bg-[#000427] checked:border-[#000427] transition-all duration-150"
+                  className="w-[10px] h-[10px] border border-[#fff] rounded-[2px] appearance-none checked:bg-[#fff] checked:border-[#fff] transition-all duration-150"
                 />
                 {text}
               </label>
@@ -222,7 +222,7 @@ const Popup = ({
         <div className={`secondContent text-center py-[44px] lg:pt-[88px] lg:py-[60px] px-[50px] ${showPopup == false ? "hide" : ""}`}>
           <h1 className="text-[30px] tracking-[2.1px] leading-[42px] text-[#0D0D0D] text-center moinster_regular mb-[35px] lg:mb-[50px]">{popup2_title ? popup2_title : "SPACE IS AVAILABLE" }</h1>
           <div className="max-w-[400px] mx-auto mb-[30px] lg:mb-[50px]">
-            <p className="forma_regular popup2_description text-center text-[#00042780] text-[10px] tracking-[0.2px] leading-[20px]">
+            <p className="forma_regular popup2_description text-center text-[#fff80] text-[10px] tracking-[0.2px] leading-[20px]">
               <PortableText value={popup2}/>
             </p>
           </div>

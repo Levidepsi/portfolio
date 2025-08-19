@@ -1,7 +1,7 @@
 .image-block-content p {
   font-size: 13px;
   line-height: 20px;
-  color: #000427;
+  color: #fff;
 }
 /* .button_url::after {
   content: "";
@@ -40,10 +40,10 @@
 
 .button_url {
   border-radius: 5px;
-  background-color: #000427;
+  background-color: #fff;
   padding: 3.5px 5px;
   transition: 0.7s all;
-  border: 0.5px solid #000427;
+  border: 0.5px solid #000;
   width: 110px;
   display: inline-flex;
   justify-content: center;
@@ -52,7 +52,7 @@
 
 .button_url:hover {
   background-color: #FFF5EF;
-  color: #000427;
+  color: #000;
 }
 
 @media (min-width: 1024px) {

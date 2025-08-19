@@ -168,7 +168,7 @@ const Contact = (
             }}
             className="contactPopupSent text-center py-[44px] lg:pt-[88px] lg:py-[60px] px-[50px]"
           >
-            <h1 className="text-[28px] tracking-[2.1px] leading-[42px] text-[#0D0D0D] text-center moinster_regular mb-[35px] lg:mb-[50px]">
+            <h1 className="text-[28px] tracking-[2.1px] leading-[42px] text-[#fff] text-center moinster_regular mb-[35px] lg:mb-[50px]">
               Thank you! Your submission has been received.
             </h1>
           </motion.div>
@@ -180,7 +180,7 @@ const Contact = (
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="contact_details lg:w-[100%] flex gap-5 justify-between md:flex-row lg:flex-row flex-col mb-[50px] ">
             <div className="md:w-[50%] lg:w-[100%] ]">
-              <h1 className=" mb-[25px] text-[30px] leading-[40px] lg:text-[40px] lg:leading-[42px] text-[#0D0D0D] 2xl:text-[2.604vw] 2x:leading-[2.734vw] 2xl:tracking-[0.182vw] moinster_regular">{title}</h1>
+              <h1 className=" mb-[25px] text-[30px] leading-[40px] lg:text-[40px] lg:leading-[42px] text-[#fff] 2xl:text-[2.604vw] 2x:leading-[2.734vw] 2xl:tracking-[0.182vw] moinster_regular">{title}</h1>
               <div className="contact_description mb-5">
                 <PortableText value={description}/>
               </div>
@@ -209,7 +209,7 @@ const Contact = (
               
               </motion.div>
               {/* <div className="mb-[30px] lg:mb-[30px]">
-                <h2  className="text-[20px] form_title tracking-[1.4px] leading-[29px] moinster_regular text-[#0D0D0D] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] mb-[14px]">FOLLOW US</h2>
+                <h2  className="text-[20px] form_title tracking-[1.4px] leading-[29px] moinster_regular text-[#fff] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] mb-[14px]">FOLLOW US</h2>
                 <div className="flex gap-5 items-center">
                   {socials && socials.map((soc: Socials, index: number) => {
                     return (
@@ -222,7 +222,7 @@ const Contact = (
               </div> */}
             </div>
             <div className="form md:w-[60%]">
-              <h2 className="text-[20px] form_title text-[#0D0D0D] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] moinster_regular mb-[25px]">WRITE US</h2>
+              <h2 className="text-[20px] form_title text-[#fff] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2x:leading-[1.888vw] 2xl:tracking-[0.091vw] moinster_regular mb-[25px]">WRITE US</h2>
               <form ref={form} onSubmit={(e) => sendEmail1(e)}>
                 <div className="user-info flex flex-col md:flex-row gap-[16px] mb-[30px]">
                   <div className="firstName flex flex-col md:w-[50%]">
@@ -231,7 +231,7 @@ const Contact = (
                       name="first_name"
                       id="first_name"
                       placeholder="First Name"
-                      className="border-b-[0.5px] lg:max-w-[258 px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                      className="border-b-[0.5px] lg:max-w-[258 px] border-[#fff] pb-[5px] text-[#fff] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                   </div>
                   <div className="secondName flex flex-col md:w-[50%]">
                     <input
@@ -239,7 +239,7 @@ const Contact = (
                       name="second_name"
                       id="second_name"
                       placeholder="Second Name"
-                      className="border-b-[0.5px] lg:max-w-[258 px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                      className="border-b-[0.5px] lg:max-w-[258 px] border-[#fff] pb-[5px] text-[#fff] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                   </div>
                 </div>
 
@@ -250,7 +250,7 @@ const Contact = (
                       name="email"
                       id="email"
                       placeholder="Email"
-                      className="border-b-[0.5px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                      className="border-b-[0.5px] border-[#fff] pb-[5px] text-[#fff] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                   </div>
                   <div className="phoneNumber flex flex-col md:w-[50%]">
                     <input
@@ -258,7 +258,7 @@ const Contact = (
                       name="phoneNumber"
                       id="phoneNumber"
                       placeholder="Phone Number"
-                      className="border-b-[0.5px] lg:max-w-[258 px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                      className="border-b-[0.5px] lg:max-w-[258 px] border-[#fff] pb-[5px] text-[#fff] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                   </div>
                 </div>
 
@@ -278,7 +278,7 @@ const Contact = (
                     {requests && requests.map((item: Requests, index: number) => {
                       return (
                         <option
-                          className='bg-[#00042780] aktiv_regular'
+                          className='bg-[#fff] aktiv_regular'
                           key={index}
                           defaultValue={item.title}
                         >
@@ -289,7 +289,7 @@ const Contact = (
                   </select>
                   <div
                     onClick={openCustomSelect}
-                    className='border-b-[0.5px] lg:max-w-[258 px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] outline-none cursor-pointer'
+                    className='border-b-[0.5px] lg:max-w-[258 px] border-[#fff] pb-[5px] text-[#fff] text-[13px] tracking-[0.26px] leading-[16px] outline-none cursor-pointer'
                   >
                     {interestsValue
                       ? interestsValue?.length > 25
@@ -314,7 +314,7 @@ const Contact = (
                         d="M1651.453,16296.816l5.2,5.135,5.151-5.135"
                         transform="translate(-16296.321 1662.301) rotate(-90)"
                         fill="none"
-                        stroke="#00042780"
+                        stroke="#fff"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth="0.7" />
@@ -328,7 +328,7 @@ const Contact = (
                     {requests && requests.map((item: Requests, index: number) => {
                       return (
                         <li
-                          className={`text-[#00042780] hover:opacity-[1]  text-[13px] 2xl:text-[0.846vw] 2xl:leading-[1.107vw] leading-[17px] aktiv_regular opacity-[0.5] cursor-pointer p-[5px] border-r-[1px] border-l-[1px] border-b-[1px] border-solid border-[black]	`}
+                          className={`text-[#fff] hover:opacity-[1]  text-[13px] 2xl:text-[0.846vw] 2xl:leading-[1.107vw] leading-[17px] aktiv_regular opacity-[0.5] cursor-pointer p-[5px] border-r-[1px] border-l-[1px] border-b-[1px] border-solid border-[black]	`}
                           onClick={() => {
                             if (item.title !== interestsValue) {
                               setInterests(item.title);
@@ -346,12 +346,12 @@ const Contact = (
                 </div>
                 
                 <div className="message flex flex-col mb-[30px]">
-                  <label className="forma_regular text-[14px] 2xl:text-[0.911vw] 2xl:leading-[1.172vw] mb-[15px] leading-[18px] text-[#00042780]" htmlFor="">Message</label>
-                  <textarea name="message" id="message" className="w-full   border-b-[0.5px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid ">
+                  <label className="forma_regular text-[14px] 2xl:text-[0.911vw] 2xl:leading-[1.172vw] mb-[15px] leading-[18px] text-[#fff]" htmlFor="">Message</label>
+                  <textarea name="message" id="message" className="w-full   border-b-[0.5px] border-[#fff] pb-[5px] text-[#fff] text-[13px] tracking-[0.26px] leading-[16px] border-solid ">
 
                   </textarea>
                 </div>
-                <button type="submit" className="text-[12px] leading-[16px] tracking-[0.24px] flex  cursor-pointer  text-[#0D0D0D] forma_regular">SUBMIT</button>
+                <button type="submit" className="text-[12px] leading-[16px] tracking-[0.24px] flex  cursor-pointer  text-[#fff] forma_regular">SUBMIT</button>
               </form>
             </div>
             <div>
@@ -369,7 +369,7 @@ const Contact = (
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="contact_details lg:w-[50%] flex gap-5 justify-between lg:justify-start md:flex-row lg:flex-col flex-col mb-[50px] lg:mb-0 ">
             <div className="md:w-[50%] lg:w-[100%] mb-[50px]">
-              <h1 className=" mb-[25px] text-[30px] leading-[40px] lg:text-[40px] lg:leading-[42px] text-[#0D0D0D] moinster_regular">{title}</h1>
+              <h1 className=" mb-[25px] text-[30px] leading-[40px] lg:text-[40px] lg:leading-[42px] text-[#fff] moinster_regular">{title}</h1>
               <div className="contact_description mb-5">
                 <PortableText value={description}/>
               </div>
@@ -380,7 +380,7 @@ const Contact = (
                   <h2
                     onClick={() => setOpenMeetingType(!openMeetingType)}
                     id="meetingType"
-                    className="text-[20px] flex justify-between items-center gap-x-5 w-max form_title text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular mb-[25px] cursor-pointer">
+                    className="text-[20px] flex justify-between items-center gap-x-5 w-max form_title text-[#fff] tracking-[1.4px] leading-[29px] m moinster_regular mb-[25px] cursor-pointer">
                     {meetingType}
                     <svg
                       className="w-[5.98px] rotate-[90deg]"
@@ -394,33 +394,33 @@ const Contact = (
                         d="M1651.453,16296.816l5.2,5.135,5.151-5.135"
                         transform="translate(-16296.321 1662.301) rotate(-90)"
                         fill="none"
-                        stroke="#0D0D0D"
+                        stroke="#fff"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth="0.7" />
                     </svg>
                   </h2>
-                <div className={`meetingType  bg-[#fff5ef] absolute top-0 left-0 border-[1px] border-solid border-[#0D0D0D] rounded-[5px] transition-all duration-[0.4s] ${openMeetingType ? "opacity-[1] visible z-10 top-[30px]" : " opacity-0 invisible z-0 top-0"}`}>
+                <div className={`meetingType  bg-[#fff5ef] absolute top-0 left-0 border-[1px] border-solid border-[#fff] rounded-[5px] transition-all duration-[0.4s] ${openMeetingType ? "opacity-[1] visible z-10 top-[30px]" : " opacity-0 invisible z-0 top-0"}`}>
                     <div
-                      className="text-[15px]  cursor-pointer px-[10px] py-[10px] hover:bg-[#0D0D0D] hover:text-[#fff5ef] text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular "
+                      className="text-[15px]  cursor-pointer px-[10px] py-[10px] hover:bg-[#fff] hover:text-[#fff5ef] text-[#fff] tracking-[1.4px] leading-[29px] m moinster_regular "
                       onClick={() => {
                         setMeetingType("Request a cask visit")
                         setOpenMeetingType(false)
                       }}>Request a cask visit</div>
 			<div
-                      className="text-[15px]  cursor-pointer px-[10px] py-[3px] hover:bg-[#0D0D0D] hover:text-[#fff5ef] text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular "
+                      className="text-[15px]  cursor-pointer px-[10px] py-[3px] hover:bg-[#fff] hover:text-[#fff5ef] text-[#fff] tracking-[1.4px] leading-[29px] m moinster_regular "
                       onClick={() => {
                         setMeetingType("Request a Site Visit")
                         setOpenMeetingType(false)
                       }}>Request a Site Visit</div>
                     <div
-                      className="text-[15px]  cursor-pointer px-[10px] py-[3px] hover:bg-[#0D0D0D] hover:text-[#fff5ef] text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular "
+                      className="text-[15px]  cursor-pointer px-[10px] py-[3px] hover:bg-[#fff] hover:text-[#fff5ef] text-[#fff] tracking-[1.4px] leading-[29px] m moinster_regular "
                       onClick={() => {
                         setMeetingType("Request a sample")
                         setOpenMeetingType(false)
                       }}>Request a sample</div>
                     <div
-                      className="text-[15px]  cursor-pointer px-[10px] py-[10px] hover:bg-[#0D0D0D] hover:text-[#fff5ef] text-[#0D0D0D] tracking-[1.4px] leading-[29px] m moinster_regular "
+                      className="text-[15px]  cursor-pointer px-[10px] py-[10px] hover:bg-[#fff] hover:text-[#fff5ef] text-[#fff] tracking-[1.4px] leading-[29px] m moinster_regular "
                       onClick={() => {
                         setMeetingType("Request a delivery order")
                         setOpenMeetingType(false)
@@ -433,7 +433,7 @@ const Contact = (
                       name="first_name"
                       id="first_name"
                       placeholder="First Name"
-                      className="border-b-[0.5px] lg:max-w-[292px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                      className="border-b-[0.5px] lg:max-w-[292px] border-[#fff] pb-[5px] text-[#fff] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                   </div>
                   
                 </div>
@@ -445,7 +445,7 @@ const Contact = (
                       name="email"
                       id="email"
                       placeholder="Email"
-                      className="border-b-[0.5px] lg:max-w-[292px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                      className="border-b-[0.5px] lg:max-w-[292px] border-[#fff] pb-[5px] text-[#fff] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                   </div>
                   </div>
                   
@@ -456,11 +456,11 @@ const Contact = (
                         name="cask_number"
                         id="cask_number"
                         placeholder="Cask Number"
-                        className="border-b-[0.5px] lg:max-w-[292px] border-[#00042780] pb-[5px] text-[#00042780] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
+                        className="border-b-[0.5px] lg:max-w-[292px] border-[#fff] pb-[5px] text-[#fff] text-[13px] tracking-[0.26px] leading-[16px] border-solid outline-none forma_regular" />
                     </div>
                   </div>
 
-                <button type="submit" className="text-[12px] leading-[16px] tracking-[0.24px] flex  cursor-pointer  text-[#0D0D0D] forma_regular">Send Request</button>
+                <button type="submit" className="text-[12px] leading-[16px] tracking-[0.24px] flex  cursor-pointer  text-[#fff] forma_regular">Send Request</button>
               </form>
             </div>
             </div>

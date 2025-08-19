@@ -3,7 +3,7 @@
 .telephone p,
 .email p,
 .address p {
-  color: #0D0D0D;
+  color: #fff;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.24px;
@@ -17,11 +17,11 @@
   font-size: 14px;
   line-height: 16px;
   font-family: 'Moister';
-  color: #0D0D0D !important;
+  color: #fff !important;
 }
 
 .form_title {
-  color: #0D0D0D !important;
+  color: #fff !important;
   font-size: 20px !important;
   line-height: 29px !important;
   letter-spacing: 1.4px !important;
@@ -51,7 +51,7 @@
     .address p {
       font-size: 12px;
       line-height: 16px;
-      color: #0D0D0D;
+      color: #fff;
     }
   
     .telephone h2,
@@ -60,7 +60,7 @@
       font-size: 20px;
         letter-spacing: 1.4px;
         line-height: 29px;
-      color: #0D0D0D;
+      color: #fff;
     }
 }
 
@@ -76,7 +76,7 @@
   height: 1px;
   bottom: 0;
   left: 0;
-  background-color: #0D0D0D;
+  background-color: #fff;
   transition: transform 0.3s ease-out;
   display: block;
 }
@@ -91,7 +91,7 @@
 }
 
 .contact_description p {
-  color: #0D0D0D;
+  color: #fff;
   font-size: 12px;
   letter-spacing: 0.24px;
   line-height: 16px;
@@ -108,7 +108,7 @@ button {
   padding-top: 4px !important;
   padding: 2px 5px;
   transition: 0.7s all;
-  border: 0.5px solid #000427;
+  border: 0.5px solid #fff;
   display: inline-flex;
   justify-content: center;
   width: 110px;
@@ -116,12 +116,12 @@ button {
 }
 
 button:hover {
-  background-color: #000427;
+  background-color: #fff;
   color: #FFF5EF;
 }
 
 .meetingTypeItem:not(:last-child) {
-  border-bottom: 1px solid #0D0D0D;
+  border-bottom: 1px solid #fff;
 }
 
 .contactPopupSent {
@@ -131,6 +131,6 @@ button:hover {
   transform: translate(-50%, -50%);
   z-index: 10;
   background-color: #fff5ef;
-  border: 1px solid #000427;
+  border: 1px solid #fff;
   border-radius: 15px;
 }

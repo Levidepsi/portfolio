@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .heading_description p {
-  color: #000;
+  color: #fff;
   font-size: 16px;
   line-height: 21px;
   font-family: Aktiv Grotesk Regular;
@@ -14,7 +14,8 @@
 
 .multiple_textitem {
   font-size: 20px;
-  color: #0D0D0D;
+  /* color: #fff; */
+  color: #fff;
   letter-spacing: 2.8px;
   line-height: 28px;
   text-align: center;

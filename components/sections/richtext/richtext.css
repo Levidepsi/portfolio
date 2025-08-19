@@ -4,7 +4,7 @@
 .richtext_Container p {
   font-size: 14px;
   line-height: 18px;
-  color: #000427;
+  color: #fff;
   font-family: 'Forma DJRText Regular';
 }
 
@@ -13,7 +13,7 @@
   margin-top: 30px;
   font-size: 20px;
   line-height: 24px;
-  color: #000427;
+  color: #fff;
   font-family: 'Moister';
   margin-bottom: 20px;
 }
@@ -23,7 +23,7 @@
 .richtext_Container h3 {
   font-size: 14px;
   line-height: 16px;
-  color: #000427;
+  color: #fff;
   font-family: 'Moister';
   margin-bottom: 10px;
 }
@@ -36,7 +36,7 @@
   list-style: disc;
   font-size: 14px;
   line-height: 24px;
-  color: #000427;
+  color: #fff;
   font-family: 'Forma DJRText Regular';
 }
 
@@ -45,7 +45,7 @@
 .function p {
   font-size: 14px;
   line-height: 18px;
-  color: #000427;
+  color: #fff;
   font-family: 'Forma DJRText Regular';
 }
 
@@ -140,7 +140,7 @@
 .description p{
   font-size: 14px;
   line-height: 18px;
-  color: #000427;
+  color: #fff;
   font-family: 'Forma DJRText Regular';
 }
 

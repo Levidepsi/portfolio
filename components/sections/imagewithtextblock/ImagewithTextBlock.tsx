@@ -95,12 +95,12 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
                         style={{
                           height: desktop && titleMinHeight ? `${titleMHeight}px`: ``
                         }}
-                        className={`text-[#000427] max-w-[310px] 2xl:max-w-[20.182vw] lg:h-[${titleMHeight}px] moinster_regular text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] uppercase mb-[20px]`}>
+                        className={`text-[#fff] max-w-[310px] 2xl:max-w-[20.182vw] lg:h-[${titleMHeight}px] moinster_regular text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] uppercase mb-[20px]`}>
                         {item.title}
                       </h2>
                       <div className="aktiv_regular mb-[25px]"><PortableText value={item.body} /></div>
                       {item.button_url && 
-                        <Link className="text-[13px] button_url relative leading-[16px] 2xl:text-[0.846vw] 2xl:leading-[1.042vw] text-[#FFF5EF] aktiv_regular " href={`${item.button_url}`}>Find out more</Link>
+                        <Link className="text-[13px] button_url relative leading-[16px] 2xl:text-[0.846vw] 2xl:leading-[1.042vw] text-[#000] aktiv_regular " href={`${item.button_url}`}>Find out more</Link>
                       }
                     </div>
                   }
@@ -157,7 +157,7 @@ const ImagewithTextBlock: React.FC<ImagewithTextBlockProps> = ({
                     : 
                     <div className="image-block-content w-full h-auto">
                       <Image src={item.image} alt={item.title} priority width={500} height={500} className="w-full rounded-[10px] h-[561px] lg:aspect-[16/20.7] xl:aspect-[16/23.65] 2xl:aspect-[16/25.65] mb-[30px] object-cover" />
-                      <h2 className="aktiv_regular text-[#000427] text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] uppercase mb-[20px]">{item.title}</h2>
+                      <h2 className="aktiv_regular text-[#fff] text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] uppercase mb-[20px]">{item.title}</h2>
                       <div className="aktiv_regular mb-[25px]"><PortableText value={item.body} /></div>
                       <Link className="text-[13px] button_url relative leading-[16px] 2xl:text-[0.846vw] 2xl:leading-[1.042vw] text-[#FFF5EF] aktiv_regular " href={`${item.button_url}`}>Read more</Link>
                     </div>

@@ -26,11 +26,19 @@ const Footer = ({ footer }: { footer: FooterValues }) => {
   }
   
   return (
-    <div className={`flex overflow-hidden justify-center md:justify-between gap-x-[50px] px-[32px] lg:pr-[32px] lg:pl-[102px]  py-[30px] lg:py-[74px]  flex-col md:flex-col bg-[#412A24]`}>
+    <div className={`flex footer-container overflow-hidden justify-center md:justify-between gap-x-[50px] px-[32px] lg:pr-[32px] lg:pl-[102px]  py-[30px] lg:py-[74px]  flex-col md:flex-col `}>
+      <div className="1stLayer"></div>
+      <div className="2ndLayer"></div>
+      <div className="3rdLayer"></div>
+      <div className="4thLayer"></div>
       <div className="flex lg:gap-x-[102px] justify-between lg:flex-row flex-col">
         <div className="lg:w-[10%]  lg:gap-y-[139px] flex flex-col justify-between mb-5 lg:mb-0">
           <Link className="text-center flex flex-col justify-center items-center" href={"/"}>
-            <Image src={footer.footer_logo} alt="RuthBerg" width={500} height={500} className="w-[50px] lg:w-[94px] h-auto lg:h-[181px] object-cover mb-[12.85px] lg:mr-auto" />
+            {footer.footer_logo ? 
+              <Image src={footer.footer_logo} alt="RuthBerg" width={500} height={500} className="w-[50px] lg:w-[94px] h-auto lg:h-[181px] object-cover mb-[12.85px] lg:mr-auto" />
+              :
+              <span className="text-[20px] text-[#fff] lg:text-[18px] xl:text-[20px] tracking-[1.4px] leading-[29px] 2xl:text-[1.302vw] 2xl:leading-[1.888vw] 2xl:tracking-[0.091vw] moinster_regular">Portfolio</span>
+            }
             {/* <Image src={footer.header_logo} alt="RuthBerg" width={500} height={500} className="w-[142px] h-[15.78px] md:h-auto object-cover" /> */}
           </Link>
           <div className="copywrite hidden lg:block forma_regular text-[13px] tracking-[0.26px] leading-[21px] text-[#F8F3E9] aktiv_regular  w-max">
